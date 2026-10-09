@@ -13,7 +13,7 @@ import org.lwjgl.system.MemoryUtil;
 /* loaded from: mio-yarn.jar:me/mioclient/ByteBufferSearchHelper4.class */
 public class ByteBufferSearchHelper4 implements SearchHelper_4 {
     public boolean flag = false;
-    public double val = Double.longBitsToDouble(4607182418800017408L);
+    public double val = 1.0;
     public final Mode_2 mode_2;
     public final int num;
     public final int num2;

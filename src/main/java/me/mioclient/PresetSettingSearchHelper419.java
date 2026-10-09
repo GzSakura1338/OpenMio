@@ -26,10 +26,10 @@ public class PresetSettingSearchHelper419 extends SettingSearchHelper419<Enum<?>
         super(presetEnumSettingHelper, presetHelper_2, (Setting) setting);
         this.arrayList = new ArrayList<>();
         this.hUDHelper_2 = new HUDHelper_2((Supplier<Float>) () -> {
-            return Float.valueOf(Float.intBitsToFloat(1073741824) * getUI1744().animSpeed.getValue().floatValue());
+            return Float.valueOf(2.0f * getUI1744().animSpeed.getValue().floatValue());
         }, true);
         this.progress = new Progress((Supplier<Float>) () -> {
-            return Float.valueOf(Float.intBitsToFloat(1073741824) * UI.uI.animSpeed.getValue().floatValue());
+            return Float.valueOf(2.0f * UI.uI.animSpeed.getValue().floatValue());
         }, true);
         this.flag = false;
         int i = get1743();
@@ -107,18 +107,18 @@ public class PresetSettingSearchHelper419 extends SettingSearchHelper419<Enum<?>
         if (this.flag) {
             this.hUDHelper_2.do1737(this.num2 * get1743());
             float f = this.hUDHelper_2.get172();
-            CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + get1397() + 1, (((this.presetEnumSettingHelper.getY() + this.num) + f) + get1743()) - Float.intBitsToFloat(1056964608), (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - 2, (((this.presetEnumSettingHelper.getY() + this.num) + (get1743() * 2)) + f) - Float.intBitsToFloat(1056964608), getUI1744().color.getValue());
+            CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + get1397() + 1, (((this.presetEnumSettingHelper.getY() + this.num) + f) + get1743()) - 0.5f, (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - 2, (((this.presetEnumSettingHelper.getY() + this.num) + (get1743() * 2)) + f) - 0.5f, getUI1744().color.getValue());
         } else {
             this.hUDHelper_2.do1737(-get1743());
         }
         int i = this.flag ? 1 : 0;
-        CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + get1397() + i, this.presetEnumSettingHelper.getY() + this.num + Float.intBitsToFloat(1056964608) + i, (this.presetEnumSettingHelper.getX() + Math.max((this.presetEnumSettingHelper.get1635() * this.progress.get172()) - Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1073741824))) - i, ((this.presetEnumSettingHelper.getY() + this.num) + get1743()) - Float.intBitsToFloat(1056964608), getUI1744().color.getValue());
+        CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + get1397() + i, this.presetEnumSettingHelper.getY() + this.num + 0.5f + i, (this.presetEnumSettingHelper.getX() + Math.max((this.presetEnumSettingHelper.get1635() * this.progress.get172()) - 1.0f, 2.0f)) - i, ((this.presetEnumSettingHelper.getY() + this.num) + get1743()) - 0.5f, getUI1744().color.getValue());
         if (this.flag) {
             this.arrayList.forEach(searchHelper419 -> {
                 searchHelper419.do19(drawContext, matrixStack, d, d2);
             });
             if (UI.uI.line.getValue().booleanValue()) {
-                CrosshairHelper.do1705(matrixStack, this.presetEnumSettingHelper.getX() + get1397(), this.presetEnumSettingHelper.getY() + this.num + Float.intBitsToFloat(1056964608), (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - 2, ((this.presetEnumSettingHelper.getY() + this.num) + get93()) - Float.intBitsToFloat(1069547520), getUI1744().color.getValue());
+                CrosshairHelper.do1705(matrixStack, this.presetEnumSettingHelper.getX() + get1397(), this.presetEnumSettingHelper.getY() + this.num + 0.5f, (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - 2, ((this.presetEnumSettingHelper.getY() + this.num) + get93()) - 1.5f, getUI1744().color.getValue());
             }
         }
         String string2921 = new ArgumentTypeHelper().getArgumentTypeHelper2919(EnumSettingConverter.getString913((Enum) this.setting.getValue())).getArgumentTypeHelper2919(this.setting.getName()).getString2921("\u0001: \u0001");

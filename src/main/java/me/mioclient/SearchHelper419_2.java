@@ -39,7 +39,7 @@ public abstract class SearchHelper419_2 extends SearchHelper4_19 {
 
     @Override // me.mioclient.SearchHelper4_19, me.mioclient.PresetHelper_5
     public boolean is92(double d, double d2) {
-        return d > ((double) (((float) this.presetEnumSettingHelper.getX()) + get123())) && d < ((double) ((((float) this.presetEnumSettingHelper.getX()) + get123()) + FontsSearchHelper4.fontsSearchHelper4.get1316(getName()))) && d2 > ((double) (((float) (this.presetEnumSettingHelper.getY() + this.num)) + get124())) && d2 < ((double) (((((float) (this.presetEnumSettingHelper.getY() + this.num)) + get124()) + ((float) FontsSearchHelper4.fontsSearchHelper4.get93())) + (get1742() * Float.intBitsToFloat(1073741824))));
+        return d > ((double) (((float) this.presetEnumSettingHelper.getX()) + get123())) && d < ((double) ((((float) this.presetEnumSettingHelper.getX()) + get123()) + FontsSearchHelper4.fontsSearchHelper4.get1316(getName()))) && d2 > ((double) (((float) (this.presetEnumSettingHelper.getY() + this.num)) + get124())) && d2 < ((double) (((((float) (this.presetEnumSettingHelper.getY() + this.num)) + get124()) + ((float) FontsSearchHelper4.fontsSearchHelper4.get93())) + (get1742() * 2.0f)));
     }
 
     public abstract float get123();

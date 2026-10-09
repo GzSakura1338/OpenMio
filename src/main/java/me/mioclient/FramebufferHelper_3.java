@@ -81,7 +81,7 @@ public class FramebufferHelper_3 implements SearchHelper_4 {
     }
 
     public void do1442(String str, Color color) {
-        FramebufferHelperSearchHelper4.do300(get1437(str), color.getRed() / Float.intBitsToFloat(1132396544), color.getGreen() / Float.intBitsToFloat(1132396544), color.getBlue() / Float.intBitsToFloat(1132396544), color.getAlpha() / Float.intBitsToFloat(1132396544));
+        FramebufferHelperSearchHelper4.do300(get1437(str), color.getRed() / 255.0f, color.getGreen() / 255.0f, color.getBlue() / 255.0f, color.getAlpha() / 255.0f);
     }
 
     public void do1443(String str, Matrix4f matrix4f) {

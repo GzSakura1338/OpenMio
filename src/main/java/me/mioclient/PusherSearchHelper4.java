@@ -40,7 +40,7 @@ public final class PusherSearchHelper4 implements SearchHelper_4 {
         if (list.contains(blockState.getBlock())) {
             return false;
         }
-        if (blockState.getHardness(minecraftClient.world, blockPos.up()) == Float.intBitsToFloat(-1082130432)) {
+        if (blockState.getHardness(minecraftClient.world, blockPos.up()) == -1.0f) {
             return false;
         }
         if (BaritoneHelper_3.stashFinderSearchHelper4.is1557(blockPos.up(2))) {
@@ -50,7 +50,7 @@ public final class PusherSearchHelper4 implements SearchHelper_4 {
             return false;
         }
         if (this.pusher.onlySafe.getValue().booleanValue() && !BaritoneHelper_3.holeSnapSearchHelper4_5.is2723(blockPos)) {
-            if (minecraftClient.world.getBlockState(playerEntity.getBlockPos()).getBlock().getBlastResistance() < Float.intBitsToFloat(1142292480)) {
+            if (minecraftClient.world.getBlockState(playerEntity.getBlockPos()).getBlock().getBlastResistance() < 600.0f) {
                 return false;
             }
         }

@@ -24,7 +24,7 @@ public class AutoCrystalSearchHelper4 implements SearchHelper_4 {
     public int num;
     public boolean flag2 = true;
     public boolean flag4 = true;
-    public float val = Float.intBitsToFloat(1086324736);
+    public float val = 6.0f;
 
     public boolean is2070(BlockPos blockPos) {
         if (!this.flag7 && !SearchHelper4_7.is2445(blockPos)) {
@@ -66,7 +66,7 @@ public class AutoCrystalSearchHelper4 implements SearchHelper_4 {
                 } else {
                     boundingBox = SearchHelper.getBox234((LivingEntity) nameTagsHelper);
                     if (this.flag6 && !nameTagsHelper.mio$isNextToWall()) {
-                        boundingBox = boundingBox.expand(Double.longBitsToDouble(4547007122018943789L), 0.0d, Double.longBitsToDouble(4547007122018943789L));
+                        boundingBox = boundingBox.expand(0.0001, 0.0d, 0.0001);
                     }
                     for (int i2 = 1; i2 <= this.num; i2++) {
                         if (BaritoneHelper_3.mainhandHelper_2.getBox1109((PlayerEntity) nameTagsHelper, i2).withMaxY(boundingBox.maxY).withMinY(boundingBox.minY).intersects(withMaxY)) {

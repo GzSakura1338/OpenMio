@@ -22,7 +22,7 @@ public final class SpeedHelper_2 extends SpeedHelper {
         }
         if (this.speed.useTimer.getValue().booleanValue() && BaritoneHelper_3.holeSnapSearchHelper4_4.getStopwatch2615().is419(250L)) {
             HoleSnapSearchHelper4_2 holeSnapSearchHelper4_2 = BaritoneHelper_3.holeSnapSearchHelper4_2;
-            holeSnapSearchHelper4_2.do2018(this.speed, Float.intBitsToFloat(1066098124));
+            holeSnapSearchHelper4_2.do2018(this.speed, 1.0887999534606934f);
         } else {
             BaritoneHelper_3.holeSnapSearchHelper4_2.do2017(this.speed);
         }
@@ -40,12 +40,12 @@ public final class SpeedHelper_2 extends SpeedHelper {
     @Override // me.mioclient.SpeedHelper
     public void do389() {
         if (!is130() && HoleSnapSearchHelper4_3.is2181() && minecraftClient.player.groundCollision) {
-            double[] doubleArray2508 = HoleSnapSearchHelper4_3.getDoubleArray2508(minecraftClient.player.getYaw(), minecraftClient.player.input, Double.longBitsToDouble(4607182418800017408L));
+            double[] doubleArray2508 = HoleSnapSearchHelper4_3.getDoubleArray2508(minecraftClient.player.getYaw(), minecraftClient.player.input, 1.0);
             float degrees = (float) (Math.toDegrees(Math.atan2(doubleArray2508[1], doubleArray2508[0])) - FreecamHelper.num2);
             Vec3d velocity = minecraftClient.player.getVelocity();
             float radians = (float) Math.toRadians(degrees);
-            float intBitsToFloat = Float.intBitsToFloat(1045220557);
-            minecraftClient.player.setVelocity(velocity.x, Double.longBitsToDouble(4600877379321698714L) + HoleSnapSearchHelper4_3.get2513(), velocity.z);
+            float intBitsToFloat = 0.20000000298023224f;
+            minecraftClient.player.setVelocity(velocity.x, 0.4 + HoleSnapSearchHelper4_3.get2513(), velocity.z);
             minecraftClient.player.addVelocityInternal(new Vec3d((-MathHelper.sin(radians)) * intBitsToFloat, 0.0d, MathHelper.cos(radians) * intBitsToFloat));
             minecraftClient.player.setSprinting(true);
         }

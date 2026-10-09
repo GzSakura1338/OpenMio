@@ -42,7 +42,7 @@ public class ShaderFramebufferHelper_5 extends ShaderFramebufferHelper {
         this.framebufferHelper_3.do1438("u_FastLines", shader.fastLines.getValue().booleanValue() || ShaderSearchHelper4.flag2);
         this.framebufferHelper_3.do1439("u_ShapeMode", 2);
         this.framebufferHelper_3.do1440("u_GlowMultiplier", shader.glow.getValue().floatValue());
-        this.framebufferHelper_3.do1440("u_Time", ((float) (System.currentTimeMillis() - this.num)) * Float.intBitsToFloat(1008981770) * shader.speed.getValue().floatValue());
+        this.framebufferHelper_3.do1440("u_Time", ((float) (System.currentTimeMillis() - this.num)) * 0.009999999776482582f * shader.speed.getValue().floatValue());
         if (shader.is3114()) {
             this.framebufferHelper_3.do1442("u_FillColor", MixinMessageIndicatorHelper_2.color);
             this.framebufferHelper_3.do1442("u_FillColor2", MixinMessageIndicatorHelper_2.color);

@@ -171,15 +171,15 @@ public class Search extends Module {
                     colors.scheme.getValue().do1027(() -> {
                         if (SearchHelper4_8.is2492(box233)) {
                             if (this.fill.getValue().booleanValue()) {
-                                PhaseESPSearchHelper4.do1590(inner_3.getMatrixStack472(), box233, MixinMessageIndicatorHelper_2.getColor816(color61, (int) (Float.intBitsToFloat(1132396544) * this.fillOpacity.getValue().floatValue())));
+                                PhaseESPSearchHelper4.do1590(inner_3.getMatrixStack472(), box233, MixinMessageIndicatorHelper_2.getColor816(color61, (int) (255.0f * this.fillOpacity.getValue().floatValue())));
                             }
                             if (this.outline.getValue().booleanValue()) {
-                                PhaseESPSearchHelper4.do1593(inner_3.getMatrixStack472(), box233, color61, Float.intBitsToFloat(1065353216));
+                                PhaseESPSearchHelper4.do1593(inner_3.getMatrixStack472(), box233, color61, 1.0f);
                             }
                         }
                         if (this.tracers.getValue().booleanValue()) {
                             Camera camera = minecraftClient.gameRenderer.getCamera();
-                            SearchHelper_2.searchHelper_2.do561(inner_3.getMatrixStack472(), new Vec3d(0.0d, 0.0d, Double.longBitsToDouble(4607182418800017408L)).rotateX(-((float) Math.toRadians(camera.getPitch()))).rotateY(-((float) Math.toRadians(camera.getYaw()))).add(minecraftClient.getEntityRenderDispatcher().camera.getPos()), box233.getCenter(), MixinMessageIndicatorHelper_2.getColor816(color61, (int) (Float.intBitsToFloat(1132396544) * this.tracerOpacity.getValue().floatValue())));
+                            SearchHelper_2.searchHelper_2.do561(inner_3.getMatrixStack472(), new Vec3d(0.0d, 0.0d, 1.0).rotateX(-((float) Math.toRadians(camera.getPitch()))).rotateY(-((float) Math.toRadians(camera.getYaw()))).add(minecraftClient.getEntityRenderDispatcher().camera.getPos()), box233.getCenter(), MixinMessageIndicatorHelper_2.getColor816(color61, (int) (255.0f * this.tracerOpacity.getValue().floatValue())));
                         }
                     });
                 }
@@ -191,22 +191,22 @@ public class Search extends Module {
                 if (!blockState.isAir() && !blockState.isOf(Blocks.AIR)) {
                     VoxelShape outlineShape = blockState.getOutlineShape(minecraftClient.world, blockPos);
                     if (outlineShape.isEmpty()) {
-                        outlineShape = VoxelShapes.cuboid(0.0d, 0.0d, 0.0d, Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4607182418800017408L));
+                        outlineShape = VoxelShapes.cuboid(0.0d, 0.0d, 0.0d, 1.0, 1.0, 1.0);
                     }
                     Box offset = outlineShape.getBoundingBox().offset(blockPos);
                     Color color60 = getColor60(blockState, blockPos);
                     colors.scheme.getValue().do1027(() -> {
                         if (SearchHelper4_8.is2492(offset)) {
                             if (this.fill.getValue().booleanValue()) {
-                                PhaseESPSearchHelper4.do1590(inner_3.getMatrixStack472(), offset, MixinMessageIndicatorHelper_2.getColor816(color60, (int) (Float.intBitsToFloat(1132396544) * this.fillOpacity.getValue().floatValue())));
+                                PhaseESPSearchHelper4.do1590(inner_3.getMatrixStack472(), offset, MixinMessageIndicatorHelper_2.getColor816(color60, (int) (255.0f * this.fillOpacity.getValue().floatValue())));
                             }
                             if (this.outline.getValue().booleanValue()) {
-                                PhaseESPSearchHelper4.do1593(inner_3.getMatrixStack472(), offset, color60, Float.intBitsToFloat(1065353216));
+                                PhaseESPSearchHelper4.do1593(inner_3.getMatrixStack472(), offset, color60, 1.0f);
                             }
                         }
                         if (this.tracers.getValue().booleanValue()) {
                             Camera camera = minecraftClient.gameRenderer.getCamera();
-                            SearchHelper_2.searchHelper_2.do561(inner_3.getMatrixStack472(), new Vec3d(0.0d, 0.0d, Double.longBitsToDouble(4607182418800017408L)).rotateX(-((float) Math.toRadians(camera.getPitch()))).rotateY(-((float) Math.toRadians(camera.getYaw()))).add(minecraftClient.getEntityRenderDispatcher().camera.getPos()), Vec3d.ofCenter((Vec3i) blockPos), MixinMessageIndicatorHelper_2.getColor816(color60, (int) (Float.intBitsToFloat(1132396544) * this.tracerOpacity.getValue().floatValue())));
+                            SearchHelper_2.searchHelper_2.do561(inner_3.getMatrixStack472(), new Vec3d(0.0d, 0.0d, 1.0).rotateX(-((float) Math.toRadians(camera.getPitch()))).rotateY(-((float) Math.toRadians(camera.getYaw()))).add(minecraftClient.getEntityRenderDispatcher().camera.getPos()), Vec3d.ofCenter((Vec3i) blockPos), MixinMessageIndicatorHelper_2.getColor816(color60, (int) (255.0f * this.tracerOpacity.getValue().floatValue())));
                         }
                     });
                 }

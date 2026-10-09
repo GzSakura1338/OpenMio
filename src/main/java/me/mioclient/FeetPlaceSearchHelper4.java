@@ -44,7 +44,7 @@ public class FeetPlaceSearchHelper4 implements SearchHelper_4 {
             d2 += it.next().doubleValue();
         }
         this.val = this.arrayDeque.size() == 0 ? 0.0d : d2 / this.arrayDeque.size();
-        if (this.val < Double.longBitsToDouble(4626604192193052672L)) {
+        if (this.val < 21.0) {
             this.val2 = this.val;
         } else if (this.stopwatch.is419(50L)) {
             this.val2 = this.val;
@@ -61,6 +61,6 @@ public class FeetPlaceSearchHelper4 implements SearchHelper_4 {
     }
 
     public double get2636() {
-        return Math.hypot(minecraftClient.player.hasVehicle() ? minecraftClient.player.getVehicle().getX() - minecraftClient.player.getVehicle().prevX : minecraftClient.player.getX() - minecraftClient.player.prevX, minecraftClient.player.hasVehicle() ? minecraftClient.player.getVehicle().getZ() - minecraftClient.player.getVehicle().prevZ : minecraftClient.player.getZ() - minecraftClient.player.prevZ) * Double.longBitsToDouble(4626322717216342016L) * Double.longBitsToDouble(4615288898129284301L);
+        return Math.hypot(minecraftClient.player.hasVehicle() ? minecraftClient.player.getVehicle().getX() - minecraftClient.player.getVehicle().prevX : minecraftClient.player.getX() - minecraftClient.player.prevX, minecraftClient.player.hasVehicle() ? minecraftClient.player.getVehicle().getZ() - minecraftClient.player.getVehicle().prevZ : minecraftClient.player.getZ() - minecraftClient.player.prevZ) * 20.0 * 3.6;
     }
 }

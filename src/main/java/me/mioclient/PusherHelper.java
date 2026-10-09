@@ -7,8 +7,8 @@ import net.minecraft.util.math.MathHelper;
 /* loaded from: mio-yarn.jar:me/mioclient/PusherHelper.class */
 public final class PusherHelper {
     public Direction getDirection2399(float[] fArr) {
-        float intBitsToFloat = fArr[1] * Float.intBitsToFloat(1016003125);
-        float intBitsToFloat2 = (-fArr[0]) * Float.intBitsToFloat(1016003125);
+        float intBitsToFloat = fArr[1] * 0.01745329238474369f;
+        float intBitsToFloat2 = (-fArr[0]) * 0.01745329238474369f;
         float sin = MathHelper.sin(intBitsToFloat);
         float cos = MathHelper.cos(intBitsToFloat);
         float sin2 = MathHelper.sin(intBitsToFloat2);

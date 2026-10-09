@@ -80,7 +80,7 @@ public class FastWeb extends Module {
             });
         }
         if (this.mode.getValue() == FastWebPredicateMode.GRIM && minecraftClient.player.input.sneaking && !minecraftClient.player.isOnGround() && HoleSnapSearchHelper4.is2005(minecraftClient.player)) {
-            motionEvent.setY(minecraftClient.player.getY() + Math.random() + Double.longBitsToDouble(4607182418800017408L));
+            motionEvent.setY(minecraftClient.player.getY() + Math.random() + 1.0);
         }
     }
 
@@ -102,7 +102,7 @@ public class FastWeb extends Module {
                 reset();
             } else if (is1194()) {
                 this.flag = true;
-                BaritoneHelper_3.inner.do2018(this, this.vSpeed.getValue().floatValue() * Float.intBitsToFloat(1086324736));
+                BaritoneHelper_3.inner.do2018(this, this.vSpeed.getValue().floatValue() * 6.0f);
             } else {
                 reset();
                 minecraftClient.player.setVelocity(minecraftClient.player.getVelocity().withAxis(Direction.Axis.Y, -this.vSpeed.getValue().floatValue()));

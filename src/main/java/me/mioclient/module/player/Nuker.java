@@ -299,7 +299,7 @@ public class Nuker extends Module {
                 return;
             }
             int i2 = -1;
-            double longBitsToDouble = Double.longBitsToDouble(-4616189618054758400L);
+            double longBitsToDouble = -1.0;
             BlockState blockState = minecraftClient.world.getBlockState(blockPos);
             for (i = 0; i < 9; i++) {
                 double miningSpeedMultiplier = minecraftClient.player.getInventory().getStack(i).getMiningSpeedMultiplier(blockState);

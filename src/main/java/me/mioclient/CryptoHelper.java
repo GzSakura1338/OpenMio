@@ -14,7 +14,7 @@ public class CryptoHelper {
     public final Supplier<Text> supplier;
     public final Supplier<Boolean> supplier2;
     public float val;
-    public final HUDHelper_2 hUDHelper_2 = new HUDHelper_2(Float.intBitsToFloat(1073741824), true);
+    public final HUDHelper_2 hUDHelper_2 = new HUDHelper_2(2.0f, true);
 
     public CryptoHelper(Supplier<Text> supplier, Supplier<Boolean> supplier2) {
         this.supplier = supplier;
@@ -29,18 +29,18 @@ public class CryptoHelper {
             this.hUDHelper_2.do171(f3);
         }
         if (this.val > 0.0f) {
-            FontsSearchHelper4.fontsSearchHelper4.do1692(drawContext, getText1879(), f, f2, MixinMessageIndicatorHelper_2.getColor816(color, (int) (color.getAlpha() * MathHelper.clamp(this.val * Float.intBitsToFloat(1073741824), Double.longBitsToDouble(4591870180066957722L), Double.longBitsToDouble(4607182418800017408L)))));
+            FontsSearchHelper4.fontsSearchHelper4.do1692(drawContext, getText1879(), f, f2, MixinMessageIndicatorHelper_2.getColor816(color, (int) (color.getAlpha() * MathHelper.clamp(this.val * 2.0f, 0.1, 1.0))));
         }
     }
 
     public void do466() {
-        float intBitsToFloat = Float.intBitsToFloat(1065353216) / (BaritoneHelper_3.hitmarkerSearchHelper4.get3094() >> 2);
+        float intBitsToFloat = 1.0f / (BaritoneHelper_3.hitmarkerSearchHelper4.get3094() >> 2);
         if (isDrawn()) {
             this.val += intBitsToFloat;
         } else {
             this.val -= intBitsToFloat;
         }
-        this.val = MathHelper.clamp(this.val, 0.0f, Float.intBitsToFloat(1065353216));
+        this.val = MathHelper.clamp(this.val, 0.0f, 1.0f);
     }
 
     public float get2601() {

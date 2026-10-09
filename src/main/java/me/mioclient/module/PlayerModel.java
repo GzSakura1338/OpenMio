@@ -24,17 +24,17 @@ public class PlayerModel extends me.mioclient.ModuleList {
     @Override // me.mioclient.ModuleList
     public void do364(DrawContext drawContext) {
         LivingEntity livingEntity = minecraftClient.player;
-        Quaternionf rotateZ = new Quaternionf().rotateZ(Float.intBitsToFloat(1078530011));
+        Quaternionf rotateZ = new Quaternionf().rotateZ(3.1415927410125732f);
         Quaternionf rotateX = new Quaternionf().rotateX(0.0f);
         rotateZ.mul((Quaternionfc) rotateX);
-        Vector3f vector3f = new Vector3f(0.0f, ((ClientPlayerEntity) livingEntity).getHeight() / Float.intBitsToFloat(1073741824), 0.0f);
+        Vector3f vector3f = new Vector3f(0.0f, ((ClientPlayerEntity) livingEntity).getHeight() / 2.0f, 0.0f);
         flag = true;
-        InventoryScreen.drawEntity(drawContext, Float.intBitsToFloat(1103626240), Float.intBitsToFloat(1109393408), Float.intBitsToFloat(1108082688), vector3f, rotateZ, rotateX, livingEntity);
+        InventoryScreen.drawEntity(drawContext, 25.0f, 40.0f, 35.0f, vector3f, rotateZ, rotateX, livingEntity);
         flag = false;
     }
 
     @Override // me.mioclient.ModuleList
     public float[] getFloatArray365() {
-        return new float[]{Float.intBitsToFloat(1112014848), Float.intBitsToFloat(1117782016)};
+        return new float[]{50.0f, 80.0f};
     }
 }

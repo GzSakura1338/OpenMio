@@ -86,7 +86,7 @@ public class MixinTextFieldWidgetHelper {
             return;
         }
         matrixStack.push();
-        matrixStack.translate(0.0f, 0.0f, Float.intBitsToFloat(1140457472));
+        matrixStack.translate(0.0f, 0.0f, 500.0f);
         DuckHandledScreen duckHandledScreen = (DuckHandledScreen) screen;
         if (!textFieldWidget.getText().isBlank() && (screen instanceof HandledScreen)) {
             ScreenHandler screenHandler = ((HandledScreen) screen).getScreenHandler();

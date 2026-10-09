@@ -45,9 +45,9 @@ public class SearchHelper4_10 implements SearchHelper_4, PresetHelper_5 {
                 }
             }
             if (z) {
-                RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), moduleListSearchHelper4.get2142());
+                RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, moduleListSearchHelper4.get2142());
                 moduleListSearchHelper4.do19(drawContext, matrixStack, d, d2);
-                RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216));
+                RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
             }
             if (i < this.arrayList.size() - 1 && this.moduleListMode != ModuleListMode.NONE && get2820(this.moduleListMode) == 1) {
                 this.arrayList.get(i + 1).do2948(moduleListSearchHelper4.get124() + floatArray365[1], true);
@@ -87,7 +87,7 @@ public class SearchHelper4_10 implements SearchHelper_4, PresetHelper_5 {
             case BOTTOM_RIGHT:
                 return (minecraftClient.getWindow().getScaledWidth() - f) - hud.get737();
             case TOP_CENTER:
-                return (minecraftClient.getWindow().getScaledWidth() / Float.intBitsToFloat(1073741824)) - (f / Float.intBitsToFloat(1073741824));
+                return (minecraftClient.getWindow().getScaledWidth() / 2.0f) - (f / 2.0f);
             case NONE:
                 throw new IllegalArgumentException("dumb");
             default:
@@ -113,6 +113,6 @@ public class SearchHelper4_10 implements SearchHelper_4, PresetHelper_5 {
     }
 
     public float get2823() {
-        return MathHelper.clamp(hud.get738() + hud.get734(), 0.0f, Float.intBitsToFloat(1096810496));
+        return MathHelper.clamp(hud.get738() + hud.get734(), 0.0f, 14.0f);
     }
 }

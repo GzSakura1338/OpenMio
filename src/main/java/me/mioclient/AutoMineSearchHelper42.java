@@ -32,10 +32,10 @@ public final class AutoMineSearchHelper42 extends AutoMineSearchHelper4_2 {
         boolean anyMatch = BlockPos.stream(boundingBox.withMaxY(boundingBox.minY)).anyMatch(blockPos -> {
             return PhaseESPSearchHelper4_2.getBlock3044(blockPos) == Blocks.BEDROCK;
         });
-        if (BlockPos.stream(boundingBox.shrink(Double.longBitsToDouble(4587366580439587226L), Double.longBitsToDouble(4587366580439587226L), Double.longBitsToDouble(4587366580439587226L))).filter(blockPos2 -> {
-            return (PhaseESPSearchHelper4_2.getBlock3044(blockPos2).getBlastResistance() < Float.intBitsToFloat(1142292480) || is724() || PhaseESPSearchHelper4_2.getBlock3044(blockPos2) == Blocks.AIR) ? false : true;
+        if (BlockPos.stream(boundingBox.shrink(0.05, 0.05, 0.05)).filter(blockPos2 -> {
+            return (PhaseESPSearchHelper4_2.getBlock3044(blockPos2).getBlastResistance() < 600.0f || is724() || PhaseESPSearchHelper4_2.getBlock3044(blockPos2) == Blocks.AIR) ? false : true;
         }).toList().isEmpty()) {
-            AtomicReference atomicReference = new AtomicReference((BlockPos) BlockPos.stream(boundingBox.withMaxY(boundingBox.maxY + Double.longBitsToDouble(4602678819172646912L))).map((v0) -> {
+            AtomicReference atomicReference = new AtomicReference((BlockPos) BlockPos.stream(boundingBox.withMaxY(boundingBox.maxY + 0.5)).map((v0) -> {
                 return v0.toImmutable();
             }).filter(this::is723).max(Comparator.comparing(blockPos3 -> {
                 return Boolean.valueOf(this.is2890(blockPos3));

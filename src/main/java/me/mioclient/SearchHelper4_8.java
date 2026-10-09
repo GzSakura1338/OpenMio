@@ -258,7 +258,7 @@ public final class SearchHelper4_8 implements SearchHelper_4 {
 
     public static float[] getFloatArray2486(Vec3d vec3d, Vec3d vec3d2) {
         double d = vec3d2.x - vec3d.x;
-        double longBitsToDouble = (vec3d2.y - vec3d.y) * Double.longBitsToDouble(-4616189618054758400L);
+        double longBitsToDouble = (vec3d2.y - vec3d.y) * -1.0;
         double d2 = vec3d2.z - vec3d.z;
         return new float[]{(float) MathHelper.wrapDegrees(Math.toDegrees(Math.atan2(d2, d)) - FreecamHelper.num2), (float) MathHelper.wrapDegrees(Math.toDegrees(Math.atan2(longBitsToDouble, Math.sqrt((d * d) + (d2 * d2)))))};
     }
@@ -267,19 +267,19 @@ public final class SearchHelper4_8 implements SearchHelper_4 {
         if (fArr == null) {
             return null;
         }
-        float clamp = MathHelper.clamp(f, Float.intBitsToFloat(1036831949), Float.intBitsToFloat(1065353216));
-        if (clamp < Float.intBitsToFloat(1065353216)) {
+        float clamp = MathHelper.clamp(f, 0.10000000149011612f, 1.0f);
+        if (clamp < 1.0f) {
             float lastYaw = ((DuckClientPlayerEntity)(Object) minecraftClient.player).lastYaw();
             float wrapDegrees = MathHelper.wrapDegrees(fArr[0] - lastYaw);
-            if (Math.abs(wrapDegrees) > Float.intBitsToFloat(1127481344) * clamp) {
-                fArr[0] = lastYaw + (wrapDegrees * ((Float.intBitsToFloat(1127481344) * clamp) / Math.abs(wrapDegrees)));
+            if (Math.abs(wrapDegrees) > 180.0f * clamp) {
+                fArr[0] = lastYaw + (wrapDegrees * ((180.0f * clamp) / Math.abs(wrapDegrees)));
             }
         }
         return new float[]{fArr[0], fArr[1]};
     }
 
     public static int get2488(float f) {
-        return MathHelper.floor(((f * Float.intBitsToFloat(1090519040)) / FreecamHelper.num3) + FreecamHelper.val2) & 7;
+        return MathHelper.floor(((f * 8.0f) / FreecamHelper.num3) + FreecamHelper.val2) & 7;
     }
 
     public static int get2489() {
@@ -287,7 +287,7 @@ public final class SearchHelper4_8 implements SearchHelper_4 {
     }
 
     public static int get2490(float f) {
-        return MathHelper.floor(((f * Float.intBitsToFloat(1082130432)) / FreecamHelper.num3) + FreecamHelper.val2) & 3;
+        return MathHelper.floor(((f * 4.0f) / FreecamHelper.num3) + FreecamHelper.val2) & 3;
     }
 
     public static Direction getDirection2491(int i) {
@@ -374,23 +374,23 @@ public final class SearchHelper4_8 implements SearchHelper_4 {
         float f3 = f2;
         double x = minecraftClient.player.getX() - minecraftClient.player.prevX;
         double z = minecraftClient.player.getZ() - minecraftClient.player.prevZ;
-        if ((x * x) + (z * z) > Double.longBitsToDouble(4567911030457368576L)) {
-            float atan2 = (((float) MathHelper.atan2(z, x)) * Float.intBitsToFloat(1113927392)) - FreecamHelper.num2;
+        if ((x * x) + (z * z) > 0.002500000176951289) {
+            float atan2 = (((float) MathHelper.atan2(z, x)) * 57.2957763671875f) - FreecamHelper.num2;
             float abs = MathHelper.abs(MathHelper.wrapDegrees(f) - atan2);
-            f3 = (Float.intBitsToFloat(1119748096) >= abs || abs >= Float.intBitsToFloat(1132756992)) ? atan2 : atan2 - Float.intBitsToFloat(1127481344);
+            f3 = (95.0f >= abs || abs >= 265.0f) ? atan2 : atan2 - 180.0f;
         }
         if (minecraftClient.player.handSwingProgress > 0.0f) {
             f3 = f;
         }
-        float wrapDegrees = MathHelper.wrapDegrees(f - (f2 + (MathHelper.wrapDegrees(f3 - f2) * Float.intBitsToFloat(1050253722))));
-        if (wrapDegrees < Float.intBitsToFloat(-1030356992)) {
-            wrapDegrees = Float.intBitsToFloat(-1030356992);
-        } else if (wrapDegrees >= Float.intBitsToFloat(1117126656)) {
-            wrapDegrees = Float.intBitsToFloat(1117126656);
+        float wrapDegrees = MathHelper.wrapDegrees(f - (f2 + (MathHelper.wrapDegrees(f3 - f2) * 0.30000001192092896f)));
+        if (wrapDegrees < -75.0f) {
+            wrapDegrees = -75.0f;
+        } else if (wrapDegrees >= 75.0f) {
+            wrapDegrees = 75.0f;
         }
         float f4 = f - wrapDegrees;
-        if (wrapDegrees * wrapDegrees > Float.intBitsToFloat(1159479296)) {
-            f4 += wrapDegrees * Float.intBitsToFloat(1045220557);
+        if (wrapDegrees * wrapDegrees > 2500.0f) {
+            f4 += wrapDegrees * 0.20000000298023224f;
         }
         return f4;
     }

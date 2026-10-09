@@ -27,6 +27,6 @@ public class ShaderFramebufferHelper_3 extends ShaderFramebufferHelper {
         this.framebufferHelper_3.do1439("u_Texture", 0);
         this.framebufferHelper_3.do1439("u_Width", 2);
         this.framebufferHelper_3.do1438("u_FastLines", true);
-        this.framebufferHelper_3.do1440("u_GlowMultiplier", Double.longBitsToDouble(4607182418800017408L));
+        this.framebufferHelper_3.do1440("u_GlowMultiplier", 1.0);
     }
 }

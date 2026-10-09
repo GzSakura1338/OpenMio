@@ -38,10 +38,10 @@ public class ArrayListPresetHelper2 extends SearchHelper4_19 implements PresetHe
         super(presetEnumSettingHelper, i);
         this.arrayList = new ArrayList<>();
         this.hUDHelper_2 = new HUDHelper_2((Supplier<Float>) () -> {
-            return Float.valueOf(getUI1744().animSpeed.getValue().floatValue() * Float.intBitsToFloat(1073741824));
+            return Float.valueOf(getUI1744().animSpeed.getValue().floatValue() * 2.0f);
         }, true);
         this.progress = new Progress((Supplier<Float>) () -> {
-            return Float.valueOf(Float.intBitsToFloat(1073741824) * UI.uI.animSpeed.getValue().floatValue());
+            return Float.valueOf(2.0f * UI.uI.animSpeed.getValue().floatValue());
         }, true);
         this.zoomHelper = new ZoomHelper();
         this.flashNum = 0;
@@ -182,17 +182,17 @@ public class ArrayListPresetHelper2 extends SearchHelper4_19 implements PresetHe
         this.progress.do2139(this.module.isToggled());
         float f = this.progress.get172();
         float f2 = get1396();
-        if (this.module.isToggled() || f > Double.longBitsToDouble(4576918229304087675L)) {
-            CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + Float.intBitsToFloat(1065353216) + ((this.presetEnumSettingHelper.get1635() - Float.intBitsToFloat(1065353216)) * f), this.presetEnumSettingHelper.getY() + this.num + Float.intBitsToFloat(1056964608), (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - Float.intBitsToFloat(1065353216), ((this.presetEnumSettingHelper.getY() + this.num) + get1743()) - Float.intBitsToFloat(1056964608), getUI1744().bgButton.getValue());
-            CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + Float.intBitsToFloat(1065353216), this.presetEnumSettingHelper.getY() + this.num + Float.intBitsToFloat(1056964608), this.presetEnumSettingHelper.getX() + ((this.presetEnumSettingHelper.get1635() - Float.intBitsToFloat(1065353216)) * f), ((this.presetEnumSettingHelper.getY() + this.num) + get1743()) - Float.intBitsToFloat(1056964608), getUI1744().bgEnabled.getValue());
+        if (this.module.isToggled() || f > 0.01) {
+            CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + 1.0f + ((this.presetEnumSettingHelper.get1635() - 1.0f) * f), this.presetEnumSettingHelper.getY() + this.num + 0.5f, (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - 1.0f, ((this.presetEnumSettingHelper.getY() + this.num) + get1743()) - 0.5f, getUI1744().bgButton.getValue());
+            CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + 1.0f, this.presetEnumSettingHelper.getY() + this.num + 0.5f, this.presetEnumSettingHelper.getX() + ((this.presetEnumSettingHelper.get1635() - 1.0f) * f), ((this.presetEnumSettingHelper.getY() + this.num) + get1743()) - 0.5f, getUI1744().bgEnabled.getValue());
         } else {
-            CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + Float.intBitsToFloat(1065353216), this.presetEnumSettingHelper.getY() + this.num + Float.intBitsToFloat(1056964608), (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - Float.intBitsToFloat(1065353216), ((this.presetEnumSettingHelper.getY() + this.num) + get1743()) - Float.intBitsToFloat(1056964608), getUI1744().bgButton.getValue());
+            CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + 1.0f, this.presetEnumSettingHelper.getY() + this.num + 0.5f, (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - 1.0f, ((this.presetEnumSettingHelper.getY() + this.num) + get1743()) - 0.5f, getUI1744().bgButton.getValue());
         }
         if (this.flashNum > 0) {
             float f3 = this.zoomHelper.get172();
-            CrosshairHelper.do1708(matrixStack, this.presetEnumSettingHelper.getX() + Float.intBitsToFloat(1065353216), this.presetEnumSettingHelper.getY() + this.num + Float.intBitsToFloat(1056964608), (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - Float.intBitsToFloat(1065353216), ((this.presetEnumSettingHelper.getY() + this.num) + get1743()) - Float.intBitsToFloat(1056964608), MixinMessageIndicatorHelper_2.get822(Float.intBitsToFloat(1065353216), 0.0f, 0.0f, f3));
-            if (f3 == Float.intBitsToFloat(1065353216) || f3 == 0.0f) {
-                this.zoomHelper.do169((f3 + Float.intBitsToFloat(1065353216)) % Float.intBitsToFloat(1073741824), 150L);
+            CrosshairHelper.do1708(matrixStack, this.presetEnumSettingHelper.getX() + 1.0f, this.presetEnumSettingHelper.getY() + this.num + 0.5f, (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - 1.0f, ((this.presetEnumSettingHelper.getY() + this.num) + get1743()) - 0.5f, MixinMessageIndicatorHelper_2.get822(1.0f, 0.0f, 0.0f, f3));
+            if (f3 == 1.0f || f3 == 0.0f) {
+                this.zoomHelper.do169((f3 + 1.0f) % 2.0f, 150L);
             }
             if (f3 == 0.0f) {
                 this.flashNum = (this.flashNum + 1) % 4;
@@ -211,7 +211,7 @@ public class ArrayListPresetHelper2 extends SearchHelper4_19 implements PresetHe
             empty.append("[").append(this.module.getKeybind().getString773().toUpperCase(Locale.ROOT)).append("]");
         }
         if (!empty.getString().isEmpty()) {
-            FontsSearchHelper4.fontsSearchHelper4.do1696(drawContext, empty, this.presetEnumSettingHelper.getX() + FontsSearchHelper4.fontsSearchHelper4.get1316(this.module.getName()) + getUI1744().modulePadding.getValue().intValue(), ((this.presetEnumSettingHelper.getY() + get1742()) - f2) + this.num + Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1056964608), getUI1744().textColor.getValue());
+            FontsSearchHelper4.fontsSearchHelper4.do1696(drawContext, empty, this.presetEnumSettingHelper.getX() + FontsSearchHelper4.fontsSearchHelper4.get1316(this.module.getName()) + getUI1744().modulePadding.getValue().intValue(), ((this.presetEnumSettingHelper.getY() + get1742()) - f2) + this.num + 1.0f, 0.5f, getUI1744().textColor.getValue());
         }
         matrixStack.push();
         if (this.val > get1743() || this.flag) {
@@ -289,7 +289,7 @@ public class ArrayListPresetHelper2 extends SearchHelper4_19 implements PresetHe
 
     public void do656() {
         this.zoomHelper.do171(0.0f);
-        this.zoomHelper.do169(Float.intBitsToFloat(1065353216), 150L);
+        this.zoomHelper.do169(1.0f, 150L);
         this.flashNum = 1;
     }
 

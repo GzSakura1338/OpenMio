@@ -54,14 +54,14 @@ public final class AutoMineSearchHelper42_5 extends AutoMineSearchHelper4_2 {
         }
         BlockPos ofFloored = BlockPos.ofFloored(minecraftClient.player.getEyePos());
         BlockState blockState = minecraftClient.world.getBlockState(ofFloored);
-        if (blockState.isAir() || blockState.getBlock().getBlastResistance() < Float.intBitsToFloat(1142292480) || is2157() || !is1212(ofFloored)) {
+        if (blockState.isAir() || blockState.getBlock().getBlastResistance() < 600.0f || is2157() || !is1212(ofFloored)) {
             return null;
         }
         return ofFloored;
     }
 
     public boolean is2157() {
-        return minecraftClient.player.getBoundingBox().getLengthY() <= Double.longBitsToDouble(4607182418800017408L);
+        return minecraftClient.player.getBoundingBox().getLengthY() <= 1.0;
     }
 
     public boolean is2158() {
@@ -73,7 +73,7 @@ public final class AutoMineSearchHelper42_5 extends AutoMineSearchHelper4_2 {
         }
         for (BlockPos blockPos : HoleSnapSearchHelper4.getList2010(minecraftClient.player)) {
             BlockState blockState = minecraftClient.world.getBlockState(blockPos.down());
-            if (blockState.isAir() || blockState.getBlock().getBlastResistance() < Float.intBitsToFloat(1142292480)) {
+            if (blockState.isAir() || blockState.getBlock().getBlastResistance() < 600.0f) {
                 return false;
             }
         }

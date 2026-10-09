@@ -123,8 +123,8 @@ public class HUD extends Module {
             return this.setting8.getValue() == MixinTitleScreenMode.RAW && this.setting6.is623();
         }));
         this.list = new ArrayList(this.setting11.getObject2326().intValue());
-        this.hUDHelper_2 = new HUDHelper_2(Float.intBitsToFloat(1073741824));
-        this.hUDHelper_22 = new HUDHelper_2(Float.intBitsToFloat(1069547520));
+        this.hUDHelper_2 = new HUDHelper_2(2.0f);
+        this.hUDHelper_22 = new HUDHelper_2(1.5f);
         this.setting.do2339(() -> {
             if (this.setting.getValue().booleanValue()) {
                 this.setting.do2333(false);
@@ -170,8 +170,8 @@ public class HUD extends Module {
         float f = this.hUDHelper_22.get172();
         float scaledWidth = minecraftClient.getWindow().getScaledWidth();
         float scaledHeight = minecraftClient.getWindow().getScaledHeight();
-        if (f > Float.intBitsToFloat(1065353216) && !(minecraftClient.currentScreen instanceof ChatScreen)) {
-            matrixStackEvent_2.getDrawContext474().fill(2, (int) ((scaledHeight - Float.intBitsToFloat(1073741824)) - f), (int) (scaledWidth - Float.intBitsToFloat(1073741824)), (int) (scaledHeight - Float.intBitsToFloat(1073741824)), minecraftClient.options.getTextBackgroundColor(Integer.MIN_VALUE));
+        if (f > 1.0f && !(minecraftClient.currentScreen instanceof ChatScreen)) {
+            matrixStackEvent_2.getDrawContext474().fill(2, (int) ((scaledHeight - 2.0f) - f), (int) (scaledWidth - 2.0f), (int) (scaledHeight - 2.0f), minecraftClient.options.getTextBackgroundColor(Integer.MIN_VALUE));
         }
         ModuleListSearchHelper4.flag = true;
         if (!(minecraftClient.currentScreen instanceof HUDSearchHelper4)) {
@@ -185,7 +185,7 @@ public class HUD extends Module {
     }
 
     public float get735() {
-        return this.hUDHelper_2.val == Float.intBitsToFloat(1082130432) ? Float.intBitsToFloat(1065353216) : this.hUDHelper_2.val;
+        return this.hUDHelper_2.val == 4.0f ? 1.0f : this.hUDHelper_2.val;
     }
 
     public void do736(float f) {

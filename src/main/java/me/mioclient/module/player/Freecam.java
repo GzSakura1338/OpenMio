@@ -99,7 +99,7 @@ public class Freecam extends Module {
         if (minecraftClient.options.sneakKey.isPressed()) {
             this.vec3d = this.vec3d.subtract(0.0d, this.verticalSpeed.getValue().floatValue(), 0.0d);
         }
-        this.freecamSearchHelper4.tick(false, Float.intBitsToFloat(1065353216));
+        this.freecamSearchHelper4.tick(false, 1.0f);
     }
 
     @Listen
@@ -142,7 +142,7 @@ public class Freecam extends Module {
 
     @Listen
     public void onUpdateMouse(UpdateMouseEvent updateMouseEvent) {
-        do173(updateMouseEvent.get1008() * Double.longBitsToDouble(4594572340058128384L), updateMouseEvent.get1009() * Double.longBitsToDouble(4594572340058128384L));
+        do173(updateMouseEvent.get1008() * 0.15000000596046448, updateMouseEvent.get1009() * 0.15000000596046448);
         updateMouseEvent.do1162();
     }
 

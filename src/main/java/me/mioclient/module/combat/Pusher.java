@@ -301,7 +301,7 @@ public class Pusher extends Module {
                 }
                 if (!this.raytrace.getValue().booleanValue() || SearchHelper4_7.is2432(AutoCraftMode.X8.getList899(offset))) {
                     if (!this.rotate.getValue().booleanValue()) {
-                        return new Record(direction2, blockPos, minecraftClient.player.getEyePos().offset(direction.getOpposite(), Double.longBitsToDouble(4607182418800017408L)));
+                        return new Record(direction2, blockPos, minecraftClient.player.getEyePos().offset(direction.getOpposite(), 1.0));
                     }
                     for (Vec3d vec3d : AutoCraftMode.X8.getList900(offset, direction2.getOpposite())) {
                         if (this.pusherHelper.getDirection2399(SearchHelper4_8.getFloatArray2484(vec3d)) == direction.getOpposite()) {

@@ -28,9 +28,9 @@ public final class AutoMineSearchHelper42_6 extends AutoMineSearchHelper4_2 {
             return this.is1212(blockPos);
         }).filter(blockPos2 -> {
             Block block = minecraftClient.world.getBlockState(blockPos2).getBlock();
-            return (block.getBlastResistance() < Float.intBitsToFloat(1142292480) || block == Blocks.COBWEB || block == Blocks.ANVIL) ? false : true;
+            return (block.getBlastResistance() < 600.0f || block == Blocks.COBWEB || block == Blocks.ANVIL) ? false : true;
         }).sorted(Comparator.comparing(blockPos3 -> {
-            return is2890(blockPos3) ? Double.valueOf(Double.longBitsToDouble(-4616189618054758400L)) : Double.valueOf(playerEntity886.squaredDistanceTo(blockPos3.toCenterPos()));
+            return is2890(blockPos3) ? Double.valueOf(-1.0) : Double.valueOf(playerEntity886.squaredDistanceTo(blockPos3.toCenterPos()));
         })).toList();
         if (list.isEmpty()) {
             return;

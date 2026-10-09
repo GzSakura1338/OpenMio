@@ -46,7 +46,7 @@ public class NoRotate extends Module {
         if (collisionShape.isEmpty() || minecraftClient.player.getY() - Math.floor(minecraftClient.player.getY()) >= collisionShape.getBoundingBox().maxY) {
             return;
         }
-        if (collisionShape.getBoundingBox().offset(minecraftClient.player.getBlockPos()).intersects(minecraftClient.player.getBoundingBox().expand(Double.longBitsToDouble(-4636005456415188582L)))) {
+        if (collisionShape.getBoundingBox().offset(minecraftClient.player.getBlockPos()).intersects(minecraftClient.player.getBoundingBox().expand(-0.05))) {
             sendImmediatelyEvent.do1162();
         }
     }

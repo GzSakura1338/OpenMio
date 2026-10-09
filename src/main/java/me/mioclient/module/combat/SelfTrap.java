@@ -58,7 +58,7 @@ public class SelfTrap extends Range {
     public void do1076() {
         this.object2 = add(new BooleanSetting("OnlyHole", false));
         this.object3 = add(new BooleanSetting("Smart", false).getSetting2336());
-        this.object4 = add(new NumberSetting("EnemyRange", Float.valueOf(Float.intBitsToFloat(1077936128)), Float.valueOf(Float.intBitsToFloat(1065353216)), Float.valueOf(Float.intBitsToFloat(1086324736)), f -> {
+        this.object4 = add(new NumberSetting("EnemyRange", Float.valueOf(3.0f), Float.valueOf(1.0f), Float.valueOf(6.0f), f -> {
             return is1079();
         }).getNumberSetting3023("m"));
     }

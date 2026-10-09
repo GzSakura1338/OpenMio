@@ -56,7 +56,7 @@ public class SelfFill extends Module {
     public SelfFill() {
         super("SelfFill", "Places solid blocks inside you blocking your lower hitbox.", Category.COMBAT, "burrow");
         PhaseESPHelper.do1351(this);
-        this.list = List.of(Double.valueOf(Double.longBitsToDouble(4600877379321698714L)), Double.valueOf(Double.longBitsToDouble(4604930618986332160L)), Double.valueOf(Double.longBitsToDouble(4607227454796291113L)), Double.valueOf(Double.longBitsToDouble(4607857958744122982L)));
+        this.list = List.of(Double.valueOf(0.4), Double.valueOf(0.75), Double.valueOf(1.01), Double.valueOf(1.15));
     }
 
     @Override // me.mioclient.module.Module
@@ -81,7 +81,7 @@ public class SelfFill extends Module {
         PlayerPositionLookS2CPacket packet904 = (channelRead0Event.getPacket904()) instanceof PlayerPositionLookS2CPacket ? (PlayerPositionLookS2CPacket) (channelRead0Event.getPacket904()) : null;
         if (packet904 instanceof PlayerPositionLookS2CPacket) {
             PlayerPositionLookS2CPacket playerPositionLookS2CPacket = packet904;
-            if (minecraftClient.player.getPos().squaredDistanceTo(new Vec3d(playerPositionLookS2CPacket.getX(), playerPositionLookS2CPacket.getY(), playerPositionLookS2CPacket.getZ())) > Double.longBitsToDouble(4621256167635550208L)) {
+            if (minecraftClient.player.getPos().squaredDistanceTo(new Vec3d(playerPositionLookS2CPacket.getX(), playerPositionLookS2CPacket.getY(), playerPositionLookS2CPacket.getZ())) > 9.0) {
                 this.val = playerPositionLookS2CPacket.getY();
             }
         }
@@ -206,9 +206,9 @@ public class SelfFill extends Module {
         if (!this.noLagBack.getValue().booleanValue()) {
             minecraftClient.player.networkHandler.sendPacket(new PlayerMoveC2SPacket.Full(minecraftClient.player.getX(), minecraftClient.player.getY() + d, minecraftClient.player.getZ(), minecraftClient.player.getYaw(), FreecamHelper.num2, false));
         } else {
-            minecraftClient.player.networkHandler.sendPacket(new PlayerMoveC2SPacket.Full(minecraftClient.player.getX(), minecraftClient.player.getY() + Double.longBitsToDouble(4607182418800017408L), minecraftClient.player.getZ(), minecraftClient.player.getYaw(), FreecamHelper.num2, true));
+            minecraftClient.player.networkHandler.sendPacket(new PlayerMoveC2SPacket.Full(minecraftClient.player.getX(), minecraftClient.player.getY() + 1.0, minecraftClient.player.getZ(), minecraftClient.player.getYaw(), FreecamHelper.num2, true));
             BaritoneHelper_3.tooltipsSearchHelper4_2.do164(() -> {
-                minecraftClient.player.setPosition(minecraftClient.player.getX(), minecraftClient.player.getY() + Double.longBitsToDouble(4607182418800017408L), minecraftClient.player.getZ());
+                minecraftClient.player.setPosition(minecraftClient.player.getX(), minecraftClient.player.getY() + 1.0, minecraftClient.player.getZ());
             }, 1);
         }
     }

@@ -49,7 +49,7 @@ public class ElytraFlyHelper_8 extends ElytraFlyHelper implements Helper_13 {
         float floatValue = this.elytraFly.speed3.getValue().floatValue();
         Input input = minecraftClient.player.input;
         if (input.movementForward == 0.0f && input.movementSideways == 0.0f) {
-            input.movementForward = Float.intBitsToFloat(1065353216);
+            input.movementForward = 1.0f;
         }
         double[] doubleArray2508 = HoleSnapSearchHelper4_3.getDoubleArray2508(minecraftClient.player.getYaw(SearchHelper_2.get536()), input, floatValue);
         moveEvent.do691(doubleArray2508[0], doubleArray2508[1]);

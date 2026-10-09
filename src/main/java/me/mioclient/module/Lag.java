@@ -18,7 +18,7 @@ public class Lag extends me.mioclient.ModuleList {
     public Lag() {
         super("Lag'O'Meter", "lag", "lagometer");
         this.setting = add(new ColorSetting("Color", Color.gray));
-        this.progress = new Progress(Float.intBitsToFloat(1065353216));
+        this.progress = new Progress(1.0f);
         do3019(new Size(this));
     }
 
@@ -29,7 +29,7 @@ public class Lag extends me.mioclient.ModuleList {
         if (string773 == null) {
             return;
         }
-        FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, string773, 0.0f, (Float.intBitsToFloat(1065353216) - this.progress.get172()) * (-FontsSearchHelper4.fontsSearchHelper4.get93()), this.setting.getValue());
+        FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, string773, 0.0f, (1.0f - this.progress.get172()) * (-FontsSearchHelper4.fontsSearchHelper4.get93()), this.setting.getValue());
     }
 
     @Override // me.mioclient.ModuleList
@@ -42,6 +42,6 @@ public class Lag extends me.mioclient.ModuleList {
         if ((Math.max(System.currentTimeMillis() - BaritoneHelper_3.holeSnapSearchHelper4_4.get2618(), 0L) <= 1000 || minecraftClient.isInSingleplayer()) && !is3017()) {
             return null;
         }
-        return "The server is not responding for %.1fs".formatted(Float.valueOf(((float) (System.currentTimeMillis() - BaritoneHelper_3.holeSnapSearchHelper4_4.get2618())) / Float.intBitsToFloat(1148846080)));
+        return "The server is not responding for %.1fs".formatted(Float.valueOf(((float) (System.currentTimeMillis() - BaritoneHelper_3.holeSnapSearchHelper4_4.get2618())) / 1000.0f));
     }
 }

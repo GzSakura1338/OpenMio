@@ -30,7 +30,7 @@ public class Graph extends me.mioclient.ModuleList {
 
     public Graph() {
         super("Graph", new String[0]);
-        this.setting = add(new NumberSetting("Ceil", Float.valueOf(Float.intBitsToFloat(1104150528)), Float.valueOf(Float.intBitsToFloat(1092616192)), Float.valueOf(Float.intBitsToFloat(1120403456))));
+        this.setting = add(new NumberSetting("Ceil", Float.valueOf(26.0f), Float.valueOf(10.0f), Float.valueOf(100.0f)));
         this.setting2 = add(new NumberSetting("Height", 30, 10, 40));
         this.setting3 = add(new NumberSetting("Width", 100, 50, 150));
         this.list = new ArrayList();
@@ -63,7 +63,7 @@ public class Graph extends me.mioclient.ModuleList {
         int i = 0;
         Iterator<Double> it = this.list.iterator();
         while (it.hasNext()) {
-            float intBitsToFloat = Float.intBitsToFloat(1065353216) + ((float) ((this.setting2.getValue().intValue() - 2) * (Double.longBitsToDouble(4607182418800017408L) - (Math.min(it.next().doubleValue(), this.setting.getValue().floatValue()) / this.setting.getValue().floatValue()))));
+            float intBitsToFloat = 1.0f + ((float) ((this.setting2.getValue().intValue() - 2) * (1.0 - (Math.min(it.next().doubleValue(), this.setting.getValue().floatValue()) / this.setting.getValue().floatValue()))));
             begin.vertex(drawContext.getMatrices().peek().getPositionMatrix(), i, intBitsToFloat, 0.0f).color(MixinMessageIndicatorHelper_2.getColor816(getColor3018(intBitsToFloat + this.moduleListSearchHelper4.get124()), get2579(i)).hashCode());
             i++;
         }
@@ -73,10 +73,10 @@ public class Graph extends me.mioclient.ModuleList {
 
     public int get2579(int i) {
         if (i <= 10) {
-            return (int) MathHelper.clamp((i / Float.intBitsToFloat(1092616192)) * Float.intBitsToFloat(1132396544), 0.0f, Float.intBitsToFloat(1132396544));
+            return (int) MathHelper.clamp((i / 10.0f) * 255.0f, 0.0f, 255.0f);
         }
         if (i >= this.setting3.getValue().intValue() - 10) {
-            return (int) MathHelper.clamp((Float.intBitsToFloat(1065353216) - (((i - this.setting3.getValue().intValue()) + 10) / Float.intBitsToFloat(1092616192))) * Float.intBitsToFloat(1132396544), 0.0f, Float.intBitsToFloat(1132396544));
+            return (int) MathHelper.clamp((1.0f - (((i - this.setting3.getValue().intValue()) + 10) / 10.0f)) * 255.0f, 0.0f, 255.0f);
         }
         return 255;
     }

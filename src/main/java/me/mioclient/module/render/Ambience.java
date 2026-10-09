@@ -134,7 +134,7 @@ public class Ambience extends Module {
             minecraftClient.world.setTimeOfDay(j);
         }
         if (this.brightness.getValue() == MixinEntityRendererMode.GAMMA) {
-            ((me.mioclient.ZoomHelper_3) (Object) minecraftClient.options.getGamma()).forceSetValue(Double.valueOf(Double.longBitsToDouble(4652007308841189376L)));
+            ((me.mioclient.ZoomHelper_3) (Object) minecraftClient.options.getGamma()).forceSetValue(Double.valueOf(1000.0));
         } else if (this.brightness.getValue() == MixinEntityRendererMode.POTION) {
             if (minecraftClient.player.hasStatusEffect(StatusEffects.NIGHT_VISION)) {
                 return;
@@ -145,10 +145,10 @@ public class Ambience extends Module {
 
     public long get2923() {
         if (!this.sync.getValue().booleanValue()) {
-            return (long) ((this.time.getValue().floatValue() * Float.intBitsToFloat(1148846080)) + Float.intBitsToFloat(1183621120));
+            return (long) ((this.time.getValue().floatValue() * 1000.0f) + 18000.0f);
         }
         Calendar calendar = Calendar.getInstance();
-        return (long) (((calendar.get(11) + (calendar.get(12) / Float.intBitsToFloat(1114636288))) * Float.intBitsToFloat(1148846080)) + Float.intBitsToFloat(1183621120));
+        return (long) (((calendar.get(11) + (calendar.get(12) / 60.0f)) * 1000.0f) + 18000.0f);
     }
 
     public boolean is2924() {

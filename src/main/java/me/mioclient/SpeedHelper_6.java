@@ -23,25 +23,25 @@ public class SpeedHelper_6 extends SpeedHelper {
         }
         double d3 = moveEvent.get692();
         if (this.speed.useTimer.getValue().booleanValue() && BaritoneHelper_3.holeSnapSearchHelper4_4.getStopwatch2615().is419(250L)) {
-            BaritoneHelper_3.holeSnapSearchHelper4_2.do2018(this.speed, Float.intBitsToFloat(1066098124));
+            BaritoneHelper_3.holeSnapSearchHelper4_2.do2018(this.speed, 1.0887999534606934f);
         } else if (this.speed.useTimer.getValue().booleanValue()) {
             BaritoneHelper_3.holeSnapSearchHelper4_2.do2017(this.speed);
         }
-        float intBitsToFloat = (this.speed.stopwatch.is419(1000L) || !this.speed.boost.getValue().booleanValue()) ? Float.intBitsToFloat(1065353216) : Float.intBitsToFloat(1067030938);
+        float intBitsToFloat = (this.speed.stopwatch.is419(1000L) || !this.speed.boost.getValue().booleanValue()) ? 1.0f : 1.2000000476837158f;
         if (this.num == 1 && HoleSnapSearchHelper4_3.is2181()) {
-            this.val2 = (Double.longBitsToDouble(4608758678669597082L) * HoleSnapSearchHelper4_3.get2512(false, (Double.longBitsToDouble(4598847156609680094L) * this.speed.speed.getValue().floatValue()) * intBitsToFloat)) - Double.longBitsToDouble(4576918229304087675L);
+            this.val2 = (1.35 * HoleSnapSearchHelper4_3.get2512(false, (0.2873 * this.speed.speed.getValue().floatValue()) * intBitsToFloat)) - 0.01;
         } else if (this.num == 2 && HoleSnapSearchHelper4_3.is2181() && minecraftClient.player.groundCollision) {
-            d3 = Double.longBitsToDouble(4601237667291888353L) + HoleSnapSearchHelper4_3.get2513();
-            this.val2 *= Double.longBitsToDouble(4609591844600660623L);
+            d3 = 0.42 + HoleSnapSearchHelper4_3.get2513();
+            this.val2 *= 1.535;
         } else if (this.num == 3) {
-            this.val2 = this.val3 - (Double.longBitsToDouble(4604119971289628672L) * (this.val3 - HoleSnapSearchHelper4_3.get2512(true, (Double.longBitsToDouble(4598847156609680094L) * this.speed.speed.getValue().floatValue()) * intBitsToFloat)));
+            this.val2 = this.val3 - (0.6600000262260437 * (this.val3 - HoleSnapSearchHelper4_3.get2512(true, (0.2873 * this.speed.speed.getValue().floatValue()) * intBitsToFloat)));
         } else {
             if ((is390() || minecraftClient.player.verticalCollision) && this.num > 0) {
                 this.num = HoleSnapSearchHelper4_3.is2181() ? 1 : 0;
             }
-            this.val2 = this.val3 - (this.val3 / Double.longBitsToDouble(4639798331726364672L));
+            this.val2 = this.val3 - (this.val3 / 159.0);
         }
-        this.val2 = Math.max(this.val2, HoleSnapSearchHelper4_3.get2512(false, Double.longBitsToDouble(4598847156609680094L) * this.speed.speed.getValue().floatValue() * intBitsToFloat));
+        this.val2 = Math.max(this.val2, HoleSnapSearchHelper4_3.get2512(false, 0.2873 * this.speed.speed.getValue().floatValue() * intBitsToFloat));
         if (HoleSnapSearchHelper4_3.is2181()) {
             double[] doubleArray2508 = HoleSnapSearchHelper4_3.getDoubleArray2508(minecraftClient.player.getYaw(SearchHelper_2.get536()), minecraftClient.player.input, this.val2);
             d = doubleArray2508[0];

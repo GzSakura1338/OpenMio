@@ -177,17 +177,17 @@ public class SearchHelper4_7 implements SearchHelper_4 {
                             if (ofFloored.isWithinDistance((Vec3i) add, f) && (!z || !minecraftClient.world.getBlockState(add).isAir())) {
                                 arrayList.add(add);
                             }
-                            f6 = f7 + Float.intBitsToFloat(1065353216);
+                            f6 = f7 + 1.0f;
                         } else {
                             break;
                         }
                     }
-                    f4 = f5 + Float.intBitsToFloat(1065353216);
+                    f4 = f5 + 1.0f;
                 } else {
                     break;
                 }
             }
-            f2 = f3 + Float.intBitsToFloat(1065353216);
+            f2 = f3 + 1.0f;
         }
     }
 
@@ -217,7 +217,7 @@ public class SearchHelper4_7 implements SearchHelper_4 {
     public static boolean is2433(Vec3d vec3d) {
         Vec3d eyePos = minecraftClient.player.getEyePos();
         BlockPos ofFloored = BlockPos.ofFloored((Position) vec3d);
-        if (vec3d.distanceTo(eyePos) > Double.longBitsToDouble(4638707616191610880L)) {
+        if (vec3d.distanceTo(eyePos) > 128.0) {
             return false;
         }
         BlockHitResult blockHitResult2784 = HoleSnapSearchHelper4_6.getBlockHitResult2784(new HoleSnapHelper_2.Inner(minecraftClient.player.getEyePos(), vec3d).getInner1604(HoleSnapHelper.getHoleSnapHelper1674(ofFloored)).getHoleSnapHelper_21606());
@@ -226,7 +226,7 @@ public class SearchHelper4_7 implements SearchHelper_4 {
 
     public static boolean is2434(Vec3d vec3d, Vec3d vec3d2) {
         Vec3d eyePos = minecraftClient.player.getEyePos();
-        if (vec3d.distanceTo(eyePos) > Double.longBitsToDouble(4638707616191610880L)) {
+        if (vec3d.distanceTo(eyePos) > 128.0) {
             return false;
         }
         if (minecraftClient.world.raycast(new RaycastContext(eyePos, vec3d, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, minecraftClient.player)).getType() == HitResult.Type.MISS) {
@@ -248,7 +248,7 @@ public class SearchHelper4_7 implements SearchHelper_4 {
 
     public static double get2436(ItemStack itemStack, BlockState blockState, boolean z) {
         float hardness = blockState.getHardness((BlockView) null, (BlockPos) null);
-        if (hardness == Float.intBitsToFloat(-1082130432)) {
+        if (hardness == -1.0f) {
             return 0.0d;
         }
         return (get2437(itemStack, blockState, z) / hardness) / ((!blockState.isToolRequired() || itemStack.isSuitableFor(blockState)) ? 30 : 100);
@@ -258,36 +258,36 @@ public class SearchHelper4_7 implements SearchHelper_4 {
         float intBitsToFloat;
         int i;
         double miningSpeedMultiplier = itemStack.getMiningSpeedMultiplier(blockState);
-        if (miningSpeedMultiplier > Double.longBitsToDouble(4607182418800017408L) && (i = IllegalConstructorCall.get1413(Enchantments.EFFICIENCY, itemStack)) > 0 && !itemStack.isEmpty()) {
+        if (miningSpeedMultiplier > 1.0 && (i = IllegalConstructorCall.get1413(Enchantments.EFFICIENCY, itemStack)) > 0 && !itemStack.isEmpty()) {
             miningSpeedMultiplier += (i * i) + 1;
         }
         if (StatusEffectUtil.hasHaste(minecraftClient.player)) {
-            miningSpeedMultiplier *= Float.intBitsToFloat(1065353216) + ((StatusEffectUtil.getHasteAmplifier(minecraftClient.player) + 1) * Float.intBitsToFloat(1045220557));
+            miningSpeedMultiplier *= 1.0f + ((StatusEffectUtil.getHasteAmplifier(minecraftClient.player) + 1) * 0.20000000298023224f);
         }
         if (minecraftClient.player.hasStatusEffect(StatusEffects.MINING_FATIGUE)) {
             switch (minecraftClient.player.getStatusEffect(StatusEffects.MINING_FATIGUE).getAmplifier()) {
                 case 0:
-                    intBitsToFloat = Float.intBitsToFloat(1050253722);
+                    intBitsToFloat = 0.30000001192092896f;
                     break;
                 case 1:
-                    intBitsToFloat = Float.intBitsToFloat(1035489772);
+                    intBitsToFloat = 0.09000000357627869f;
                     break;
                 case 2:
-                    intBitsToFloat = Float.intBitsToFloat(993063548);
+                    intBitsToFloat = 0.0027000000700354576f;
                     break;
                 default:
-                    intBitsToFloat = Float.intBitsToFloat(978605614);
+                    intBitsToFloat = 0.0008099999977275729f;
                     break;
             }
             miningSpeedMultiplier *= intBitsToFloat;
         }
         if (minecraftClient.player.isSubmergedIn(FluidTags.WATER)) {
             if (!IllegalConstructorCall.is1418(Enchantments.AQUA_AFFINITY, EquipmentSlot.HEAD)) {
-                miningSpeedMultiplier /= Double.longBitsToDouble(4617315517961601024L);
+                miningSpeedMultiplier /= 5.0;
             }
         }
         if (!z) {
-            miningSpeedMultiplier /= Double.longBitsToDouble(4617315517961601024L);
+            miningSpeedMultiplier /= 5.0;
         }
         return miningSpeedMultiplier;
     }
@@ -362,7 +362,7 @@ public class SearchHelper4_7 implements SearchHelper_4 {
         if (!(entity instanceof EnderDragonEntity)) {
             return get2444(add, boundingBox);
         }
-        double longBitsToDouble = Double.longBitsToDouble(4666722622711529472L);
+        double longBitsToDouble = 9999.0;
         for (EnderDragonPart enderDragonPart : ((EnderDragonEntity) entity).getBodyParts()) {
             longBitsToDouble = Math.min(longBitsToDouble, get2444(add, enderDragonPart.getBoundingBox()));
         }

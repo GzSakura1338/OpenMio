@@ -66,14 +66,14 @@ public final class Feature_14 extends Feature {
             this.capeX = getX();
             this.capeY = getY();
             this.capeZ = getZ();
-            setHealth(Float.intBitsToFloat(1101004800));
+            setHealth(20.0f);
             getInventory().clone(playerEntity.getInventory());
         }
 
         public void setHealth(float f) {
             super.setHealth(f);
             if (getHealth() <= 0.0f) {
-                super.setHealth(Float.intBitsToFloat(1091567616));
+                super.setHealth(9.0f);
                 clearStatusEffects();
                 addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 900, 1));
                 SearchHelper_4.minecraftClient.particleManager.addEmitter((Entity) this, ParticleTypes.TOTEM_OF_UNDYING, 30);
@@ -81,7 +81,7 @@ public final class Feature_14 extends Feature {
                 PlayerEntity playerEntity = SearchHelper_4.minecraftClient.player;
                 BlockPos blockPos = getBlockPos();
                 SoundEvent soundEvent = SoundEvents.ITEM_TOTEM_USE;
-                clientWorld.playSound(playerEntity, blockPos, soundEvent, SoundCategory.PLAYERS, Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216));
+                clientWorld.playSound(playerEntity, blockPos, soundEvent, SoundCategory.PLAYERS, 1.0f, 1.0f);
                 SearchHelper_4.baritoneHelper.getObject1794(new ChannelRead0Event(new EntityStatusS2CPacket(this, (byte) 35)));
             }
         }
@@ -93,7 +93,7 @@ public final class Feature_14 extends Feature {
                 addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 6000, 0));
                 addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 6000, 0));
                 addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 2400, 3));
-                setAbsorptionAmount(Float.intBitsToFloat(1098907648));
+                setAbsorptionAmount(16.0f);
             }
             if (!getOffHandStack().isOf(Items.TOTEM_OF_UNDYING)) {
                 getInventory().setStack(40, new ItemStack(Items.TOTEM_OF_UNDYING, 1));
@@ -297,13 +297,13 @@ public final class Feature_14 extends Feature {
             double x = explosionS2CPacket.getX();
             double y = explosionS2CPacket.getY();
             double z = explosionS2CPacket.getZ();
-            double distanceTo = this.otherClientPlayerEntity.getPos().distanceTo(new Vec3d(x, y, z)) / Double.longBitsToDouble(4622945017495814144L);
-            if (distanceTo > Double.longBitsToDouble(4607182418800017408L)) {
+            double distanceTo = this.otherClientPlayerEntity.getPos().distanceTo(new Vec3d(x, y, z)) / 12.0;
+            if (distanceTo > 1.0) {
                 return;
             }
             float radius = explosionS2CPacket.getRadius();
-            double longBitsToDouble = (Double.longBitsToDouble(4607182418800017408L) - distanceTo) * Explosion.getExposure(new Vec3d(x, y, z), this.otherClientPlayerEntity);
-            this.otherClientPlayerEntity.damage(minecraftClient.world.getDamageSources().explosion(new Explosion(minecraftClient.world, minecraftClient.player, x, y, z, radius, false, Explosion.DestructionType.DESTROY, explosionS2CPacket.getAffectedBlocks())), (float) (((((longBitsToDouble * longBitsToDouble) + y) / Double.longBitsToDouble(4611686018427387904L)) * Double.longBitsToDouble(4619567317775286272L) * radius * Double.longBitsToDouble(4611686018427387904L)) + Double.longBitsToDouble(4607182418800017408L)));
+            double longBitsToDouble = (1.0 - distanceTo) * Explosion.getExposure(new Vec3d(x, y, z), this.otherClientPlayerEntity);
+            this.otherClientPlayerEntity.damage(minecraftClient.world.getDamageSources().explosion(new Explosion(minecraftClient.world, minecraftClient.player, x, y, z, radius, false, Explosion.DestructionType.DESTROY, explosionS2CPacket.getAffectedBlocks())), (float) (((((longBitsToDouble * longBitsToDouble) + y) / 2.0) * 7.0 * radius * 2.0) + 1.0));
         }
     }
 }

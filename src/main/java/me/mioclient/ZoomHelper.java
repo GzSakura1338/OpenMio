@@ -21,7 +21,7 @@ public class ZoomHelper {
     }
 
     public void do170(boolean z, long j) {
-        do169(z ? Float.intBitsToFloat(1065353216) : 0.0f, j);
+        do169(z ? 1.0f : 0.0f, j);
     }
 
     public void do171(float f) {
@@ -29,6 +29,6 @@ public class ZoomHelper {
     }
 
     public float get172() {
-        return ((Float.intBitsToFloat(1065353216) - MathHelper.clamp(((float) ((this.startTime + this.num) - System.currentTimeMillis())) / ((float) Math.max(this.num, 1L)), 0.0f, Float.intBitsToFloat(1065353216))) * (this.val2 - this.val)) + this.val;
+        return ((1.0f - MathHelper.clamp(((float) ((this.startTime + this.num) - System.currentTimeMillis())) / ((float) Math.max(this.num, 1L)), 0.0f, 1.0f)) * (this.val2 - this.val)) + this.val;
     }
 }

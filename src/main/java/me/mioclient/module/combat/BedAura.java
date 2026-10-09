@@ -79,7 +79,7 @@ public final class BedAura extends Module {
         this.stopwatch = new Stopwatch();
         this.stopwatch2 = new Stopwatch();
         BaritoneHelper_3.antiPhaseSearchHelper4.register(new AntiPhaseSearchHelper4.Record(this, this.fill, this.outline, () -> {
-            return Float.valueOf(Float.intBitsToFloat(1065353216));
+            return Float.valueOf(1.0f);
         }, this.fadeTime, () -> {
             return false;
         }, this.fade, 1000));
@@ -124,7 +124,7 @@ public final class BedAura extends Module {
 
     public PlayerEntity getPlayerEntity886() {
         PlayerEntity playerEntity = null;
-        float intBitsToFloat = Float.intBitsToFloat(1203982208);
+        float intBitsToFloat = 99999.0f;
         for (PlayerEntity playerEntity2 : minecraftClient.world.getPlayers()) {
             if (playerEntity2 != minecraftClient.player && !BaritoneHelper_3.searchHelper4_14.is520(playerEntity2)) {
                 if (intBitsToFloat > minecraftClient.player.getEyePos().distanceTo(playerEntity2.getPos())) {
@@ -164,7 +164,7 @@ public final class BedAura extends Module {
             });
             minecraftClient.player.swingHand(Hand.MAIN_HAND);
             Box enclosing = Box.enclosing(bedAuraData.getBlockPos153(), bedAuraData.getBlockPos154());
-            Box expand = enclosing.withMaxY(enclosing.minY + Double.longBitsToDouble(4603241769126068224L)).expand(Double.longBitsToDouble(4566758108763783168L));
+            Box expand = enclosing.withMaxY(enclosing.minY + 0.5625).expand(0.0020000000949949026);
             if (this.render.getValue().booleanValue()) {
                 BaritoneHelper_3.antiPhaseSearchHelper4.do2133(this, expand);
             }
@@ -229,7 +229,7 @@ public final class BedAura extends Module {
     }
 
     public boolean is1427(Stopwatch stopwatch, Setting<Integer> setting) {
-        return stopwatch.is419((long) (((float) (50 * setting.getValue().intValue())) * (this.tPSSync.getValue().booleanValue() ? BaritoneHelper_3.holeSnapSearchHelper4_4.get2621() : Float.intBitsToFloat(1065353216))));
+        return stopwatch.is419((long) (((float) (50 * setting.getValue().intValue())) * (this.tPSSync.getValue().booleanValue() ? BaritoneHelper_3.holeSnapSearchHelper4_4.get2621() : 1.0f)));
     }
 
     public Box getBox1428(LivingEntity livingEntity) {

@@ -46,7 +46,7 @@ public class Jesus extends Module {
     public Jesus() {
         super("Jesus", "Allows you to walk on water.", Category.MOVEMENT, new String[0]);
         PhaseESPHelper.do1351(this);
-        this.doubleArr = new double[]{Double.longBitsToDouble(4590596676834315394L), Double.longBitsToDouble(4594186111131777582L), Double.longBitsToDouble(4595128048006538934L), Double.longBitsToDouble(4592898539957638545L), Double.longBitsToDouble(4586206011794593297L), Double.longBitsToDouble(4578280644290880618L)};
+        this.doubleArr = new double[]{0.08232659236482401, 0.13927999979019162, 0.1654239999427795, 0.11427136035293574, 0.04194693730418576, 0.01236341326161235};
     }
 
     @Override // me.mioclient.module.Module
@@ -57,7 +57,7 @@ public class Jesus extends Module {
     @Listen
     public void do27(TickEvent tickEvent) {
         if (is240() && minecraftClient.player.isTouchingWater()) {
-            minecraftClient.player.addVelocity(0.0d, this.mode.getValue() == JesusMode.DOLPHIN ? Double.longBitsToDouble(4585911017040021081L) : Double.longBitsToDouble(4590429028186199163L) * this.ascending.getValue().floatValue(), 0.0d);
+            minecraftClient.player.addVelocity(0.0d, this.mode.getValue() == JesusMode.DOLPHIN ? 0.0399 : 0.08 * this.ascending.getValue().floatValue(), 0.0d);
         }
     }
 
@@ -86,7 +86,7 @@ public class Jesus extends Module {
             return;
         }
         if (voxelShapeEvent.getBlockState670().isOf(Blocks.WATER)) {
-            voxelShapeEvent.do666(VoxelShapes.cuboid(new Box(0.0d, 0.0d, 0.0d, Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4607002274814922588L), Double.longBitsToDouble(4607182418800017408L))));
+            voxelShapeEvent.do666(VoxelShapes.cuboid(new Box(0.0d, 0.0d, 0.0d, 1.0, 0.98, 1.0)));
         }
     }
 
@@ -95,6 +95,6 @@ public class Jesus extends Module {
     }
 
     public boolean is241() {
-        return minecraftClient.world.getBlockState(BlockPos.ofFloored(minecraftClient.player.getPos().subtract(0.0d, Double.longBitsToDouble(4576918229304087675L), 0.0d))).isOf(Blocks.WATER);
+        return minecraftClient.world.getBlockState(BlockPos.ofFloored(minecraftClient.player.getPos().subtract(0.0d, 0.01, 0.0d))).isOf(Blocks.WATER);
     }
 }

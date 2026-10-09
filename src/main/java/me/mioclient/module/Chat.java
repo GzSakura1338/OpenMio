@@ -16,7 +16,7 @@ public class Chat extends me.mioclient.ModuleList {
         if (this.moduleListSearchHelper4.getFloatArray2950() == null) {
             return 0.0f;
         }
-        return ((this.moduleListSearchHelper4.get124() - (minecraftClient.getWindow().getScaledHeight() - Float.intBitsToFloat(1109393408))) / get989()) + get990();
+        return ((this.moduleListSearchHelper4.get124() - (minecraftClient.getWindow().getScaledHeight() - 40.0f)) / get989()) + get990();
     }
 
     public float get988() {
@@ -41,6 +41,6 @@ public class Chat extends me.mioclient.ModuleList {
 
     @Override // me.mioclient.ModuleList
     public float[] getFloatArray365() {
-        return new float[]{(((Double) minecraftClient.options.getChatWidth().getValue()).floatValue() * Float.intBitsToFloat(1133248512)) + Float.intBitsToFloat(1109393408) + (Float.intBitsToFloat(1094713344) * get989()), get990() * get989()};
+        return new float[]{(((Double) minecraftClient.options.getChatWidth().getValue()).floatValue() * 280.0f) + 40.0f + (12.0f * get989()), get990() * get989()};
     }
 }

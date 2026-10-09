@@ -163,7 +163,7 @@ public class FireworksHelper implements SearchHelper_4 {
     }
 
     public static float get451(PlayerEntity playerEntity) {
-        float intBitsToFloat = Float.intBitsToFloat(1120403456);
+        float intBitsToFloat = 100.0f;
         Iterator it = playerEntity.getInventory().armor.iterator();
         while (it.hasNext()) {
             float f = get452((ItemStack) it.next());
@@ -175,7 +175,7 @@ public class FireworksHelper implements SearchHelper_4 {
     }
 
     public static float get452(ItemStack itemStack) {
-        return 100 - ((int) ((Float.intBitsToFloat(1065353216) - ((itemStack.getMaxDamage() - itemStack.getDamage()) / (float) itemStack.getMaxDamage())) * Float.intBitsToFloat(1120403456)));
+        return 100 - ((int) ((1.0f - ((itemStack.getMaxDamage() - itemStack.getDamage()) / (float) itemStack.getMaxDamage())) * 100.0f));
     }
 
     public static int get453(int i) {
@@ -232,7 +232,7 @@ public class FireworksHelper implements SearchHelper_4 {
     }
 
     public static int get459(BlockPos blockPos, boolean z) {
-        double longBitsToDouble = Double.longBitsToDouble(-4616189618054758400L);
+        double longBitsToDouble = -1.0;
         int i = -1;
         BlockState blockState = minecraftClient.world.getBlockState(blockPos);
         int i2 = 0;

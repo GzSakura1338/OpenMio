@@ -80,7 +80,7 @@ public class Range extends Delay {
 
     public Range(String str, String str2, Category category) {
         super(str, str2, category, new String[0]);
-        this.setting = add(new NumberSetting("Range", Float.valueOf(Float.intBitsToFloat(1084227584)), Float.valueOf(Float.intBitsToFloat(1065353216)), Float.valueOf(Float.intBitsToFloat(1090519040))).getNumberSetting3023("m"));
+        this.setting = add(new NumberSetting("Range", Float.valueOf(5.0f), Float.valueOf(1.0f), Float.valueOf(8.0f)).getNumberSetting3023("m"));
         this.setting2 = add(new BooleanSetting("Sequential", false));
         this.setting3 = add(new BooleanSetting("Targets", true).getSetting2337());
         this.setting4 = add(new BooleanSetting("Head", true).getSetting2342(this.setting3));
@@ -93,7 +93,7 @@ public class Range extends Delay {
 
     public Range() {
         super("AutoTrap", "Traps your enemies with obby.", Category.COMBAT, new String[0]);
-        this.setting = add(new NumberSetting("Range", Float.valueOf(Float.intBitsToFloat(1084227584)), Float.valueOf(Float.intBitsToFloat((((1333017453 | 593773) - 2926) + 1) ^ 1895642112)), Float.valueOf(Float.intBitsToFloat(1090519040))).getNumberSetting3023("m"));
+        this.setting = add(new NumberSetting("Range", Float.valueOf(5.0f), Float.valueOf(1.0f), Float.valueOf(8.0f)).getNumberSetting3023("m"));
         this.setting2 = add(new BooleanSetting("Sequential", false));
         this.setting3 = add(new BooleanSetting("Targets", true).getSetting2337());
         this.setting4 = add(new BooleanSetting("Head", true).getSetting2342(this.setting3));
@@ -119,10 +119,10 @@ public class Range extends Delay {
     @Override // me.mioclient.module.Delay
     public List<BlockPos> getList876() {
         this.playerEntity = getPlayerEntity886();
-        if (this.playerEntity == null || Math.hypot(this.playerEntity.getX() - this.playerEntity.prevX, this.playerEntity.getZ() - this.playerEntity.prevZ) * Double.longBitsToDouble(4626322717216342016L) * Double.longBitsToDouble(4615288898129284301L) > Double.longBitsToDouble(4626322717216342016L)) {
+        if (this.playerEntity == null || Math.hypot(this.playerEntity.getX() - this.playerEntity.prevX, this.playerEntity.getZ() - this.playerEntity.prevZ) * 20.0 * 3.6 > 20.0) {
             return Collections.emptyList();
         }
-        if (Math.abs(this.playerEntity.prevY - this.playerEntity.getY()) > Double.longBitsToDouble(4603579539098121011L)) {
+        if (Math.abs(this.playerEntity.prevY - this.playerEntity.getY()) > 0.6) {
             return Collections.emptyList();
         }
         Position vec3d885 = getVec3d885(this.playerEntity);
@@ -232,7 +232,7 @@ public class Range extends Delay {
     public List<Vec3d> getList882(BlockPos blockPos, int i, float f) {
         ArrayList arrayList = new ArrayList();
         if (is887()) {
-            arrayList.add(new Vec3d(0.0d, i + f + Float.intBitsToFloat(1065353216), 0.0d));
+            arrayList.add(new Vec3d(0.0d, i + f + 1.0f, 0.0d));
             Iterator<Vec3d> it = getList883(i, f).iterator();
             if (it.hasNext()) {
                 Vec3d next = it.next();
@@ -240,15 +240,15 @@ public class Range extends Delay {
                 if (minecraftClient.world.getBlockState(add).isReplaceable()) {
                     if (PhaseESPSearchHelper4_2.getDirection3030(add, this.setting4.getValue().booleanValue(), this.setting5.getValue().booleanValue()) == null) {
                         if (next.getY() > i) {
-                            arrayList.add(new Vec3d(Double.longBitsToDouble(-4616189618054758400L), i + 1, 0.0d));
+                            arrayList.add(new Vec3d(-1.0, i + 1, 0.0d));
                         } else {
-                            arrayList.add(new Vec3d(Double.longBitsToDouble(-4616189618054758400L), i, 0.0d));
+                            arrayList.add(new Vec3d(-1.0, i, 0.0d));
                         }
                     }
                 }
             }
         } else if (this.setting4.getValue().booleanValue()) {
-            arrayList.add(new Vec3d(0.0d, i + f + Float.intBitsToFloat(1065353216), 0.0d));
+            arrayList.add(new Vec3d(0.0d, i + f + 1.0f, 0.0d));
         }
         for (Vec3d vec3d : getList883(i, f)) {
             if (vec3d.getY() <= f && (this.setting5.getValue().booleanValue() || vec3d.getY() <= i)) {
@@ -258,13 +258,13 @@ public class Range extends Delay {
             }
         }
         if (this.setting7.getValue().booleanValue()) {
-            arrayList.add(new Vec3d(0.0d, i + f + Float.intBitsToFloat(1073741824), 0.0d));
+            arrayList.add(new Vec3d(0.0d, i + f + 2.0f, 0.0d));
         }
         return arrayList;
     }
 
     public List<Vec3d> getList883(int i, float f) {
-        return Arrays.asList(new Vec3d(0.0d, i + f + Float.intBitsToFloat(1065353216), 0.0d), new Vec3d(Double.longBitsToDouble(4607182418800017408L), i, 0.0d), new Vec3d(0.0d, i, Double.longBitsToDouble(4607182418800017408L)), new Vec3d(0.0d, i, Double.longBitsToDouble(-4616189618054758400L)), new Vec3d(Double.longBitsToDouble(-4616189618054758400L), i, 0.0d), new Vec3d(Double.longBitsToDouble(4607182418800017408L), i + 1, 0.0d), new Vec3d(0.0d, i + 1, Double.longBitsToDouble(4607182418800017408L)), new Vec3d(0.0d, i + 1, Double.longBitsToDouble(-4616189618054758400L)), new Vec3d(Double.longBitsToDouble(-4616189618054758400L), i + 1, 0.0d));
+        return Arrays.asList(new Vec3d(0.0d, i + f + 1.0f, 0.0d), new Vec3d(1.0, i, 0.0d), new Vec3d(0.0d, i, 1.0), new Vec3d(0.0d, i, -1.0), new Vec3d(-1.0, i, 0.0d), new Vec3d(1.0, i + 1, 0.0d), new Vec3d(0.0d, i + 1, 1.0), new Vec3d(0.0d, i + 1, -1.0), new Vec3d(-1.0, i + 1, 0.0d));
     }
 
     public boolean is884(PlayerEntity playerEntity) {

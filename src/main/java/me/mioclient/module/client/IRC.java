@@ -130,7 +130,7 @@ public class IRC extends Module {
 
     @Listen
     public void onEvent2(SpawnTimeHelperEvent spawnTimeHelperEvent) {
-        if (((float) minecraftClient.player.getEyePos().distanceTo(spawnTimeHelperEvent.getSpawnTimeHelper1787().getBlockPos386().toCenterPos())) >= Float.intBitsToFloat(1176255488)) {
+        if (((float) minecraftClient.player.getEyePos().distanceTo(spawnTimeHelperEvent.getSpawnTimeHelper1787().getBlockPos386().toCenterPos())) >= 9999.0f) {
             spawnTimeHelperEvent.do1162();
             return;
         }
@@ -155,27 +155,27 @@ public class IRC extends Module {
                 for (SpawnTimeHelper spawnTimeHelper : BaritoneHelper_3.nameTagsSearchHelper4.getList2307()) {
                     if (spawnTimeHelper.is796()) {
                         float distanceTo = (float) minecraftClient.player.getEyePos().distanceTo(spawnTimeHelper.getBlockPos386().toCenterPos());
-                        if (distanceTo < Float.intBitsToFloat(1176255488)) {
+                        if (distanceTo < 9999.0f) {
                             Vec3d of = Vec3d.of(spawnTimeHelper.getBlockPos386());
                             Vec3d vec3d = of;
                             if (distanceTo >= FreecamHelper.num2) {
                                 float[] floatArray2484 = SearchHelper4_8.getFloatArray2484(of);
-                                vec3d = new Vec3d(minecraftClient.player.getX() + (Float.intBitsToFloat(1116471296) * ((float) Math.cos(Math.toRadians(floatArray2484[0] + FreecamHelper.num2)))), of.y, minecraftClient.player.getZ() + (Float.intBitsToFloat(1116471296) * ((float) Math.sin(Math.toRadians(floatArray2484[0] + FreecamHelper.num2)))));
+                                vec3d = new Vec3d(minecraftClient.player.getX() + (70.0f * ((float) Math.cos(Math.toRadians(floatArray2484[0] + FreecamHelper.num2)))), of.y, minecraftClient.player.getZ() + (70.0f * ((float) Math.sin(Math.toRadians(floatArray2484[0] + FreecamHelper.num2)))));
                             }
-                            float clamp = MathHelper.clamp(Float.intBitsToFloat(1065353216) - (((float) ((System.currentTimeMillis() - spawnTimeHelper.getSpawnTime()) - 6500)) / Float.intBitsToFloat(1148846080)), 0.0f, Float.intBitsToFloat(1065353216));
-                            float f = get2845(MathHelper.clamp(((float) (System.currentTimeMillis() - spawnTimeHelper.getSpawnTime())) / Float.intBitsToFloat(1153138688), 0.0f, Float.intBitsToFloat(1065353216)));
+                            float clamp = MathHelper.clamp(1.0f - (((float) ((System.currentTimeMillis() - spawnTimeHelper.getSpawnTime()) - 6500)) / 1000.0f), 0.0f, 1.0f);
+                            float f = get2845(MathHelper.clamp(((float) (System.currentTimeMillis() - spawnTimeHelper.getSpawnTime())) / 1500.0f, 0.0f, 1.0f));
                             float f2 = get2846(clamp);
-                            float min = Math.min(MixinLivingEntityHelper_2.get2583(minecraftClient.player.getLerpedPos(inner_3.get473()), of), Float.intBitsToFloat(1086324736)) / Float.intBitsToFloat(1086324736);
-                            Vec3d add = vec3d.add(Double.longBitsToDouble(4602678819172646912L), Double.longBitsToDouble(4602678819172646912L), Double.longBitsToDouble(4602678819172646912L));
-                            double d = PingSpoofHelper.get377(minecraftClient.gameRenderer.getCamera().getPos(), add, Double.longBitsToDouble(4613937818241073152L));
-                            PhaseESPSearchHelper4.do1590(inner_3.getMatrixStack472(), new Box(add.add(-FreecamHelper.val3, -FreecamHelper.val3, -FreecamHelper.val3), add.add(FreecamHelper.val3, FreecamHelper.val3, FreecamHelper.val3)).withMaxY(MathHelper.lerp(f, add.y, minecraftClient.world.getTopY())).withMinY(MathHelper.lerp(f, add.y, minecraftClient.world.getBottomY())), MixinMessageIndicatorHelper_2.getColor817(MixinMessageIndicatorHelper_2.getColor814(Color.red, Color.yellow, Double.longBitsToDouble(4652007308841189376L), 0.0d), Float.intBitsToFloat(1050253722) * f * f2 * min));
-                            SearchHelper_2.searchHelper_2.do568(inner_3.getDrawContext474(), add, Float.intBitsToFloat(1132462080), Float.intBitsToFloat(1132462080), (d / Double.longBitsToDouble(4627898977085921690L)) * f * f2, MixinMessageIndicatorHelper_2.getColor814(Color.red, Color.yellow, Double.longBitsToDouble(4652007308841189376L), 0.0d), identifier);
+                            float min = Math.min(MixinLivingEntityHelper_2.get2583(minecraftClient.player.getLerpedPos(inner_3.get473()), of), 6.0f) / 6.0f;
+                            Vec3d add = vec3d.add(0.5, 0.5, 0.5);
+                            double d = PingSpoofHelper.get377(minecraftClient.gameRenderer.getCamera().getPos(), add, 3.0);
+                            PhaseESPSearchHelper4.do1590(inner_3.getMatrixStack472(), new Box(add.add(-FreecamHelper.val3, -FreecamHelper.val3, -FreecamHelper.val3), add.add(FreecamHelper.val3, FreecamHelper.val3, FreecamHelper.val3)).withMaxY(MathHelper.lerp(f, add.y, minecraftClient.world.getTopY())).withMinY(MathHelper.lerp(f, add.y, minecraftClient.world.getBottomY())), MixinMessageIndicatorHelper_2.getColor817(MixinMessageIndicatorHelper_2.getColor814(Color.red, Color.yellow, 1000.0, 0.0d), 0.30000001192092896f * f * f2 * min));
+                            SearchHelper_2.searchHelper_2.do568(inner_3.getDrawContext474(), add, 256.0f, 256.0f, (d / 25.6) * f * f2, MixinMessageIndicatorHelper_2.getColor814(Color.red, Color.yellow, 1000.0, 0.0d), identifier);
                             if (this.info.getValue().is594()) {
-                                double d2 = PingSpoofHelper.get377(minecraftClient.gameRenderer.getCamera().getPos(), add, Double.longBitsToDouble(4609434218613702656L)) * f * f2;
+                                double d2 = PingSpoofHelper.get377(minecraftClient.gameRenderer.getCamera().getPos(), add, 1.5) * f * f2;
                                 String string2864 = this.info.getValue().getString2864(spawnTimeHelper);
-                                float intBitsToFloat = Float.intBitsToFloat(-1102263091) * ((float) d);
-                                SearchHelper_2.searchHelper_2.do567(inner_3.getMatrixStack472(), add, 0.0f, intBitsToFloat, (-(FontsSearchHelper4.fontsSearchHelper4.get1316(string2864) / Float.intBitsToFloat(1073741824))) - Float.intBitsToFloat(1073741824), Float.intBitsToFloat(1084227584), d2 * Double.longBitsToDouble(4611686018427387904L), new Color(0, 0, 0, 100));
-                                SearchHelper_2.searchHelper_2.do571(inner_3.getDrawContext474(), string2864, add, 0.0f, intBitsToFloat, -(FontsSearchHelper4.fontsSearchHelper4.get1316(string2864) / Float.intBitsToFloat(1073741824)), 0.0f, d2, Color.WHITE, true);
+                                float intBitsToFloat = -0.20000000298023224f * ((float) d);
+                                SearchHelper_2.searchHelper_2.do567(inner_3.getMatrixStack472(), add, 0.0f, intBitsToFloat, (-(FontsSearchHelper4.fontsSearchHelper4.get1316(string2864) / 2.0f)) - 2.0f, 5.0f, d2 * 2.0, new Color(0, 0, 0, 100));
+                                SearchHelper_2.searchHelper_2.do571(inner_3.getDrawContext474(), string2864, add, 0.0f, intBitsToFloat, -(FontsSearchHelper4.fontsSearchHelper4.get1316(string2864) / 2.0f), 0.0f, d2, Color.WHITE, true);
                             }
                         }
                     }
@@ -185,11 +185,11 @@ public class IRC extends Module {
     }
 
     public float get2845(float f) {
-        double longBitsToDouble = (Double.longBitsToDouble(4611686018427387904L) * FreecamHelper.val) / Double.longBitsToDouble(4613937818241073152L);
+        double longBitsToDouble = (2.0 * FreecamHelper.val) / 3.0;
         if (f == 0.0f) {
             return 0.0f;
         }
-        return (float) (f == Float.intBitsToFloat(1065353216) ? Double.longBitsToDouble(4607182418800017408L) : (Math.pow(Double.longBitsToDouble(4611686018427387904L), Float.intBitsToFloat(-1054867456) * f) * Math.sin(((f * Float.intBitsToFloat(1092616192)) - Double.longBitsToDouble(4604930618986332160L)) * longBitsToDouble)) + Double.longBitsToDouble(4607182418800017408L));
+        return (float) (f == 1.0f ? 1.0 : (Math.pow(2.0, -10.0f * f) * Math.sin(((f * 10.0f) - 0.75) * longBitsToDouble)) + 1.0);
     }
 
     public float get2846(float f) {

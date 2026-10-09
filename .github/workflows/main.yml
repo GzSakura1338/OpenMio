@@ -1,0 +1,67 @@
+name: Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      prerelease_tag:
+        description: 'Tag name for the prerelease (e.g. v1.0.0-pre1). Leave empty to just build without releasing.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build with Gradle (Fabric Loom)
+        run: ./gradlew build --stacktrace
+
+      - name: Upload built jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: mio-client-jar
+          path: build/libs/*.jar
+          if-no-files-found: error
+
+  prerelease:
+    needs: build
+    if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.prerelease_tag != '' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download built jar
+        uses: actions/download-artifact@v4
+        with:
+          name: mio-client-jar
+          path: build/libs
+
+      - name: Create prerelease
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.prerelease_tag }}
+          name: ${{ github.event.inputs.prerelease_tag }}
+          prerelease: true
+          files: build/libs/*.jar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

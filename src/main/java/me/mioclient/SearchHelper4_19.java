@@ -9,7 +9,7 @@ public abstract class SearchHelper4_19 implements SearchHelper_4, PresetHelper_5
     public final PresetEnumSettingHelper presetEnumSettingHelper;
     public int num;
     public int num2;
-    public final HUDHelper_2 hUDHelper_2 = new HUDHelper_2(Float.intBitsToFloat(1082130432));
+    public final HUDHelper_2 hUDHelper_2 = new HUDHelper_2(4.0f);
     public boolean flag = false;
 
     public SearchHelper4_19(PresetEnumSettingHelper presetEnumSettingHelper, int i) {
@@ -34,7 +34,7 @@ public abstract class SearchHelper4_19 implements SearchHelper_4, PresetHelper_5
             this.flag = false;
         }
         if (getUI1744().bounce.getValue().booleanValue()) {
-            this.hUDHelper_2.do1737(is92(d, d2) ? Float.intBitsToFloat(1065353216) : 0.0f);
+            this.hUDHelper_2.do1737(is92(d, d2) ? 1.0f : 0.0f);
         } else {
             this.hUDHelper_2.do1737(0.0f);
         }

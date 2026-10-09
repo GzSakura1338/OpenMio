@@ -35,7 +35,7 @@ public final class SpeedMineSearchHelper4 implements SearchHelper_4 {
     }
 
     public float get2142() {
-        return MathHelper.clamp(MathHelper.lerp(SearchHelper_2.get536(), this.val, this.val2), 0.0f, Float.intBitsToFloat(1065353216));
+        return MathHelper.clamp(MathHelper.lerp(SearchHelper_2.get536(), this.val, this.val2), 0.0f, 1.0f);
     }
 
     public void do2143(float f) {

@@ -106,11 +106,11 @@ public class Trajectories extends Module {
             this.flag = true;
             this.box = new Box(blockHitResult.getPos(), blockHitResult.getPos());
             if (blockHitResult.getSide() == Direction.UP || blockHitResult.getSide() == Direction.DOWN) {
-                this.box = this.box.expand(Double.longBitsToDouble(4598175219545276416L), 0.0d, Double.longBitsToDouble(4598175219545276416L));
+                this.box = this.box.expand(0.25, 0.0d, 0.25);
             } else if (blockHitResult.getSide() == Direction.NORTH || blockHitResult.getSide() == Direction.SOUTH) {
-                this.box = this.box.expand(Double.longBitsToDouble(4598175219545276416L), Double.longBitsToDouble(4598175219545276416L), 0.0d);
+                this.box = this.box.expand(0.25, 0.25, 0.0d);
             } else {
-                this.box = this.box.expand(0.0d, Double.longBitsToDouble(4598175219545276416L), Double.longBitsToDouble(4598175219545276416L));
+                this.box = this.box.expand(0.0d, 0.25, 0.25);
             }
             this.list.add(hitResult.getPos());
         }

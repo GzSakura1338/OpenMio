@@ -189,7 +189,7 @@ public class AutoArmor extends Module {
                                     i2 = i3;
                                 }
                             }
-                            if (i2 != autoArmorMode.get499() && d != Double.longBitsToDouble(-4616189618054758400L)) {
+                            if (i2 != autoArmorMode.get499() && d != -1.0) {
                                 this.inner = new Inner(this, autoArmorMode, i2);
                                 break;
                             }
@@ -214,10 +214,10 @@ public class AutoArmor extends Module {
     public double get1095(ItemStack itemStack, AutoArmorMode autoArmorMode) {
         float f = FireworksHelper.get452(itemStack);
         if (this.safe.getValue().booleanValue() && f < this.safeAmount.getValue().intValue()) {
-            return Double.longBitsToDouble(-4616189618054758400L);
+            return -1.0;
         }
         if (!this.bindingCurse.getValue().booleanValue() && IllegalConstructorCall.is1416(Enchantments.BINDING_CURSE, itemStack)) {
-            return Double.longBitsToDouble(-4616189618054758400L);
+            return -1.0;
         }
         ArmorItem item = (itemStack.getItem()) instanceof ArmorItem ? (ArmorItem) (itemStack.getItem()) : null;
         if (item instanceof ArmorItem) {
@@ -225,20 +225,20 @@ public class AutoArmor extends Module {
             if (armorItem.getSlotType().getEntitySlotId() == autoArmorMode.get921()) {
                 double d = 0.0d;
                 if (armorItem instanceof AnimalArmorItem) {
-                    return Double.longBitsToDouble(-4616189618054758400L);
+                    return -1.0;
                 }
                 if (is1097() && armorItem.getSlotType() == EquipmentSlot.HEAD) {
-                    return Double.longBitsToDouble(-4616189618054758400L);
+                    return -1.0;
                 }
                 if (this.turtleShell.getValue().booleanValue() && itemStack.isOf(Items.TURTLE_HELMET)) {
-                    d = Double.longBitsToDouble(4666722622711529472L);
+                    d = 9999.0;
                 }
                 double protection = d + (armorItem.getProtection() * 10) + (((int) armorItem.getToughness()) * 10);
                 if (itemStack.hasEnchantments()) {
                     RegistryKey registryKey = (autoArmorMode == AutoArmorMode.LEGGINGS || this.blast.getValue().booleanValue()) ? Enchantments.BLAST_PROTECTION : Enchantments.PROTECTION;
                     for (Object2IntMap.Entry entry : itemStack.getEnchantments().getEnchantmentEntries()) {
                         if (!((RegistryEntry) entry.getKey()).isIn(EnchantmentTags.CURSE)) {
-                            protection = entry.getKey() == registryKey ? protection + (entry.getValue().intValue() * 3) : protection + (entry.getValue().intValue() * Double.longBitsToDouble(4591870180066957722L));
+                            protection = entry.getKey() == registryKey ? protection + (entry.getValue().intValue() * 3) : protection + (entry.getValue().intValue() * 0.1);
                             if (((RegistryEntry) entry.getKey()).matchesKey(Enchantments.THORNS) && !this.thorns.getValue().booleanValue()) {
                                 protection -= entry.getValue().intValue();
                             }
@@ -249,14 +249,14 @@ public class AutoArmor extends Module {
             }
         }
         if (!itemStack.isOf(Items.ELYTRA) || autoArmorMode != AutoArmorMode.CHESTPLATE) {
-            return Double.longBitsToDouble(-4616189618054758400L);
+            return -1.0;
         }
         if (!ElytraItem.isUsable(itemStack) || ArmorSearchHelper4.get1905(itemStack) <= 1) {
-            return Double.longBitsToDouble(-4616189618054758400L);
+            return -1.0;
         }
-        double longBitsToDouble = Double.longBitsToDouble(4607182418800017408L);
+        double longBitsToDouble = 1.0;
         if (this.elytra.getValue().booleanValue()) {
-            longBitsToDouble *= Double.longBitsToDouble(4666722622711529472L);
+            longBitsToDouble *= 9999.0;
         }
         if (itemStack.hasEnchantments()) {
             longBitsToDouble = longBitsToDouble + IllegalConstructorCall.get1413(Enchantments.UNBREAKING, itemStack) + IllegalConstructorCall.get1413(Enchantments.MENDING, itemStack);

@@ -86,7 +86,7 @@ public class PhaseESP extends Module {
 
     @Listen
     public void onEvent(MatrixStackEvent.Inner_3 inner_3) {
-        Box expand = minecraftClient.player.getBoundingBox().withMaxY(minecraftClient.player.getBoundingBox().minY).expand(Double.longBitsToDouble(4576918229304087675L), 0.0d, Double.longBitsToDouble(4576918229304087675L));
+        Box expand = minecraftClient.player.getBoundingBox().withMaxY(minecraftClient.player.getBoundingBox().minY).expand(0.01, 0.0d, 0.01);
         if (PhaseESPSearchHelper4_2.is3045(minecraftClient.player.getBlockPos()) || minecraftClient.player.isInSwimmingPose()) {
             return;
         }
@@ -95,20 +95,20 @@ public class PhaseESP extends Module {
         }).forEach(record -> {
             VoxelShape outlineShape = minecraftClient.world.getBlockState(record.blockPos).getOutlineShape(minecraftClient.world, record.blockPos);
             if (outlineShape.isEmpty()) {
-                outlineShape = VoxelShapes.cuboid(0.0d, 0.0d, 0.0d, Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4607182418800017408L));
+                outlineShape = VoxelShapes.cuboid(0.0d, 0.0d, 0.0d, 1.0, 1.0, 1.0);
             }
             Box offset = outlineShape.getBoundingBox().offset(record.blockPos);
             PhaseESPSearchHelper4.do1590(inner_3.getMatrixStack472(), offset.withMaxY(record.blockPos.getY()), record.phaseESPMode.getColor16(this));
             if (this.outline.getValue().booleanValue()) {
-                PhaseESPSearchHelper4.do1593(inner_3.getMatrixStack472(), offset.withMaxY(record.blockPos.getY()), MixinMessageIndicatorHelper_2.getColor817(record.phaseESPMode.getColor16(this), this.alpha.getValue().floatValue()), Float.intBitsToFloat(1065353216));
+                PhaseESPSearchHelper4.do1593(inner_3.getMatrixStack472(), offset.withMaxY(record.blockPos.getY()), MixinMessageIndicatorHelper_2.getColor817(record.phaseESPMode.getColor16(this), this.alpha.getValue().floatValue()), 1.0f);
             }
         });
     }
 
     public PhaseESPMode getPhaseESPMode6(BlockPos blockPos) {
-        boolean z = minecraftClient.world.getBlockState(blockPos).getBlock().getBlastResistance() >= Float.intBitsToFloat(1142292480);
+        boolean z = minecraftClient.world.getBlockState(blockPos).getBlock().getBlastResistance() >= 600.0f;
         if (PhaseESPSearchHelper4_2.is3045(blockPos.down()) && z) {
-            if (minecraftClient.world.getBlockState(blockPos.down()).getBlock().getBlastResistance() >= Float.intBitsToFloat(1142292480)) {
+            if (minecraftClient.world.getBlockState(blockPos.down()).getBlock().getBlastResistance() >= 600.0f) {
                 return (is7(blockPos) || is7(blockPos.down())) ? PhaseESPMode.phaseESPMode2 : PhaseESPMode.phaseESPMode;
             }
         }
@@ -121,6 +121,6 @@ public class PhaseESP extends Module {
 
     public boolean is8(BlockPos blockPos) {
         BlockState blockState = minecraftClient.world.getBlockState(blockPos);
-        return blockState.getBlock().getBlastResistance() >= Float.intBitsToFloat(1142292480) && PhaseESPSearchHelper4_2.is3045(blockPos) && !blockState.isReplaceable();
+        return blockState.getBlock().getBlastResistance() >= 600.0f && PhaseESPSearchHelper4_2.is3045(blockPos) && !blockState.isReplaceable();
     }
 }

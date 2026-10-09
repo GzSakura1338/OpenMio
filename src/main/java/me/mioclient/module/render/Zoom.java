@@ -53,7 +53,7 @@ public class Zoom extends Module {
         if (!this.flag2) {
             this.num = ((Integer) minecraftClient.options.getFov().getValue()).intValue();
         }
-        this.zoomHelper.do169(Float.intBitsToFloat(1065353216), get919(Helper_7.num));
+        this.zoomHelper.do169(1.0f, get919(Helper_7.num));
         this.flag = minecraftClient.options.smoothCameraEnabled;
     }
 
@@ -63,7 +63,7 @@ public class Zoom extends Module {
             return;
         }
         int abs = (int) (this.num - (Math.abs((75 / this.amount.getValue().intValue()) - this.num) * get918()));
-        this.zoomHelper2.do169((int) MathHelper.clamp((float) (this.zoomHelper2.get172() + (mouseScrollEvent.get2802() * Double.longBitsToDouble(4621819117588971520L))), abs - this.num, abs - 10), get919(100));
+        this.zoomHelper2.do169((int) MathHelper.clamp((float) (this.zoomHelper2.get172() + (mouseScrollEvent.get2802() * 10.0)), abs - this.num, abs - 10), get919(100));
         mouseScrollEvent.do1162();
     }
 
@@ -73,11 +73,11 @@ public class Zoom extends Module {
 
     public int get917() {
         int abs = (int) (this.num - (Math.abs((75 / this.amount.getValue().intValue()) - this.num) * get918()));
-        return this.scroll.getValue().booleanValue() ? (int) MathHelper.clamp(abs - this.zoomHelper2.get172(), Float.intBitsToFloat(1092616192), Float.intBitsToFloat(1125515264)) : abs;
+        return this.scroll.getValue().booleanValue() ? (int) MathHelper.clamp(abs - this.zoomHelper2.get172(), 10.0f, 150.0f) : abs;
     }
 
     public float get918() {
-        return (float) (Double.longBitsToDouble(4607182418800017408L) - Math.pow(Float.intBitsToFloat(1065353216) - this.zoomHelper.get172(), Double.longBitsToDouble(4616189618054758400L)));
+        return (float) (1.0 - Math.pow(1.0f - this.zoomHelper.get172(), 4.0));
     }
 
     public int get919(int i) {

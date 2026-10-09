@@ -81,12 +81,12 @@ public class MixinTitleScreenSearchHelper4 extends FontsSearchHelper4_2 implemen
         });
         if (!this.textFieldWidget.isFocused()) {
             if (BaritoneHelper_3.welcomerHelper.get2811() != 8) {
-                FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, "Ctrl + F to activate search.", minecraftClient.getWindow().getScaledWidth() - FontsSearchHelper4.fontsSearchHelper4.get1316("Ctrl + F to activate search."), minecraftClient.getWindow().getScaledHeight() - FontsSearchHelper4.fontsSearchHelper4.get93(), MixinMessageIndicatorHelper_2.getColor814(Color.GRAY, Color.WHITE, Double.longBitsToDouble(4656510908468559872L), Double.longBitsToDouble(4643000109586448384L)));
+                FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, "Ctrl + F to activate search.", minecraftClient.getWindow().getScaledWidth() - FontsSearchHelper4.fontsSearchHelper4.get1316("Ctrl + F to activate search."), minecraftClient.getWindow().getScaledHeight() - FontsSearchHelper4.fontsSearchHelper4.get93(), MixinMessageIndicatorHelper_2.getColor814(Color.GRAY, Color.WHITE, 2000.0, 250.0));
                 return;
             }
             return;
         }
-        FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, new ArgumentTypeHelper().getArgumentTypeHelper2919(getString95()).getArgumentTypeHelper2919(String.valueOf(Formatting.WHITE)).getArgumentTypeHelper2919(this.string).getArgumentTypeHelper2919(String.valueOf(Formatting.GRAY)).getArgumentTypeHelper2919(this.textFieldWidget.getText()).getString2921("\u0001\u0001\u0001\u0001\u0001"), (minecraftClient.getWindow().getScaledWidth() / Float.intBitsToFloat(1073741824)) - (FontsSearchHelper4.fontsSearchHelper4.get1316(new ArgumentTypeHelper().getArgumentTypeHelper2919(this.string).getArgumentTypeHelper2919(this.textFieldWidget.getText()).getString2921("\u0001\u0001_")) / Float.intBitsToFloat(1073741824)), (minecraftClient.getWindow().getScaledHeight() / Float.intBitsToFloat(1073741824)) - (FontsSearchHelper4.fontsSearchHelper4.get93() / Float.intBitsToFloat(1073741824)), Color.white);
+        FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, new ArgumentTypeHelper().getArgumentTypeHelper2919(getString95()).getArgumentTypeHelper2919(String.valueOf(Formatting.WHITE)).getArgumentTypeHelper2919(this.string).getArgumentTypeHelper2919(String.valueOf(Formatting.GRAY)).getArgumentTypeHelper2919(this.textFieldWidget.getText()).getString2921("\u0001\u0001\u0001\u0001\u0001"), (minecraftClient.getWindow().getScaledWidth() / 2.0f) - (FontsSearchHelper4.fontsSearchHelper4.get1316(new ArgumentTypeHelper().getArgumentTypeHelper2919(this.string).getArgumentTypeHelper2919(this.textFieldWidget.getText()).getString2921("\u0001\u0001_")) / 2.0f), (minecraftClient.getWindow().getScaledHeight() / 2.0f) - (FontsSearchHelper4.fontsSearchHelper4.get93() / 2.0f), Color.white);
     }
 
     @Override // me.mioclient.FontsSearchHelper4_2

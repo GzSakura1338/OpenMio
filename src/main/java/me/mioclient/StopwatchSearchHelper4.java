@@ -40,7 +40,7 @@ public final class StopwatchSearchHelper4 implements SearchHelper_4 {
         if (this.num2 > 0) {
             this.num2--;
         }
-        if (this.vec3d == null || 0 != 0 || Math.abs(pos.y - this.vec3d.y) >= Double.longBitsToDouble(4625759767262920704L)) {
+        if (this.vec3d == null || 0 != 0 || Math.abs(pos.y - this.vec3d.y) >= 18.0) {
             do2737();
             this.vec3d = pos;
         }
@@ -76,7 +76,7 @@ public final class StopwatchSearchHelper4 implements SearchHelper_4 {
         } else {
             this.num++;
         }
-        do2738(Float.intBitsToFloat(1148846080));
+        do2738(1000.0f);
         this.stopwatch.reset();
         this.flag = false;
     }

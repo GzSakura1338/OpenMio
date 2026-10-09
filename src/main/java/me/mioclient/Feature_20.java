@@ -15,7 +15,7 @@ public final class Feature_20 extends Feature {
     @Override // me.mioclient.Feature
     public void exec(com.mojang.brigadier.builder.LiteralArgumentBuilder<CommandSource> literalArgumentBuilder) {
         literalArgumentBuilder.then(Feature.argument("message", StringArgumentType.greedyString()).executes(commandContext -> {
-            minecraftClient.inGameHud.getChatHud().addMessage(Text.of((String) commandContext.getArgument("message", String.class)), MixinMessageIndicatorHelper.getMessageSignatureData337((int) (Math.random() * Double.longBitsToDouble(4666723172467343360L))), MixinMessageIndicatorHelper.messageIndicator);
+            minecraftClient.inGameHud.getChatHud().addMessage(Text.of((String) commandContext.getArgument("message", String.class)), MixinMessageIndicatorHelper.getMessageSignatureData337((int) (Math.random() * 10000.0)), MixinMessageIndicatorHelper.messageIndicator);
             return 1;
         })).executes(commandContext2 -> {
             MixinMessageIndicatorHelper.do345(Text.literal("Please enter a message to print."), MixinMessageIndicatorHelper.getMessageSignatureData337(-1), MixinMessageIndicatorHelper.MixinClientConnectionMode.mixinClientConnectionMode3);

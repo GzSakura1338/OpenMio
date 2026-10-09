@@ -25,7 +25,7 @@ public class Heaven extends Module {
             }
             ClientPlayerEntity clientPlayerEntity = minecraftClient.player;
             Vec3d velocity = minecraftClient.player.getVelocity();
-            clientPlayerEntity.setVelocity(velocity.withAxis(Direction.Axis.Y, Double.longBitsToDouble(4613937818241073152L)));
+            clientPlayerEntity.setVelocity(velocity.withAxis(Direction.Axis.Y, 3.0));
         }
     }
 }

@@ -26,11 +26,11 @@ public final class SpeedHelper_4 extends SpeedHelper {
         if (minecraftClient.player.isOnGround() || this.num == 3) {
             if ((!minecraftClient.player.horizontalCollision && minecraftClient.player.forwardSpeed != 0.0f) || minecraftClient.player.sidewaysSpeed != 0.0f) {
                 if (this.num == 2) {
-                    this.val2 *= Double.longBitsToDouble(4612021536599627006L);
+                    this.val2 *= 2.149;
                     this.num = 3;
                 } else if (this.num == 3) {
                     this.num = 2;
-                    this.val2 = this.val3 - (Double.longBitsToDouble(4604119971053405471L) * (this.val3 - HoleSnapSearchHelper4_3.get2511(true)));
+                    this.val2 = this.val3 - (0.66 * (this.val3 - HoleSnapSearchHelper4_3.get2511(true)));
                 }
             }
             this.val2 = Math.min(this.val2, this.speed.speed.getValue().floatValue());
@@ -51,7 +51,7 @@ public final class SpeedHelper_4 extends SpeedHelper {
         }
         super.do388(motionEvent);
         if (this.num == 3) {
-            motionEvent.setY(motionEvent.get692() + (is390() ? Double.longBitsToDouble(4596373779694328218L) : Double.longBitsToDouble(4600877379321698714L)) + HoleSnapSearchHelper4_3.get2513());
+            motionEvent.setY(motionEvent.get692() + (is390() ? 0.2 : 0.4) + HoleSnapSearchHelper4_3.get2513());
         }
     }
 
@@ -63,7 +63,7 @@ public final class SpeedHelper_4 extends SpeedHelper {
         if (!minecraftClient.world.isSpaceEmpty(minecraftClient.player.getBoundingBox().offset(x, y, z))) {
             return true;
         }
-        if (!minecraftClient.world.isSpaceEmpty(minecraftClient.player.getBoundingBox().stretch(0.0d, Double.longBitsToDouble(-4616189618054758400L), 0.0d)) && !minecraftClient.player.horizontalCollision && minecraftClient.player.getY() <= Math.floor(minecraftClient.player.getY()) && is1827()) {
+        if (!minecraftClient.world.isSpaceEmpty(minecraftClient.player.getBoundingBox().stretch(0.0d, -1.0, 0.0d)) && !minecraftClient.player.horizontalCollision && minecraftClient.player.getY() <= Math.floor(minecraftClient.player.getY()) && is1827()) {
             if (BaritoneHelper_3.mainhandHelper_2.getBox1109(minecraftClient.player, 3).minY >= minecraftClient.player.getY()) {
                 return false;
             }

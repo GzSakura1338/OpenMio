@@ -123,7 +123,7 @@ public class Replenish extends Module {
         if (!this.selection.getValue().is1391(stack.getItem(), this.items.getValue())) {
             return false;
         }
-        float intValue = this.threshold.getValue().intValue() / Float.intBitsToFloat(1115684864);
+        float intValue = this.threshold.getValue().intValue() / 64.0f;
         if (stack.isEmpty() || stack.getItem() == Items.AIR || !stack.isStackable() || stack.getCount() / stack.getMaxCount() >= intValue) {
             return false;
         }

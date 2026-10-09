@@ -41,8 +41,8 @@ public class FontsSearchHelper4_2 extends Screen implements SearchHelper_4 {
         super(Text.literal("mio"));
         this.arrayList = new ArrayList<>();
         this.list = new ArrayList();
-        this.hUDHelper_2 = new HUDHelper_2(Float.intBitsToFloat(1075838976), true);
-        this.hUDHelper_22 = new HUDHelper_2(Float.intBitsToFloat(1075838976), true);
+        this.hUDHelper_2 = new HUDHelper_2(2.5f, true);
+        this.hUDHelper_22 = new HUDHelper_2(2.5f, true);
         this.flag = false;
         this.string = "";
         this.num2 = 0L;
@@ -56,8 +56,8 @@ public class FontsSearchHelper4_2 extends Screen implements SearchHelper_4 {
             getScreen1715().init(minecraftClient, scaledWidth, scaledHeight);
         }
         if (!is1469()) {
-            this.hUDHelper_2.do171(scaledWidth / Float.intBitsToFloat(1073741824));
-            this.hUDHelper_22.do171(scaledHeight / Float.intBitsToFloat(1073741824));
+            this.hUDHelper_2.do171(scaledWidth / 2.0f);
+            this.hUDHelper_22.do171(scaledHeight / 2.0f);
         }
         this.flag = false;
         getArrayList2831().forEach(presetEnumSettingHelper -> {
@@ -79,11 +79,11 @@ public class FontsSearchHelper4_2 extends Screen implements SearchHelper_4 {
         float f3 = this.hUDHelper_22.get172();
         if ((getScreen1715() instanceof TitleScreen) || (getScreen1715() instanceof MultiplayerScreen)) {
             GlStateManager._enablePolygonOffset();
-            GlStateManager._polygonOffset(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1148846080));
+            GlStateManager._polygonOffset(1.0f, 1000.0f);
             getScreen1715().render(drawContext, -99, -99, f);
             minecraftClient.getBufferBuilders().getEntityVertexConsumers().draw();
             drawContext.draw();
-            GlStateManager._polygonOffset(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(-998637568));
+            GlStateManager._polygonOffset(1.0f, -1000.0f);
             GlStateManager._disablePolygonOffset();
         }
         mode_5.do935();
@@ -94,10 +94,10 @@ public class FontsSearchHelper4_2 extends Screen implements SearchHelper_4 {
         if (this.list.size() < 25) {
             this.list.add(new Helper_20());
         }
-        RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), get189());
+        RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, get189());
         float f4 = (float) SearchHelper4.get1481(this.val);
         SearchHelper4.do1479(this.val);
-        drawContext.getMatrices().scale(f4, f4, Float.intBitsToFloat(1065353216));
+        drawContext.getMatrices().scale(f4, f4, 1.0f);
         int i3 = (int) (i / f4);
         int i4 = (int) (i2 / f4);
         float f5 = f2 / f4;
@@ -143,23 +143,23 @@ public class FontsSearchHelper4_2 extends Screen implements SearchHelper_4 {
                     f7 = f8;
                 }
             }
-            float intBitsToFloat = f5 + Float.intBitsToFloat(1091567616);
-            float intBitsToFloat2 = f5 + f7 + Float.intBitsToFloat(1092616192);
+            float intBitsToFloat = f5 + 9.0f;
+            float intBitsToFloat2 = f5 + f7 + 10.0f;
             if (intBitsToFloat2 > minecraftClient.getWindow().getScaledWidth()) {
-                intBitsToFloat = (f5 - f7) - Float.intBitsToFloat(1073741824);
-                intBitsToFloat2 = f5 - Float.intBitsToFloat(1065353216);
+                intBitsToFloat = (f5 - f7) - 2.0f;
+                intBitsToFloat2 = f5 - 1.0f;
             }
             float f9 = intBitsToFloat;
             float f10 = intBitsToFloat2;
             int i5 = (int) f6;
-            float intBitsToFloat3 = (f6 - Float.intBitsToFloat(1065353216)) + ((FontsSearchHelper4.fontsSearchHelper4.get93() + Float.intBitsToFloat(1065353216)) * split.length);
+            float intBitsToFloat3 = (f6 - 1.0f) + ((FontsSearchHelper4.fontsSearchHelper4.get93() + 1.0f) * split.length);
             BlurFramebuffer.do2002(() -> {
-                SearchHelper_2.searchHelper_2.do545(drawContext.getMatrices(), f9, i5 - Float.intBitsToFloat(1065353216), f10, intBitsToFloat3, MixinMessageIndicatorHelper_2.get821(10, 10, 10, 140));
-            }, Float.intBitsToFloat(1086324736));
-            SearchHelper_2.searchHelper_2.do546(drawContext.getMatrices(), intBitsToFloat, f6 - Float.intBitsToFloat(1065353216), intBitsToFloat2, intBitsToFloat3, new Color(10, 10, 10, 80));
+                SearchHelper_2.searchHelper_2.do545(drawContext.getMatrices(), f9, i5 - 1.0f, f10, intBitsToFloat3, MixinMessageIndicatorHelper_2.get821(10, 10, 10, 140));
+            }, 6.0f);
+            SearchHelper_2.searchHelper_2.do546(drawContext.getMatrices(), intBitsToFloat, f6 - 1.0f, intBitsToFloat2, intBitsToFloat3, new Color(10, 10, 10, 80));
             int i6 = 0;
             for (String str2 : split) {
-                FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, str2, intBitsToFloat + Float.intBitsToFloat(1065353216), f6 + ((FontsSearchHelper4.fontsSearchHelper4.get93() + Float.intBitsToFloat(1065353216)) * i6), Color.white);
+                FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, str2, intBitsToFloat + 1.0f, f6 + ((FontsSearchHelper4.fontsSearchHelper4.get93() + 1.0f) * i6), Color.white);
                 i6++;
             }
             this.num2 = System.currentTimeMillis();
@@ -169,7 +169,7 @@ public class FontsSearchHelper4_2 extends Screen implements SearchHelper_4 {
         }
         do940(drawContext, i3, i4, f);
         CrosshairHelper.do1597();
-        RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216));
+        RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         SearchHelper4.do604();
     }
 
@@ -220,7 +220,7 @@ public class FontsSearchHelper4_2 extends Screen implements SearchHelper_4 {
         int orElse = this.arrayList.stream().mapToInt((v0) -> {
             return v0.get93();
         }).max().orElse(i);
-        int scaledHeight = ((double) orElse) > ((double) (minecraftClient.getWindow().getScaledHeight() + 5)) / d5 ? orElse - ((int) ((minecraftClient.getWindow().getScaledHeight() - 5) / d5)) : (int) (Double.longBitsToDouble(-4606056518893174784L) / d5);
+        int scaledHeight = ((double) orElse) > ((double) (minecraftClient.getWindow().getScaledHeight() + 5)) / d5 ? orElse - ((int) ((minecraftClient.getWindow().getScaledHeight() - 5) / d5)) : (int) (-5.0 / d5);
         if (d4 != 0.0d) {
             int i2 = (int) (d4 * i);
             Iterator<PresetEnumSettingHelper> it = this.arrayList.iterator();
@@ -309,11 +309,11 @@ public class FontsSearchHelper4_2 extends Screen implements SearchHelper_4 {
     }
 
     public float get189() {
-        float currentTimeMillis = ((float) (System.currentTimeMillis() - this.num3)) / Float.intBitsToFloat(1125515264);
+        float currentTimeMillis = ((float) (System.currentTimeMillis() - this.num3)) / 150.0f;
         if (this.flag2) {
-            currentTimeMillis = Float.intBitsToFloat(1065353216) - currentTimeMillis;
+            currentTimeMillis = 1.0f - currentTimeMillis;
         }
-        return MathHelper.clamp(currentTimeMillis, 0.0f, Float.intBitsToFloat(1065353216));
+        return MathHelper.clamp(currentTimeMillis, 0.0f, 1.0f);
     }
 
     public void do2828() {

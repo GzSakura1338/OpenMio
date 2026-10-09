@@ -109,7 +109,7 @@ public class Sprint extends Module {
             return;
         }
         Vec3d vec3d = new Vec3d(explosionVelocityEvent.get515(), explosionVelocityEvent.get692(), explosionVelocityEvent.get516());
-        if (HoleSnapSearchHelper4_3.is2181() && BaritoneHelper_3.holeSnapSearchHelper4_4.getStopwatch2615().is419(750L) && this.boost.getValue().booleanValue() && Math.sqrt(minecraftClient.player.squaredDistanceTo(vec3d)) <= Double.longBitsToDouble(4618441417868443648L)) {
+        if (HoleSnapSearchHelper4_3.is2181() && BaritoneHelper_3.holeSnapSearchHelper4_4.getStopwatch2615().is419(750L) && this.boost.getValue().booleanValue() && Math.sqrt(minecraftClient.player.squaredDistanceTo(vec3d)) <= 6.0) {
             this.stopwatch.reset();
             this.val = ((float) Math.hypot(explosionVelocityEvent.get767(), explosionVelocityEvent.get771())) * this.boostSpeed.getValue().floatValue();
         }
@@ -145,7 +145,7 @@ public class Sprint extends Module {
         if (this.vanillaSlowdown.getValue().booleanValue()) {
             net.minecraft.block.Block r0 = minecraftClient.world.getBlockState(((me.mioclient.mixin.ducks.DuckEntity)(Object) minecraftClient.player).mio$getVelocityAffectingPos()).getBlock();
             if (r0 == Blocks.SLIME_BLOCK) {
-                d *= Double.longBitsToDouble(4604480259023595110L);
+                d *= 0.7;
             }
             d *= r0.getVelocityMultiplier();
         }
@@ -223,7 +223,7 @@ public class Sprint extends Module {
         if (minecraftClient.player.isOnGround()) {
             return false;
         }
-        return BlockPos.stream(minecraftClient.player.getBoundingBox().stretch(0.0d, Double.longBitsToDouble(-4631501856787818086L), 0.0d)).anyMatch(blockPos -> {
+        return BlockPos.stream(minecraftClient.player.getBoundingBox().stretch(0.0d, -0.1, 0.0d)).anyMatch(blockPos -> {
             return minecraftClient.world.isWater(blockPos);
         });
     }

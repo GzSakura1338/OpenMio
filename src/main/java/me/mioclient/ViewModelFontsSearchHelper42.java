@@ -33,8 +33,8 @@ public class ViewModelFontsSearchHelper42 extends FontsSearchHelper4_2 {
         if (getMode_11943() == Mode_11.NONE) {
             return;
         }
-        float f2 = ((float) PingSpoofHelper.get368((this.val - i) * Double.longBitsToDouble(4572414629547868160L), 2)) * (this.flag ? -1 : 1);
-        float f3 = (float) PingSpoofHelper.get368((this.val2 - i2) * Double.longBitsToDouble(4572414629547868160L), 2);
+        float f2 = ((float) PingSpoofHelper.get368((this.val - i) * 0.004999999888241291, 2)) * (this.flag ? -1 : 1);
+        float f3 = (float) PingSpoofHelper.get368((this.val2 - i2) * 0.004999999888241291, 2);
         if (EntityControlSearchHelper4.is2608()) {
             if (Math.abs(f2) > Math.abs(f3)) {
                 f3 = 0.0f;
@@ -84,8 +84,8 @@ public class ViewModelFontsSearchHelper42 extends FontsSearchHelper4_2 {
             }
         }
         if (getMode_11943() == Mode_11.ROTATE) {
-            float intBitsToFloat = f2 / Float.intBitsToFloat(1000593162);
-            float intBitsToFloat2 = f3 / Float.intBitsToFloat(1000593162);
+            float intBitsToFloat = f2 / 0.004999999888241291f;
+            float intBitsToFloat2 = f3 / 0.004999999888241291f;
             if (!EntityControlSearchHelper4.is2607()) {
                 this.viewmodel.offRotateX.do2333(Float.valueOf(PingSpoofHelper.get381(data_2.get1382() + intBitsToFloat2)));
                 this.viewmodel.offRotateY.do2333(Float.valueOf(PingSpoofHelper.get381(data_2.get1383() + intBitsToFloat)));
@@ -109,7 +109,7 @@ public class ViewModelFontsSearchHelper42 extends FontsSearchHelper4_2 {
         if (getMode_11943() != Mode_11.NONE) {
             this.data_2 = Data_2.getData_21364(this.viewmodel);
             this.linkedList.add(this.data_2);
-            this.flag = d * SearchHelper4.get1481((float) this.val) < ((double) (((float) minecraftClient.getWindow().getScaledWidth()) / Float.intBitsToFloat(1073741824)));
+            this.flag = d * SearchHelper4.get1481((float) this.val) < ((double) (((float) minecraftClient.getWindow().getScaledWidth()) / 2.0f));
             this.val = d;
             this.val2 = d2;
         }
@@ -122,11 +122,11 @@ public class ViewModelFontsSearchHelper42 extends FontsSearchHelper4_2 {
 
     @Override // me.mioclient.FontsSearchHelper4_2
     public boolean mouseScrolled(double d, double d2, double d3, double d4) {
-        if (d4 > Double.longBitsToDouble(-4616189618054758400L) && d4 < Double.longBitsToDouble(4607182418800017408L)) {
+        if (d4 > -1.0 && d4 < 1.0) {
             return super.mouseScrolled(d, d2, d3, d4);
         }
-        boolean z = d * SearchHelper4.get1481((float) this.val) < ((double) (((float) minecraftClient.getWindow().getScaledWidth()) / Float.intBitsToFloat(1073741824)));
-        float longBitsToDouble = (float) (d4 * Double.longBitsToDouble(-4631501856680443904L));
+        boolean z = d * SearchHelper4.get1481((float) this.val) < ((double) (((float) minecraftClient.getWindow().getScaledWidth()) / 2.0f));
+        float longBitsToDouble = (float) (d4 * -0.10000000149011612);
         if (this.stopwatch.is419(100L)) {
             this.linkedList.add(Data_2.getData_21364(this.viewmodel));
         }
@@ -139,8 +139,8 @@ public class ViewModelFontsSearchHelper42 extends FontsSearchHelper4_2 {
             do945(this.viewmodel.mainZ, this.viewmodel.offZ, z, longBitsToDouble);
             return super.mouseScrolled(d, d2, d3, d4);
         }
-        float f = PingSpoofHelper.get381(this.viewmodel.offRotateZ.getValue().floatValue() + (((float) d4) * Float.intBitsToFloat(1092616192)));
-        float f2 = PingSpoofHelper.get381(this.viewmodel.mainRotateZ.getValue().floatValue() + (((float) d4) * Float.intBitsToFloat(1092616192)));
+        float f = PingSpoofHelper.get381(this.viewmodel.offRotateZ.getValue().floatValue() + (((float) d4) * 10.0f));
+        float f2 = PingSpoofHelper.get381(this.viewmodel.mainRotateZ.getValue().floatValue() + (((float) d4) * 10.0f));
         if (!EntityControlSearchHelper4.is2607()) {
             this.viewmodel.offRotateZ.do2333(Float.valueOf(f));
             this.viewmodel.mainRotateZ.do2333(Float.valueOf(f2));
@@ -172,13 +172,13 @@ public class ViewModelFontsSearchHelper42 extends FontsSearchHelper4_2 {
     public void do204(DrawContext drawContext) {
         float scaledWindowWidth = drawContext.getScaledWindowWidth();
         float scaledWindowHeight = drawContext.getScaledWindowHeight();
-        SearchHelper_2.searchHelper_2.do546(drawContext.getMatrices(), (scaledWindowWidth / Float.intBitsToFloat(1073741824)) - Float.intBitsToFloat(1065353216), 0.0f, (scaledWindowWidth / Float.intBitsToFloat(1073741824)) + Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1111490560), color);
+        SearchHelper_2.searchHelper_2.do546(drawContext.getMatrices(), (scaledWindowWidth / 2.0f) - 1.0f, 0.0f, (scaledWindowWidth / 2.0f) + 1.0f, 48.0f, color);
         int i = 2;
         for (String str : List.of("Left Click - Rotate", "Right Click - Move", "Middle Click - Scale", "Mouse Scroll - Move by Z", "Mouse Scroll + Shift - Rotate by Z", "Mouse Scroll + Alt - Scale by Z", "Hold Ctrl - Modify one", "Hold Shift - Lock axis", "Ctrl + Z - Undo", "Delete - Reset to defaults")) {
-            FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, str, (scaledWindowWidth - FontsSearchHelper4.fontsSearchHelper4.get1316(str)) / Float.intBitsToFloat(1073741824), 50 + i, MixinMessageIndicatorHelper_2.getColor816(Color.white, 180));
+            FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, str, (scaledWindowWidth - FontsSearchHelper4.fontsSearchHelper4.get1316(str)) / 2.0f, 50 + i, MixinMessageIndicatorHelper_2.getColor816(Color.white, 180));
             i += FontsSearchHelper4.fontsSearchHelper4.get93() + 1;
         }
-        SearchHelper_2.searchHelper_2.do546(drawContext.getMatrices(), (scaledWindowWidth / Float.intBitsToFloat(1073741824)) - Float.intBitsToFloat(1065353216), i + 52, (scaledWindowWidth / Float.intBitsToFloat(1073741824)) + Float.intBitsToFloat(1065353216), scaledWindowHeight, color);
+        SearchHelper_2.searchHelper_2.do546(drawContext.getMatrices(), (scaledWindowWidth / 2.0f) - 1.0f, i + 52, (scaledWindowWidth / 2.0f) + 1.0f, scaledWindowHeight, color);
     }
 
     public Mode_11 getMode_11943() {

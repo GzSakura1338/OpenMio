@@ -315,7 +315,7 @@ public class PhaseESPSearchHelper4_2 implements SearchHelper_4 {
                 return false;
             }
         }
-        Box box = new Box(blockPos2.getX(), blockPos2.getY(), blockPos2.getZ(), blockPos2.getX() + 1, blockPos2.getY() + (z5 ? Double.longBitsToDouble(4606281698874543309L) : Double.longBitsToDouble(4611686018427387904L)), blockPos2.getZ() + 1);
+        Box box = new Box(blockPos2.getX(), blockPos2.getY(), blockPos2.getZ(), blockPos2.getX() + 1, blockPos2.getY() + (z5 ? 0.9 : 2.0), blockPos2.getZ() + 1);
         int i = 0;
         Iterator it = minecraftClient.world.getEntities().iterator();
         while (true) {
@@ -326,7 +326,7 @@ public class PhaseESPSearchHelper4_2 implements SearchHelper_4 {
             if (!((Entity) clientPlayerEntity).isRemoved() && ((Entity) clientPlayerEntity).isAlive()) {
                 Box boundingBox = ((Entity) clientPlayerEntity).getBoundingBox();
                 if ((clientPlayerEntity instanceof PlayerEntity) && clientPlayerEntity != minecraftClient.player && z6) {
-                    boundingBox = boundingBox.expand(Double.longBitsToDouble(4576918229304087675L));
+                    boundingBox = boundingBox.expand(0.01);
                 } else if ((clientPlayerEntity instanceof EndCrystalEntity) && !z3) {
                 }
                 if (boundingBox.intersects(box)) {

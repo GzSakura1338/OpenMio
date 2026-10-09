@@ -103,8 +103,8 @@ public class Highlight extends Module {
     }
 
     public void do407(MatrixStack matrixStack, Box box, BlockPos blockPos) {
-        PhaseESPSearchHelper4.do1590(matrixStack, box.offset(blockPos).expand(Double.longBitsToDouble(4566758108544739836L)), this.fillColor.getValue());
-        PhaseESPSearchHelper4.do1593(matrixStack, box.offset(blockPos).expand(Double.longBitsToDouble(4566758108544739836L)), this.color.getValue(), this.lineWidth.getValue().floatValue());
+        PhaseESPSearchHelper4.do1590(matrixStack, box.offset(blockPos).expand(0.002), this.fillColor.getValue());
+        PhaseESPSearchHelper4.do1593(matrixStack, box.offset(blockPos).expand(0.002), this.color.getValue(), this.lineWidth.getValue().floatValue());
     }
 
     public boolean is408() {

@@ -205,7 +205,7 @@ public class FramebufferHelperSearchHelper4 implements SearchHelper_4 {
     }
 
     public static void do309(int i) {
-        GlStateManager._clearColor(0.0f, 0.0f, 0.0f, Float.intBitsToFloat(1065353216));
+        GlStateManager._clearColor(0.0f, 0.0f, 0.0f, 1.0f);
         GlStateManager._clear(i, false);
     }
 
@@ -259,7 +259,7 @@ public class FramebufferHelperSearchHelper4 implements SearchHelper_4 {
 
     public static void do320() {
         GL32C.glEnable(2848);
-        GL32C.glLineWidth(Float.intBitsToFloat(1065353216));
+        GL32C.glLineWidth(1.0f);
     }
 
     public static void do321() {

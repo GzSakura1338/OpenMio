@@ -32,11 +32,11 @@ public class SearchHelper4_4 implements SearchHelper_4 {
     }
 
     public void do1016() {
-        do1820(Float.intBitsToFloat(1065353216));
+        do1820(1.0f);
     }
 
     public void do1819(Vec3d vec3d) {
-        do1821(vec3d, Float.intBitsToFloat(1065353216));
+        do1821(vec3d, 1.0f);
     }
 
     public void do1820(float f) {

@@ -24,7 +24,7 @@ public class StopwatchSettingSearchHelper419 extends SettingSearchHelper419<Numb
 
     public StopwatchSettingSearchHelper419(PresetEnumSettingHelper presetEnumSettingHelper, PresetHelper_2 presetHelper_2, Setting<?> setting) {
         super(presetEnumSettingHelper, presetHelper_2, (Setting) setting);
-        this.hUDHelper_2 = new HUDHelper_2(Float.intBitsToFloat(1086324736), false);
+        this.hUDHelper_2 = new HUDHelper_2(6.0f, false);
         this.stopwatch = new Stopwatch();
         this.flag2 = false;
         this.string = "";
@@ -148,19 +148,19 @@ public class StopwatchSettingSearchHelper419 extends SettingSearchHelper419<Numb
         double min = Math.min(d3, Math.max(0.0d, d - this.barX));
         double doubleValue = ((Number) this.setting.getObject2325()).doubleValue();
         double doubleValue2 = ((Number) this.setting.getObject2326()).doubleValue();
-        double longBitsToDouble = ((Number) this.setting.getValue()).getClass().getSimpleName().equalsIgnoreCase("Integer") ? Double.longBitsToDouble(4607182418800017408L) : Double.longBitsToDouble(4591870180066957722L);
-        this.val = (float) ((d3 * ((longBitsToDouble == Double.longBitsToDouble(4607182418800017408L) ? ((Number) this.setting.getValue()).intValue() : ((Number) this.setting.getValue()).floatValue()) - doubleValue)) / (doubleValue2 - doubleValue));
+        double longBitsToDouble = ((Number) this.setting.getValue()).getClass().getSimpleName().equalsIgnoreCase("Integer") ? 1.0 : 0.1;
+        this.val = (float) ((d3 * ((longBitsToDouble == 1.0 ? ((Number) this.setting.getValue()).intValue() : ((Number) this.setting.getValue()).floatValue()) - doubleValue)) / (doubleValue2 - doubleValue));
         if (this.flag) {
             if (min != 0.0d) {
                 float f = (float) (((min / d3) * (doubleValue2 - doubleValue)) + doubleValue);
-                float longBitsToDouble2 = (float) (Double.longBitsToDouble(4607182418800017408L) / longBitsToDouble);
+                float longBitsToDouble2 = (float) (1.0 / longBitsToDouble);
                 double max = Math.max(doubleValue, Math.min(doubleValue2, f));
-                if (longBitsToDouble == Double.longBitsToDouble(4591870180066957722L)) {
+                if (longBitsToDouble == 0.1) {
                     this.setting.do2333(Double.valueOf(get87(((float) Math.round(max * longBitsToDouble2)) / longBitsToDouble2)));
                 } else {
                     this.setting.do2333(Double.valueOf(get87(max)));
                 }
-            } else if (longBitsToDouble == Double.longBitsToDouble(4607182418800017408L)) {
+            } else if (longBitsToDouble == 1.0) {
                 this.setting.do2333(Integer.valueOf((int) ((Number) this.setting.getObject2325()).floatValue()));
             } else {
                 this.setting.do2333(Float.valueOf(((Number) this.setting.getObject2325()).floatValue()));
@@ -185,7 +185,7 @@ public class StopwatchSettingSearchHelper419 extends SettingSearchHelper419<Numb
         if (this.flag && this.flag2) {
             FontsSearchHelper4_2.mode_5 = Mode_5.INPUT;
         }
-        CrosshairHelper.do1707(matrixStack, this.barX + get1397(), this.barY + Float.intBitsToFloat(1056964608), (int) (this.barX + MathHelper.clamp(this.hUDHelper_2.get172(), 0.0f, this.presetEnumSettingHelper.get1635() - 3) + Float.intBitsToFloat(1073741824)), (this.barY + get93()) - Float.intBitsToFloat(1056964608), getUI1744().color.getValue());
+        CrosshairHelper.do1707(matrixStack, this.barX + get1397(), this.barY + 0.5f, (int) (this.barX + MathHelper.clamp(this.hUDHelper_2.get172(), 0.0f, this.presetEnumSettingHelper.get1635() - 3) + 2.0f), (this.barY + get93()) - 0.5f, getUI1744().color.getValue());
         String string2921 = this.flag2 ? this.string == null ? "" : this.string : this.setting.is2348() ? new ArgumentTypeHelper().getArgumentTypeHelper2919(this.setting.getString2331()).getArgumentTypeHelper2919(this.setting.getName()).getString2921("\u0001: \u0001") : new ArgumentTypeHelper().getArgumentTypeHelper2919(((NumberSetting) this.setting).getString3024()).getArgumentTypeHelper2919(String.format("%s: %s", this.setting.getName(), numberFormat.format(((Number) this.setting.getValue()).doubleValue())).replace(",", ".")).getString2921("\u0001\u0001");
         do1670(matrixStack, getString94(string2921), () -> {
             FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, new ArgumentTypeHelper().getArgumentTypeHelper2919(getString95()).getArgumentTypeHelper2919(string2921).getString2921("\u0001\u0001"), this.presetEnumSettingHelper.getX() + 4, ((this.presetEnumSettingHelper.getY() + get1742()) - get1396()) + this.num, getUI1744().textColor.getValue());

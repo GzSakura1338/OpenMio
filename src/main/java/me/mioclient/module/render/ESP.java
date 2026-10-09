@@ -212,18 +212,18 @@ public class ESP extends Module {
                             if (itemEntity.getStack().getCount() > 1) {
                                 string = new ArgumentTypeHelper().getArgumentTypeHelper2906(itemEntity.getStack().getCount()).getArgumentTypeHelper2919(string).getString2921("\u0001 x\u0001");
                             }
-                            this.eSPSearchHelper4_2.do1766(inner_3, string, itemEntity.getLerpedPos(inner_3.get473()).add(0.0d, Double.longBitsToDouble(4603579539312869376L), 0.0d), this.scale.getValue().floatValue(), this.itemsText.getValue(), this.background.getValue());
+                            this.eSPSearchHelper4_2.do1766(inner_3, string, itemEntity.getLerpedPos(inner_3.get473()).add(0.0d, 0.6000000238418579, 0.0d), this.scale.getValue().floatValue(), this.itemsText.getValue(), this.background.getValue());
                         }
                     }
                 }
             }
             String string1768 = this.eSPSearchHelper4_2.getString1768(entity2);
             if (string1768 != null) {
-                Vec3d add = entity2.getLerpedPos(inner_3.get473()).add(0.0d, Double.longBitsToDouble(4596373779694328218L), 0.0d);
+                Vec3d add = entity2.getLerpedPos(inner_3.get473()).add(0.0d, 0.2, 0.0d);
                 if (!(entity2 instanceof EnderPearlEntity)) {
-                    add = add.add(0.0d, Double.longBitsToDouble(4608533498688228557L), 0.0d);
+                    add = add.add(0.0d, 1.3, 0.0d);
                 }
-                this.eSPSearchHelper4_2.do1766(inner_3, string1768, add, Float.intBitsToFloat(1065353216), Color.white, (Color) null);
+                this.eSPSearchHelper4_2.do1766(inner_3, string1768, add, 1.0f, Color.white, (Color) null);
             }
         }
         if (this.group.getValue().booleanValue()) {
@@ -232,7 +232,7 @@ public class ESP extends Module {
         if (this.chorus.getValue().booleanValue()) {
             synchronized (this.map) {
                 for (Map.Entry<Vec3d, Long> entry : this.map.entrySet()) {
-                    this.eSPSearchHelper4_2.do1766(inner_3, "Player teleport", entry.getKey(), Float.intBitsToFloat(1065353216), this.chorusText.getValue(), (Color) null);
+                    this.eSPSearchHelper4_2.do1766(inner_3, "Player teleport", entry.getKey(), 1.0f, this.chorusText.getValue(), (Color) null);
                 }
             }
         }
@@ -251,11 +251,11 @@ public class ESP extends Module {
                 do1916(matrixStackEvent.getMatrixStack472(), eSPSearchHelper4, d, eSPSearchHelper4.getMap1750().size() * f);
             } else {
                 do1916(matrixStackEvent.getMatrixStack472(), eSPSearchHelper4, d, f);
-                do1916(matrixStackEvent.getMatrixStack472(), eSPSearchHelper4, d, ((eSPSearchHelper4.getMap1750().size() - 1) * (-f)) - Float.intBitsToFloat(1073741824));
+                do1916(matrixStackEvent.getMatrixStack472(), eSPSearchHelper4, d, ((eSPSearchHelper4.getMap1750().size() - 1) * (-f)) - 2.0f);
             }
             for (Map.Entry<String, Integer> entry : eSPSearchHelper4.getMap1750().entrySet()) {
                 String string1752 = ESPSearchHelper4.getString1752(entry.getKey(), entry.getValue().intValue());
-                SearchHelper_2.searchHelper_2.do571(matrixStackEvent.getDrawContext474(), string1752, center, 0.0f, 0.0f, (-FontsSearchHelper4.fontsSearchHelper4.get1316(string1752)) / Float.intBitsToFloat(1073741824), f2, d, this.itemsText.getValue(), true);
+                SearchHelper_2.searchHelper_2.do571(matrixStackEvent.getDrawContext474(), string1752, center, 0.0f, 0.0f, (-FontsSearchHelper4.fontsSearchHelper4.get1316(string1752)) / 2.0f, f2, d, this.itemsText.getValue(), true);
                 f2 -= f;
             }
         }
@@ -280,11 +280,11 @@ public class ESP extends Module {
     }
 
     public void do1916(MatrixStack matrixStack, ESPSearchHelper4 eSPSearchHelper4, double d, float f) {
-        SearchHelper_2.searchHelper_2.do567(matrixStack, eSPSearchHelper4.getBox1748().getCenter(), 0.0f, 0.0f, eSPSearchHelper4.get1751() + Float.intBitsToFloat(1065353216), f, d, this.background.getValue());
+        SearchHelper_2.searchHelper_2.do567(matrixStack, eSPSearchHelper4.getBox1748().getCenter(), 0.0f, 0.0f, eSPSearchHelper4.get1751() + 1.0f, f, d, this.background.getValue());
     }
 
     public void do1917(MatrixStackEvent matrixStackEvent) {
-        float intBitsToFloat = Float.intBitsToFloat(1061158912);
+        float intBitsToFloat = 0.75f;
         Vec3d pos = minecraftClient.getEntityRenderDispatcher().camera.getPos();
         MatrixStack matrixStack472 = matrixStackEvent.getMatrixStack472();
         BufferBuilder begin = Tessellator.getInstance().begin(VertexFormat.DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
@@ -292,25 +292,25 @@ public class ESP extends Module {
         RenderSystem.enableDepthTest();
         RenderSystem.enableBlend();
         ChunkLightingView chunkLightingView = minecraftClient.world.getLightingProvider().get(LightType.BLOCK);
-        for (BlockPos blockPos : SearchHelper4_7.getList2429(minecraftClient.player.getEyePos(), Float.intBitsToFloat(1094713344), true)) {
+        for (BlockPos blockPos : SearchHelper4_7.getList2429(minecraftClient.player.getEyePos(), 12.0f, true)) {
             BlockState blockState = minecraftClient.world.getBlockState(blockPos);
             if (SearchHelper4_7.is2446(blockPos.up())) {
                 if (chunkLightingView.getLightLevel(blockPos.up()) <= 7) {
                     boolean matchesKey = minecraftClient.world.getBiome(blockPos).matchesKey(BiomeKeys.MUSHROOM_FIELDS);
                     if (blockState.allowsSpawning(minecraftClient.world, blockPos, EntityType.ZOMBIE) && !matchesKey) {
                         double distanceTo = minecraftClient.gameRenderer.getCamera().getPos().distanceTo(blockPos.toCenterPos());
-                        float intBitsToFloat2 = Float.intBitsToFloat(1065353216) - ((float) MathHelper.clamp((distanceTo - Double.longBitsToDouble(4620693217682128896L)) / Double.longBitsToDouble(4611686018427387904L), 0.0d, Double.longBitsToDouble(4607182418800017408L)));
+                        float intBitsToFloat2 = 1.0f - ((float) MathHelper.clamp((distanceTo - 8.0) / 2.0, 0.0d, 1.0));
                         int hashCode = Color.red.hashCode();
-                        if (distanceTo >= Double.longBitsToDouble(4620693217682128896L)) {
+                        if (distanceTo >= 8.0) {
                             hashCode = MixinMessageIndicatorHelper_2.get819(Color.red, intBitsToFloat2);
                         }
                         matrixStack472.push();
-                        matrixStack472.translate(blockPos.getX() - pos.x, (blockPos.getY() - pos.y) + Double.longBitsToDouble(4607272490792564818L), blockPos.getZ() - pos.z);
+                        matrixStack472.translate(blockPos.getX() - pos.x, (blockPos.getY() - pos.y) + 1.02, blockPos.getZ() - pos.z);
                         Matrix4f positionMatrix = matrixStack472.peek().getPositionMatrix();
-                        begin.vertex(positionMatrix, Float.intBitsToFloat(1065353216) - intBitsToFloat, 0.0f, Float.intBitsToFloat(1065353216) - intBitsToFloat).color(hashCode);
+                        begin.vertex(positionMatrix, 1.0f - intBitsToFloat, 0.0f, 1.0f - intBitsToFloat).color(hashCode);
                         begin.vertex(positionMatrix, intBitsToFloat, 0.0f, intBitsToFloat).color(hashCode);
-                        begin.vertex(positionMatrix, intBitsToFloat, 0.0f, Float.intBitsToFloat(1065353216) - intBitsToFloat).color(hashCode);
-                        begin.vertex(positionMatrix, Float.intBitsToFloat(1065353216) - intBitsToFloat, 0.0f, intBitsToFloat).color(hashCode);
+                        begin.vertex(positionMatrix, intBitsToFloat, 0.0f, 1.0f - intBitsToFloat).color(hashCode);
+                        begin.vertex(positionMatrix, 1.0f - intBitsToFloat, 0.0f, intBitsToFloat).color(hashCode);
                         matrixStack472.pop();
                     }
                 }

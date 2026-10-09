@@ -20,7 +20,7 @@ public class PresetEnumSettingHelper implements EnumSettingHelper, PresetHelper_
     public int num5;
     public final ArrayList<PresetHelper_5> registry = new ArrayList<>();
     public Progress progress = new Progress((Supplier<Float>) () -> {
-        return Float.valueOf(getUI1744().animSpeed.getValue().floatValue() * Float.intBitsToFloat(1073741824));
+        return Float.valueOf(getUI1744().animSpeed.getValue().floatValue() * 2.0f);
     }, true);
     public final int num = 92;
     public int num3 = 0;
@@ -39,15 +39,15 @@ public class PresetEnumSettingHelper implements EnumSettingHelper, PresetHelper_
     @Override // me.mioclient.PresetHelper_5
     public void do19(DrawContext drawContext, MatrixStack matrixStack, double d, double d2) {
         CrosshairHelper.do1707(drawContext.getMatrices(), this.x, this.y, this.x + get1635(), this.y + 14, UI.uI.color.getValue());
-        FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, this.name, this.x + 2, (this.y + Float.intBitsToFloat(1088421888)) - (FontsSearchHelper4.fontsSearchHelper4.get93() / Float.intBitsToFloat(1073741824)), Color.white);
+        FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, this.name, this.x + 2, (this.y + 7.0f) - (FontsSearchHelper4.fontsSearchHelper4.get93() / 2.0f), Color.white);
         this.progress.do2139(this.flag);
         float f = this.progress.get172();
-        if (f != Float.intBitsToFloat(1065353216) && this.num5 != 0) {
+        if (f != 1.0f && this.num5 != 0) {
             CrosshairHelper.do1597();
-            SearchHelper4_17.do1106(this.x - 1, this.y - 1, get1635() + 2, ((int) (Float.intBitsToFloat(1096810496) + (this.num5 * f))) + 3);
+            SearchHelper4_17.do1106(this.x - 1, this.y - 1, get1635() + 2, ((int) (14.0f + (this.num5 * f))) + 3);
         }
         if (f > 0.0f && !this.registry.isEmpty()) {
-            CrosshairHelper.do1707(drawContext.getMatrices(), this.x, this.y + 14, this.x + get1635(), this.y + this.num5 + Float.intBitsToFloat(1056964608), UI.uI.bgColor.getValue());
+            CrosshairHelper.do1707(drawContext.getMatrices(), this.x, this.y + 14, this.x + get1635(), this.y + this.num5 + 0.5f, UI.uI.bgColor.getValue());
             this.registry.forEach(presetHelper_5 -> {
                 if (is1772(presetHelper_5)) {
                     presetHelper_5.do91(d, d2);
@@ -55,14 +55,14 @@ public class PresetEnumSettingHelper implements EnumSettingHelper, PresetHelper_
                 }
             });
             if (UI.uI.windowShadow.getValue().booleanValue()) {
-                CrosshairHelper.do1707(drawContext.getMatrices(), this.x + UI.uI.shadowSize.getValue().floatValue(), this.y + this.num5 + Float.intBitsToFloat(1056964608), this.x + get1635(), this.y + this.num5 + Float.intBitsToFloat(1056964608) + UI.uI.shadowSize.getValue().floatValue(), UI.uI.shadowColor.getValue());
-                CrosshairHelper.do1707(drawContext.getMatrices(), this.x + get1635(), this.y + UI.uI.shadowSize.getValue().floatValue(), this.x + get1635() + UI.uI.shadowSize.getValue().floatValue(), this.y + this.num5 + Float.intBitsToFloat(1056964608) + UI.uI.shadowSize.getValue().floatValue(), UI.uI.shadowColor.getValue());
+                CrosshairHelper.do1707(drawContext.getMatrices(), this.x + UI.uI.shadowSize.getValue().floatValue(), this.y + this.num5 + 0.5f, this.x + get1635(), this.y + this.num5 + 0.5f + UI.uI.shadowSize.getValue().floatValue(), UI.uI.shadowColor.getValue());
+                CrosshairHelper.do1707(drawContext.getMatrices(), this.x + get1635(), this.y + UI.uI.shadowSize.getValue().floatValue(), this.x + get1635() + UI.uI.shadowSize.getValue().floatValue(), this.y + this.num5 + 0.5f + UI.uI.shadowSize.getValue().floatValue(), UI.uI.shadowColor.getValue());
             }
         }
         if (UI.uI.line.getValue().booleanValue()) {
-            CrosshairHelper.do1705(drawContext.getMatrices(), this.x - 1, this.y - 1, this.x + get1635(), this.y + (f == 0.0f ? Float.intBitsToFloat(1096810496) : this.num5 + Float.intBitsToFloat(1056964608)), UI.uI.color.getValue());
+            CrosshairHelper.do1705(drawContext.getMatrices(), this.x - 1, this.y - 1, this.x + get1635(), this.y + (f == 0.0f ? 14.0f : this.num5 + 0.5f), UI.uI.color.getValue());
         }
-        if (f != Float.intBitsToFloat(1065353216) && this.num5 != 0) {
+        if (f != 1.0f && this.num5 != 0) {
             CrosshairHelper.do1597();
             SearchHelper4_17.do1107();
         }
@@ -165,11 +165,11 @@ public class PresetEnumSettingHelper implements EnumSettingHelper, PresetHelper_
     }
 
     public boolean is623() {
-        return this.flag && this.progress.val == Float.intBitsToFloat(1073741824);
+        return this.flag && this.progress.val == 2.0f;
     }
 
     public float get1970() {
-        return this.progress.get2138() - Float.intBitsToFloat(1065353216);
+        return this.progress.get2138() - 1.0f;
     }
 
     public void do1971(boolean z) {

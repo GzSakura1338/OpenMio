@@ -28,11 +28,11 @@ public class HUDHelper_2 {
     }
 
     public float get172() {
-        float f = BaritoneHelper_3.hitmarkerSearchHelper4.get3095(Float.intBitsToFloat(1056964608)) * this.supplier.get().floatValue();
+        float f = BaritoneHelper_3.hitmarkerSearchHelper4.get3095(0.5f) * this.supplier.get().floatValue();
         if (this.flag) {
-            double longBitsToDouble = Double.longBitsToDouble(4607182418800017408L);
-            float intBitsToFloat = f - Float.intBitsToFloat(1065353216);
-            f = (float) (longBitsToDouble - (intBitsToFloat * Math.pow(intBitsToFloat, Double.longBitsToDouble(4613937818241073152L))));
+            double longBitsToDouble = 1.0;
+            float intBitsToFloat = f - 1.0f;
+            f = (float) (longBitsToDouble - (intBitsToFloat * Math.pow(intBitsToFloat, 3.0)));
         }
         this.val = this.val3 + ((this.val - this.val3) * f);
         if (this.val == this.val2 || Math.abs(this.val2 - this.val) < FreecamHelper.val2) {

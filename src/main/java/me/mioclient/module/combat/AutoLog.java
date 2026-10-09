@@ -86,7 +86,7 @@ public class AutoLog extends Module {
                 do2367(new ArgumentTypeHelper().getArgumentTypeHelper2919(String.valueOf(this.y.getValue())).getString2921("You are below Y level \u0001"));
                 return;
             }
-            if (minecraftClient.player.age / Float.intBitsToFloat(1101004800) < this.invincTimeout.getValue().floatValue()) {
+            if (minecraftClient.player.age / 20.0f < this.invincTimeout.getValue().floatValue()) {
                 return;
             }
             if (this.onRender.getValue().booleanValue()) {
@@ -96,19 +96,19 @@ public class AutoLog extends Module {
                     }
                 }
             }
-            if (!minecraftClient.world.getEntitiesByClass(TntMinecartEntity.class, minecraftClient.player.getBoundingBox().expand(Double.longBitsToDouble(4616189618054758400L), Double.longBitsToDouble(4616189618054758400L), Double.longBitsToDouble(4616189618054758400L)), (v0) -> {
+            if (!minecraftClient.world.getEntitiesByClass(TntMinecartEntity.class, minecraftClient.player.getBoundingBox().expand(4.0, 4.0, 4.0), (v0) -> {
                 return v0.isPrimed();
             }).isEmpty() && this.tNTMinecart.getValue().booleanValue()) {
                 do2367("You are at risk of getting blown up by a TNT minecart!");
             }
             if (this.crystal.getValue().booleanValue()) {
                 minecraftClient.world.getEntities().forEach(entity -> {
-                    if (!(entity instanceof EndCrystalEntity) || minecraftClient.player.squaredDistanceTo(entity) > Double.longBitsToDouble(4638707616191610880L)) {
+                    if (!(entity instanceof EndCrystalEntity) || minecraftClient.player.squaredDistanceTo(entity) > 128.0) {
                         return;
                     }
                     Vec3d pos = entity.getPos();
                     LivingEntity livingEntity = minecraftClient.player;
-                    if (ArmorSearchHelper4.get1900(pos, livingEntity, minecraftClient.player.getBoundingBox(), Double.longBitsToDouble(4618441417868443648L), true, (BlockPos) null, (BlockPos) null) >= SearchHelper_3.get643()) {
+                    if (ArmorSearchHelper4.get1900(pos, livingEntity, minecraftClient.player.getBoundingBox(), 6.0, true, (BlockPos) null, (BlockPos) null) >= SearchHelper_3.get643()) {
                         do2367("You are at risk of getting blown up by an end crystal!");
                     }
                 });

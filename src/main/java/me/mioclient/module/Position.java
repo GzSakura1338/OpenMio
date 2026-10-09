@@ -30,7 +30,7 @@ public class Position extends me.mioclient.ModuleList {
 
     public Position() {
         super("Position", "coordinates");
-        this.setting = add(new NumberSetting("SafeRange", Float.valueOf(0.0f), Float.valueOf(0.0f), Float.valueOf(Float.intBitsToFloat(1120403456))).getNumberSetting3023("k"));
+        this.setting = add(new NumberSetting("SafeRange", Float.valueOf(0.0f), Float.valueOf(0.0f), Float.valueOf(100.0f)).getNumberSetting3023("k"));
         this.setting2 = add(new BooleanSetting("Nether", true));
         this.setting3 = add(new BooleanSetting("Fake", false));
         this.setting.getSetting2338("None", HoleSnapMode.MIN);
@@ -38,8 +38,8 @@ public class Position extends me.mioclient.ModuleList {
             BaritoneHelper_3.tooltipsSearchHelper4_2.do164(() -> {
                 boolean is380 = PingSpoofHelper.is380(50);
                 boolean is3802 = PingSpoofHelper.is380(50);
-                int longBitsToDouble = ((int) (((-minecraftClient.player.getX()) * Double.longBitsToDouble(4611686018427387904L)) + (Math.random() * minecraftClient.player.getX() * Double.longBitsToDouble(4616189618054758400L)))) + 13;
-                int longBitsToDouble2 = ((int) (((-minecraftClient.player.getZ()) * Double.longBitsToDouble(4611686018427387904L)) + ((Math.random() * minecraftClient.player.getZ()) * Double.longBitsToDouble(4616189618054758400L)))) - 37;
+                int longBitsToDouble = ((int) (((-minecraftClient.player.getX()) * 2.0) + (Math.random() * minecraftClient.player.getX() * 4.0))) + 13;
+                int longBitsToDouble2 = ((int) (((-minecraftClient.player.getZ()) * 2.0) + ((Math.random() * minecraftClient.player.getZ()) * 4.0))) - 37;
                 if (is380) {
                     longBitsToDouble = -longBitsToDouble;
                 }
@@ -52,7 +52,7 @@ public class Position extends me.mioclient.ModuleList {
         do3019(new ModuleListSearchHelper4_2(this, new CryptoHelper(() -> {
             if (!is1469()) {
                 if (this.setting.getValue().floatValue() > 0.0f) {
-                    if (!minecraftClient.player.getPos().isInRange(Vec3d.ZERO, this.setting.getValue().floatValue() * Float.intBitsToFloat(1148846080))) {
+                    if (!minecraftClient.player.getPos().isInRange(Vec3d.ZERO, this.setting.getValue().floatValue() * 1000.0f)) {
                     }
                 }
                 boolean contains = minecraftClient.world.getRegistryKey().getValue().getPath().contains("nether");
@@ -67,7 +67,7 @@ public class Position extends me.mioclient.ModuleList {
                     pos = pos.add(this.positionData.get476(), 0.0d, this.positionData.get1222());
                 }
                 BlockPos ofFloored = BlockPos.ofFloored((net.minecraft.util.math.Position) pos);
-                BlockPos ofFloored2 = contains ? BlockPos.ofFloored(pos.multiply(Double.longBitsToDouble(4620693217682128896L), Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4620693217682128896L))) : BlockPos.ofFloored(pos.multiply(Double.longBitsToDouble(4593671619917905920L), Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4593671619917905920L)));
+                BlockPos ofFloored2 = contains ? BlockPos.ofFloored(pos.multiply(8.0, 1.0, 8.0)) : BlockPos.ofFloored(pos.multiply(0.125, 1.0, 0.125));
                 String string2921 = new ArgumentTypeHelper().getArgumentTypeHelper2919(String.valueOf(Formatting.WHITE)).getString2921("XYZ: \u0001");
                 String string29212 = new ArgumentTypeHelper().getArgumentTypeHelper2906(ofFloored.getZ()).getArgumentTypeHelper2906(ofFloored.getY()).getArgumentTypeHelper2906(ofFloored.getX()).getString2921("\u0001, \u0001, \u0001.");
                 String string29213 = new ArgumentTypeHelper().getArgumentTypeHelper2906(ofFloored2.getZ()).getArgumentTypeHelper2906(ofFloored2.getY()).getArgumentTypeHelper2906(ofFloored2.getX()).getString2921(" (\u0001, \u0001, \u0001.)");

@@ -93,7 +93,7 @@ public class ScaffoldHelper implements SearchHelper_4 {
             return;
         }
         minecraftClient.player.resetLastAttackedTicks();
-        this.num = (long) (Math.random() * Double.longBitsToDouble(4643985272004935680L));
+        this.num = (long) (Math.random() * 300.0);
     }
 
     public boolean is1118() {

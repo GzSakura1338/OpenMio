@@ -24,7 +24,7 @@ public class PresetSearchHelper419_2 extends PresetSearchHelper419 {
     @Override // me.mioclient.PresetSearchHelper419, me.mioclient.SearchHelper4_19, me.mioclient.PresetHelper_5
     public void do19(DrawContext drawContext, MatrixStack matrixStack, double d, double d2) {
         if (is960()) {
-            CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + 1, this.presetEnumSettingHelper.getY() + this.num + Float.intBitsToFloat(1056964608), (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - 1, ((this.presetEnumSettingHelper.getY() + this.num) + get93()) - Float.intBitsToFloat(1056964608), getUI1744().color.getValue());
+            CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + 1, this.presetEnumSettingHelper.getY() + this.num + 0.5f, (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - 1, ((this.presetEnumSettingHelper.getY() + this.num) + get93()) - 0.5f, getUI1744().color.getValue());
         }
         super.do19(drawContext, matrixStack, d, d2);
     }

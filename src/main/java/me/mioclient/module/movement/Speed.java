@@ -161,7 +161,7 @@ public class Speed extends Module {
 
     @Listen
     public void onMove(MoveEvent_2 moveEvent_2) {
-        if (moveEvent_2.getKeyPearlMode1472() == KeyPearlMode.Post && minecraftClient.player.isOnGround() && moveEvent_2.get990() > Double.longBitsToDouble(4603579539098121011L)) {
+        if (moveEvent_2.getKeyPearlMode1472() == KeyPearlMode.Post && minecraftClient.player.isOnGround() && moveEvent_2.get990() > 0.6) {
             this.flag = true;
         }
     }
@@ -184,8 +184,8 @@ public class Speed extends Module {
     @Listen
     public void do598(ExplosionVelocityEvent explosionVelocityEvent) {
         Vec3d vec3d = new Vec3d(explosionVelocityEvent.get515(), explosionVelocityEvent.get692(), explosionVelocityEvent.get516());
-        double d = ArmorSearchHelper4.get1900(vec3d, minecraftClient.player, minecraftClient.player.getBoundingBox(), Double.longBitsToDouble(4618441417868443648L), true, (BlockPos) null, (BlockPos) null);
-        if (HoleSnapSearchHelper4_3.is2181() && BaritoneHelper_3.holeSnapSearchHelper4_4.getStopwatch2615().is419(500L) && this.boost.getValue().booleanValue() && Math.sqrt(minecraftClient.player.squaredDistanceTo(vec3d)) <= Double.longBitsToDouble(4618441417868443648L) && d >= Double.longBitsToDouble(4616189618054758400L)) {
+        double d = ArmorSearchHelper4.get1900(vec3d, minecraftClient.player, minecraftClient.player.getBoundingBox(), 6.0, true, (BlockPos) null, (BlockPos) null);
+        if (HoleSnapSearchHelper4_3.is2181() && BaritoneHelper_3.holeSnapSearchHelper4_4.getStopwatch2615().is419(500L) && this.boost.getValue().booleanValue() && Math.sqrt(minecraftClient.player.squaredDistanceTo(vec3d)) <= 6.0 && d >= 4.0) {
             this.stopwatch.reset();
         }
     }
@@ -206,7 +206,7 @@ public class Speed extends Module {
 
     public boolean is1815() {
         Box boundingBox = minecraftClient.player.getBoundingBox();
-        return minecraftClient.world.canCollide(minecraftClient.player, new Box((double) minecraftClient.player.getBlockPos().getX(), boundingBox.minY, (double) minecraftClient.player.getBlockPos().getZ(), ((double) minecraftClient.player.getBlockPos().getX()) + Double.longBitsToDouble(4607182418800017408L), boundingBox.maxY, ((double) minecraftClient.player.getBlockPos().getZ()) + Double.longBitsToDouble(4607182418800017408L)).contract(Double.longBitsToDouble(4502148214488346440L))) && this.pauseInBlocks.getValue().booleanValue();
+        return minecraftClient.world.canCollide(minecraftClient.player, new Box((double) minecraftClient.player.getBlockPos().getX(), boundingBox.minY, (double) minecraftClient.player.getBlockPos().getZ(), ((double) minecraftClient.player.getBlockPos().getX()) + 1.0, boundingBox.maxY, ((double) minecraftClient.player.getBlockPos().getZ()) + 1.0).contract(1e-07)) && this.pauseInBlocks.getValue().booleanValue();
     }
 
     public boolean is2824() {

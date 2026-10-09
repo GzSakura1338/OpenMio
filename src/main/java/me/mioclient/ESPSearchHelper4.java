@@ -20,7 +20,7 @@ public class ESPSearchHelper4 implements SearchHelper_4 {
 
     public ESPSearchHelper4(ItemEntity itemEntity) {
         float tickDelta = minecraftClient.getRenderTickCounter().getTickDelta(true);
-        this.box = Box.of(itemEntity.getLerpedPos(tickDelta), Double.longBitsToDouble(4617315517961601024L), Double.longBitsToDouble(4617315517961601024L), Double.longBitsToDouble(4617315517961601024L));
+        this.box = Box.of(itemEntity.getLerpedPos(tickDelta), 5.0, 5.0, 5.0);
         this.box2 = SearchHelper.getBox233((Entity) itemEntity, tickDelta);
         is1749(itemEntity);
     }
@@ -43,7 +43,7 @@ public class ESPSearchHelper4 implements SearchHelper_4 {
             return Integer.valueOf(itemEntity.getStack().getCount() + (num == null ? 0 : num.intValue()));
         });
         this.val = Math.max(FontsSearchHelper4.fontsSearchHelper4.get1316(getString1752(string, this.map.get(string).intValue())), this.val);
-        if (new Vec3d(itemEntity.getX() - itemEntity.prevX, itemEntity.getY() - itemEntity.prevY, itemEntity.getZ() - itemEntity.prevZ).lengthSquared() >= Double.longBitsToDouble(4547007122018943789L)) {
+        if (new Vec3d(itemEntity.getX() - itemEntity.prevX, itemEntity.getY() - itemEntity.prevY, itemEntity.getZ() - itemEntity.prevZ).lengthSquared() >= 0.0001) {
             return true;
         }
         this.box2 = this.box2.union(SearchHelper.getBox233((Entity) itemEntity, tickDelta));

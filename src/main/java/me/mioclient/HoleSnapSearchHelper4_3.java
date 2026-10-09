@@ -13,8 +13,8 @@ import net.minecraft.util.shape.VoxelShape;
 /* compiled from: 0.java */
 /* loaded from: mio-yarn.jar:me/mioclient/HoleSnapSearchHelper4_3.class */
 public class HoleSnapSearchHelper4_3 implements SearchHelper_4 {
-    public static float val = Float.intBitsToFloat(1049827580);
-    public static float val2 = val * Float.intBitsToFloat(1045220557);
+    public static float val = 0.2872999906539917f;
+    public static float val2 = val * 0.20000000298023224f;
 
     public static double[] getDoubleArray2507(MoveEvent moveEvent, double d) {
         if (!is2181()) {
@@ -38,9 +38,9 @@ public class HoleSnapSearchHelper4_3 implements SearchHelper_4 {
             }
             f3 = 0.0f;
             if (f2 > 0.0f) {
-                f2 = Float.intBitsToFloat(1065353216);
+                f2 = 1.0f;
             } else if (f2 < 0.0f) {
-                f2 = Float.intBitsToFloat(-1082130432);
+                f2 = -1.0f;
             }
         }
         return new double[]{(f2 * d * (-Math.sin(Math.toRadians(f4)))) + (f3 * d * Math.cos(Math.toRadians(f4))), ((f2 * d) * Math.cos(Math.toRadians(f4))) - ((f3 * d) * (-Math.sin(Math.toRadians(f4))))};
@@ -50,7 +50,7 @@ public class HoleSnapSearchHelper4_3 implements SearchHelper_4 {
         if (d2 >= d) {
             return d;
         }
-        return Math.min(d2 + ((d - d2) * MathHelper.clamp((System.currentTimeMillis() - j) / (d3 * Double.longBitsToDouble(4652007308841189376L)), 0.0d, Double.longBitsToDouble(4607182418800017408L))), d);
+        return Math.min(d2 + ((d - d2) * MathHelper.clamp((System.currentTimeMillis() - j) / (d3 * 1000.0), 0.0d, 1.0)), d);
     }
 
     public static boolean is2510(PlayerEntity playerEntity) {
@@ -71,11 +71,11 @@ public class HoleSnapSearchHelper4_3 implements SearchHelper_4 {
     public static double get2512(boolean z, double d) {
         double d2 = d;
         if (minecraftClient.player.hasStatusEffect(StatusEffects.SPEED)) {
-            d2 *= Double.longBitsToDouble(4607182418800017408L) + (Double.longBitsToDouble(4596373779694328218L) * (minecraftClient.player.getStatusEffect(StatusEffects.SPEED).getAmplifier() + 1));
+            d2 *= 1.0 + (0.2 * (minecraftClient.player.getStatusEffect(StatusEffects.SPEED).getAmplifier() + 1));
         }
         if (z) {
             if (minecraftClient.player.hasStatusEffect(StatusEffects.SLOWNESS)) {
-                d2 /= Double.longBitsToDouble(4607182418800017408L) + (Double.longBitsToDouble(4596373779694328218L) * (minecraftClient.player.getStatusEffect(StatusEffects.SLOWNESS).getAmplifier() + 1));
+                d2 /= 1.0 + (0.2 * (minecraftClient.player.getStatusEffect(StatusEffects.SLOWNESS).getAmplifier() + 1));
             }
         }
         return d2;
@@ -84,7 +84,7 @@ public class HoleSnapSearchHelper4_3 implements SearchHelper_4 {
     public static double get2513() {
         double d = 0.0d;
         if (minecraftClient.player.hasStatusEffect(StatusEffects.JUMP_BOOST)) {
-            d = 0.0d + ((minecraftClient.player.getStatusEffect(StatusEffects.JUMP_BOOST).getAmplifier() + 1) * Double.longBitsToDouble(4591870180066957722L));
+            d = 0.0d + ((minecraftClient.player.getStatusEffect(StatusEffects.JUMP_BOOST).getAmplifier() + 1) * 0.1);
         }
         return d;
     }
@@ -93,8 +93,8 @@ public class HoleSnapSearchHelper4_3 implements SearchHelper_4 {
         if (!(minecraftClient.player.isOnGround() && minecraftClient.player.horizontalCollision)) {
             return 0.0d;
         }
-        double longBitsToDouble = Double.longBitsToDouble(-4616189618054758400L);
-        Box expand = minecraftClient.player.getBoundingBox().offset(0.0d, Double.longBitsToDouble(4587366580439587226L), 0.0d).expand(Double.longBitsToDouble(4587366580439587226L));
+        double longBitsToDouble = -1.0;
+        Box expand = minecraftClient.player.getBoundingBox().offset(0.0d, 0.05, 0.0d).expand(0.05);
         Iterator it = minecraftClient.world.getCollisions(minecraftClient.player, expand.withMaxY(expand.maxY + d)).iterator();
         while (it.hasNext()) {
             for (Box box : ((VoxelShape) it.next()).getBoundingBoxes()) {
@@ -113,7 +113,7 @@ public class HoleSnapSearchHelper4_3 implements SearchHelper_4 {
     public static boolean is2515(PlayerEntity playerEntity, Vec3d vec3d) {
         Vec3d velocity = playerEntity.getVelocity();
         if (is2510(playerEntity)) {
-            return playerEntity.getPos().add(velocity.getX() * Double.longBitsToDouble(4666723172467343360L), 0.0d, velocity.getZ() * Double.longBitsToDouble(4666723172467343360L)).squaredDistanceTo(vec3d) < playerEntity.getPos().add(velocity.getX() * Double.longBitsToDouble(-4556648864387432448L), 0.0d, velocity.getZ() * Double.longBitsToDouble(-4556648864387432448L)).squaredDistanceTo(vec3d);
+            return playerEntity.getPos().add(velocity.getX() * 10000.0, 0.0d, velocity.getZ() * 10000.0).squaredDistanceTo(vec3d) < playerEntity.getPos().add(velocity.getX() * -10000.0, 0.0d, velocity.getZ() * -10000.0).squaredDistanceTo(vec3d);
         }
         return false;
     }
@@ -124,14 +124,14 @@ public class HoleSnapSearchHelper4_3 implements SearchHelper_4 {
 
     public static float get2517() {
         if (minecraftClient.player.isFallFlying()) {
-            double[] doubleArray2508 = getDoubleArray2508(minecraftClient.player.getYaw(), minecraftClient.player.input, Double.longBitsToDouble(4607182418800017408L));
+            double[] doubleArray2508 = getDoubleArray2508(minecraftClient.player.getYaw(), minecraftClient.player.input, 1.0);
             return (float) (Math.toDegrees(Math.atan2(doubleArray2508[1], doubleArray2508[0])) - FreecamHelper.num2);
         }
         float yaw = minecraftClient.player.getYaw();
         Input input = minecraftClient.player.input;
         boolean z = input.pressingForward != input.pressingBack;
         if (input.pressingBack) {
-            yaw += Float.intBitsToFloat(1127481344);
+            yaw += 180.0f;
         }
         if (input.pressingRight && !z) {
             yaw += FreecamHelper.num2 * (input.pressingBack ? -1 : 1);

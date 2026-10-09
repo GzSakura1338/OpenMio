@@ -27,13 +27,13 @@ public class ModuleListSearchHelper4_2 extends ModuleListSearchHelper4 {
         float f = get2954(get93());
         for (CryptoHelper cryptoHelper : this.list) {
             matrixStack.push();
-            float clamp = (float) MathHelper.clamp(Double.longBitsToDouble(4607182418800017408L) - Math.pow(Float.intBitsToFloat(1065353216) - cryptoHelper.get2601(), Double.longBitsToDouble(4616189618054758400L)), 0.0d, Double.longBitsToDouble(4607182418800017408L));
+            float clamp = (float) MathHelper.clamp(1.0 - Math.pow(1.0f - cryptoHelper.get2601(), 4.0), 0.0d, 1.0);
             Color color489 = getColor489(f, cryptoHelper);
             float f2 = cryptoHelper.hUDHelper_2.get172();
-            matrixStack.translate(get2953(f2) - ((f2 * (Float.intBitsToFloat(1065353216) - clamp)) * get2955()), f, 0.0f);
+            matrixStack.translate(get2953(f2) - ((f2 * (1.0f - clamp)) * get2955()), f, 0.0f);
             cryptoHelper.do2600(drawContext, 0.0f, 0.0f, color489);
             if (clamp != 0.0f) {
-                f += ((get93() * clamp) + Float.intBitsToFloat(1065353216)) * get2956();
+                f += ((get93() * clamp) + 1.0f) * get2956();
             }
             matrixStack.pop();
         }
@@ -46,16 +46,16 @@ public class ModuleListSearchHelper4_2 extends ModuleListSearchHelper4 {
         for (CryptoHelper cryptoHelper : this.list) {
             cryptoHelper.do466();
             if (cryptoHelper.get2601() != 0.0f) {
-                float clamp = (float) MathHelper.clamp(Double.longBitsToDouble(4607182418800017408L) - Math.pow(Float.intBitsToFloat(1065353216) - cryptoHelper.get2601(), Double.longBitsToDouble(4616189618054758400L)), 0.0d, Double.longBitsToDouble(4607182418800017408L));
+                float clamp = (float) MathHelper.clamp(1.0 - Math.pow(1.0f - cryptoHelper.get2601(), 4.0), 0.0d, 1.0);
                 float f3 = FontsSearchHelper4.fontsSearchHelper4.get1316(cryptoHelper.getText1879().getString());
-                f += (get93() * clamp) + Float.intBitsToFloat(1065353216);
+                f += (get93() * clamp) + 1.0f;
                 if (f3 > f2) {
                     f2 = f3;
                 }
             }
         }
         if (!flag && f2 == 0.0f) {
-            f2 = Float.intBitsToFloat(1112014848);
+            f2 = 50.0f;
             f = get93();
         }
         return new float[]{f2, f};

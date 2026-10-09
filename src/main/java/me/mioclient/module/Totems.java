@@ -34,14 +34,14 @@ public class Totems extends me.mioclient.ModuleList {
             String valueOf = String.valueOf(itemStack.getCount());
             drawContext.draw();
             drawContext.getMatrices().push();
-            drawContext.getMatrices().translate(0.0f, 0.0f, Float.intBitsToFloat(1140457472));
-            FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, valueOf, Float.intBitsToFloat(1099431936) - FontsSearchHelper4.fontsSearchHelper4.get1316(valueOf), Float.intBitsToFloat(1091567616), this.setting.getValue().booleanValue() ? Color.white : getColor3018(Float.intBitsToFloat(1091567616)));
+            drawContext.getMatrices().translate(0.0f, 0.0f, 500.0f);
+            FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, valueOf, 17.0f - FontsSearchHelper4.fontsSearchHelper4.get1316(valueOf), 9.0f, this.setting.getValue().booleanValue() ? Color.white : getColor3018(9.0f));
             drawContext.getMatrices().pop();
         }
     }
 
     @Override // me.mioclient.ModuleList
     public float[] getFloatArray365() {
-        return new float[]{Float.intBitsToFloat(1098907648), Float.intBitsToFloat(1098907648)};
+        return new float[]{16.0f, 16.0f};
     }
 }

@@ -139,7 +139,7 @@ public class Shader extends Module {
         super("Shader", "Advanced ESP using shaders.", Category.RENDER, new String[0]);
         PhaseESPHelper.do1351(this);
         this.objectArrayList = new ObjectArrayList<>();
-        this.val = Float.intBitsToFloat(1065353216);
+        this.val = 1.0f;
         this.radius.do2329("DecoratorRadius");
         this.alpha.do2329("DecoratorAlpha");
         this.fill2.do2329("HandsFill");
@@ -198,17 +198,17 @@ public class Shader extends Module {
             float width = entity.getWidth();
             if (distanceTo <= width && entity != minecraftClient.player) {
                 float f = (float) (distanceTo / width);
-                float intValue = norender.clusterAlpha.getValue().intValue() / Float.intBitsToFloat(1132396544);
-                return intValue + (f * (Float.intBitsToFloat(1065353216) - intValue));
+                float intValue = norender.clusterAlpha.getValue().intValue() / 255.0f;
+                return intValue + (f * (1.0f - intValue));
             }
         }
-        return Float.intBitsToFloat(1065353216);
+        return 1.0f;
     }
 
     public Color getColor3112(Color color) {
         float f = this.val;
         if (ShaderSearchHelper4.flag2) {
-            f = Float.intBitsToFloat(1065353216);
+            f = 1.0f;
         }
         return MixinMessageIndicatorHelper_2.getColor816(color, (int) (f * color.getAlpha()));
     }

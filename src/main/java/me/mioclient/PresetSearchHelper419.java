@@ -27,7 +27,7 @@ public class PresetSearchHelper419 extends SearchHelper4_19 {
     public void do19(DrawContext drawContext, MatrixStack matrixStack, double d, double d2) {
         String[] split = this.supplier.get().split("\n");
         for (int i = 0; i < split.length; i++) {
-            FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, split[i], this.presetEnumSettingHelper.getX() + getUI1744().modulePadding.getValue().intValue(), ((((this.presetEnumSettingHelper.getY() + this.num) + get1742()) + (i * FontsSearchHelper4.fontsSearchHelper4.get93())) + Float.intBitsToFloat(1065353216)) - ((this.flag && is92(d, d2)) ? Float.intBitsToFloat(1065353216) : 0.0f), Color.white);
+            FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, split[i], this.presetEnumSettingHelper.getX() + getUI1744().modulePadding.getValue().intValue(), ((((this.presetEnumSettingHelper.getY() + this.num) + get1742()) + (i * FontsSearchHelper4.fontsSearchHelper4.get93())) + 1.0f) - ((this.flag && is92(d, d2)) ? 1.0f : 0.0f), Color.white);
         }
         super.do19(drawContext, matrixStack, d, d2);
     }

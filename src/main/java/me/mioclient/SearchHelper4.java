@@ -9,7 +9,7 @@ public class SearchHelper4 implements SearchHelper_4 {
     public static boolean flag = FabricLoader.getInstance().isModLoaded("advanced-ui-scale");
 
     public static void do1478() {
-        do1479(Float.intBitsToFloat(1065353216));
+        do1479(1.0f);
     }
 
     public static void do1479(float f) {
@@ -24,11 +24,11 @@ public class SearchHelper4 implements SearchHelper_4 {
         if (is1482()) {
             return;
         }
-        if (val == Double.longBitsToDouble(-4616189618054758400L)) {
+        if (val == -1.0) {
             throw new UnsupportedOperationException();
         }
         minecraftClient.getWindow().setScaleFactor(val);
-        val = Double.longBitsToDouble(-4616189618054758400L);
+        val = -1.0;
     }
 
     public static float get1480() {
@@ -36,7 +36,7 @@ public class SearchHelper4 implements SearchHelper_4 {
     }
 
     public static double get1481(float f) {
-        return is1482() ? Double.longBitsToDouble(4607182418800017408L) : (get1480() / minecraftClient.getWindow().getScaleFactor()) * f;
+        return is1482() ? 1.0 : (get1480() / minecraftClient.getWindow().getScaleFactor()) * f;
     }
 
     public static boolean is1482() {

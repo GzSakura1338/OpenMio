@@ -13,7 +13,7 @@ public class HoleFillHelper_2 implements HoleFillHelper {
 
     @Override // me.mioclient.HoleFillHelper
     public boolean is464(HoleSnapData holeSnapData) {
-        if ((holeSnapData.getBox799().getLengthX() == Double.longBitsToDouble(4607182418800017408L) && holeSnapData.getBox799().getLengthZ() == Double.longBitsToDouble(4607182418800017408L)) || this.holeFill.doubles.getValue().booleanValue()) {
+        if ((holeSnapData.getBox799().getLengthX() == 1.0 && holeSnapData.getBox799().getLengthZ() == 1.0) || this.holeFill.doubles.getValue().booleanValue()) {
             if (minecraftClient.player.getEyePos().distanceTo(holeSnapData.getBlockPos12().toCenterPos()) <= this.holeFill.range.getValue().floatValue() && Math.abs(minecraftClient.player.getEyePos().y - holeSnapData.getBlockPos12().toCenterPos().y) <= this.holeFill.verticalRange.getValue().floatValue()) {
                 return true;
             }

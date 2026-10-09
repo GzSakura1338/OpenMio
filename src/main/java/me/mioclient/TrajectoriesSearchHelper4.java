@@ -72,9 +72,9 @@ public class TrajectoriesSearchHelper4 implements SearchHelper_4 {
         if ((item instanceof BowItem) && trajectories.bow.getValue().booleanValue()) {
             double lerp = MathHelper.lerp(d2, trajectories.get1475(), BowItem.getPullProgress(minecraftClient.player.getItemUseTime()));
             if (lerp <= 0.0d) {
-                lerp = Double.longBitsToDouble(4607182418800017408L);
+                lerp = 1.0;
             }
-            do1868(entity, 0.0d, lerp * Double.longBitsToDouble(4613937818241073152L), d, Double.longBitsToDouble(4587366580546961408L), Double.longBitsToDouble(4603579539098121011L), z, d2);
+            do1868(entity, 0.0d, lerp * 3.0, d, 0.05000000074505806, 0.6, z, d2);
             return true;
         }
         if ((item instanceof CrossbowItem) && trajectories.xBow.getValue().booleanValue()) {
@@ -82,10 +82,10 @@ public class TrajectoriesSearchHelper4 implements SearchHelper_4 {
                 return false;
             }
             if (chargedProjectilesComponent.contains(Items.FIREWORK_ROCKET)) {
-                do1868(entity, 0.0d, chargedProjectilesComponent.contains(Items.FIREWORK_ROCKET) ? 1.6f : 3.15f, d, 0.0d, Double.longBitsToDouble(4603579539098121011L), z, d2);
+                do1868(entity, 0.0d, chargedProjectilesComponent.contains(Items.FIREWORK_ROCKET) ? 1.6f : 3.15f, d, 0.0d, 0.6, z, d2);
                 return true;
             }
-            do1868(entity, 0.0d, chargedProjectilesComponent.contains(Items.FIREWORK_ROCKET) ? 1.6f : 3.15f, d, Double.longBitsToDouble(4587366580546961408L), Double.longBitsToDouble(4603579539098121011L), z, d2);
+            do1868(entity, 0.0d, chargedProjectilesComponent.contains(Items.FIREWORK_ROCKET) ? 1.6f : 3.15f, d, 0.05000000074505806, 0.6, z, d2);
             return true;
         }
         if ((item instanceof FishingRodItem) && trajectories.others.getValue().booleanValue()) {
@@ -93,21 +93,21 @@ public class TrajectoriesSearchHelper4 implements SearchHelper_4 {
             return true;
         }
         if ((item instanceof TridentItem) && trajectories.trident.getValue().booleanValue()) {
-            do1868(entity, 0.0d, Double.longBitsToDouble(4612811918334230528L), d, Double.longBitsToDouble(4587366580546961408L), Double.longBitsToDouble(4607092346807469998L), z, d2);
+            do1868(entity, 0.0d, 2.5, d, 0.05000000074505806, 0.99, z, d2);
             return true;
         }
         if ((((item instanceof SnowballItem) || (item instanceof EggItem)) && trajectories.others.getValue().booleanValue()) || ((item instanceof EnderPearlItem) && trajectories.pearls.getValue().booleanValue())) {
-            do1868(entity, 0.0d, Double.longBitsToDouble(4609434218613702656L), d, Double.longBitsToDouble(4584304132692975288L), Double.longBitsToDouble(4605380978949069210L), z, d2);
+            do1868(entity, 0.0d, 1.5, d, 0.03, 0.8, z, d2);
             return true;
         }
         if ((item instanceof ExperienceBottleItem) && trajectories.exp.getValue().booleanValue()) {
-            do1868(entity, Double.longBitsToDouble(-4597049319638433792L), Double.longBitsToDouble(4604480259023595110L), d, Double.longBitsToDouble(4589708452245819884L), Double.longBitsToDouble(4605380978949069210L), z, d2);
+            do1868(entity, -20.0, 0.7, d, 0.07, 0.8, z, d2);
             return true;
         }
         if (!(item instanceof ThrowablePotionItem) || !trajectories.others.getValue().booleanValue()) {
             return false;
         }
-        do1868(entity, Double.longBitsToDouble(-4597049319638433792L), FreecamHelper.val2, d, Double.longBitsToDouble(4587366580439587226L), Double.longBitsToDouble(4605380978949069210L), z, d2);
+        do1868(entity, -20.0, FreecamHelper.val2, d, 0.05, 0.8, z, d2);
         return true;
     }
 
@@ -127,9 +127,9 @@ public class TrajectoriesSearchHelper4 implements SearchHelper_4 {
             d8 = -Math.sin((lerp2 + d) * FreecamHelper.val4);
             d9 = Math.cos(lerp * FreecamHelper.val4) * Math.cos(lerp2 * FreecamHelper.val4);
         } else {
-            Vec3d oppositeRotationVector = entity.getOppositeRotationVector(Float.intBitsToFloat(1065353216));
+            Vec3d oppositeRotationVector = entity.getOppositeRotationVector(1.0f);
             Quaterniondc angleAxis = new Quaterniond().setAngleAxis(d3, oppositeRotationVector.x, oppositeRotationVector.y, oppositeRotationVector.z);
-            Vec3d rotationVec = entity.getRotationVec(Float.intBitsToFloat(1065353216));
+            Vec3d rotationVec = entity.getRotationVec(1.0f);
             Vector3d vector3d = new Vector3d(rotationVec.x, rotationVec.y, rotationVec.z);
             vector3d.rotate(angleAxis);
             d7 = vector3d.x;
@@ -146,7 +146,7 @@ public class TrajectoriesSearchHelper4 implements SearchHelper_4 {
             }
         }
         this.val = d4;
-        this.val2 = Double.longBitsToDouble(4607092346807469998L);
+        this.val2 = 0.99;
         this.val3 = d5;
     }
 
@@ -155,29 +155,29 @@ public class TrajectoriesSearchHelper4 implements SearchHelper_4 {
             return false;
         }
         if (entity instanceof ArrowEntity) {
-            do1870(entity, ((ArrowEntity) entity).getVelocity().length(), Double.longBitsToDouble(4587366580546961408L), Double.longBitsToDouble(4603579539098121011L), z, d);
+            do1870(entity, ((ArrowEntity) entity).getVelocity().length(), 0.05000000074505806, 0.6, z, d);
         } else if ((entity instanceof EnderPearlEntity) || (entity instanceof SnowballEntity) || (entity instanceof EggEntity)) {
-            do1870(entity, Double.longBitsToDouble(4609434218613702656L), Double.longBitsToDouble(4584304132692975288L), Double.longBitsToDouble(4605380978949069210L), z, d);
-            if (BlockPos.stream(entity.getBoundingBox().expand(0.0d, Double.longBitsToDouble(4611686018427387904L), 0.0d)).map((v0) -> {
+            do1870(entity, 1.5, 0.03, 0.8, z, d);
+            if (BlockPos.stream(entity.getBoundingBox().expand(0.0d, 2.0, 0.0d)).map((v0) -> {
                 return v0.toImmutable();
             }).anyMatch(blockPos -> {
                 return minecraftClient.world.getBlockState(blockPos).getBlock() == Blocks.BUBBLE_COLUMN;
             })) {
                 Vec3d velocity = entity.getVelocity();
-                Vec3d vec3d3 = new Vec3d(velocity.x, Double.longBitsToDouble(-4571373524106608640L), velocity.z);
-                do1871(entity, vec3d3, Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4609434218613702656L));
+                Vec3d vec3d3 = new Vec3d(velocity.x, -999.0, velocity.z);
+                do1871(entity, vec3d3, 1.0, 1.5);
             }
         } else if (entity instanceof TridentEntity) {
-            do1870(entity, Double.longBitsToDouble(4612811918334230528L), Double.longBitsToDouble(4587366580546961408L), Double.longBitsToDouble(4607092346807469998L), z, d);
+            do1870(entity, 2.5, 0.05000000074505806, 0.99, z, d);
         } else if (entity instanceof ExperienceBottleEntity) {
-            do1870(entity, Double.longBitsToDouble(4604480259023595110L), Double.longBitsToDouble(4589708452245819884L), Double.longBitsToDouble(4605380978949069210L), z, d);
+            do1870(entity, 0.7, 0.07, 0.8, z, d);
         } else if (entity instanceof ThrownEntity) {
-            do1870(entity, FreecamHelper.val2, Double.longBitsToDouble(4587366580439587226L), Double.longBitsToDouble(4605380978949069210L), z, d);
+            do1870(entity, FreecamHelper.val2, 0.05, 0.8, z, d);
         } else {
             if (!(entity instanceof WitherSkullEntity) && !(entity instanceof FireballEntity) && !(entity instanceof DragonFireballEntity)) {
                 return false;
             }
-            do1870(entity, Double.longBitsToDouble(4606732058837280358L), 0.0d, Double.longBitsToDouble(4605380978949069210L), z, d);
+            do1870(entity, 0.95, 0.0d, 0.8, z, d);
         }
         if (!entity.hasNoGravity()) {
             return true;
@@ -197,7 +197,7 @@ public class TrajectoriesSearchHelper4 implements SearchHelper_4 {
             vector3d.add(d5, d6, velocity.z);
         }
         this.val = d2;
-        this.val2 = Double.longBitsToDouble(4607092346807469998L);
+        this.val2 = 0.99;
         this.val3 = d3;
     }
 
@@ -209,17 +209,17 @@ public class TrajectoriesSearchHelper4 implements SearchHelper_4 {
     public void do1872(Entity entity, double d) {
         double lerp = MathHelper.lerp(d, entity.prevYaw, entity.getYaw());
         double lerp2 = MathHelper.lerp(d, entity.prevPitch, entity.getPitch());
-        double cos = Math.cos(((-lerp) * FreecamHelper.val4) - Double.longBitsToDouble(4614256656748904448L));
-        double sin = Math.sin(((-lerp) * FreecamHelper.val4) - Double.longBitsToDouble(4614256656748904448L));
+        double cos = Math.cos(((-lerp) * FreecamHelper.val4) - 3.1415927410125732);
+        double sin = Math.sin(((-lerp) * FreecamHelper.val4) - 3.1415927410125732);
         double d2 = -Math.cos((-lerp2) * FreecamHelper.val4);
         double sin2 = Math.sin((-lerp2) * FreecamHelper.val4);
         this.vector3d.set(MathHelper.lerp(d, entity.prevX, entity.getX()), MathHelper.lerp(d, entity.prevY, entity.getY()) + entity.getEyeHeight(entity.getPose()), MathHelper.lerp(d, entity.prevZ, entity.getZ()));
-        this.vector3d.sub(sin * Double.longBitsToDouble(4599075939470750515L), 0.0d, cos * Double.longBitsToDouble(4599075939470750515L));
-        this.vector3d2.set(-sin, MathHelper.clamp(-(sin2 / d2), Double.longBitsToDouble(-4606056518893174784L), Double.longBitsToDouble(4617315517961601024L)), -cos);
+        this.vector3d.sub(sin * 0.3, 0.0d, cos * 0.3);
+        this.vector3d2.set(-sin, MathHelper.clamp(-(sin2 / d2), -5.0, 5.0), -cos);
         double length = this.vector3d2.length();
-        this.vector3d2.mul((Double.longBitsToDouble(4603579539098121011L) / length) + FreecamHelper.val2, (Double.longBitsToDouble(4603579539098121011L) / length) + FreecamHelper.val2, (Double.longBitsToDouble(4603579539098121011L) / length) + FreecamHelper.val2);
-        this.val = Double.longBitsToDouble(4584304132692975288L);
-        this.val2 = Double.longBitsToDouble(4606461842859638129L);
+        this.vector3d2.mul((0.6 / length) + FreecamHelper.val2, (0.6 / length) + FreecamHelper.val2, (0.6 / length) + FreecamHelper.val2);
+        this.val = 0.03;
+        this.val2 = 0.92;
         this.val3 = 0.0d;
     }
 
@@ -231,7 +231,7 @@ public class TrajectoriesSearchHelper4 implements SearchHelper_4 {
         if (this.vector3d.y < minecraftClient.world.getBottomY()) {
             return hitResult;
         }
-        if (!minecraftClient.world.getChunkManager().isChunkLoaded((int) (this.vector3d.x / Double.longBitsToDouble(4625196817309499392L)), (int) (this.vector3d.z / Double.longBitsToDouble(4625196817309499392L)))) {
+        if (!minecraftClient.world.getChunkManager().isChunkLoaded((int) (this.vector3d.x / 16.0), (int) (this.vector3d.z / 16.0))) {
             return hitResult;
         }
         vec3d = new Vec3d(this.vector3d.x, this.vector3d.y, this.vector3d.z);
@@ -254,7 +254,7 @@ public class TrajectoriesSearchHelper4 implements SearchHelper_4 {
         if (raycast.getType() != HitResult.Type.MISS) {
             vec3d3 = raycast.getPos();
         }
-        net.minecraft.util.hit.HitResult entityCollision = ProjectileUtil.getEntityCollision(minecraftClient.world, minecraftClient.player, vec3d3, vec3d, new Box(this.vector3d.x, this.vector3d.y, this.vector3d.z, this.vector3d.x, this.vector3d.y, this.vector3d.z).stretch(minecraftClient.player.getVelocity()).expand(Double.longBitsToDouble(4607182418800017408L)), entity -> {
+        net.minecraft.util.hit.HitResult entityCollision = ProjectileUtil.getEntityCollision(minecraftClient.world, minecraftClient.player, vec3d3, vec3d, new Box(this.vector3d.x, this.vector3d.y, this.vector3d.z, this.vector3d.x, this.vector3d.y, this.vector3d.z).stretch(minecraftClient.player.getVelocity()).expand(1.0), entity -> {
             return !entity.isSpectator() && entity.isAlive() && entity.canHit();
         });
         if (entityCollision != null) {

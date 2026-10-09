@@ -60,7 +60,7 @@ public class Metrics extends me.mioclient.ModuleList {
             String string2921 = new ArgumentTypeHelper().getArgumentTypeHelper2919(this.setting2.getValue().booleanValue() ? "b/s" : "km/h").getString2921("Speed %s%.2f\u0001");
             Object[] objArr = new Object[2];
             objArr[0] = Formatting.WHITE;
-            objArr[1] = Double.valueOf(BaritoneHelper_3.feetPlaceSearchHelper4.get2635() / (this.setting2.getValue().booleanValue() ? Double.longBitsToDouble(4615288898129284301L) : Double.longBitsToDouble(4607182418800017408L)));
+            objArr[1] = Double.valueOf(BaritoneHelper_3.feetPlaceSearchHelper4.get2635() / (this.setting2.getValue().booleanValue() ? 3.6 : 1.0));
             return Text.literal(string2921.formatted(objArr).replace(",", "."));
         };
         Setting<Boolean> setting = this.setting;

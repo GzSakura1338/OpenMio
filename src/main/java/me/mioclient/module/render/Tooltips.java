@@ -117,7 +117,7 @@ public class Tooltips extends Module {
                         Color color = new Color(shulkerBoxBlock.getColor().getMapColor().color, false);
                         float[] fArr = new float[3];
                         color.getColorComponents(fArr);
-                        do587(new Color(fArr[0], fArr[1], fArr[2], Float.intBitsToFloat(1056964608)));
+                        do587(new Color(fArr[0], fArr[1], fArr[2], 0.5f));
                     }
                 }
             }

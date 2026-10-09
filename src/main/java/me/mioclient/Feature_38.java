@@ -19,9 +19,9 @@ public class Feature_38 extends Feature {
         }, () -> {
             return color2;
         }, () -> {
-            return Float.valueOf(Float.intBitsToFloat(1065353216));
+            return Float.valueOf(1.0f);
         }, () -> {
-            return Float.valueOf(Float.intBitsToFloat(1084227584));
+            return Float.valueOf(5.0f);
         }, () -> {
             return true;
         }, () -> {
@@ -32,10 +32,10 @@ public class Feature_38 extends Feature {
     @Override // me.mioclient.Feature
     public void exec(com.mojang.brigadier.builder.LiteralArgumentBuilder<CommandSource> literalArgumentBuilder) {
         literalArgumentBuilder.then(Feature.argument("pos", new ExamplesArgumentType()).then(Feature.literal("beam").executes(commandContext -> {
-            BaritoneHelper_3.antiPhaseSearchHelper4.do2133(this, Box.of((Vec3d) commandContext.getArgument("pos", Vec3d.class), Double.longBitsToDouble(4598175219545276416L), Double.longBitsToDouble(4598175219545276416L), Double.longBitsToDouble(4598175219545276416L)).withMaxY(minecraftClient.world.getTopY()).withMinY(minecraftClient.world.getBottomY()));
+            BaritoneHelper_3.antiPhaseSearchHelper4.do2133(this, Box.of((Vec3d) commandContext.getArgument("pos", Vec3d.class), 0.25, 0.25, 0.25).withMaxY(minecraftClient.world.getTopY()).withMinY(minecraftClient.world.getBottomY()));
             return 1;
         })).executes(commandContext2 -> {
-            BaritoneHelper_3.antiPhaseSearchHelper4.do2133(this, Box.of((Vec3d) commandContext2.getArgument("pos", Vec3d.class), Double.longBitsToDouble(4598175219545276416L), Double.longBitsToDouble(4598175219545276416L), Double.longBitsToDouble(4598175219545276416L)));
+            BaritoneHelper_3.antiPhaseSearchHelper4.do2133(this, Box.of((Vec3d) commandContext2.getArgument("pos", Vec3d.class), 0.25, 0.25, 0.25));
             return 1;
         }));
     }

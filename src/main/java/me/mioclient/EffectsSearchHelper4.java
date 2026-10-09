@@ -19,7 +19,7 @@ public class EffectsSearchHelper4 extends CryptoHelper implements SearchHelper_4
             if (statusEffect == null) {
                 return Text.empty();
             }
-            String string = StatusEffectUtil.getDurationText(statusEffect, Float.intBitsToFloat(1065353216), minecraftClient.world.getTickManager().getTickRate()).getString();
+            String string = StatusEffectUtil.getDurationText(statusEffect, 1.0f, minecraftClient.world.getTickManager().getTickRate()).getString();
             if (string.startsWith("0")) {
                 string = string.substring(1);
             }

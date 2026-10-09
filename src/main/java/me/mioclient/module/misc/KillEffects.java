@@ -206,7 +206,7 @@ public class KillEffects extends Module {
                             if (this.delay.is2327()) {
                                 runnable.run();
                             } else {
-                                BaritoneHelper_3.tooltipsSearchHelper4_2.do164(runnable, (int) (this.delay.getValue().floatValue() / Float.intBitsToFloat(1028443341)));
+                                BaritoneHelper_3.tooltipsSearchHelper4_2.do164(runnable, (int) (this.delay.getValue().floatValue() / 0.05000000074505806f));
                             }
                         }
                     }
@@ -308,7 +308,7 @@ public class KillEffects extends Module {
 
     public void do3007(Vec3d vec3d) {
         for (int i = 0; i < random2.nextInt(35) + 25; i++) {
-            Particle addParticle = minecraftClient.particleManager.addParticle((ParticleEffect) (random2.nextBoolean() ? ParticleTypes.ASH : ParticleTypes.WHITE_ASH), vec3d.getX() + (random2.nextGaussian() * Double.longBitsToDouble(4597454643433098445L)), (vec3d.getY() + Double.longBitsToDouble(4611686018427387904L)) - (random2.nextGaussian() * Double.longBitsToDouble(4602949035107339469L)), vec3d.getZ() + (random2.nextGaussian() * Double.longBitsToDouble(4597454643433098445L)), 0.0d, Double.longBitsToDouble(-4631501856787818086L) - (random2.nextGaussian() * Double.longBitsToDouble(4602678819172646912L)), 0.0d);
+            Particle addParticle = minecraftClient.particleManager.addParticle((ParticleEffect) (random2.nextBoolean() ? ParticleTypes.ASH : ParticleTypes.WHITE_ASH), vec3d.getX() + (random2.nextGaussian() * 0.22999999523162842), (vec3d.getY() + 2.0) - (random2.nextGaussian() * 0.5299999952316284), vec3d.getZ() + (random2.nextGaussian() * 0.22999999523162842), 0.0d, -0.1 - (random2.nextGaussian() * 0.5), 0.0d);
             if (addParticle != null) {
                 addParticle.maxAge += 15;
             }

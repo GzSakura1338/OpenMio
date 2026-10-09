@@ -29,7 +29,7 @@ public class ByteToMessageDecoderHelper_14 implements ByteToMessageDecoderHelper
         iRC.num++;
         Text empty = Text.empty();
         ((MutableText) empty).append("<");
-        Color color814 = iRC.gradient.getValue().booleanValue() ? MixinMessageIndicatorHelper_2.getColor814(MixinMessageIndicatorHelper_2.getColor811(), MixinMessageIndicatorHelper_2.getColor811().darker(), Double.longBitsToDouble(4658815484840378368L), 0.0d) : MixinMessageIndicatorHelper_2.getColor811();
+        Color color814 = iRC.gradient.getValue().booleanValue() ? MixinMessageIndicatorHelper_2.getColor814(MixinMessageIndicatorHelper_2.getColor811(), MixinMessageIndicatorHelper_2.getColor811().darker(), 3000.0, 0.0d) : MixinMessageIndicatorHelper_2.getColor811();
         ((MutableText) empty).append(Text.literal(this.string).styled(style -> {
             Objects.requireNonNull(color814);
             return MixinMessageIndicatorHelper.getStyle340(style, color814::hashCode);

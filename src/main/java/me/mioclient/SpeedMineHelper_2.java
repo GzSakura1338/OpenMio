@@ -63,7 +63,7 @@ public final class SpeedMineHelper_2 {
         if (!this.flag || this.blockPos == null) {
             return false;
         }
-        long max = Math.max((long) (Math.ceil((BaritoneHelper_3.holeSnapSearchHelper4_4.get1730() * Float.intBitsToFloat(1097859072)) / Float.intBitsToFloat(1112014848)) * Double.longBitsToDouble(4632233691727265792L)), 750L);
+        long max = Math.max((long) (Math.ceil((BaritoneHelper_3.holeSnapSearchHelper4_4.get1730() * 15.0f) / 50.0f) * 50.0), 750L);
         if (this.speedMine.tPSSync.getValue().booleanValue()) {
             max = (long) (((float) max) / BaritoneHelper_3.holeSnapSearchHelper4_4.get2621());
         }

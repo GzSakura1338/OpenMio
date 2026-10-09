@@ -142,15 +142,15 @@ public final class Fireworks extends Module {
     }
 
     public void do138(MoveEvent moveEvent) {
-        float intBitsToFloat = Float.intBitsToFloat(-1165815185);
+        float intBitsToFloat = -0.0010000000474974513f;
         if (minecraftClient.player.input.jumping) {
             intBitsToFloat = this.vertical.getValue().floatValue();
         } else if (minecraftClient.player.input.sneaking) {
             intBitsToFloat = -this.vertical.getValue().floatValue();
         }
         float floatValue = this.horizontal.getValue().floatValue();
-        if (floatValue > Double.longBitsToDouble(4609884578576439706L)) {
-            floatValue = MathHelper.clamp(Float.intBitsToFloat(1070386381) + (this.num2 * Float.intBitsToFloat(1036831949)), Float.intBitsToFloat(1070386381), floatValue);
+        if (floatValue > 1.6) {
+            floatValue = MathHelper.clamp(1.600000023841858f + (this.num2 * 0.10000000149011612f), 1.600000023841858f, floatValue);
             this.num2++;
         }
         double[] doubleArray2507 = HoleSnapSearchHelper4_3.getDoubleArray2507(moveEvent, floatValue);

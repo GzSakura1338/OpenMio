@@ -115,7 +115,7 @@ public class FeetPlace extends Delay {
         PlayerPositionLookS2CPacket packet904 = (channelRead0Event.getPacket904()) instanceof PlayerPositionLookS2CPacket ? (PlayerPositionLookS2CPacket) (channelRead0Event.getPacket904()) : null;
         if (packet904 instanceof PlayerPositionLookS2CPacket) {
             PlayerPositionLookS2CPacket playerPositionLookS2CPacket = packet904;
-            if (minecraftClient.player.getPos().squaredDistanceTo(new Vec3d(playerPositionLookS2CPacket.getX(), playerPositionLookS2CPacket.getY(), playerPositionLookS2CPacket.getZ())) > Double.longBitsToDouble(4621256167635550208L)) {
+            if (minecraftClient.player.getPos().squaredDistanceTo(new Vec3d(playerPositionLookS2CPacket.getX(), playerPositionLookS2CPacket.getY(), playerPositionLookS2CPacket.getZ())) > 9.0) {
                 this.val = playerPositionLookS2CPacket.getY();
                 BaritoneHelper_3.holeSnapSearchHelper4_4.getStopwatch2616().reset();
             }
@@ -137,7 +137,7 @@ public class FeetPlace extends Delay {
         while (it.hasNext()) {
             Position position = (Vec3d) it.next();
             BlockPos add = blockPos.add(BlockPos.ofFloored(position));
-            if (((Vec3d) position).y == Double.longBitsToDouble(-4616189618054758400L)) {
+            if (((Vec3d) position).y == -1.0) {
                 if (!BaritoneHelper_3.holeSnapSearchHelper4_5.is2723(add) || minecraftClient.player.isOnGround()) {
                     if (this.flatten.getValue().booleanValue() && !minecraftClient.player.isInSwimmingPose() && !add.equals(BaritoneHelper_3.stashFinderSearchHelper4.getBlockPos1551())) {
                     }
@@ -171,11 +171,11 @@ public class FeetPlace extends Delay {
     }
 
     public List<Vec3d> getList1401(int i) {
-        return Arrays.asList(new Vec3d(Double.longBitsToDouble(-4616189618054758400L), i, 0.0d), new Vec3d(Double.longBitsToDouble(4607182418800017408L), i, 0.0d), new Vec3d(0.0d, i, Double.longBitsToDouble(4607182418800017408L)), new Vec3d(0.0d, i, Double.longBitsToDouble(-4616189618054758400L)), new Vec3d(0.0d, i - 1, 0.0d));
+        return Arrays.asList(new Vec3d(-1.0, i, 0.0d), new Vec3d(1.0, i, 0.0d), new Vec3d(0.0d, i, 1.0), new Vec3d(0.0d, i, -1.0), new Vec3d(0.0d, i - 1, 0.0d));
     }
 
     public Comparator<BlockPos> getComparator1402() {
-        return BaritoneHelper_3.feetPlaceSearchHelper4.get2636() <= Double.longBitsToDouble(4621819117588971520L) ? Comparator.comparing(blockPos -> {
+        return BaritoneHelper_3.feetPlaceSearchHelper4.get2636() <= 10.0 ? Comparator.comparing(blockPos -> {
             return Float.valueOf(get1403(minecraftClient.player.getYaw(), blockPos));
         }) : Comparator.comparing(blockPos2 -> {
             return Float.valueOf(get1404(HoleSnapSearchHelper4_3.get2517(), blockPos2));
@@ -190,15 +190,15 @@ public class FeetPlace extends Delay {
     }
 
     public float get1404(float f, BlockPos blockPos) {
-        return MathHelper.angleBetween(f, SearchHelper4_8.getFloatArray2484(blockPos.toCenterPos())[0]) + (blockPos.getY() * Float.intBitsToFloat(981668463));
+        return MathHelper.angleBetween(f, SearchHelper4_8.getFloatArray2484(blockPos.toCenterPos())[0]) + (blockPos.getY() * 0.0010000000474974513f);
     }
 
     public void do1405() {
         if (is1469() || !this.center.getValue().booleanValue() || !minecraftClient.player.isOnGround() || BaritoneHelper_3.holeSnapSearchHelper4_5.is2728() || HoleSnapSearchHelper4.getList2010(minecraftClient.player).size() <= 4) {
             return;
         }
-        Vec3d vec3d = new Vec3d(Math.floor(minecraftClient.player.getX()) + Double.longBitsToDouble(4602678819172646912L), minecraftClient.player.getY(), Math.floor(minecraftClient.player.getZ()) + Double.longBitsToDouble(4602678819172646912L));
-        minecraftClient.player.setVelocity((vec3d.x - minecraftClient.player.getX()) * Double.longBitsToDouble(4602678819172646912L), minecraftClient.player.getVelocity().getY(), (vec3d.z - minecraftClient.player.getZ()) * Double.longBitsToDouble(4602678819172646912L));
+        Vec3d vec3d = new Vec3d(Math.floor(minecraftClient.player.getX()) + 0.5, minecraftClient.player.getY(), Math.floor(minecraftClient.player.getZ()) + 0.5);
+        minecraftClient.player.setVelocity((vec3d.x - minecraftClient.player.getX()) * 0.5, minecraftClient.player.getVelocity().getY(), (vec3d.z - minecraftClient.player.getZ()) * 0.5);
         minecraftClient.player.setPosition(vec3d);
     }
 

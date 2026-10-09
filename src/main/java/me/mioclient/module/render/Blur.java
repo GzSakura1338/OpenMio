@@ -36,7 +36,7 @@ public class Blur extends Module {
         }
         if ((minecraftClient.currentScreen == null || (minecraftClient.currentScreen instanceof ChatScreen)) ? false : true) {
             BlurFramebuffer.do2002(() -> {
-                drawContext.fill(0, 0, minecraftClient.getWindow().getScaledWidth(), minecraftClient.getWindow().getScaledHeight(), new Color(0.0f, 0.0f, 0.0f, Float.intBitsToFloat(1065353216)).hashCode());
+                drawContext.fill(0, 0, minecraftClient.getWindow().getScaledWidth(), minecraftClient.getWindow().getScaledHeight(), new Color(0.0f, 0.0f, 0.0f, 1.0f).hashCode());
             }, get992());
         }
     }

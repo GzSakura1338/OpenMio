@@ -68,7 +68,7 @@ public class RotationLock extends Module {
     }
 
     public float get751() {
-        return !this.custom.getValue().booleanValue() ? Math.round((minecraftClient.player.getYaw() + Float.intBitsToFloat(1065353216)) / FreecamHelper.num) * FreecamHelper.num : this.value2.getValue().floatValue();
+        return !this.custom.getValue().booleanValue() ? Math.round((minecraftClient.player.getYaw() + 1.0f) / FreecamHelper.num) * FreecamHelper.num : this.value2.getValue().floatValue();
     }
 
     public float get752() {

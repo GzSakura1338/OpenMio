@@ -18,7 +18,7 @@ public class HUDSearchHelper4 extends FontsSearchHelper4_2 implements SearchHelp
     public static final List<SearchHelper4_10> list = Collections.synchronizedList(new ArrayList());
     public static final Helper_22 helper_22 = new Helper_22();
     public final ZoomHelper_2 zoomHelper_2 = new ZoomHelper_2();
-    public final Progress progress = new Progress(Float.intBitsToFloat(1073741824), true);
+    public final Progress progress = new Progress(2.0f, true);
     public boolean flag;
     public float val;
     public float val2;
@@ -41,16 +41,16 @@ public class HUDSearchHelper4 extends FontsSearchHelper4_2 implements SearchHelp
 
     @Override // me.mioclient.FontsSearchHelper4_2
     public void render(DrawContext drawContext, int i, int i2, float f) {
-        RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), get189());
+        RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, get189());
         helper_22.do2424(false);
         this.val3 = i;
         this.val4 = i2;
-        float scaledWindowWidth = drawContext.getScaledWindowWidth() / Float.intBitsToFloat(1073741824);
-        float scaledWindowHeight = drawContext.getScaledWindowHeight() / Float.intBitsToFloat(1073741824);
-        Color color817 = MixinMessageIndicatorHelper_2.getColor817(Color.white, RenderSystem.getShaderColor()[3] * Float.intBitsToFloat(1053609165));
-        CrosshairHelper.do1707(drawContext.getMatrices(), scaledWindowWidth - Float.intBitsToFloat(1056964608), 0.0f, scaledWindowWidth + Float.intBitsToFloat(1056964608), scaledWindowHeight * Float.intBitsToFloat(1073741824), color817);
-        CrosshairHelper.do1707(drawContext.getMatrices(), 0.0f, scaledWindowHeight - Float.intBitsToFloat(1056964608), scaledWindowWidth - Float.intBitsToFloat(1056964608), scaledWindowHeight + Float.intBitsToFloat(1056964608), color817);
-        CrosshairHelper.do1707(drawContext.getMatrices(), scaledWindowWidth + Float.intBitsToFloat(1056964608), scaledWindowHeight - Float.intBitsToFloat(1056964608), scaledWindowWidth * Float.intBitsToFloat(1073741824), scaledWindowHeight + Float.intBitsToFloat(1056964608), color817);
+        float scaledWindowWidth = drawContext.getScaledWindowWidth() / 2.0f;
+        float scaledWindowHeight = drawContext.getScaledWindowHeight() / 2.0f;
+        Color color817 = MixinMessageIndicatorHelper_2.getColor817(Color.white, RenderSystem.getShaderColor()[3] * 0.4000000059604645f);
+        CrosshairHelper.do1707(drawContext.getMatrices(), scaledWindowWidth - 0.5f, 0.0f, scaledWindowWidth + 0.5f, scaledWindowHeight * 2.0f, color817);
+        CrosshairHelper.do1707(drawContext.getMatrices(), 0.0f, scaledWindowHeight - 0.5f, scaledWindowWidth - 0.5f, scaledWindowHeight + 0.5f, color817);
+        CrosshairHelper.do1707(drawContext.getMatrices(), scaledWindowWidth + 0.5f, scaledWindowHeight - 0.5f, scaledWindowWidth * 2.0f, scaledWindowHeight + 0.5f, color817);
         this.zoomHelper_2.do1010(drawContext, i, i2, f);
         do199(drawContext, i, i2);
         if (this.flag) {
@@ -59,23 +59,23 @@ public class HUDSearchHelper4 extends FontsSearchHelper4_2 implements SearchHelp
             object1989.do2946(Math.max(0.0f, Math.min(drawContext.getScaledWindowWidth() - floatArray2950[0], i - this.val)), true);
             object1989.do2948(Math.max(0.0f, Math.min(drawContext.getScaledWindowHeight() - floatArray2950[1], i2 - this.val2)), true);
             object1989.do2957();
-            if (Math.abs((object1989.get123() + (floatArray2950[0] / Float.intBitsToFloat(1073741824))) - scaledWindowWidth) <= Float.intBitsToFloat(1084227584)) {
-                float intBitsToFloat = scaledWindowWidth - (floatArray2950[0] / Float.intBitsToFloat(1073741824));
+            if (Math.abs((object1989.get123() + (floatArray2950[0] / 2.0f)) - scaledWindowWidth) <= 5.0f) {
+                float intBitsToFloat = scaledWindowWidth - (floatArray2950[0] / 2.0f);
                 object1989.do2946(intBitsToFloat, true);
-                do203(drawContext, intBitsToFloat - Double.longBitsToDouble(4602678819172646912L), true);
+                do203(drawContext, intBitsToFloat - 0.5, true);
                 do203(drawContext, intBitsToFloat + floatArray2950[0], true);
             }
-            if (Math.abs((object1989.get124() + (floatArray2950[1] / Float.intBitsToFloat(1073741824))) - scaledWindowHeight) <= Float.intBitsToFloat(1084227584)) {
-                float intBitsToFloat2 = scaledWindowHeight - (floatArray2950[1] / Float.intBitsToFloat(1073741824));
+            if (Math.abs((object1989.get124() + (floatArray2950[1] / 2.0f)) - scaledWindowHeight) <= 5.0f) {
+                float intBitsToFloat2 = scaledWindowHeight - (floatArray2950[1] / 2.0f);
                 object1989.do2948(intBitsToFloat2, true);
-                do203(drawContext, intBitsToFloat2 - Double.longBitsToDouble(4602678819172646912L), false);
+                do203(drawContext, intBitsToFloat2 - 0.5, false);
                 do203(drawContext, intBitsToFloat2 + floatArray2950[1], false);
             }
         }
         float f2 = this.progress.get172();
         this.progress.do2139(helper_22.is2423());
-        if (helper_22.is2423() || f2 > Double.longBitsToDouble(4591870180066957722L)) {
-            FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, helper_22.getString2419(), helper_22.get123() + (Float.intBitsToFloat(1092616192) * (Float.intBitsToFloat(1065353216) - f2) * helper_22.get2421()), helper_22.get124(), MixinMessageIndicatorHelper_2.getColor816(Color.white, (int) (f2 * Float.intBitsToFloat(1132396544))));
+        if (helper_22.is2423() || f2 > 0.1) {
+            FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, helper_22.getString2419(), helper_22.get123() + (10.0f * (1.0f - f2) * helper_22.get2421()), helper_22.get124(), MixinMessageIndicatorHelper_2.getColor816(Color.white, (int) (f2 * 255.0f)));
         }
         super.render(drawContext, i, i2, f);
     }
@@ -125,7 +125,7 @@ public class HUDSearchHelper4 extends FontsSearchHelper4_2 implements SearchHelp
                 }
             }
             for (ModuleListMode moduleListMode : ModuleListMode.values()) {
-                if (moduleListMode.getData_32936().is1615(object1989.getData_32936().getData_31616(Float.intBitsToFloat(1084227584)))) {
+                if (moduleListMode.getData_32936().is1615(object1989.getData_32936().getData_31616(5.0f))) {
                     getSearchHelper4_10200(moduleListMode).getArrayList2819().addLast(object1989);
                     object1989.do2952(moduleListMode);
                     return true;
@@ -259,9 +259,9 @@ public class HUDSearchHelper4 extends FontsSearchHelper4_2 implements SearchHelp
     public void do203(DrawContext drawContext, double d, boolean z) {
         float f = (float) d;
         if (z) {
-            CrosshairHelper.do1707(drawContext.getMatrices(), f, 0.0f, f + Float.intBitsToFloat(1056964608), drawContext.getScaledWindowHeight(), Color.yellow);
+            CrosshairHelper.do1707(drawContext.getMatrices(), f, 0.0f, f + 0.5f, drawContext.getScaledWindowHeight(), Color.yellow);
         } else {
-            CrosshairHelper.do1707(drawContext.getMatrices(), 0.0f, f, drawContext.getScaledWindowWidth(), f + Float.intBitsToFloat(1056964608), Color.yellow);
+            CrosshairHelper.do1707(drawContext.getMatrices(), 0.0f, f, drawContext.getScaledWindowWidth(), f + 0.5f, Color.yellow);
         }
     }
 

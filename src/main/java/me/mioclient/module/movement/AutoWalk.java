@@ -49,7 +49,7 @@ public class AutoWalk extends Module {
 
     @Listen(get219= Helper_7.num4)
     public void do329(TickEvent_2 tickEvent_2) {
-        tickEvent_2.getInput806().movementForward = tickEvent_2.is808() ? tickEvent_2.get807() : Float.intBitsToFloat(1065353216);
+        tickEvent_2.getInput806().movementForward = tickEvent_2.is808() ? tickEvent_2.get807() : 1.0f;
         tickEvent_2.getInput806().pressingForward = true;
         if (this.autoJump.getValue().booleanValue()) {
             tickEvent_2.getInput806().jumping = true;

@@ -29,7 +29,7 @@ import net.minecraft.util.math.MathHelper;
 /* loaded from: mio-yarn.jar:me/mioclient/module/client/AntiCheat.class */
 public class AntiCheat extends KeybindModule {
     public static final Velocity velocity = (Velocity) BaritoneHelper_3.baritoneHelper_4.getModule117(Velocity.class);
-    public static final float val = (float) (((Math.pow(Double.longBitsToDouble(4596373779801702400L), Double.longBitsToDouble(4613937818241073152L)) * Double.longBitsToDouble(4620693217682128896L)) * Double.longBitsToDouble(4594572339843380019L)) - Double.longBitsToDouble(4562254508917369340L));
+    public static final float val = (float) (((Math.pow(0.20000000298023224, 3.0) * 8.0) * 0.15) - 0.001);
     public Setting<Boolean> f2b2t;
     public Setting<Float> yawStep;
     public Setting<Boolean> movementSync;
@@ -64,7 +64,7 @@ public class AntiCheat extends KeybindModule {
                     return;
                 }
             }
-            float intBitsToFloat = val * Float.intBitsToFloat(1073741824) * (this.flag ? -1 : 1);
+            float intBitsToFloat = val * 2.0f * (this.flag ? -1 : 1);
             this.flag = !this.flag;
             motionEvent.setPitch(MathHelper.clamp(motionEvent.get752() + intBitsToFloat, -FreecamHelper.num2, FreecamHelper.num2));
         }

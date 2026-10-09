@@ -159,7 +159,7 @@ public class ElytraFlyHelper_2 extends ElytraFlyHelper {
         if (!is605() && is606() && HoleSnapSearchHelper4.is955() && !this.elytraFly.is952()) {
             tickEvent_2.getInput806().jumping = true;
             tickEvent_2.getInput806().pressingForward = true;
-            tickEvent_2.getInput806().movementForward = tickEvent_2.is808() ? tickEvent_2.get807() : Float.intBitsToFloat(1065353216);
+            tickEvent_2.getInput806().movementForward = tickEvent_2.is808() ? tickEvent_2.get807() : 1.0f;
             minecraftClient.player.setSprinting(true);
         }
     }

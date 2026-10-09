@@ -30,12 +30,12 @@ public class SpeedHelper_5 extends SpeedHelper {
             for (BlockEntity blockEntity : SearchHelper4_7.getList2427()) {
                 if (blockEntity instanceof ShulkerBoxBlockEntity) {
                     ShulkerBoxBlockEntity shulkerBoxBlockEntity = (ShulkerBoxBlockEntity) blockEntity;
-                    if (this.box.expand(Double.longBitsToDouble(4602678819172646912L)).intersects(shulkerBoxBlockEntity.getBoundingBox(Blocks.SHULKER_BOX.getDefaultState()).offset(blockEntity.getPos())) && shulkerBoxBlockEntity.getAnimationStage() != ShulkerBoxBlockEntity.AnimationStage.CLOSED) {
+                    if (this.box.expand(0.5).intersects(shulkerBoxBlockEntity.getBoundingBox(Blocks.SHULKER_BOX.getDefaultState()).offset(blockEntity.getPos())) && shulkerBoxBlockEntity.getAnimationStage() != ShulkerBoxBlockEntity.AnimationStage.CLOSED) {
                         i += antiCheat.is238() ? 0 : 4;
                     }
                 }
             }
-            float intBitsToFloat = antiCheat.is238() ? 0.0f : Float.intBitsToFloat(1065353216);
+            float intBitsToFloat = antiCheat.is238() ? 0.0f : 1.0f;
             for (Entity entity : minecraftClient.world.getEntities()) {
                 if (!(entity instanceof Feature_14.OtherClientPlayerEntity) && entity != minecraftClient.player && entity.isPushable()) {
                     if (entity.getBoundingBox().intersects(this.box.expand(intBitsToFloat))) {
@@ -49,7 +49,7 @@ public class SpeedHelper_5 extends SpeedHelper {
             if (i == 0) {
                 return;
             }
-            moveEvent.do690(moveEvent.getVec3d689().add(moveEvent.getVec3d689().normalize().withAxis(Direction.Axis.Y, 0.0d).multiply(Double.longBitsToDouble(4590429028186199163L) * i)));
+            moveEvent.do690(moveEvent.getVec3d689().add(moveEvent.getVec3d689().normalize().withAxis(Direction.Axis.Y, 0.0d).multiply(0.08 * i)));
         }
     }
 

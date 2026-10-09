@@ -43,15 +43,15 @@ public class ElytraFlyHelper_5 extends ElytraFlyHelper {
     @Override // me.mioclient.ElytraFlyHelper
     public void do28(MoveEvent moveEvent) {
         float floatValue = this.elytraFly.limit.getValue().floatValue();
-        if (floatValue > Float.intBitsToFloat(1128792064) && is2168()) {
-            floatValue = Float.intBitsToFloat(1128792064);
+        if (floatValue > 200.0f && is2168()) {
+            floatValue = 200.0f;
         }
         if (!this.elytraFly.limit.is2328() || is2168()) {
             Vec3d vec3d689 = moveEvent.getVec3d689();
-            if (Math.hypot(vec3d689.getX(), vec3d689.getZ()) * Double.longBitsToDouble(4626322717216342016L) * Double.longBitsToDouble(4615288898129284301L) <= floatValue) {
+            if (Math.hypot(vec3d689.getX(), vec3d689.getZ()) * 20.0 * 3.6 <= floatValue) {
                 return;
             }
-            Vec3d multiply = moveEvent.getVec3d689().normalize().multiply((floatValue / Double.longBitsToDouble(4615288898129284301L)) / Double.longBitsToDouble(4626322717216342016L));
+            Vec3d multiply = moveEvent.getVec3d689().normalize().multiply((floatValue / 3.6) / 20.0);
             moveEvent.do691(multiply.getX(), multiply.getZ());
         }
     }
@@ -87,7 +87,7 @@ public class ElytraFlyHelper_5 extends ElytraFlyHelper {
         }
         boolean z = minecraftClient.player.input.jumping;
         if (this.elytraFly.takeoff.getValue() == ElytraFly.ElytraFlyMode_2.STRICT) {
-            z = !minecraftClient.player.isOnGround() && minecraftClient.player.getVelocity().getY() < Double.longBitsToDouble(4591870180066957722L);
+            z = !minecraftClient.player.isOnGround() && minecraftClient.player.getVelocity().getY() < 0.1;
         } else {
             BaritoneHelper_3.holeSnapSearchHelper4_2.do2017(this.elytraFly);
         }
@@ -103,24 +103,24 @@ public class ElytraFlyHelper_5 extends ElytraFlyHelper {
                 do2169();
             }
             float radians = (float) Math.toRadians(minecraftClient.player.getYaw());
-            float floatValue = this.elytraFly.minBoost.getValue().floatValue() * Float.intBitsToFloat(1036831949);
+            float floatValue = this.elytraFly.minBoost.getValue().floatValue() * 0.10000000149011612f;
             if (this.elytraFly.minBoost.is2328() && antiCheat.is238()) {
-                floatValue = minecraftClient.player.getPitch() > 0.0f ? Float.intBitsToFloat(1020054733) : Float.intBitsToFloat(1016296636) + (this.elytraFly.verticalBoost.getValue().intValue() * Float.intBitsToFloat(981668463));
+                floatValue = minecraftClient.player.getPitch() > 0.0f ? 0.02500000037252903f : 0.017999999225139618f + (this.elytraFly.verticalBoost.getValue().intValue() * 0.0010000000474974513f);
                 if (minecraftClient.player.getPitch() <= 0.0f) {
-                    if (!BaritoneHelper_3.holeSnapSearchHelper4_4.getStopwatch2615().is418(Double.longBitsToDouble(4621819117588971520L), TimeUnit.SECONDS)) {
-                        floatValue = Float.intBitsToFloat(1006834287);
+                    if (!BaritoneHelper_3.holeSnapSearchHelper4_4.getStopwatch2615().is418(10.0, TimeUnit.SECONDS)) {
+                        floatValue = 0.00800000037997961f;
                     }
                 }
             }
             if (is2168()) {
-                floatValue = Float.intBitsToFloat(1077936128);
+                floatValue = 3.0f;
             }
             do2167();
             if (this.flag2) {
                 return;
             }
             if (this.elytraFly.inLava.getValue().booleanValue() && minecraftClient.player.isInLava()) {
-                floatValue = Float.intBitsToFloat(1045220557) * this.elytraFly.speed.getValue().floatValue();
+                floatValue = 0.20000000298023224f * this.elytraFly.speed.getValue().floatValue();
             }
             if (!this.elytraFly.factorize.getValue().booleanValue() ? !(minecraftClient.options.forwardKey.isPressed() || this.elytraFly.always.getValue().booleanValue()) : minecraftClient.player.getPitch() <= 0.0f) {
                 minecraftClient.player.addVelocity(MathHelper.sin(radians) * (-floatValue), 0.0d, MathHelper.cos(radians) * floatValue);
@@ -167,9 +167,9 @@ public class ElytraFlyHelper_5 extends ElytraFlyHelper {
             this.flag = false;
         }
         if (this.flag) {
-            this.val += Float.intBitsToFloat(1082130432);
+            this.val += 4.0f;
         } else {
-            this.val -= Float.intBitsToFloat(1082130432);
+            this.val -= 4.0f;
         }
         this.val = MathHelper.clamp(this.val, -floatValue, Math.max(floatValue, minecraftClient.player.getPitch()));
     }

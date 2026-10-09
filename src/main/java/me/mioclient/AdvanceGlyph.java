@@ -89,15 +89,15 @@ public class AdvanceGlyph implements Glyph {
     }
 
     public int get2763(MatrixStack matrixStack, String str, double d, double d2, int i) {
-        return get2766(matrixStack, str, ((float) d) - (get2772(str) / Float.intBitsToFloat(1073741824)), (float) d2, i, false);
+        return get2766(matrixStack, str, ((float) d) - (get2772(str) / 2.0f), (float) d2, i, false);
     }
 
     public int get2764(MatrixStack matrixStack, String str, double d, double d2, int i) {
-        return get2766(matrixStack, str, ((float) d) - (get2772(str) / Float.intBitsToFloat(1073741824)), (float) d2, i, true);
+        return get2766(matrixStack, str, ((float) d) - (get2772(str) / 2.0f), (float) d2, i, true);
     }
 
     public int get2765(MatrixStack matrixStack, OrderedText orderedText, float f, float f2, int i, boolean z) {
-        return z ? Math.max(new MatrixStackCharacterVisitor(matrixStack, i, Float.intBitsToFloat(1048576000), this.fontHelper).get859(orderedText, f + FontsSearchHelper4.get1698(), f2 + FontsSearchHelper4.get1698()), new MatrixStackCharacterVisitor(matrixStack, i, Float.intBitsToFloat(1065353216), this.fontHelper).get859(orderedText, f, f2)) : new MatrixStackCharacterVisitor(matrixStack, i, Float.intBitsToFloat(1065353216), this.fontHelper).get859(orderedText, f, f2);
+        return z ? Math.max(new MatrixStackCharacterVisitor(matrixStack, i, 0.25f, this.fontHelper).get859(orderedText, f + FontsSearchHelper4.get1698(), f2 + FontsSearchHelper4.get1698()), new MatrixStackCharacterVisitor(matrixStack, i, 1.0f, this.fontHelper).get859(orderedText, f, f2)) : new MatrixStackCharacterVisitor(matrixStack, i, 1.0f, this.fontHelper).get859(orderedText, f, f2);
     }
 
     public int get2766(MatrixStack matrixStack, String str, float f, float f2, int i, boolean z) {
@@ -114,20 +114,20 @@ public class AdvanceGlyph implements Glyph {
         if (z) {
             i = ((i & 16579836) >> 2) | (i & (-16777216));
         }
-        this.val = f * Float.intBitsToFloat(1073741824);
-        this.val2 = f2 * Float.intBitsToFloat(1073741824);
+        this.val = f * 2.0f;
+        this.val2 = f2 * 2.0f;
         do2768(matrixStack, str, z, i);
-        return (int) (this.val / Float.intBitsToFloat(1082130432));
+        return (int) (this.val / 4.0f);
     }
 
     public void do2768(MatrixStack matrixStack, String str, boolean z, int i) {
-        float intBitsToFloat = ((i >> 24) & 255) / Float.intBitsToFloat(1132396544);
-        float intBitsToFloat2 = ((i >> 16) & 255) / Float.intBitsToFloat(1132396544);
-        float intBitsToFloat3 = ((i >> 8) & 255) / Float.intBitsToFloat(1132396544);
-        float intBitsToFloat4 = (i & 255) / Float.intBitsToFloat(1132396544);
+        float intBitsToFloat = ((i >> 24) & 255) / 255.0f;
+        float intBitsToFloat2 = ((i >> 16) & 255) / 255.0f;
+        float intBitsToFloat3 = ((i >> 8) & 255) / 255.0f;
+        float intBitsToFloat4 = (i & 255) / 255.0f;
         matrixStack.push();
         matrixStack.translate(FontsSearchHelper4.get1699(), FontsSearchHelper4.get1697(), 0.0f);
-        matrixStack.scale(Float.intBitsToFloat(1056964608), Float.intBitsToFloat(1056964608), Float.intBitsToFloat(1056964608));
+        matrixStack.scale(0.5f, 0.5f, 0.5f);
         if (!trajectoriesVertexConsumer.is1662()) {
             trajectoriesVertexConsumer.getBufferBuilder2595(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_TEXTURE_COLOR);
         }
@@ -147,13 +147,13 @@ public class AdvanceGlyph implements Glyph {
                         indexOf += 16;
                     }
                     int i3 = intArr[indexOf];
-                    intBitsToFloat2 = ((i3 >> 16) & 255) / Float.intBitsToFloat(1132396544);
-                    intBitsToFloat3 = ((i3 >> 8) & 255) / Float.intBitsToFloat(1132396544);
-                    intBitsToFloat4 = (i3 & 255) / Float.intBitsToFloat(1132396544);
+                    intBitsToFloat2 = ((i3 >> 16) & 255) / 255.0f;
+                    intBitsToFloat3 = ((i3 >> 8) & 255) / 255.0f;
+                    intBitsToFloat4 = (i3 & 255) / 255.0f;
                 } else {
-                    intBitsToFloat2 = ((i >> 16) & 255) / Float.intBitsToFloat(1132396544);
-                    intBitsToFloat3 = ((i >> 8) & 255) / Float.intBitsToFloat(1132396544);
-                    intBitsToFloat4 = (i & 255) / Float.intBitsToFloat(1132396544);
+                    intBitsToFloat2 = ((i >> 16) & 255) / 255.0f;
+                    intBitsToFloat3 = ((i >> 8) & 255) / 255.0f;
+                    intBitsToFloat4 = (i & 255) / 255.0f;
                 }
                 i2++;
             }
@@ -183,7 +183,7 @@ public class AdvanceGlyph implements Glyph {
         int i2 = 0;
         while (i2 < length) {
             if (str.charAt(i2) != 167 || i2 + 1 >= length) {
-                i += (int) (getFontHelper2770().get1783(str.charAt(i2)) - Float.intBitsToFloat(1090519040));
+                i += (int) (getFontHelper2770().get1783(str.charAt(i2)) - 8.0f);
             } else {
                 i2++;
             }
@@ -193,7 +193,7 @@ public class AdvanceGlyph implements Glyph {
     }
 
     public float get2773(char c) {
-        return (getFontHelper2770().get1783(c) - Float.intBitsToFloat(1090519040)) / Float.intBitsToFloat(1073741824);
+        return (getFontHelper2770().get1783(c) - 8.0f) / 2.0f;
     }
 
     public void do1597() {

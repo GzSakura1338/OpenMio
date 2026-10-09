@@ -104,7 +104,7 @@ public class AntiPhase extends Module {
         if (!playerEntity.isAlive() || minecraftClient.player == playerEntity || playerEntity.isSwimming() || BaritoneHelper_3.searchHelper4_14.is520(playerEntity) || HoleSnapSearchHelper4.getSet2011((LivingEntity) playerEntity).size() != 1 || is267(HoleSnapSearchHelper4.getBlockPos2008((LivingEntity) playerEntity)) || !HoleSnapSearchHelper4.is2013((LivingEntity) playerEntity)) {
             return false;
         }
-        return (!this.noCrawl.getValue().booleanValue() || playerEntity.getBoundingBox().getLengthY() > Double.longBitsToDouble(4607182418800017408L)) && playerEntity.distanceTo(minecraftClient.player) <= this.range.getValue().floatValue();
+        return (!this.noCrawl.getValue().booleanValue() || playerEntity.getBoundingBox().getLengthY() > 1.0) && playerEntity.distanceTo(minecraftClient.player) <= this.range.getValue().floatValue();
     }
 
     public boolean is267(BlockPos blockPos) {

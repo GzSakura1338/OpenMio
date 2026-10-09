@@ -12,7 +12,7 @@ public class FramebufferHelper_2 {
     public static void init() {
         byteBufferSearchHelper4 = new ByteBufferSearchHelper4(ByteBufferSearchHelper4.Mode_2.Triangles, ByteBufferSearchHelper4.Mode.Vec2);
         byteBufferSearchHelper4.do1651();
-        byteBufferSearchHelper4.do1657(byteBufferSearchHelper4.getByteBufferSearchHelper41653(Double.longBitsToDouble(-4616189618054758400L), Double.longBitsToDouble(-4616189618054758400L)).get1655(), byteBufferSearchHelper4.getByteBufferSearchHelper41653(Double.longBitsToDouble(-4616189618054758400L), Double.longBitsToDouble(4607182418800017408L)).get1655(), byteBufferSearchHelper4.getByteBufferSearchHelper41653(Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4607182418800017408L)).get1655(), byteBufferSearchHelper4.getByteBufferSearchHelper41653(Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(-4616189618054758400L)).get1655());
+        byteBufferSearchHelper4.do1657(byteBufferSearchHelper4.getByteBufferSearchHelper41653(-1.0, -1.0).get1655(), byteBufferSearchHelper4.getByteBufferSearchHelper41653(-1.0, 1.0).get1655(), byteBufferSearchHelper4.getByteBufferSearchHelper41653(1.0, 1.0).get1655(), byteBufferSearchHelper4.getByteBufferSearchHelper41653(1.0, -1.0).get1655());
         byteBufferSearchHelper4.do1659();
     }
 

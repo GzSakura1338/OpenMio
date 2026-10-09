@@ -53,11 +53,11 @@ public class ArmorSearchHelper4 implements SearchHelper_4 {
     }
 
     public static float get1895(Vec3d vec3d, LivingEntity livingEntity) {
-        return get1899(vec3d, livingEntity, Double.longBitsToDouble(4618441417868443648L), true, (BlockPos) null);
+        return get1899(vec3d, livingEntity, 6.0, true, (BlockPos) null);
     }
 
     public static float get1896(Vec3d vec3d, LivingEntity livingEntity, Box box) {
-        return get1900(vec3d, livingEntity, box, Double.longBitsToDouble(4618441417868443648L), true, (BlockPos) null, (BlockPos) null);
+        return get1900(vec3d, livingEntity, box, 6.0, true, (BlockPos) null, (BlockPos) null);
     }
 
     public static float get1897(Vec3d vec3d, LivingEntity livingEntity) {
@@ -65,7 +65,7 @@ public class ArmorSearchHelper4 implements SearchHelper_4 {
     }
 
     public static float get1898(Vec3d vec3d, LivingEntity livingEntity, Box box) {
-        return get1900(vec3d, livingEntity, box, Double.longBitsToDouble(4617315517961601024L), true, (BlockPos) null, (BlockPos) null);
+        return get1900(vec3d, livingEntity, box, 5.0, true, (BlockPos) null, (BlockPos) null);
     }
 
     public static float get1899(Vec3d vec3d, LivingEntity livingEntity, double d, boolean z, BlockPos blockPos) {
@@ -77,13 +77,13 @@ public class ArmorSearchHelper4 implements SearchHelper_4 {
             return 0.0f;
         }
         Vec3d vec3d2 = new Vec3d(MathHelper.lerp(FreecamHelper.val2, box.minX, box.maxX), box.minY, MathHelper.lerp(FreecamHelper.val2, box.minZ, box.maxZ));
-        double longBitsToDouble = d * Double.longBitsToDouble(4611686018427387904L);
+        double longBitsToDouble = d * 2.0;
         double distanceTo = vec3d2.distanceTo(vec3d) / longBitsToDouble;
-        if (distanceTo > Double.longBitsToDouble(4607182418800017408L)) {
+        if (distanceTo > 1.0) {
             return 0.0f;
         }
-        double longBitsToDouble2 = (Double.longBitsToDouble(4607182418800017408L) - distanceTo) * get1902(vec3d, (Entity) livingEntity, box, blockPos, blockPos2, z);
-        return Math.max(get1903(livingEntity, get1904((float) (((((longBitsToDouble2 * longBitsToDouble2) + longBitsToDouble2) / Double.longBitsToDouble(4611686018427387904L)) * Double.longBitsToDouble(4619567317775286272L) * longBitsToDouble) + Double.longBitsToDouble(4607182418800017408L)))), 0.0f);
+        double longBitsToDouble2 = (1.0 - distanceTo) * get1902(vec3d, (Entity) livingEntity, box, blockPos, blockPos2, z);
+        return Math.max(get1903(livingEntity, get1904((float) (((((longBitsToDouble2 * longBitsToDouble2) + longBitsToDouble2) / 2.0) * 7.0 * longBitsToDouble) + 1.0))), 0.0f);
     }
 
     public static float get1901(Vec3d vec3d, Entity entity, BlockPos blockPos, boolean z) {
@@ -91,11 +91,11 @@ public class ArmorSearchHelper4 implements SearchHelper_4 {
     }
 
     public static float get1902(Vec3d vec3d, Entity entity, Box box, BlockPos blockPos, BlockPos blockPos2, boolean z) {
-        double longBitsToDouble = Double.longBitsToDouble(4607182418800017408L) / (((box.maxX - box.minX) * Double.longBitsToDouble(4611686018427387904L)) + Double.longBitsToDouble(4607182418800017408L));
-        double longBitsToDouble2 = Double.longBitsToDouble(4607182418800017408L) / (((box.maxY - box.minY) * Double.longBitsToDouble(4611686018427387904L)) + Double.longBitsToDouble(4607182418800017408L));
-        double longBitsToDouble3 = Double.longBitsToDouble(4607182418800017408L) / (((box.maxZ - box.minZ) * Double.longBitsToDouble(4611686018427387904L)) + Double.longBitsToDouble(4607182418800017408L));
-        double longBitsToDouble4 = (Double.longBitsToDouble(4607182418800017408L) - (Math.floor(Double.longBitsToDouble(4607182418800017408L) / longBitsToDouble) * longBitsToDouble)) / Double.longBitsToDouble(4611686018427387904L);
-        double longBitsToDouble5 = (Double.longBitsToDouble(4607182418800017408L) - (Math.floor(Double.longBitsToDouble(4607182418800017408L) / longBitsToDouble3) * longBitsToDouble3)) / Double.longBitsToDouble(4611686018427387904L);
+        double longBitsToDouble = 1.0 / (((box.maxX - box.minX) * 2.0) + 1.0);
+        double longBitsToDouble2 = 1.0 / (((box.maxY - box.minY) * 2.0) + 1.0);
+        double longBitsToDouble3 = 1.0 / (((box.maxZ - box.minZ) * 2.0) + 1.0);
+        double longBitsToDouble4 = (1.0 - (Math.floor(1.0 / longBitsToDouble) * longBitsToDouble)) / 2.0;
+        double longBitsToDouble5 = (1.0 - (Math.floor(1.0 / longBitsToDouble3) * longBitsToDouble3)) / 2.0;
         if (longBitsToDouble < 0.0d || longBitsToDouble2 < 0.0d || longBitsToDouble3 < 0.0d) {
             return 0.0f;
         }
@@ -104,17 +104,17 @@ public class ArmorSearchHelper4 implements SearchHelper_4 {
         double d = 0.0d;
         while (true) {
             double d2 = d;
-            if (d2 > Double.longBitsToDouble(4607182418800017408L)) {
+            if (d2 > 1.0) {
                 return (float) i / (float) i2;   // 爆炸暴露率(命中样本/总样本), 必须浮点除法; 反编译丢了转型导致整数除法→恒0→水晶伤害≈0→AutoCrystal不放置
             }
             double d3 = 0.0d;
             while (true) {
                 double d4 = d3;
-                if (d4 <= Double.longBitsToDouble(4607182418800017408L)) {
+                if (d4 <= 1.0) {
                     double d5 = 0.0d;
                     while (true) {
                         double d6 = d5;
-                        if (d6 <= Double.longBitsToDouble(4607182418800017408L)) {
+                        if (d6 <= 1.0) {
                             HoleSnapHelper_2.Inner inner1603 = new HoleSnapHelper_2.Inner(new Vec3d(MathHelper.lerp(d2, box.minX, box.maxX) + longBitsToDouble4, MathHelper.lerp(d4, box.minY, box.maxY), MathHelper.lerp(d6, box.minZ, box.maxZ) + longBitsToDouble5), vec3d).getInner1603(entity);
                             HoleSnapHelper[] holeSnapHelperArr = new HoleSnapHelper[3];
                             BlockPos[] blockPosArr = new BlockPos[2];
@@ -144,7 +144,7 @@ public class ArmorSearchHelper4 implements SearchHelper_4 {
     public static float get1903(LivingEntity livingEntity, float f) {
         float damageLeft = DamageUtil.getDamageLeft(livingEntity, f, minecraftClient.world.getDamageSources().explosion((Explosion) null), livingEntity.getArmor(), (float) livingEntity.getAttributeValue(EntityAttributes.GENERIC_ARMOR_TOUGHNESS));
         if (livingEntity.hasStatusEffect(StatusEffects.RESISTANCE)) {
-            damageLeft = (damageLeft * (25 - ((livingEntity.getStatusEffect(StatusEffects.RESISTANCE).getAmplifier() + 1) * 5))) / Float.intBitsToFloat(1103626240);
+            damageLeft = (damageLeft * (25 - ((livingEntity.getStatusEffect(StatusEffects.RESISTANCE).getAmplifier() + 1) * 5))) / 25.0f;
         }
         int i = 0;
         Iterator it = livingEntity.getArmorItems().iterator();
@@ -155,7 +155,7 @@ public class ArmorSearchHelper4 implements SearchHelper_4 {
         if (i > 20 || (autoCrystal.isToggled() && autoCrystal.assumeBestArmor.getValue().booleanValue())) {
             i = 20;
         }
-        float intBitsToFloat = damageLeft * (Float.intBitsToFloat(1065353216) - (i / Float.intBitsToFloat(1103626240)));
+        float intBitsToFloat = damageLeft * (1.0f - (i / 25.0f));
         if (intBitsToFloat < 0.0f) {
             return 0.0f;
         }
@@ -167,15 +167,15 @@ public class ArmorSearchHelper4 implements SearchHelper_4 {
             case 1:
                 return 0.0f;
             case 2:
-                return Math.min((f / Float.intBitsToFloat(1073741824)) + Float.intBitsToFloat(1065353216), f);
+                return Math.min((f / 2.0f) + 1.0f, f);
             case 3:
-                return (f * Float.intBitsToFloat(1077936128)) / Float.intBitsToFloat(1073741824);
+                return (f * 3.0f) / 2.0f;
             default:
                 return f;
         }
     }
 
     public static int get1905(ItemStack itemStack) {
-        return MathHelper.clamp(100 - ((int) Math.ceil((Float.intBitsToFloat(1065353216) - ((itemStack.getMaxDamage() - itemStack.getDamage()) / (float) itemStack.getMaxDamage())) * Float.intBitsToFloat(1120403456))), 1, 100);
+        return MathHelper.clamp(100 - ((int) Math.ceil((1.0f - ((itemStack.getMaxDamage() - itemStack.getDamage()) / (float) itemStack.getMaxDamage())) * 100.0f)), 1, 100);
     }
 }

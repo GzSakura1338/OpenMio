@@ -123,7 +123,7 @@ public class HoleSnap extends Module {
             return;
         }
         if (this.stopwatch2.is418(this.timeout.getValue().floatValue(), TimeUnit.SECONDS)) {
-            tickEvent_2.getInput806().movementForward = tickEvent_2.is808() ? tickEvent_2.get807() : Float.intBitsToFloat(1065353216);
+            tickEvent_2.getInput806().movementForward = tickEvent_2.is808() ? tickEvent_2.get807() : 1.0f;
             tickEvent_2.getInput806().pressingForward = true;
         }
     }
@@ -144,18 +144,18 @@ public class HoleSnap extends Module {
     }
 
     public HoleSnapData_2<Vec3d, Double> getHoleSnapData_2129() {
-        double longBitsToDouble = Double.longBitsToDouble(4666722622711529472L);
+        double longBitsToDouble = 9999.0;
         Vec3d vec3d = null;
         Vec3d pos = minecraftClient.player.getPos();
         for (HoleSnapData holeSnapData : BaritoneHelper_3.holeSnapSearchHelper4_5.getList2726()) {
             Vec3d center = holeSnapData.getBox799().getCenter();
-            Vec3d withAxis = center.withAxis(Direction.Axis.Y, MathHelper.clamp(pos.getY(), center.y, (center.y + this.height.getValue().floatValue()) - Double.longBitsToDouble(4602678819172646912L)));
+            Vec3d withAxis = center.withAxis(Direction.Axis.Y, MathHelper.clamp(pos.getY(), center.y, (center.y + this.height.getValue().floatValue()) - 0.5));
             if (holeSnapData.getBlockPos12().getY() < pos.getY() && !holeSnapData.is2171()) {
                 double distanceTo = pos.distanceTo(withAxis);
-                if (!this.directional.getValue().booleanValue() || HoleSnapSearchHelper4_3.is2516(withAxis) || distanceTo <= Double.longBitsToDouble(4587366580439587226L)) {
+                if (!this.directional.getValue().booleanValue() || HoleSnapSearchHelper4_3.is2516(withAxis) || distanceTo <= 0.05) {
                     if (distanceTo <= this.range.getValue().floatValue()) {
                         if (minecraftClient.world.isSpaceEmpty(holeSnapData.getBox799().withMaxY(minecraftClient.player.getBoundingBox().maxY)) && !is131(pos, withAxis)) {
-                            if (!is131(pos.add(0.0d, Double.longBitsToDouble(4610785298287165440L), 0.0d), withAxis.add(0.0d, Double.longBitsToDouble(4610785298287165440L), 0.0d)) && distanceTo < longBitsToDouble) {
+                            if (!is131(pos.add(0.0d, 1.7999999523162842, 0.0d), withAxis.add(0.0d, 1.7999999523162842, 0.0d)) && distanceTo < longBitsToDouble) {
                                 longBitsToDouble = distanceTo;
                                 vec3d = withAxis;
                             }

@@ -23,9 +23,9 @@ public class VelocityHelper_2 extends VelocityHelper {
             EntityVelocityUpdateS2CPacket entityVelocityUpdateS2CPacket = packet904;
             if (entityVelocityUpdateS2CPacket.getEntityId() == minecraftClient.player.getId()) {
                 DuckEntityVelocityUpdateS2CPacket duckEntityVelocityUpdateS2CPacket = (DuckEntityVelocityUpdateS2CPacket) entityVelocityUpdateS2CPacket;
-                duckEntityVelocityUpdateS2CPacket.setX((int) (entityVelocityUpdateS2CPacket.getVelocityX() * Double.longBitsToDouble(4665518107723300864L) * intValue * Float.intBitsToFloat(1008981770) * i));
-                duckEntityVelocityUpdateS2CPacket.setY((int) (entityVelocityUpdateS2CPacket.getVelocityY() * Double.longBitsToDouble(4665518107723300864L) * intValue2 * Float.intBitsToFloat(1008981770)));
-                duckEntityVelocityUpdateS2CPacket.setZ((int) (entityVelocityUpdateS2CPacket.getVelocityZ() * Double.longBitsToDouble(4665518107723300864L) * intValue * Float.intBitsToFloat(1008981770) * i));
+                duckEntityVelocityUpdateS2CPacket.setX((int) (entityVelocityUpdateS2CPacket.getVelocityX() * 8000.0 * intValue * 0.009999999776482582f * i));
+                duckEntityVelocityUpdateS2CPacket.setY((int) (entityVelocityUpdateS2CPacket.getVelocityY() * 8000.0 * intValue2 * 0.009999999776482582f));
+                duckEntityVelocityUpdateS2CPacket.setZ((int) (entityVelocityUpdateS2CPacket.getVelocityZ() * 8000.0 * intValue * 0.009999999776482582f * i));
                 if (intValue == 0 && intValue2 == 0) {
                     channelRead0Event.do1162();
                 }
@@ -39,9 +39,9 @@ public class VelocityHelper_2 extends VelocityHelper {
             int intValue = this.velocity.horizontal.getValue().intValue();
             int intValue2 = this.velocity.vertical.getValue().intValue();
             int i = this.velocity.inverse.getValue().booleanValue() ? -1 : 1;
-            explosionVelocityEvent.do768((int) (explosionVelocityEvent.get767() * intValue * Float.intBitsToFloat(1008981770) * i));
-            explosionVelocityEvent.do770((int) (explosionVelocityEvent.get769() * intValue2 * Float.intBitsToFloat(1008981770)));
-            explosionVelocityEvent.do772((int) (explosionVelocityEvent.get771() * intValue * Float.intBitsToFloat(1008981770) * i));
+            explosionVelocityEvent.do768((int) (explosionVelocityEvent.get767() * intValue * 0.009999999776482582f * i));
+            explosionVelocityEvent.do770((int) (explosionVelocityEvent.get769() * intValue2 * 0.009999999776482582f));
+            explosionVelocityEvent.do772((int) (explosionVelocityEvent.get771() * intValue * 0.009999999776482582f * i));
         }
     }
 }

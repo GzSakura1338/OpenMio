@@ -32,9 +32,9 @@ public class SettingFontsSearchHelper42 extends FontsSearchHelper4_2 {
         @Override // me.mioclient.PresetSearchHelper419, me.mioclient.SearchHelper4_19, me.mioclient.PresetHelper_5
         public void do19(DrawContext drawContext, MatrixStack matrixStack, double d, double d2) {
             if (SettingFontsSearchHelper42.this.setting.getValue().equals(this.searchIdentifier)) {
-                SearchHelper_2.searchHelper_2.do546(matrixStack, this.presetEnumSettingHelper.getX() + 1, this.presetEnumSettingHelper.getY() + this.num + Float.intBitsToFloat(1056964608), (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - 1, ((this.presetEnumSettingHelper.getY() + this.num) + get93()) - Float.intBitsToFloat(1056964608), getUI1744().color.getValue());
+                SearchHelper_2.searchHelper_2.do546(matrixStack, this.presetEnumSettingHelper.getX() + 1, this.presetEnumSettingHelper.getY() + this.num + 0.5f, (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - 1, ((this.presetEnumSettingHelper.getY() + this.num) + get93()) - 0.5f, getUI1744().color.getValue());
             } else {
-                SearchHelper_2.searchHelper_2.do546(matrixStack, this.presetEnumSettingHelper.getX() + 1, this.presetEnumSettingHelper.getY() + this.num + Float.intBitsToFloat(1056964608), (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - 1, ((this.presetEnumSettingHelper.getY() + this.num) + get93()) - Float.intBitsToFloat(1056964608), getUI1744().bgButton.getValue());
+                SearchHelper_2.searchHelper_2.do546(matrixStack, this.presetEnumSettingHelper.getX() + 1, this.presetEnumSettingHelper.getY() + this.num + 0.5f, (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - 1, ((this.presetEnumSettingHelper.getY() + this.num) + get93()) - 0.5f, getUI1744().bgButton.getValue());
             }
             super.do19(drawContext, matrixStack, d, d2);
         }
@@ -46,7 +46,7 @@ public class SettingFontsSearchHelper42 extends FontsSearchHelper4_2 {
                     SettingFontsSearchHelper42.this.setting.do2333(this.searchIdentifier);
                     SettingFontsSearchHelper42.this.do1714();
                 } else if (i == 1) {
-                    BaritoneHelper_3.searchHelper4_11.do2971(this.searchIdentifier, Float.intBitsToFloat(1065353216));
+                    BaritoneHelper_3.searchHelper4_11.do2971(this.searchIdentifier, 1.0f);
                 }
             }
         }

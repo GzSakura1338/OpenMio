@@ -39,7 +39,7 @@ public abstract class AutoMineSearchHelper4_2 implements SearchHelper_4, AutoMin
     }
 
     public boolean is2891(Entity entity) {
-        return minecraftClient.world.isSpaceEmpty(entity.getBoundingBox().stretch(0.0d, Double.longBitsToDouble(-4631501856787818086L), 0.0d));
+        return minecraftClient.world.isSpaceEmpty(entity.getBoundingBox().stretch(0.0d, -0.1, 0.0d));
     }
 
     public boolean is465() {

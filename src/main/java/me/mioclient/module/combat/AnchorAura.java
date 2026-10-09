@@ -89,7 +89,7 @@ public class AnchorAura extends Module {
         this.stopwatch = new Stopwatch();
         this.atomicReference = new AtomicReference<>();
         BaritoneHelper_3.antiPhaseSearchHelper4.register(new AntiPhaseSearchHelper4.Record(this, this.fill, this.outline, () -> {
-            return Float.valueOf(Float.intBitsToFloat(1065353216));
+            return Float.valueOf(1.0f);
         }, this.fadeTime, () -> {
             return false;
         }, this.fade, 450));
@@ -314,7 +314,7 @@ public class AnchorAura extends Module {
                                     }
                                 }
                             }
-                            d5 = d6 + Double.longBitsToDouble(4607182418800017408L);
+                            d5 = d6 + 1.0;
                         } else {
                             break;
                         }
@@ -322,9 +322,9 @@ public class AnchorAura extends Module {
                 } else {
                     break;
                 }
-                d3 = d4 + Double.longBitsToDouble(4607182418800017408L);
+                d3 = d4 + 1.0;
             }
-            d = d2 + Double.longBitsToDouble(4607182418800017408L);
+            d = d2 + 1.0;
         }
     }
 
@@ -332,7 +332,7 @@ public class AnchorAura extends Module {
         AutoCrystalData_2 autoCrystalData_2 = null;
         for (LivingEntity livingEntity : minecraftClient.world.getPlayers()) {
             if (!AutoCrystalData_2.is625((PlayerEntity) livingEntity, this.targetRange.getValue().floatValue())) {
-                double d = ArmorSearchHelper4.get1900(blockPos.toCenterPos(), livingEntity, ((PlayerEntity) livingEntity).getBoundingBox(), Double.longBitsToDouble(4617315517961601024L), true, is2876(blockPos) ? blockPos : null, (BlockPos) null);
+                double d = ArmorSearchHelper4.get1900(blockPos.toCenterPos(), livingEntity, ((PlayerEntity) livingEntity).getBoundingBox(), 5.0, true, is2876(blockPos) ? blockPos : null, (BlockPos) null);
                 if (this.minDamage.getValue().floatValue() <= d && d >= FreecamHelper.val2 && (autoCrystalData_2 == null || d > autoCrystalData_2.get14())) {
                     autoCrystalData_2 = new AutoCrystalData_2((PlayerEntity) livingEntity, d);
                 }
@@ -355,9 +355,9 @@ public class AnchorAura extends Module {
             return true;
         }
         boolean is2876 = is2876(blockPos);
-        double d = ArmorSearchHelper4.get1900(Vec3d.ofCenter((Vec3i) blockPos), minecraftClient.player, minecraftClient.player.getBoundingBox(), Double.longBitsToDouble(4617315517961601024L), true, is2876(blockPos) ? blockPos : null, (BlockPos) null);
+        double d = ArmorSearchHelper4.get1900(Vec3d.ofCenter((Vec3i) blockPos), minecraftClient.player, minecraftClient.player.getBoundingBox(), 5.0, true, is2876(blockPos) ? blockPos : null, (BlockPos) null);
         boolean z = autoCrystalData_2.get14() >= ((double) SearchHelper_3.get644(autoCrystalData_2.getPlayerEntity626()));
-        double d2 = ArmorSearchHelper4.get1900(Vec3d.ofCenter((Vec3i) blockPos), autoCrystalData_2.getPlayerEntity626(), autoCrystalData_2.getPlayerEntity626().getBoundingBox(), Double.longBitsToDouble(4617315517961601024L), true, is2876(blockPos) ? blockPos : null, (BlockPos) null);
+        double d2 = ArmorSearchHelper4.get1900(Vec3d.ofCenter((Vec3i) blockPos), autoCrystalData_2.getPlayerEntity626(), autoCrystalData_2.getPlayerEntity626().getBoundingBox(), 5.0, true, is2876(blockPos) ? blockPos : null, (BlockPos) null);
         boolean z2 = (!z && d >= ((double) this.maxSelfDamage.getValue().floatValue())) || (d >= ((double) SearchHelper_3.get643()) && this.antiSuicide.getValue().booleanValue());
         if (is2876 && !z2) {
             return false;

@@ -163,12 +163,12 @@ public class Trails extends Module {
         }
         BufferRenderer.drawWithGlobalProgram(begin.end());
         SearchHelper_2.searchHelper_2.do565();
-        GL32C.glLineWidth(Float.intBitsToFloat(1065353216));
+        GL32C.glLineWidth(1.0f);
     }
 
     public Color getColor3149(float[] fArr, Inner inner) {
-        Color hSBColor = this.rainbow.getValue().booleanValue() ? Color.getHSBColor((float) ((Math.ceil(inner.get2652() / (Double.longBitsToDouble(4626322717216342016L) * this.threshold.getValue().doubleValue())) % FreecamHelper.num3) / FreecamHelper.num3), fArr[1], fArr[2]) : this.color.getValue();
-        return (!this.fade.getValue().booleanValue() || System.currentTimeMillis() - inner.get2652() < get3150()) ? MixinMessageIndicatorHelper_2.getColor816(hSBColor, this.color.getValue().getAlpha()) : MixinMessageIndicatorHelper_2.getColor816(hSBColor, (int) MathHelper.clamp((Float.intBitsToFloat(1065353216) - (((float) ((System.currentTimeMillis() - inner.get2652()) - get3150())) / ((float) get3151()))) * this.color.getValue().getAlpha(), 0.0f, Float.intBitsToFloat(1132396544)));
+        Color hSBColor = this.rainbow.getValue().booleanValue() ? Color.getHSBColor((float) ((Math.ceil(inner.get2652() / (20.0 * this.threshold.getValue().doubleValue())) % FreecamHelper.num3) / FreecamHelper.num3), fArr[1], fArr[2]) : this.color.getValue();
+        return (!this.fade.getValue().booleanValue() || System.currentTimeMillis() - inner.get2652() < get3150()) ? MixinMessageIndicatorHelper_2.getColor816(hSBColor, this.color.getValue().getAlpha()) : MixinMessageIndicatorHelper_2.getColor816(hSBColor, (int) MathHelper.clamp((1.0f - (((float) ((System.currentTimeMillis() - inner.get2652()) - get3150())) / ((float) get3151()))) * this.color.getValue().getAlpha(), 0.0f, 255.0f));
     }
 
     public boolean is1763(Entity entity) {
@@ -176,10 +176,10 @@ public class Trails extends Module {
     }
 
     public long get3150() {
-        return (long) (this.fadeDelay.getValue().floatValue() * Float.intBitsToFloat(1148846080));
+        return (long) (this.fadeDelay.getValue().floatValue() * 1000.0f);
     }
 
     public long get3151() {
-        return (long) (this.fadeDuration.getValue().floatValue() * Float.intBitsToFloat(1148846080));
+        return (long) (this.fadeDuration.getValue().floatValue() * 1000.0f);
     }
 }

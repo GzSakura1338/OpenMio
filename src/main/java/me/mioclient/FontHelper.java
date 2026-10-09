@@ -84,8 +84,8 @@ public class FontHelper {
     }
 
     public void do1778(char[] cArr) {
-        double longBitsToDouble = Double.longBitsToDouble(-4616189618054758400L);
-        double longBitsToDouble2 = Double.longBitsToDouble(-4616189618054758400L);
+        double longBitsToDouble = -1.0;
+        double longBitsToDouble2 = -1.0;
         FontRenderContext fontRenderContext = new FontRenderContext(new AffineTransform(), this.flag, this.flag2);
         for (char c : cArr) {
             Rectangle2D stringBounds = this.font.getStringBounds(Character.toString(c), fontRenderContext);
@@ -96,8 +96,8 @@ public class FontHelper {
                 longBitsToDouble2 = stringBounds.getHeight();
             }
         }
-        double longBitsToDouble3 = longBitsToDouble + Double.longBitsToDouble(4611686018427387904L);
-        double longBitsToDouble4 = longBitsToDouble2 + Double.longBitsToDouble(4611686018427387904L);
+        double longBitsToDouble3 = longBitsToDouble + 2.0;
+        double longBitsToDouble4 = longBitsToDouble2 + 2.0;
         this.num = ((int) Math.ceil(Math.max(Math.ceil(Math.sqrt((longBitsToDouble3 * longBitsToDouble3) * cArr.length) / longBitsToDouble3), Math.ceil(Math.sqrt((longBitsToDouble4 * longBitsToDouble4) * cArr.length) / longBitsToDouble4)) * Math.max(longBitsToDouble3, longBitsToDouble4))) + 1;
         this.bufferedImage = new BufferedImage(this.num, this.num, 2);
         Graphics2D createGraphics = this.bufferedImage.createGraphics();
@@ -193,7 +193,7 @@ public class FontHelper {
         vertexConsumer.vertex(matrixStack.peek().getPositionMatrix(), f + f15, f2 + f16, FontsSearchHelper4.get1701()).color(f7, f8, f9, f10).texture(f11 + f13, f12 + f14);
         vertexConsumer.vertex(matrixStack.peek().getPositionMatrix(), f + f15, f2, FontsSearchHelper4.get1701()).color(f7, f8, f9, f10).texture(f11 + f13, f12);
         vertexConsumer.vertex(matrixStack.peek().getPositionMatrix(), f, f2, FontsSearchHelper4.get1701()).color(f7, f8, f9, f10).texture(f11, f12);
-        return f15 - Float.intBitsToFloat(1090519040);
+        return f15 - 8.0f;
     }
 
     public float get1783(char c) {

@@ -84,7 +84,7 @@ public class Feature_35 extends Feature {
             for (SpawnTimeHelper spawnTimeHelper : BaritoneHelper_3.nameTagsSearchHelper4.getList2307()) {
                 if (spawnTimeHelper.is796()) {
                     if (!spawnTimeHelper.getString793().equalsIgnoreCase(minecraftClient.player.getName().getString())) {
-                        if (((float) minecraftClient.player.getEyePos().distanceTo(spawnTimeHelper.getBlockPos386().toCenterPos())) < Float.intBitsToFloat(1176255488)) {
+                        if (((float) minecraftClient.player.getEyePos().distanceTo(spawnTimeHelper.getBlockPos386().toCenterPos())) < 9999.0f) {
                             return spawnTimeHelper.getBlockPos386();
                         }
                     }

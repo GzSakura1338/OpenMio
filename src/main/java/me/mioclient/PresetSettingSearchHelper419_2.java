@@ -60,7 +60,7 @@ public class PresetSettingSearchHelper419_2 extends SettingSearchHelper419<Strin
         if (this.flag) {
             FontsSearchHelper4_2.mode_5 = Mode_5.INPUT;
         }
-        CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + get1397(), this.presetEnumSettingHelper.getY() + this.num + Float.intBitsToFloat(1056964608), (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - 1, ((this.presetEnumSettingHelper.getY() + this.num) + get93()) - Float.intBitsToFloat(1056964608), getUI1744().color.getValue());
+        CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + get1397(), this.presetEnumSettingHelper.getY() + this.num + 0.5f, (this.presetEnumSettingHelper.getX() + this.presetEnumSettingHelper.get1635()) - 1, ((this.presetEnumSettingHelper.getY() + this.num) + get93()) - 0.5f, getUI1744().color.getValue());
         if (this.string != null) {
             this.num = MathHelper.clamp(this.num, 0, this.string.length());
         }

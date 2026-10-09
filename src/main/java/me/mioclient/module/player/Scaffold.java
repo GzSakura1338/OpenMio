@@ -93,7 +93,7 @@ public class Scaffold extends Module {
         this.stopwatch4 = new Stopwatch();
         this.stopwatch5 = new Stopwatch();
         this.num2 = -1;
-        this.val2 = Float.intBitsToFloat(-1082130432);
+        this.val2 = -1.0f;
         BaritoneHelper_3.antiPhaseSearchHelper4.register(new AntiPhaseSearchHelper4.Record(this, this.fill, this.outline, this.lineWidth, this.fadeTime, () -> {
             return false;
         }, this.fade, 450));
@@ -128,7 +128,7 @@ public class Scaffold extends Module {
         boolean z2;
         if (this.val2 > 0.0f) {
             do511(this.val2);
-            this.val2 = Float.intBitsToFloat(-1082130432);
+            this.val2 = -1.0f;
         }
         if (minecraftClient.player.isRiding()) {
             return;
@@ -178,7 +178,7 @@ public class Scaffold extends Module {
                             if (scaffoldData1460.getDirection1462() == Direction.DOWN) {
                                 add = vec3d843.withAxis(Direction.Axis.Y, this.scaffoldData_2.getBlockPos12().getY());
                             } else {
-                                add = vec3d843.add(0.0d, scaffoldData1460.getVoxelShape1463().isEmpty() ? FreecamHelper.val2 : scaffoldData1460.getVoxelShape1463().getBoundingBox().maxY - Double.longBitsToDouble(4576918229304087675L), 0.0d);
+                                add = vec3d843.add(0.0d, scaffoldData1460.getVoxelShape1463().isEmpty() ? FreecamHelper.val2 : scaffoldData1460.getVoxelShape1463().getBoundingBox().maxY - 0.01, 0.0d);
                             }
                             boolean is2625 = BaritoneHelper_3.holeSnapSearchHelper4_4.is2625();
                             AutoSignSearchHelper4.do2567(minecraftClient.player, ClientCommandC2SPacket.Mode.PRESS_SHIFT_KEY, 0);
@@ -225,7 +225,7 @@ public class Scaffold extends Module {
         if (this.safeWalk.getValue().booleanValue() && SearchHelper4_8.is724() && minecraftClient.player.isOnGround() && !minecraftClient.player.isRiding()) {
             Box offset = minecraftClient.player.getBoundingBox().offset(moveEvent.get515(), 0.0d, moveEvent.get516());
             boolean isSneaking = minecraftClient.player.isSneaking();
-            if (minecraftClient.world.isSpaceEmpty(offset.stretch(0.0d, Double.longBitsToDouble(-4616189618054758400L), 0.0d))) {
+            if (minecraftClient.world.isSpaceEmpty(offset.stretch(0.0d, -1.0, 0.0d))) {
                 if (!isSneaking) {
                     minecraftClient.player.setSneaking(true);
                 }
@@ -254,13 +254,13 @@ public class Scaffold extends Module {
                 if (SearchHelper4_8.is724()) {
                     if (minecraftClient.player.isOnGround()) {
                         this.val2 = get510();
-                        do511(Float.intBitsToFloat(1052539785));
+                        do511(0.36812999844551086f);
                         return;
                     }
                     return;
                 }
                 if (this.scaffoldData_2 != null) {
-                    minecraftClient.player.setVelocity(0.0d, Double.longBitsToDouble(4601237667055665185L), 0.0d);
+                    minecraftClient.player.setVelocity(0.0d, 0.41999998688698, 0.0d);
                 }
             }
         }
@@ -329,14 +329,14 @@ public class Scaffold extends Module {
 
     public float[] getFloatArray506(ScaffoldMode scaffoldMode) {
         if (scaffoldMode != ScaffoldMode.PRE) {
-            return SearchHelper4_8.getFloatArray2484(scaffoldMode.vec3d.add(0.0d, scaffoldMode.scaffoldData.getVoxelShape1463().isEmpty() ? FreecamHelper.val2 : scaffoldMode.scaffoldData.getVoxelShape1463().getBoundingBox().maxY - Double.longBitsToDouble(4576918229304087675L), 0.0d));
+            return SearchHelper4_8.getFloatArray2484(scaffoldMode.vec3d.add(0.0d, scaffoldMode.scaffoldData.getVoxelShape1463().isEmpty() ? FreecamHelper.val2 : scaffoldMode.scaffoldData.getVoxelShape1463().getBoundingBox().maxY - 0.01, 0.0d));
         }
         ScaffoldData scaffoldData1460 = ScaffoldData.getScaffoldData1460(this.scaffoldData_2, false);
-        float[] floatArray2484 = SearchHelper4_8.getFloatArray2484(scaffoldData1460.getVec3d843().add(0.0d, scaffoldData1460.getVoxelShape1463().isEmpty() ? FreecamHelper.val2 : scaffoldData1460.getVoxelShape1463().getBoundingBox().maxY - Double.longBitsToDouble(4576918229304087675L), 0.0d));
+        float[] floatArray2484 = SearchHelper4_8.getFloatArray2484(scaffoldData1460.getVec3d843().add(0.0d, scaffoldData1460.getVoxelShape1463().isEmpty() ? FreecamHelper.val2 : scaffoldData1460.getVoxelShape1463().getBoundingBox().maxY - 0.01, 0.0d));
         if (HoleSnapSearchHelper4_3.is2181()) {
-            double[] doubleArray2508 = HoleSnapSearchHelper4_3.getDoubleArray2508(minecraftClient.player.getYaw(), minecraftClient.player.input, Double.longBitsToDouble(4607182418800017408L));
-            float degrees = (float) (Math.toDegrees(Math.atan2(doubleArray2508[1], doubleArray2508[0])) - Double.longBitsToDouble(4643457506423603200L));
-            if (MathHelper.angleBetween(degrees, floatArray2484[0]) < Float.intBitsToFloat(1114636288)) {
+            double[] doubleArray2508 = HoleSnapSearchHelper4_3.getDoubleArray2508(minecraftClient.player.getYaw(), minecraftClient.player.input, 1.0);
+            float degrees = (float) (Math.toDegrees(Math.atan2(doubleArray2508[1], doubleArray2508[0])) - 270.0);
+            if (MathHelper.angleBetween(degrees, floatArray2484[0]) < 60.0f) {
                 floatArray2484[0] = degrees;
             }
         }
@@ -403,15 +403,15 @@ public class Scaffold extends Module {
         if (isOnGround) {
             arrayList.addAll(List.of(new Vec3d(d, f, d2), new Vec3d(d3, f, d2), new Vec3d(d, f, d4), new Vec3d(d3, f, d4)));
         }
-        double longBitsToDouble2 = Double.longBitsToDouble(-4571373524106608640L);
+        double longBitsToDouble2 = -999.0;
         for (Vec3d vec3d : arrayList) {
-            BlockHitResult blockHitResult2784 = HoleSnapSearchHelper4_6.getBlockHitResult2784(new HoleSnapHelper_2.Inner(vec3d, vec3d.add(0.0d, Double.longBitsToDouble(-4616189618054758400L), 0.0d)).getInner1603(minecraftClient.player.hasVehicle() ? minecraftClient.player.getVehicle() : minecraftClient.player).getHoleSnapHelper_21606());
+            BlockHitResult blockHitResult2784 = HoleSnapSearchHelper4_6.getBlockHitResult2784(new HoleSnapHelper_2.Inner(vec3d, vec3d.add(0.0d, -1.0, 0.0d)).getInner1603(minecraftClient.player.hasVehicle() ? minecraftClient.player.getVehicle() : minecraftClient.player).getHoleSnapHelper_21606());
             if (blockHitResult2784.getType() == HitResult.Type.MISS) {
                 y = vec3d.getY();
-                longBitsToDouble = Double.longBitsToDouble(4607182418800017408L);
+                longBitsToDouble = 1.0;
             } else {
                 y = blockHitResult2784.getPos().getY();
-                longBitsToDouble = Double.longBitsToDouble(4576918229175238656L);
+                longBitsToDouble = 0.009999999776482582;
             }
             longBitsToDouble2 = Math.max(longBitsToDouble2, y - longBitsToDouble);
         }

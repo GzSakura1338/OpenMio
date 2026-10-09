@@ -35,8 +35,8 @@ public class Map extends me.mioclient.ModuleList {
     public Setting<Color> setting4;
     public Setting<Color> setting5;
     public Setting<Color> setting6;
-    public static final float val2 = Float.intBitsToFloat(1090519040);
-    public static final float val = Float.intBitsToFloat(1098907648);
+    public static final float val2 = 8.0f;
+    public static final float val = 16.0f;
     public static final NewChunks newChunks = (NewChunks) BaritoneHelper_3.baritoneHelper_4.getModule117(NewChunks.class);
     public static final Identifier identifier = Identifier.of("mio", "textures/nav.png");
 
@@ -63,8 +63,8 @@ public class Map extends me.mioclient.ModuleList {
     public Map() {
         super("Map", "minimap");
         this.setting = add(new EnumSetting("Pointer", Mode.ARROW));
-        this.setting2 = add(new NumberSetting("Width", Float.valueOf(Float.intBitsToFloat(1117257728)), Float.valueOf(Float.intBitsToFloat(1112014848)), Float.valueOf(Float.intBitsToFloat(1140457472))));
-        this.setting3 = add(new NumberSetting("Height", Float.valueOf(Float.intBitsToFloat(1117257728)), Float.valueOf(Float.intBitsToFloat(1112014848)), Float.valueOf(Float.intBitsToFloat(1132068864))));
+        this.setting2 = add(new NumberSetting("Width", Float.valueOf(76.0f), Float.valueOf(50.0f), Float.valueOf(500.0f)));
+        this.setting3 = add(new NumberSetting("Height", Float.valueOf(76.0f), Float.valueOf(50.0f), Float.valueOf(250.0f)));
         this.setting4 = add(new ColorSetting("Pointer", Color.white));
         this.setting5 = add(new ColorSetting("Background", new Color(10, 10, 10, 50)));
         this.setting6 = add(new ColorSetting("Outline", new Color(10, 10, 10, 100)));
@@ -83,26 +83,26 @@ public class Map extends me.mioclient.ModuleList {
             return;
         }
         float f = RenderSystem.getShaderColor()[3];
-        RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216));
+        RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         CrosshairHelper.do1597();
-        RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), f);
-        SearchHelper_2.searchHelper_2.do546(drawContext.getMatrices(), Float.intBitsToFloat(-1082130432), Float.intBitsToFloat(-1082130432), this.setting2.getValue().floatValue(), this.setting3.getValue().floatValue(), this.setting5.getValue());
-        SearchHelper_2.searchHelper_2.do539(drawContext.getMatrices(), Float.intBitsToFloat(-1073741824), Float.intBitsToFloat(-1073741824), this.setting2.getValue().floatValue(), this.setting3.getValue().floatValue(), this.setting6.getValue());
-        float floatValue = this.setting2.getValue().floatValue() / Float.intBitsToFloat(1073741824);
-        float floatValue2 = this.setting3.getValue().floatValue() / Float.intBitsToFloat(1073741824);
+        RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, f);
+        SearchHelper_2.searchHelper_2.do546(drawContext.getMatrices(), -1.0f, -1.0f, this.setting2.getValue().floatValue(), this.setting3.getValue().floatValue(), this.setting5.getValue());
+        SearchHelper_2.searchHelper_2.do539(drawContext.getMatrices(), -2.0f, -2.0f, this.setting2.getValue().floatValue(), this.setting3.getValue().floatValue(), this.setting6.getValue());
+        float floatValue = this.setting2.getValue().floatValue() / 2.0f;
+        float floatValue2 = this.setting3.getValue().floatValue() / 2.0f;
         drawContext.getMatrices().push();
         drawContext.getMatrices().translate(floatValue, floatValue2, 0.0f);
         Iterator<BlockPos> it = newChunks.getList1504().iterator();
         while (it.hasNext()) {
             ChunkPos chunkPos = new ChunkPos(it.next());
             if (is2053(chunkPos)) {
-                do2054(drawContext, chunkPos, MixinMessageIndicatorHelper_2.getColor817(newChunks.fill5.getValue(), Float.intBitsToFloat(1053609165)));
+                do2054(drawContext, chunkPos, MixinMessageIndicatorHelper_2.getColor817(newChunks.fill5.getValue(), 0.4000000059604645f));
             }
         }
         for (NewChunksHelperSearchHelper4 newChunksHelperSearchHelper4 : newChunks.getList1503()) {
             if (is2053(newChunksHelperSearchHelper4.getChunkPos2467())) {
                 if (newChunksHelperSearchHelper4.getNewChunksHelperMode2468().getColorArray671(newChunks) != null) {
-                    Color color817 = MixinMessageIndicatorHelper_2.getColor817(newChunksHelperSearchHelper4.getNewChunksHelperMode2468().getColorArray671(newChunks)[0], Float.intBitsToFloat(1048576000));
+                    Color color817 = MixinMessageIndicatorHelper_2.getColor817(newChunksHelperSearchHelper4.getNewChunksHelperMode2468().getColorArray671(newChunks)[0], 0.25f);
                     do2054(drawContext, newChunksHelperSearchHelper4.getChunkPos2467(), color817);
                 }
             }
@@ -120,17 +120,17 @@ public class Map extends me.mioclient.ModuleList {
     }
 
     public boolean is2053(ChunkPos chunkPos) {
-        int ceil = (int) Math.ceil(Math.hypot(this.setting2.getValue().floatValue(), this.setting3.getValue().floatValue()) / Double.longBitsToDouble(4625196817309499392L));
+        int ceil = (int) Math.ceil(Math.hypot(this.setting2.getValue().floatValue(), this.setting3.getValue().floatValue()) / 16.0);
         return chunkPos.getSquaredDistance(minecraftClient.player.getChunkPos()) <= ceil * ceil;
     }
 
     public void do2054(DrawContext drawContext, ChunkPos chunkPos, Color color) {
         Vec3d pos = minecraftClient.gameRenderer.getCamera().getPos();
-        float startX = (((float) (pos.x - chunkPos.getStartX())) / Float.intBitsToFloat(1073741824)) - Float.intBitsToFloat(1090519040);
-        float startZ = (((float) (pos.z - chunkPos.getStartZ())) / Float.intBitsToFloat(1073741824)) - Float.intBitsToFloat(1090519040);
+        float startX = (((float) (pos.x - chunkPos.getStartX())) / 2.0f) - 8.0f;
+        float startZ = (((float) (pos.z - chunkPos.getStartZ())) / 2.0f) - 8.0f;
         drawContext.getMatrices().push();
         drawContext.getMatrices().translate(startX, startZ, 0.0f);
-        CrosshairHelper.do1707(drawContext.getMatrices(), 0.0f, 0.0f, Float.intBitsToFloat(1090519040), Float.intBitsToFloat(1090519040), color);
+        CrosshairHelper.do1707(drawContext.getMatrices(), 0.0f, 0.0f, 8.0f, 8.0f, color);
         drawContext.getMatrices().pop();
     }
 
@@ -140,12 +140,12 @@ public class Map extends me.mioclient.ModuleList {
         if (this.setting.getValue() == Mode.DOT) {
             drawContext.fill(-1, -1, 1, 1, this.setting4.getValue().hashCode());
         } else if (this.setting.getValue() == Mode.ARROW) {
-            drawContext.getMatrices().scale(Float.intBitsToFloat(1028443341), Float.intBitsToFloat(1028443341), Float.intBitsToFloat(1065353216));
-            drawContext.getMatrices().multiply(RotationAxis.POSITIVE_Z.rotationDegrees(Float.intBitsToFloat(1110704128) + minecraftClient.gameRenderer.getCamera().getYaw()));
+            drawContext.getMatrices().scale(0.05000000074505806f, 0.05000000074505806f, 1.0f);
+            drawContext.getMatrices().multiply(RotationAxis.POSITIVE_Z.rotationDegrees(45.0f + minecraftClient.gameRenderer.getCamera().getYaw()));
             GlStateManager._texParameter(3553, 10240, 9729);
-            RenderSystem.setShaderColor(this.setting4.getValue().getRed() / Float.intBitsToFloat(1132396544), this.setting4.getValue().getGreen() / Float.intBitsToFloat(1132396544), this.setting4.getValue().getBlue() / Float.intBitsToFloat(1132396544), Float.intBitsToFloat(1065353216));
+            RenderSystem.setShaderColor(this.setting4.getValue().getRed() / 255.0f, this.setting4.getValue().getGreen() / 255.0f, this.setting4.getValue().getBlue() / 255.0f, 1.0f);
             drawContext.drawTexture(identifier, -128, -128, 0, 0, 256, 256);
-            RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216));
+            RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
             GlStateManager._texParameter(3553, 10240, 9728);
         }
         drawContext.getMatrices().pop();

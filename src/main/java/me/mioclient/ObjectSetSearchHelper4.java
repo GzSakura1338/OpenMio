@@ -50,7 +50,7 @@ public final class ObjectSetSearchHelper4 implements SearchHelper_4, ObstaclePas
         }
 
         public double priority() {
-            return Double.longBitsToDouble(4651998512748167168L);
+            return 999.0;
         }
     }
 
@@ -93,7 +93,7 @@ public final class ObjectSetSearchHelper4 implements SearchHelper_4, ObstaclePas
 
     @Override // me.mioclient.ObstaclePasserHelper
     public void do703(double d) {
-        BaritoneAPI.getProvider().getPrimaryBaritone().getCustomGoalProcess().setGoalAndPath(GoalXZ.fromDirection(minecraftClient.player.getPos(), minecraftClient.player.getYaw(), Double.longBitsToDouble(4617315517961601024L)));
+        BaritoneAPI.getProvider().getPrimaryBaritone().getCustomGoalProcess().setGoalAndPath(GoalXZ.fromDirection(minecraftClient.player.getPos(), minecraftClient.player.getYaw(), 5.0));
     }
 
     @Override // me.mioclient.ObstaclePasserHelper

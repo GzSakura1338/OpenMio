@@ -36,12 +36,12 @@ public class Inventory extends me.mioclient.ModuleList {
         this.zoomHelper.do170(!isEmpty(), 200L);
         float f = this.zoomHelper.get172();
         if (!this.setting3.getValue().booleanValue()) {
-            f = Float.intBitsToFloat(1065353216);
+            f = 1.0f;
         }
-        Color color817 = MixinMessageIndicatorHelper_2.getColor817(this.setting.getValue(), (this.setting.getValue().getAlpha() / Float.intBitsToFloat(1132396544)) * f);
-        Color color8172 = MixinMessageIndicatorHelper_2.getColor817(this.setting2.getValue(), (this.setting2.getValue().getAlpha() / Float.intBitsToFloat(1132396544)) * f);
-        SearchHelper_2.searchHelper_2.do546(drawContext.getMatrices(), 0.0f, 0.0f, Float.intBitsToFloat(1126301696), Float.intBitsToFloat(1113063424), color817);
-        SearchHelper_2.searchHelper_2.do539(drawContext.getMatrices(), Float.intBitsToFloat(-1082130432), Float.intBitsToFloat(-1082130432), Float.intBitsToFloat(1126301696), Float.intBitsToFloat(1113063424), color8172);
+        Color color817 = MixinMessageIndicatorHelper_2.getColor817(this.setting.getValue(), (this.setting.getValue().getAlpha() / 255.0f) * f);
+        Color color8172 = MixinMessageIndicatorHelper_2.getColor817(this.setting2.getValue(), (this.setting2.getValue().getAlpha() / 255.0f) * f);
+        SearchHelper_2.searchHelper_2.do546(drawContext.getMatrices(), 0.0f, 0.0f, 162.0f, 54.0f, color817);
+        SearchHelper_2.searchHelper_2.do539(drawContext.getMatrices(), -1.0f, -1.0f, 162.0f, 54.0f, color8172);
         DefaultedList defaultedList = minecraftClient.player.getInventory().main;
         for (int i = 0; i < defaultedList.size() - 9; i++) {
             int i2 = (i % 9) * 18;
@@ -64,6 +64,6 @@ public class Inventory extends me.mioclient.ModuleList {
 
     @Override // me.mioclient.ModuleList
     public float[] getFloatArray365() {
-        return new float[]{Float.intBitsToFloat(1126301696), Float.intBitsToFloat(1113063424)};
+        return new float[]{162.0f, 54.0f};
     }
 }

@@ -37,7 +37,7 @@ public class FishTrap extends Range {
 
     @Override // me.mioclient.module.combat.Range
     public boolean is884(PlayerEntity playerEntity) {
-        if (playerEntity.getBoundingBox().getLengthY() > Double.longBitsToDouble(4607182418800017408L)) {
+        if (playerEntity.getBoundingBox().getLengthY() > 1.0) {
             return false;
         }
         return super.is884(playerEntity);

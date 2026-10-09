@@ -141,7 +141,7 @@ public abstract class Delay extends Module {
             if (hitResult985.getType() != HitResult.Type.BLOCK) {
                 return false;
             }
-            return new Box(hitResult985.getPos().add(Double.longBitsToDouble(-4646453807550688133L), Double.longBitsToDouble(-4646453807550688133L), Double.longBitsToDouble(-4646453807550688133L)), hitResult985.getPos().add(Double.longBitsToDouble(4576918229304087675L), Double.longBitsToDouble(4576918229304087675L), Double.longBitsToDouble(4576918229304087675L))).intersects(new Box(blockPos));
+            return new Box(hitResult985.getPos().add(-0.01, -0.01, -0.01), hitResult985.getPos().add(0.01, 0.01, 0.01)).intersects(new Box(blockPos));
         }
 
         public HitResult getHitResult985() {
@@ -151,7 +151,7 @@ public abstract class Delay extends Module {
             float sin = MathHelper.sin(f2);
             float cos2 = MathHelper.cos(f);
             Vec3d vec3d = new Vec3d(sin * cos2, -MathHelper.sin(f), cos * cos2);
-            return HoleSnapSearchHelper4_6.getBlockHitResult2784(new HoleSnapHelper_2.Inner(SearchHelper_4.minecraftClient.player.getEyePos(), SearchHelper_4.minecraftClient.player.getEyePos().add(vec3d.x * Double.longBitsToDouble(4617315517961601024L), vec3d.y * Double.longBitsToDouble(4617315517961601024L), vec3d.z * Double.longBitsToDouble(4617315517961601024L))).getInner1604(HoleSnapHelper.getHoleSnapHelper1677(BaritoneHelper_3.stashFinderSearchHelper4.getMap1552().keySet())).getHoleSnapHelper_21606());
+            return HoleSnapSearchHelper4_6.getBlockHitResult2784(new HoleSnapHelper_2.Inner(SearchHelper_4.minecraftClient.player.getEyePos(), SearchHelper_4.minecraftClient.player.getEyePos().add(vec3d.x * 5.0, vec3d.y * 5.0, vec3d.z * 5.0)).getInner1604(HoleSnapHelper.getHoleSnapHelper1677(BaritoneHelper_3.stashFinderSearchHelper4.getMap1552().keySet())).getHoleSnapHelper_21606());
         }
 
 
@@ -183,9 +183,9 @@ public abstract class Delay extends Module {
         this.setting15 = add(new ColorSetting("Outline", new Color(189, 153, 255, 91), color2 -> {
             return this.setting13.is623();
         }));
-        this.setting16 = add(new NumberSetting("LineWidth", Float.valueOf(Float.intBitsToFloat(1065353216)), Float.valueOf(Float.intBitsToFloat(1036831949)), Float.valueOf(Float.intBitsToFloat(1077936128))).getSetting2342(this.setting13));
+        this.setting16 = add(new NumberSetting("LineWidth", Float.valueOf(1.0f), Float.valueOf(0.10000000149011612f), Float.valueOf(3.0f)).getSetting2342(this.setting13));
         this.setting17 = add(new BooleanSetting("Fade", true).getSetting2342(this.setting13));
-        this.setting18 = add(new NumberSetting("FadeTime", Float.valueOf(Float.intBitsToFloat(1065353216)), Float.valueOf(Float.intBitsToFloat(1036831949)), Float.valueOf(Float.intBitsToFloat(1065353216))).getNumberSetting3023("s").getSetting2342(this.setting13, this.setting17));
+        this.setting18 = add(new NumberSetting("FadeTime", Float.valueOf(1.0f), Float.valueOf(0.10000000149011612f), Float.valueOf(1.0f)).getNumberSetting3023("s").getSetting2342(this.setting13, this.setting17));
         this.stopwatch = new Stopwatch();
         this.stopwatch2 = new Stopwatch();
         BaritoneHelper_3.antiPhaseSearchHelper4.register(new AntiPhaseSearchHelper4.Record(this, this.setting14, this.setting15, this.setting16, this.setting18, () -> {
@@ -311,7 +311,7 @@ public abstract class Delay extends Module {
                         if (!it.hasNext()) {
                             break;
                         }
-                        if (it.next().isWithinDistance(ofFloored, Double.longBitsToDouble(4611686018427387904L))) {
+                        if (it.next().isWithinDistance(ofFloored, 2.0)) {
                             if (!BaritoneHelper_3.scaffoldHelper.is1113(entitySpawnS2CPacket.getEntityId(), true)) {
                                 return;
                             } else {
@@ -329,7 +329,7 @@ public abstract class Delay extends Module {
         if (packet9042 instanceof PlayerPositionLookS2CPacket) {
             PlayerPositionLookS2CPacket playerPositionLookS2CPacket = packet9042;
             this.val = playerPositionLookS2CPacket.getY();
-            if (minecraftClient.player.getPos().squaredDistanceTo(playerPositionLookS2CPacket.getX(), playerPositionLookS2CPacket.getY(), playerPositionLookS2CPacket.getZ()) >= Double.longBitsToDouble(4607182418800017408L) && this.setting12.getValue().booleanValue()) {
+            if (minecraftClient.player.getPos().squaredDistanceTo(playerPositionLookS2CPacket.getX(), playerPositionLookS2CPacket.getY(), playerPositionLookS2CPacket.getZ()) >= 1.0 && this.setting12.getValue().booleanValue()) {
                 disable();
                 return;
             }
@@ -447,8 +447,8 @@ public abstract class Delay extends Module {
         }
         if (!z && is1327(blockPos)) {
             if (SearchHelper4_8.is724() && antiCheat.is238()) {
-                floatArray2485[0] = (float) (floatArray2485[0] + (Math.random() * Double.longBitsToDouble(4576918229175238656L)));
-                floatArray2485[1] = (float) (floatArray2485[1] + (Math.random() * Double.longBitsToDouble(4576918229175238656L)));
+                floatArray2485[0] = (float) (floatArray2485[0] + (Math.random() * 0.009999999776482582));
+                floatArray2485[1] = (float) (floatArray2485[1] + (Math.random() * 0.009999999776482582));
             }
             this.stopwatch.reset();
             if (this.setting13.getValue().booleanValue()) {
@@ -477,7 +477,7 @@ public abstract class Delay extends Module {
             BlockItem item = (itemStack.getItem()) instanceof BlockItem ? (BlockItem) (itemStack.getItem()) : null;
             if (item instanceof BlockItem) {
                 BlockItem blockItem = item;
-                if (blockItem.getBlock() != Blocks.ANVIL && blockItem.getBlock().getBlastResistance() >= Float.intBitsToFloat(1142292480)) {
+                if (blockItem.getBlock() != Blocks.ANVIL && blockItem.getBlock().getBlastResistance() >= 600.0f) {
                     return true;
                 }
             }
@@ -504,7 +504,7 @@ public abstract class Delay extends Module {
         if (minecraftClient.player.isOnGround()) {
             this.val = minecraftClient.player.getY();
         }
-        if ((minecraftClient.player.getY() <= this.val + Double.longBitsToDouble(4591870180066957722L) || y < Double.longBitsToDouble(4600877379321698714L) || !this.setting9.getValue().booleanValue()) && !minecraftClient.player.isSleeping()) {
+        if ((minecraftClient.player.getY() <= this.val + 0.1 || y < 0.4 || !this.setting9.getValue().booleanValue()) && !minecraftClient.player.isSleeping()) {
             return false;
         }
         do495(false);
@@ -522,7 +522,7 @@ public abstract class Delay extends Module {
         }
         for (BlockPos blockPos : list) {
             double squaredDistanceTo = minecraftClient.player.getEyePos().squaredDistanceTo(blockPos.getX(), blockPos.getY(), blockPos.getZ());
-            if (!PhaseESPSearchHelper4_2.is3040(blockPos, block, true, this.setting7.getValue().booleanValue()) || squaredDistanceTo > Double.longBitsToDouble(4630263366890291200L)) {
+            if (!PhaseESPSearchHelper4_2.is3040(blockPos, block, true, this.setting7.getValue().booleanValue()) || squaredDistanceTo > 36.0) {
                 arrayList.add(blockPos);
             } else if (PhaseESPSearchHelper4_2.getDirection3028(blockPos) == null) {
                 this.flag = true;

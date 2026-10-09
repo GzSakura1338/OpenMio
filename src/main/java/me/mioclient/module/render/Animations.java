@@ -28,7 +28,7 @@ public class Animations extends Module {
     }
 
     public boolean is999() {
-        return isToggled() && this.players.getValue().booleanValue() && this.playerScale.getValue().floatValue() != Float.intBitsToFloat(1065353216);
+        return isToggled() && this.players.getValue().booleanValue() && this.playerScale.getValue().floatValue() != 1.0f;
     }
 
     public boolean is1000() {

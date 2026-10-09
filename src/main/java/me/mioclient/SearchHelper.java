@@ -21,14 +21,14 @@ import net.minecraft.util.shape.VoxelShapes;
 /* compiled from: 0.java */
 /* loaded from: mio-yarn.jar:me/mioclient/SearchHelper.class */
 public class SearchHelper implements SearchHelper_4 {
-    public static double val = Double.longBitsToDouble(4589168020290535424L);
+    public static double val = 0.0625;
 
     public static Vec3d getVec3d222(Box box) {
         return new Vec3d(MathHelper.lerp(FreecamHelper.val2, box.minX, box.maxX), box.minY, MathHelper.lerp(FreecamHelper.val2, box.minZ, box.maxZ));
     }
 
     public static Vec3d getVec3d223(Box box) {
-        return getVec3d222(box).add(0.0d, box.getLengthY() * Double.longBitsToDouble(4598175219545276416L), 0.0d);
+        return getVec3d222(box).add(0.0d, box.getLengthY() * 0.25, 0.0d);
     }
 
     public static Vec3d getVec3d224(Box box) {
@@ -53,7 +53,7 @@ public class SearchHelper implements SearchHelper_4 {
         }
         VoxelShape outlineShape = blockState.getOutlineShape(minecraftClient.world, blockPos);
         if (outlineShape.isEmpty()) {
-            outlineShape = VoxelShapes.cuboid(0.0d, 0.0d, 0.0d, Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4607182418800017408L));
+            outlineShape = VoxelShapes.cuboid(0.0d, 0.0d, 0.0d, 1.0, 1.0, 1.0);
         }
         return outlineShape.getBoundingBox().offset(blockPos);
     }
@@ -67,7 +67,7 @@ public class SearchHelper implements SearchHelper_4 {
     }
 
     public static boolean is229(Box box) {
-        return box.getLengthZ() == Double.longBitsToDouble(4607182418800017408L) && box.getLengthY() == Double.longBitsToDouble(4607182418800017408L) && box.getLengthX() == Double.longBitsToDouble(4607182418800017408L);
+        return box.getLengthZ() == 1.0 && box.getLengthY() == 1.0 && box.getLengthX() == 1.0;
     }
 
     public static boolean is230(VoxelShape voxelShape) {
@@ -81,17 +81,17 @@ public class SearchHelper implements SearchHelper_4 {
         if (!setting.is2348()) {
             return setting.getValue().intValue();
         }
-        double hypot = Math.hypot(playerEntity.getX() - playerEntity.prevX, playerEntity.getZ() - playerEntity.prevZ) * Double.longBitsToDouble(4626322717216342016L) * Double.longBitsToDouble(4615288898129284301L);
-        if (hypot < Double.longBitsToDouble(4613937818241073152L)) {
+        double hypot = Math.hypot(playerEntity.getX() - playerEntity.prevX, playerEntity.getZ() - playerEntity.prevZ) * 20.0 * 3.6;
+        if (hypot < 3.0) {
             return 0;
         }
-        if (hypot <= Double.longBitsToDouble(4621819117588971520L)) {
+        if (hypot <= 10.0) {
             return 1;
         }
-        if (hypot <= Double.longBitsToDouble(4626322717216342016L)) {
+        if (hypot <= 20.0) {
             return 3;
         }
-        return hypot <= Double.longBitsToDouble(4629137466983448576L) ? 4 : 5;
+        return hypot <= 30.0 ? 4 : 5;
     }
 
     public static Vec3d getVec3d232(Vec3d vec3d, Box box) {
@@ -112,13 +112,13 @@ public class SearchHelper implements SearchHelper_4 {
         if (vec3d.lengthSquared() == 0.0d) {
             return livingEntity.getBoundingBox();
         }
-        double lengthX = boundingBox.getLengthX() / Double.longBitsToDouble(4611686018427387904L);
-        double lengthZ = boundingBox.getLengthZ() / Double.longBitsToDouble(4611686018427387904L);
+        double lengthX = boundingBox.getLengthX() / 2.0;
+        double lengthZ = boundingBox.getLengthZ() / 2.0;
         return new Box(-lengthX, 0.0d, -lengthZ, lengthX, boundingBox.getLengthY(), lengthZ).offset(vec3d);
     }
 
     public static boolean is235(Box box, Box box2) {
         Box intersection = box.intersection(box2);
-        return ((double) ((float) Math.min(intersection.getLengthX(), Math.min(intersection.getLengthY(), intersection.getLengthZ())))) > Double.longBitsToDouble(4502148214488346440L);
+        return ((double) ((float) Math.min(intersection.getLengthX(), Math.min(intersection.getLengthY(), intersection.getLengthZ())))) > 1e-07;
     }
 }

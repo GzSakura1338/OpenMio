@@ -20,7 +20,7 @@ public class SearchHelper419 extends SearchHelper4_19 {
     @Override // me.mioclient.SearchHelper4_19, me.mioclient.PresetHelper_5
     public void do19(DrawContext drawContext, MatrixStack matrixStack, double d, double d2) {
         super.do19(drawContext, matrixStack, d, d2);
-        FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, this.string, (getPresetEnumSettingHelper1394().getX() + (getPresetEnumSettingHelper1394().get1635() / Float.intBitsToFloat(1073741824))) - (FontsSearchHelper4.fontsSearchHelper4.get1316(this.string) / Float.intBitsToFloat(1073741824)), (((this.presetSettingSearchHelper419.getY() + this.num) + get1742()) - Float.intBitsToFloat(1065353216)) - get1396(), getUI1744().textColor.getValue());
+        FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, this.string, (getPresetEnumSettingHelper1394().getX() + (getPresetEnumSettingHelper1394().get1635() / 2.0f)) - (FontsSearchHelper4.fontsSearchHelper4.get1316(this.string) / 2.0f), (((this.presetSettingSearchHelper419.getY() + this.num) + get1742()) - 1.0f) - get1396(), getUI1744().textColor.getValue());
     }
 
     /* JADX WARN: Multi-variable type inference failed */

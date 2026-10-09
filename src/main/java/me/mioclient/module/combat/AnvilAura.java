@@ -59,7 +59,7 @@ public class AnvilAura extends Delay {
 
     public AnvilAuraData getAnvilAuraData1909() {
         AnvilAuraData anvilAuraData;
-        double longBitsToDouble = Double.longBitsToDouble(9218868437227405311L);
+        double longBitsToDouble = 1.7976931348623157e+308;
         AnvilAuraData anvilAuraData2 = null;
         for (LivingEntity livingEntity : minecraftClient.world.getPlayers()) {
             if (((AbstractClientPlayerEntity) livingEntity).isAlive() && minecraftClient.player != livingEntity && !BaritoneHelper_3.searchHelper4_14.is520((PlayerEntity) livingEntity) && (!this.ignoreNakeds.getValue().booleanValue() || HoleSnapSearchHelper4.is2013(livingEntity))) {

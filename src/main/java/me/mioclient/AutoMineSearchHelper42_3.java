@@ -64,7 +64,7 @@ public final class AutoMineSearchHelper42_3 extends AutoMineSearchHelper4_2 {
             BlockPos ofFloored = BlockPos.ofFloored(((PlayerEntity) playerEntity886).getPos());
             List<BlockPos> list2010 = HoleSnapSearchHelper4.getList2010(playerEntity886);
             Block block = minecraftClient.world.getBlockState(ofFloored).getBlock();
-            boolean z2 = block.getBlastResistance() >= Float.intBitsToFloat(1142292480) && block != Blocks.AIR;
+            boolean z2 = block.getBlastResistance() >= 600.0f && block != Blocks.AIR;
             if (!this.autoMine.speedMineHelper.is1228(500L) || ofFloored.equals(this.autoMine.speedMineHelper.getBlockPos386())) {
                 z2 = false;
             }
@@ -87,10 +87,10 @@ public final class AutoMineSearchHelper42_3 extends AutoMineSearchHelper4_2 {
         boolean z3 = false;
         list2.sort(Comparator.comparing(blockPos3 -> {
             if (minecraftClient.player.getBoundingBox().intersects(new Box(blockPos3))) {
-                return Double.valueOf(Double.longBitsToDouble(-4556649414143246336L));
+                return Double.valueOf(-9999.0);
             }
             if (HoleSnapSearchHelper4.getList2010(minecraftClient.player).contains(blockPos3)) {
-                return Double.valueOf(Double.longBitsToDouble(-4571373524106608640L));
+                return Double.valueOf(-999.0);
             }
             boolean z4 = false;
             Iterator<Vec3i> it = list.iterator();
@@ -108,7 +108,7 @@ public final class AutoMineSearchHelper42_3 extends AutoMineSearchHelper4_2 {
             }
             double squaredDistance = blockPos3.getSquaredDistance(minecraftClient.player.getPos());
             if (!z4) {
-                squaredDistance += Math.pow(speedmine.range.getObject2326().floatValue(), Double.longBitsToDouble(4611686018427387904L));
+                squaredDistance += Math.pow(speedmine.range.getObject2326().floatValue(), 2.0);
             }
             return Double.valueOf(-squaredDistance);
         }));
@@ -165,7 +165,7 @@ public final class AutoMineSearchHelper42_3 extends AutoMineSearchHelper4_2 {
         List list2 = BlockPos.stream(minecraftClient.player.getBoundingBox().withMaxY(minecraftClient.player.getY())).map((v0) -> {
             return v0.toImmutable();
         }).filter(blockPos2 -> {
-            return minecraftClient.world.getBlockState(blockPos2).getBlock().getBlastResistance() >= Float.intBitsToFloat(1142292480);
+            return minecraftClient.world.getBlockState(blockPos2).getBlock().getBlastResistance() >= 600.0f;
         }).toList();
         return list2.size() == 1 && list2.contains(blockPos);
     }

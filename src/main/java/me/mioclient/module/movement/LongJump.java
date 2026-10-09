@@ -69,21 +69,21 @@ public class LongJump extends Module {
         }
         double d3 = moveEvent.get692();
         if (this.useTimer.getValue().booleanValue() && BaritoneHelper_3.holeSnapSearchHelper4_4.getStopwatch2615().is419(250L)) {
-            BaritoneHelper_3.holeSnapSearchHelper4_2.do2018(this, Float.intBitsToFloat(1066098124));
+            BaritoneHelper_3.holeSnapSearchHelper4_2.do2018(this, 1.0887999534606934f);
         } else if (this.useTimer.getValue().booleanValue()) {
             BaritoneHelper_3.holeSnapSearchHelper4_2.do2017(this);
         }
         if (!BaritoneHelper_3.holeSnapSearchHelper4_4.getStopwatch2615().is419(250L) && this.autoDisable.getValue().booleanValue()) {
             do496();
         }
-        double intBitsToFloat = Float.intBitsToFloat(1073741824) * this.jumpSpeed.getValue().floatValue();
+        double intBitsToFloat = 2.0f * this.jumpSpeed.getValue().floatValue();
         if (this.num == 1 && HoleSnapSearchHelper4_3.is2181()) {
-            this.val = (Double.longBitsToDouble(4608758678669597082L) * HoleSnapSearchHelper4_3.get2512(false, Double.longBitsToDouble(4598847156609680094L) * intBitsToFloat)) - Double.longBitsToDouble(4576918229304087675L);
+            this.val = (1.35 * HoleSnapSearchHelper4_3.get2512(false, 0.2873 * intBitsToFloat)) - 0.01;
         } else if (this.num == 2 && HoleSnapSearchHelper4_3.is2181()) {
-            d3 = Double.longBitsToDouble(4601237667291888353L) + HoleSnapSearchHelper4_3.get2513();
-            this.val *= this.flag ? Double.longBitsToDouble(4610260629145325142L) : Double.longBitsToDouble(4608961340652828754L);
+            d3 = 0.42 + HoleSnapSearchHelper4_3.get2513();
+            this.val *= this.flag ? 1.6835 : 1.395;
         } else if (this.num == 3) {
-            this.val = this.val2 - (Double.longBitsToDouble(4604119971289628672L) * (this.val2 - HoleSnapSearchHelper4_3.get2512(true, Double.longBitsToDouble(4598847156609680094L) * intBitsToFloat)));
+            this.val = this.val2 - (0.6600000262260437 * (this.val2 - HoleSnapSearchHelper4_3.get2512(true, 0.2873 * intBitsToFloat)));
             this.flag = !this.flag;
         } else {
             if (!minecraftClient.player.verticalCollision) {
@@ -91,9 +91,9 @@ public class LongJump extends Module {
             if (this.num > 0) {
                 this.num = HoleSnapSearchHelper4_3.is2181() ? 1 : 0;
             }
-            this.val = this.val2 - (this.val2 / Double.longBitsToDouble(4639798331726364672L));
+            this.val = this.val2 - (this.val2 / 159.0);
         }
-        this.val = Math.max(this.val, HoleSnapSearchHelper4_3.get2512(false, Double.longBitsToDouble(4598847156609680094L) * intBitsToFloat));
+        this.val = Math.max(this.val, HoleSnapSearchHelper4_3.get2512(false, 0.2873 * intBitsToFloat));
         if (HoleSnapSearchHelper4_3.is2181()) {
             double[] doubleArray2508 = HoleSnapSearchHelper4_3.getDoubleArray2508(minecraftClient.player.getYaw(SearchHelper_2.get536()), minecraftClient.player.input, this.val);
             d = doubleArray2508[0];
@@ -127,6 +127,6 @@ public class LongJump extends Module {
 
     public boolean is1815() {
         Box boundingBox = minecraftClient.player.getBoundingBox();
-        return minecraftClient.world.canCollide(minecraftClient.player, new Box(minecraftClient.player.getBlockPos().getX(), boundingBox.minY, minecraftClient.player.getBlockPos().getZ(), minecraftClient.player.getBlockPos().getX() + Double.longBitsToDouble(4607182418800017408L), boundingBox.maxY, minecraftClient.player.getBlockPos().getZ() + Double.longBitsToDouble(4607182418800017408L)).contract(Double.longBitsToDouble(4502148214488346440L)));
+        return minecraftClient.world.canCollide(minecraftClient.player, new Box(minecraftClient.player.getBlockPos().getX(), boundingBox.minY, minecraftClient.player.getBlockPos().getZ(), minecraftClient.player.getBlockPos().getX() + 1.0, boundingBox.maxY, minecraftClient.player.getBlockPos().getZ() + 1.0).contract(1e-07));
     }
 }

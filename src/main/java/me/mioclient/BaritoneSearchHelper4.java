@@ -30,7 +30,7 @@ public final class BaritoneSearchHelper4 implements SearchHelper_4 {
         if (packet904 instanceof PlayerMoveC2SPacket) {
             DuckPlayerMoveC2SPacket duckPlayerMoveC2SPacket = (DuckPlayerMoveC2SPacket)((PlayerMoveC2SPacket) packet904);
             if (is1624((PlayerMoveC2SPacket) duckPlayerMoveC2SPacket)) {
-                duckPlayerMoveC2SPacket.setYaw(((PlayerMoveC2SPacket) duckPlayerMoveC2SPacket).getYaw(0.0f) + Float.intBitsToFloat(1359354950));
+                duckPlayerMoveC2SPacket.setYaw(((PlayerMoveC2SPacket) duckPlayerMoveC2SPacket).getYaw(0.0f) + 35999997952.0f);
             }
         }
     }
@@ -40,7 +40,7 @@ public final class BaritoneSearchHelper4 implements SearchHelper_4 {
     }
 
     public boolean is1624(PlayerMoveC2SPacket playerMoveC2SPacket) {
-        if ((!HoleSnapSearchHelper4_3.is2181() && BaritoneHelper_3.feetPlaceSearchHelper4.get2634() < Double.longBitsToDouble(4617315517961601024L)) || !this.antiCheat.f2b2t.getValue().booleanValue() || HoleSnapSearchHelper4.is955()) {
+        if ((!HoleSnapSearchHelper4_3.is2181() && BaritoneHelper_3.feetPlaceSearchHelper4.get2634() < 5.0) || !this.antiCheat.f2b2t.getValue().booleanValue() || HoleSnapSearchHelper4.is955()) {
             return false;
         }
         if (playerMoveC2SPacket != null) {

@@ -120,8 +120,8 @@ public class Particles extends Module {
     }
 
     public void do2580(Particle particle, int i) {
-        float intBitsToFloat = (i >> 24) / Float.intBitsToFloat(1132396544);
-        particle.setColor(((i & 16711680) >> 16) / Float.intBitsToFloat(1132396544), ((i & 65280) >> 8) / Float.intBitsToFloat(1132396544), (i & 255) / Float.intBitsToFloat(1132396544));
+        float intBitsToFloat = (i >> 24) / 255.0f;
+        particle.setColor(((i & 16711680) >> 16) / 255.0f, ((i & 65280) >> 8) / 255.0f, (i & 255) / 255.0f);
         ((ParticlesHelper) particle).mio$setInitialAlpha(intBitsToFloat);
     }
 }

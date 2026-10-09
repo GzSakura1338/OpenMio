@@ -11,28 +11,28 @@ import net.minecraft.util.math.MathHelper;
 /* compiled from: 0.java */
 /* loaded from: mio-yarn.jar:me/mioclient/Helper_20.class */
 public class Helper_20 {
-    public final float val2 = (float) MathHelper.clamp(Math.random(), Double.longBitsToDouble(4589708452267294720L), Double.longBitsToDouble(4595653204011646976L));
-    public final float val3 = PingSpoofHelper.get370((float) FreecamHelper.val2, Float.intBitsToFloat(1066611507));
+    public final float val2 = (float) MathHelper.clamp(Math.random(), 0.07000000029802322, 0.18000000715255737);
+    public final float val3 = PingSpoofHelper.get370((float) FreecamHelper.val2, 1.149999976158142f);
     public final double val4 = Math.random();
-    public final double val5 = PingSpoofHelper.get370(Float.intBitsToFloat(-1123603710), Float.intBitsToFloat(1023879938));
-    public float val6 = PingSpoofHelper.get370(Float.intBitsToFloat(-1092196762), 0.0f);
-    public static final float val = Float.intBitsToFloat(1023879938);
+    public final double val5 = PingSpoofHelper.get370(-0.032999999821186066f, 0.032999999821186066f);
+    public float val6 = PingSpoofHelper.get370(-0.44999998807907104f, 0.0f);
+    public static final float val = 0.032999999821186066f;
     public static final String string = "❆";
 
     public void do364(DrawContext drawContext) {
         TextRenderer textRenderer = MinecraftClient.getInstance().textRenderer;
         float scaledWindowWidth = (float) ((this.val4 + (this.val6 * this.val5)) * drawContext.getScaledWindowWidth());
-        float scaledWindowHeight = this.val6 * drawContext.getScaledWindowHeight() * Float.intBitsToFloat(1056964608);
+        float scaledWindowHeight = this.val6 * drawContext.getScaledWindowHeight() * 0.5f;
         Objects.requireNonNull(textRenderer);
-        float intBitsToFloat = (scaledWindowHeight - Float.intBitsToFloat(1091567616)) - Float.intBitsToFloat(1065353216);
-        this.val6 += BaritoneHelper_3.hitmarkerSearchHelper4.get3095(Float.intBitsToFloat(1056964608)) * this.val2;
-        this.val6 = Math.min(this.val6, Float.intBitsToFloat(1065353216));
+        float intBitsToFloat = (scaledWindowHeight - 9.0f) - 1.0f;
+        this.val6 += BaritoneHelper_3.hitmarkerSearchHelper4.get3095(0.5f) * this.val2;
+        this.val6 = Math.min(this.val6, 1.0f);
         if (!UI.uI.snow.getValue().booleanValue() || this.val6 < 0.0f) {
             return;
         }
-        int ceil = MathHelper.ceil(Math.max(Float.intBitsToFloat(1132396544) - (this.val6 * Float.intBitsToFloat(1132396544)), Float.intBitsToFloat(1082130432)));
+        int ceil = MathHelper.ceil(Math.max(255.0f - (this.val6 * 255.0f), 4.0f));
         drawContext.getMatrices().push();
-        drawContext.getMatrices().scale(this.val3, this.val3, Float.intBitsToFloat(1065353216));
+        drawContext.getMatrices().scale(this.val3, this.val3, 1.0f);
         drawContext.getMatrices().translate(scaledWindowWidth / this.val3, intBitsToFloat / this.val3, 0.0f);
         drawContext.drawCenteredTextWithShadow(textRenderer, "❆", 0, 0, new Color(255, 255, 255, ceil).hashCode());
         drawContext.getMatrices().pop();
@@ -43,6 +43,6 @@ public class Helper_20 {
     }
 
     public boolean is2378() {
-        return this.val6 >= Float.intBitsToFloat(1065353216);
+        return this.val6 >= 1.0f;
     }
 }

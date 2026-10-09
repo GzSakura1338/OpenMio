@@ -158,7 +158,7 @@ public class SpeedMine extends Module {
     @Override // me.mioclient.module.Module
     public String getInfo() {
         if (SearchHelper4_7.is2435(this.blockPos)) {
-            return "%.2f".formatted(Float.valueOf(MathHelper.clamp(get1052() / this.damage.getValue().floatValue(), 0.0f, Float.intBitsToFloat(1065353216))));
+            return "%.2f".formatted(Float.valueOf(MathHelper.clamp(get1052() / this.damage.getValue().floatValue(), 0.0f, 1.0f)));
         }
         return null;
     }
@@ -309,7 +309,7 @@ public class SpeedMine extends Module {
 
     @Listen
     public void do30(SendImmediatelyEvent sendImmediatelyEvent) {
-        if (!SearchHelper4_8.is724() || this.damage.getValue().floatValue() >= Float.intBitsToFloat(1065353216) || antiCheat.is238()) {
+        if (!SearchHelper4_8.is724() || this.damage.getValue().floatValue() >= 1.0f || antiCheat.is238()) {
             return;
         }
         PlayerActionC2SPacket packet904 = (sendImmediatelyEvent.getPacket904()) instanceof PlayerActionC2SPacket ? (PlayerActionC2SPacket) (sendImmediatelyEvent.getPacket904()) : null;
@@ -339,11 +339,11 @@ public class SpeedMine extends Module {
         if (this.autoSwap.getValue() == SpeedMineMode_3.NONE && !ItemSaver.is905(minecraftClient.player.getMainHandStack()) && itemSaver.isToggled()) {
             return;
         }
-        if (SearchHelper_3.get643() <= Float.intBitsToFloat(1082130432)) {
+        if (SearchHelper_3.get643() <= 4.0f) {
             if (minecraftClient.player.getMainHandStack().isOf(Items.TOTEM_OF_UNDYING)) {
                 z = false;
                 boolean z2 = z;
-                if (this.speedMineSearchHelper4 == null && !this.speedMineSearchHelper4.getBlockPos386().equals(this.blockPos) && this.speedMineSearchHelper4.get2142() >= Float.intBitsToFloat(1065353216) && !noSlow.is3108() && z2) {
+                if (this.speedMineSearchHelper4 == null && !this.speedMineSearchHelper4.getBlockPos386().equals(this.blockPos) && this.speedMineSearchHelper4.get2142() >= 1.0f && !noSlow.is3108() && z2) {
                     atomicBoolean.set(true);
                     int i = minecraftClient.player.getInventory().selectedSlot;
                     int i2 = FireworksHelper.get459(this.speedMineSearchHelper4.getBlockPos386(), !this.alternative.getValue().booleanValue());
@@ -373,7 +373,7 @@ public class SpeedMine extends Module {
                     return;
                 }
                 if (is1044() && !minecraftClient.player.isSpectator() && !minecraftClient.player.isCreative() && SearchHelper4_7.is2435(this.blockPos)) {
-                    if (this.limit.getValue().floatValue() != Float.intBitsToFloat(1065353216) || (get1052() / this.damage.getValue().floatValue() >= this.limit.getValue().floatValue() && (this.autoSwap.getValue() != SpeedMineMode_3.NONE || !this.holdingBest.getValue().booleanValue() || this.num == minecraftClient.player.getInventory().selectedSlot))) {
+                    if (this.limit.getValue().floatValue() != 1.0f || (get1052() / this.damage.getValue().floatValue() >= this.limit.getValue().floatValue() && (this.autoSwap.getValue() != SpeedMineMode_3.NONE || !this.holdingBest.getValue().booleanValue() || this.num == minecraftClient.player.getInventory().selectedSlot))) {
                         do1045(this.blockPos);
                     }
                     if (get1052() >= this.damage.getValue().floatValue()) {
@@ -478,7 +478,7 @@ public class SpeedMine extends Module {
         if (is1044()) {
             return;
         }
-        if (this.limit.getValue().floatValue() != Float.intBitsToFloat(1065353216)) {
+        if (this.limit.getValue().floatValue() != 1.0f) {
         }
         do1045(this.blockPos);
         if (get1052() >= this.damage.getValue().floatValue()) {
@@ -487,7 +487,7 @@ public class SpeedMine extends Module {
 
     @Listen
     public void do27(TickEvent tickEvent) {
-        float f = this.tPSSync.getValue().booleanValue() ? BaritoneHelper_3.holeSnapSearchHelper4_4.get2621() : Float.intBitsToFloat(1065353216);
+        float f = this.tPSSync.getValue().booleanValue() ? BaritoneHelper_3.holeSnapSearchHelper4_4.get2621() : 1.0f;
         if (this.speedMineSearchHelper4 != null) {
             this.speedMineSearchHelper4.do2143((float) (SearchHelper4_7.get2436(minecraftClient.player.getInventory().getStack(FireworksHelper.get459(this.speedMineSearchHelper4.getBlockPos386(), !this.alternative.getValue().booleanValue())), minecraftClient.world.getBlockState(this.speedMineSearchHelper4.getBlockPos386()), minecraftClient.player.isOnGround()) * f));
             if (minecraftClient.world.isAir(this.speedMineSearchHelper4.getBlockPos386())) {
@@ -550,7 +550,7 @@ public class SpeedMine extends Module {
         if (!z || !blockState.isOf(Blocks.OBSIDIAN)) {
             this.val += (float) (SearchHelper4_7.get2436(stack, blockState, minecraftClient.player.isOnGround()) * f);
         } else {
-            this.val = MathHelper.clamp(this.val, 0.0f, Float.intBitsToFloat(1065185444));
+            this.val = MathHelper.clamp(this.val, 0.0f, 0.9900000095367432f);
             this.val2 = this.val;
         }
     }
@@ -587,9 +587,9 @@ public class SpeedMine extends Module {
                     return;
                 }
             }
-            float clamp = MathHelper.clamp(MathHelper.lerp(SearchHelper_2.get536(), this.val2, get1052()) / this.damage.getValue().floatValue(), 0.0f, Float.intBitsToFloat(1065353216));
+            float clamp = MathHelper.clamp(MathHelper.lerp(SearchHelper_2.get536(), this.val2, get1052()) / this.damage.getValue().floatValue(), 0.0f, 1.0f);
             Color[] colorArray1773 = this.colorMode.getValue().getColorArray1773(this, clamp);
-            Box offset = this.renderMode.getValue().getBox809(this, outlineShape.isEmpty() ? new Box(0.0d, 0.0d, 0.0d, Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4607182418800017408L)) : outlineShape.getBoundingBox(), clamp).offset(this.blockPos);
+            Box offset = this.renderMode.getValue().getBox809(this, outlineShape.isEmpty() ? new Box(0.0d, 0.0d, 0.0d, 1.0, 1.0, 1.0) : outlineShape.getBoundingBox(), clamp).offset(this.blockPos);
             if (minecraftClient.world.getBlockState(this.blockPos).isAir()) {
                 offset = new Box(this.blockPos);
             }
@@ -600,7 +600,7 @@ public class SpeedMine extends Module {
             }
             this.speedMineHelper_3.do2259(offset);
             this.speedMineHelper_3.do2260(this.lineWidth.getValue().floatValue());
-            this.speedMineHelper_3.do2261(inner_3.getMatrixStack472(), colorArray1773[0], colorArray1773[1], z ? Float.intBitsToFloat(1142292480) : Float.intBitsToFloat(1065353216), true);
+            this.speedMineHelper_3.do2261(inner_3.getMatrixStack472(), colorArray1773[0], colorArray1773[1], z ? 600.0f : 1.0f, true);
         }
     }
 
@@ -637,7 +637,7 @@ public class SpeedMine extends Module {
         if (this.blockPos == null) {
             return 0.0d;
         }
-        return SearchHelper4_7.get2436(minecraftClient.player.getInventory().getStack(get1047()), minecraftClient.world.getBlockState(this.blockPos), minecraftClient.player.isOnGround()) * (this.tPSSync.getValue().booleanValue() ? BaritoneHelper_3.holeSnapSearchHelper4_4.get2621() : Float.intBitsToFloat(1065353216));
+        return SearchHelper4_7.get2436(minecraftClient.player.getInventory().getStack(get1047()), minecraftClient.world.getBlockState(this.blockPos), minecraftClient.player.isOnGround()) * (this.tPSSync.getValue().booleanValue() ? BaritoneHelper_3.holeSnapSearchHelper4_4.get2621() : 1.0f);
     }
 
     public int get1047() {
@@ -672,7 +672,7 @@ public class SpeedMine extends Module {
         boolean z = false;
         for (Entity entity : minecraftClient.world.getEntities()) {
             if ((entity instanceof PlayerEntity) && entity != minecraftClient.player && !z) {
-                if (entity.getBoundingBox().stretch(0.0d, Double.longBitsToDouble(4607182418800017408L), 0.0d).expand(Double.longBitsToDouble(4607182418800017408L), 0.0d, Double.longBitsToDouble(4607182418800017408L)).intersects(box)) {
+                if (entity.getBoundingBox().stretch(0.0d, 1.0, 0.0d).expand(1.0, 0.0d, 1.0).intersects(box)) {
                     z = true;
                 }
             } else if (entity instanceof EndCrystalEntity) {
@@ -684,7 +684,7 @@ public class SpeedMine extends Module {
             }
         }
         if (z) {
-            if (!this.stopwatch4.is419((long) (Float.intBitsToFloat(1148846080) / BaritoneHelper_3.holeSnapSearchHelper4_4.get2621()))) {
+            if (!this.stopwatch4.is419((long) (1000.0f / BaritoneHelper_3.holeSnapSearchHelper4_4.get2621()))) {
                 return false;
             }
         }
@@ -708,14 +708,14 @@ public class SpeedMine extends Module {
         if (isToggled()) {
             return this.blockPos;
         }
-        if (!((BreakingProgressHelper)(Object) minecraftClient.interactionManager).isBreakingBlock() || ((BreakingProgressHelper)(Object) minecraftClient.interactionManager).getBreakingProgress() < Double.longBitsToDouble(4606281698874543309L)) {
+        if (!((BreakingProgressHelper)(Object) minecraftClient.interactionManager).isBreakingBlock() || ((BreakingProgressHelper)(Object) minecraftClient.interactionManager).getBreakingProgress() < 0.9) {
             return null;
         }
         return ((BreakingProgressHelper)(Object) minecraftClient.interactionManager).getCurrentBreakingBlock();
     }
 
     public float get1052() {
-        return MathHelper.clamp(this.val, 0.0f, Float.intBitsToFloat(1065353216));
+        return MathHelper.clamp(this.val, 0.0f, 1.0f);
     }
 
     public BlockPos getBlockPos1053() {

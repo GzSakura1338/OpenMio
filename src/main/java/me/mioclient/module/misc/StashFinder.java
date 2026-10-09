@@ -152,7 +152,7 @@ public class StashFinder extends Module {
         if (!this.sound.getValue().booleanValue()) {
             return true;
         }
-        if (!this.stopwatch.is418(Double.longBitsToDouble(4617315517961601024L), TimeUnit.SECONDS)) {
+        if (!this.stopwatch.is418(5.0, TimeUnit.SECONDS)) {
             return true;
         }
         SearchHelper4_11 searchHelper4_11 = BaritoneHelper_3.searchHelper4_11;

@@ -18,7 +18,7 @@ public class ViewClip extends Module {
     public ViewClip() {
         super("ViewClip", "Allows you to clip into blocks using 3rd person camera.", Category.RENDER, new String[0]);
         PhaseESPHelper.do1351(this);
-        this.progress = new Progress(Float.intBitsToFloat(1067869798), true);
+        this.progress = new Progress(1.2999999523162842f, true);
         setDrawn(false);
     }
 
@@ -28,6 +28,6 @@ public class ViewClip extends Module {
             this.progress.do2139(true);
             return;
         }
-        this.progress.do171(Float.intBitsToFloat(1065353216));
+        this.progress.do171(1.0f);
     }
 }

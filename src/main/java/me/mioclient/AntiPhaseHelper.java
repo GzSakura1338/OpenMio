@@ -19,7 +19,7 @@ public class AntiPhaseHelper implements SearchHelper_4, AntiPhaseHelper_3 {
         BlockPos blockPos2008 = HoleSnapSearchHelper4.getBlockPos2008((LivingEntity) playerEntity);
         Direction direction = null;
         Box box = null;
-        float intBitsToFloat = Float.intBitsToFloat(1148829696);
+        float intBitsToFloat = 999.0f;
         if (!SearchHelper4_7.is2446(blockPos2008)) {
             return null;
         }

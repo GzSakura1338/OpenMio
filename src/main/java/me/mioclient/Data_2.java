@@ -53,7 +53,7 @@ public final class Data_2 {
     }
 
     public static Data_2 getData_21365() {
-        return new Data_2(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+        return new Data_2(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
     }
 
     public void do1366(ViewModel viewModel) {

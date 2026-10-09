@@ -13,7 +13,7 @@ public final class Feature_30 extends Feature {
 
     @Override // me.mioclient.Feature
     public void exec(com.mojang.brigadier.builder.LiteralArgumentBuilder<CommandSource> literalArgumentBuilder) {
-        literalArgumentBuilder.then(Feature.argument("yaw", FloatArgumentType.floatArg(Float.intBitsToFloat(-1020002304), Float.intBitsToFloat(1127481344))).executes(commandContext -> {
+        literalArgumentBuilder.then(Feature.argument("yaw", FloatArgumentType.floatArg(-180.0f, 180.0f)).executes(commandContext -> {
             minecraftClient.player.setYaw(((Float) commandContext.getArgument("yaw", Float.class)).floatValue());
             MixinMessageIndicatorHelper.do344(Text.literal(new ArgumentTypeHelper().getArgumentTypeHelper2919(String.valueOf(commandContext.getArgument("yaw", Float.class))).getString2921("Player's yaw has been set to \u0001.")), MixinMessageIndicatorHelper.getMessageSignatureData337(-1));
             return 1;

@@ -113,7 +113,7 @@ public class FastFall extends Module {
         if (minecraftClient.player.getVelocity().y >= 0.0d || !this.flag2 || !this.flag3) {
             do1196();
         } else {
-            BaritoneHelper_3.inner.do2018(this, Float.intBitsToFloat(1073741824));
+            BaritoneHelper_3.inner.do2018(this, 2.0f);
             this.flag6 = true;
         }
     }
@@ -137,10 +137,10 @@ public class FastFall extends Module {
                     double doubleValue = ((Double) atomicReference.get()).doubleValue();
                     Vec3d velocity = minecraftClient.player.getVelocity();
                     boolean z2 = minecraftClient.world.isAir(BlockPos.ofFloored(minecraftClient.player.getX(), doubleValue, minecraftClient.player.getZ()).add(new Vec3i((int) velocity.x, -1, (int) velocity.z))) || !BaritoneHelper_3.holeSnapSearchHelper4_4.getStopwatch2616().is419(25L) || this.mode.getValue() == FastFallMode.PLAIN;
-                    if (minecraftClient.player.getY() - doubleValue > Double.longBitsToDouble(4611686018427387904L) || z2) {
-                        doubleValue = minecraftClient.player.getY() - Double.longBitsToDouble(4611686018427387904L);
+                    if (minecraftClient.player.getY() - doubleValue > 2.0 || z2) {
+                        doubleValue = minecraftClient.player.getY() - 2.0;
                         this.flag5 = true;
-                        float speedValue = this.mode.getValue() == FastFallMode.PLAIN ? this.speed.getValue().floatValue() : Float.intBitsToFloat(1065353216);
+                        float speedValue = this.mode.getValue() == FastFallMode.PLAIN ? this.speed.getValue().floatValue() : 1.0f;
                         if (speedValue != 0.0f) {
                             minecraftClient.player.setVelocity(velocity.withAxis(Direction.Axis.Y, -speedValue));
                         }
@@ -161,7 +161,7 @@ public class FastFall extends Module {
         this.val2 = HoleSnapSearchHelper4_6.get2786();
         this.flag4 = BaritoneHelper_3.holeSnapSearchHelper4_5.is2723(minecraftClient.player.getBlockPos().down((int) this.val2));
         if (this.flag4 || !this.onlyHole.getValue().booleanValue()) {
-            double longBitsToDouble = Double.longBitsToDouble(4599075939470750515L);
+            double longBitsToDouble = 0.3;
             boolean z = holeSnap.isToggled() && holeSnap.stopwatch2.is419(500L) && holeSnap.getHoleSnapData_2129() != null;
             if ((is1194() && is1193() && is1191() && minecraftClient.player.isOnGround()) || (this.flag5 && !z && is1192())) {
                 MixinLivingEntityHelper_2.do2581(moveEvent.getVec3d689(), moveEvent.get515() * longBitsToDouble, moveEvent.get692(), moveEvent.get516() * longBitsToDouble);
@@ -177,11 +177,11 @@ public class FastFall extends Module {
         double d3 = boundingBox.maxX;
         double d4 = boundingBox.maxZ;
         HashMap<Vec3d, Vec3d> hashMap = new HashMap<>();
-        hashMap.put(center, new Vec3d(center.x, center.y - Double.longBitsToDouble(4607182418800017408L), center.z));
-        hashMap.put(new Vec3d(d, center.y, d2), new Vec3d(d, center.y - Double.longBitsToDouble(4607182418800017408L), d2));
-        hashMap.put(new Vec3d(d3, center.y, d2), new Vec3d(d3, center.y - Double.longBitsToDouble(4607182418800017408L), d2));
-        hashMap.put(new Vec3d(d, center.y, d4), new Vec3d(d, center.y - Double.longBitsToDouble(4607182418800017408L), d4));
-        hashMap.put(new Vec3d(d3, center.y, d4), new Vec3d(d3, center.y - Double.longBitsToDouble(4607182418800017408L), d4));
+        hashMap.put(center, new Vec3d(center.x, center.y - 1.0, center.z));
+        hashMap.put(new Vec3d(d, center.y, d2), new Vec3d(d, center.y - 1.0, d2));
+        hashMap.put(new Vec3d(d3, center.y, d2), new Vec3d(d3, center.y - 1.0, d2));
+        hashMap.put(new Vec3d(d, center.y, d4), new Vec3d(d, center.y - 1.0, d4));
+        hashMap.put(new Vec3d(d3, center.y, d4), new Vec3d(d3, center.y - 1.0, d4));
         for (Vec3d vec3d : hashMap.keySet()) {
             BlockHitResult raycast = minecraftClient.world.raycast(new RaycastContext(vec3d, (Vec3d) hashMap.get(vec3d), RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, minecraftClient.player));
             if (raycast != null && raycast.getType() == HitResult.Type.BLOCK) {
@@ -191,7 +191,7 @@ public class FastFall extends Module {
         if (!is1192()) {
             return false;
         }
-        BlockState blockState = minecraftClient.world.getBlockState(BlockPos.ofFloored(minecraftClient.player.getX(), minecraftClient.player.getY() - Double.longBitsToDouble(4607182418800017408L), minecraftClient.player.getZ()));
+        BlockState blockState = minecraftClient.world.getBlockState(BlockPos.ofFloored(minecraftClient.player.getX(), minecraftClient.player.getY() - 1.0, minecraftClient.player.getZ()));
         return blockState == null || blockState.getBlock() == Blocks.AIR;
     }
 
@@ -200,7 +200,7 @@ public class FastFall extends Module {
         double d = velocity.x;
         double d2 = velocity.z;
         double signum = Math.abs(d2) > Math.abs(d) ? 0.0d : Math.signum(d);
-        BlockState blockState = minecraftClient.world.getBlockState(BlockPos.ofFloored(minecraftClient.player.getX() + signum, minecraftClient.player.getY() - Double.longBitsToDouble(4607182418800017408L), minecraftClient.player.getZ() + (Math.abs(signum) > Math.abs(d2) ? 0.0d : Math.signum(d2))));
+        BlockState blockState = minecraftClient.world.getBlockState(BlockPos.ofFloored(minecraftClient.player.getX() + signum, minecraftClient.player.getY() - 1.0, minecraftClient.player.getZ() + (Math.abs(signum) > Math.abs(d2) ? 0.0d : Math.signum(d2))));
         if (blockState != null) {
             return ((me.mioclient.mixin.ducks.DuckAbstractBlock) (Object) blockState.getBlock()).isCollidable();
         }

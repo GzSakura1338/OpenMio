@@ -83,7 +83,7 @@ public class Hitmarker extends Module {
             }
         }
         long currentTimeMillis = System.currentTimeMillis() - this.num;
-        if (currentTimeMillis > this.time.getValue().floatValue() * Float.intBitsToFloat(1148846080)) {
+        if (currentTimeMillis > this.time.getValue().floatValue() * 1000.0f) {
             this.num = -1L;
             return;
         }
@@ -91,27 +91,27 @@ public class Hitmarker extends Module {
         if (this.num2 <= 0 || !this.draw.getValue().booleanValue()) {
             return;
         }
-        float scaledWidth = minecraftClient.getWindow().getScaledWidth() / Float.intBitsToFloat(1073741824);
-        float scaledHeight = (minecraftClient.getWindow().getScaledHeight() / Float.intBitsToFloat(1073741824)) - Float.intBitsToFloat(1056964608);
+        float scaledWidth = minecraftClient.getWindow().getScaledWidth() / 2.0f;
+        float scaledHeight = (minecraftClient.getWindow().getScaledHeight() / 2.0f) - 0.5f;
         if (crosshair.isToggled()) {
-            scaledHeight = (float) (scaledHeight + Double.longBitsToDouble(4602678819172646912L));
+            scaledHeight = (float) (scaledHeight + 0.5);
         } else {
-            scaledWidth = (float) (scaledWidth - Double.longBitsToDouble(4602678819172646912L));
+            scaledWidth = (float) (scaledWidth - 0.5);
         }
         Color color816 = MixinMessageIndicatorHelper_2.getColor816(this.outlineColor.getValue(), this.num2);
         Color color8162 = MixinMessageIndicatorHelper_2.getColor816(this.color.getValue(), this.num2);
-        float intBitsToFloat = Float.intBitsToFloat(1073741824) + this.length.getValue().floatValue();
+        float intBitsToFloat = 2.0f + this.length.getValue().floatValue();
         int i = 0;
         while (i < 2) {
             Color color = i == 0 ? color816 : color8162;
             matrixStackEvent_2.getMatrixStack472().push();
             if (crosshair.isToggled()) {
-                matrixStackEvent_2.getMatrixStack472().translate(Double.longBitsToDouble(-4619792497756654797L), 0.0d, 0.0d);
+                matrixStackEvent_2.getMatrixStack472().translate(-0.6, 0.0d, 0.0d);
             }
-            do1122(matrixStackEvent_2.getMatrixStack472(), color, scaledWidth - intBitsToFloat, scaledHeight - intBitsToFloat, scaledWidth - Float.intBitsToFloat(1073741824), scaledHeight - Float.intBitsToFloat(1073741824));
-            do1122(matrixStackEvent_2.getMatrixStack472(), color, scaledWidth - intBitsToFloat, scaledHeight + intBitsToFloat, scaledWidth - Float.intBitsToFloat(1073741824), scaledHeight + Float.intBitsToFloat(1073741824));
-            do1122(matrixStackEvent_2.getMatrixStack472(), color, scaledWidth + Float.intBitsToFloat(1073741824), scaledHeight - Float.intBitsToFloat(1073741824), scaledWidth + intBitsToFloat, scaledHeight - intBitsToFloat);
-            do1122(matrixStackEvent_2.getMatrixStack472(), color, scaledWidth + Float.intBitsToFloat(1073741824), scaledHeight + Float.intBitsToFloat(1073741824), scaledWidth + intBitsToFloat, scaledHeight + intBitsToFloat);
+            do1122(matrixStackEvent_2.getMatrixStack472(), color, scaledWidth - intBitsToFloat, scaledHeight - intBitsToFloat, scaledWidth - 2.0f, scaledHeight - 2.0f);
+            do1122(matrixStackEvent_2.getMatrixStack472(), color, scaledWidth - intBitsToFloat, scaledHeight + intBitsToFloat, scaledWidth - 2.0f, scaledHeight + 2.0f);
+            do1122(matrixStackEvent_2.getMatrixStack472(), color, scaledWidth + 2.0f, scaledHeight - 2.0f, scaledWidth + intBitsToFloat, scaledHeight - intBitsToFloat);
+            do1122(matrixStackEvent_2.getMatrixStack472(), color, scaledWidth + 2.0f, scaledHeight + 2.0f, scaledWidth + intBitsToFloat, scaledHeight + intBitsToFloat);
             matrixStackEvent_2.getMatrixStack472().pop();
             i++;
         }
@@ -138,11 +138,11 @@ public class Hitmarker extends Module {
     }
 
     public void do1120(long j) {
-        if (j < (this.time.getValue().floatValue() * Float.intBitsToFloat(1148846080)) - (this.fadeTime.getValue().floatValue() * Float.intBitsToFloat(1148846080))) {
+        if (j < (this.time.getValue().floatValue() * 1000.0f) - (this.fadeTime.getValue().floatValue() * 1000.0f)) {
             this.num2 = 255;
             return;
         }
-        this.num2 = (int) (this.num2 - ((Float.intBitsToFloat(1132396544) / this.fadeTime.getValue().floatValue()) * BaritoneHelper_3.hitmarkerSearchHelper4.get3095(Float.intBitsToFloat(1065353216))));
+        this.num2 = (int) (this.num2 - ((255.0f / this.fadeTime.getValue().floatValue()) * BaritoneHelper_3.hitmarkerSearchHelper4.get3095(1.0f)));
         this.num2 = MathHelper.clamp(this.num2, 0, 255);
     }
 
@@ -151,7 +151,7 @@ public class Hitmarker extends Module {
     }
 
     public static void do1122(MatrixStack matrixStack, Color color, float f, float f2, float f3, float f4) {
-        float[] fArr = {color.getRed() / Float.intBitsToFloat(1132396544), color.getGreen() / Float.intBitsToFloat(1132396544), color.getBlue() / Float.intBitsToFloat(1132396544), color.getAlpha() / Float.intBitsToFloat(1132396544)};
+        float[] fArr = {color.getRed() / 255.0f, color.getGreen() / 255.0f, color.getBlue() / 255.0f, color.getAlpha() / 255.0f};
         Matrix4f positionMatrix = matrixStack.peek().getPositionMatrix();
         BufferBuilder begin = Tessellator.getInstance().begin(VertexFormat.DrawMode.DEBUG_LINES, VertexFormats.POSITION_COLOR);
         begin.vertex(positionMatrix, f, f2, 0.0f).color(fArr[0], fArr[1], fArr[2], fArr[3]);

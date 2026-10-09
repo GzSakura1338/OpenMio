@@ -39,10 +39,10 @@ public class ShaderFramebufferHelper_2 extends ShaderFramebufferHelper {
         this.framebufferHelper_3.do1439("u_Overlay", 1);
         this.framebufferHelper_3.do1440("u_OverlayAlpha", shader.get3113());
         this.framebufferHelper_3.do1442("u_Fill", shader.is3114() ? MixinMessageIndicatorHelper_2.color : shader.getColor3112(shader.fill.getValue()));
-        this.framebufferHelper_3.do1440("u_Fill_Offset", ((float) (System.currentTimeMillis() - this.num)) * Float.intBitsToFloat(981668463) * shader.fillSpeed.getValue().floatValue());
+        this.framebufferHelper_3.do1440("u_Fill_Offset", ((float) (System.currentTimeMillis() - this.num)) * 0.0010000000474974513f * shader.fillSpeed.getValue().floatValue());
         this.framebufferHelper_3.do1440("u_Fill_Strength", shader.fillStrength.getValue().floatValue());
         this.framebufferHelper_3.do1442("u_Outline", shader.outline2.getValue());
-        this.framebufferHelper_3.do1440("u_Outline_Offset", ((float) (System.currentTimeMillis() - this.num)) * Float.intBitsToFloat(981668463) * shader.outlineSpeed.getValue().floatValue());
+        this.framebufferHelper_3.do1440("u_Outline_Offset", ((float) (System.currentTimeMillis() - this.num)) * 0.0010000000474974513f * shader.outlineSpeed.getValue().floatValue());
         this.framebufferHelper_3.do1440("u_Outline_Strength", shader.outlineStrength.getValue().floatValue());
         this.framebufferHelper_3.do1439("u_Radius", shader.is3115() ? 0 : shader.lineWidth.getValue().intValue());
         this.framebufferHelper_3.do1440("u_GlowMultiplier", shader.glow.getValue().floatValue());

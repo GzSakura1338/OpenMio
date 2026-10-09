@@ -15,7 +15,7 @@ public class ProgressSettingSearchHelper419 extends SettingSearchHelper419<Boole
     public ProgressSettingSearchHelper419(PresetEnumSettingHelper presetEnumSettingHelper, PresetHelper_2 presetHelper_2, Setting<?> setting) {
         super(presetEnumSettingHelper, presetHelper_2, (BooleanSetting) setting);
         this.progress = new Progress((Supplier<Float>) () -> {
-            return Float.valueOf(Float.intBitsToFloat(1073741824) * UI.uI.animSpeed.getValue().floatValue());
+            return Float.valueOf(2.0f * UI.uI.animSpeed.getValue().floatValue());
         }, true);
     }
 
@@ -47,8 +47,8 @@ public class ProgressSettingSearchHelper419 extends SettingSearchHelper419<Boole
         this.progress.do2139(((Boolean) this.setting.getValue()).booleanValue());
         float f = this.progress.get172();
         super.do19(drawContext, matrixStack, d, d2);
-        if ((((Boolean) this.setting.getValue()).booleanValue() || f > Double.longBitsToDouble(4576918229304087675L)) && !this.setting.flag4) {
-            CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + get1397(), this.presetEnumSettingHelper.getY() + this.num + Float.intBitsToFloat(1056964608), this.presetEnumSettingHelper.getX() + Math.max((this.presetEnumSettingHelper.get1635() * f) - Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1073741824)), ((this.presetEnumSettingHelper.getY() + this.num) + get93()) - Float.intBitsToFloat(1056964608), getUI1744().color.getValue());
+        if ((((Boolean) this.setting.getValue()).booleanValue() || f > 0.01) && !this.setting.flag4) {
+            CrosshairHelper.do1707(matrixStack, this.presetEnumSettingHelper.getX() + get1397(), this.presetEnumSettingHelper.getY() + this.num + 0.5f, this.presetEnumSettingHelper.getX() + Math.max((this.presetEnumSettingHelper.get1635() * f) - 1.0f, 2.0f), ((this.presetEnumSettingHelper.getY() + this.num) + get93()) - 0.5f, getUI1744().color.getValue());
         }
         String name = this.setting.getName();
         if (!name.isEmpty()) {

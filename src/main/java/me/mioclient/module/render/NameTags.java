@@ -241,8 +241,8 @@ public class NameTags extends Module {
             }
         }
         RenderSystem.enablePolygonOffset();
-        RenderSystem.polygonOffset(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(-910746880));
-        GL20.glDepthRange(0.0d, Double.longBitsToDouble(4591870180066957722L));
+        RenderSystem.polygonOffset(1.0f, -1500000.0f);
+        GL20.glDepthRange(0.0d, 0.1);
         RenderSystem.enableBlend();
         RenderSystem.blendFunc(GlStateManager.SrcFactor.SRC_ALPHA, GlStateManager.DstFactor.ONE_MINUS_SRC_ALPHA);
         DiffuseLighting.disableGuiDepthLighting();
@@ -250,11 +250,11 @@ public class NameTags extends Module {
         RenderSystem.setShaderLights(this.vector3fArr[0], this.vector3fArr[1]);
         RenderSystem.disableBlend();
         CrosshairHelper.do1713(false);
-        RenderSystem.polygonOffset(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(-979615744));
+        RenderSystem.polygonOffset(1.0f, -5000.0f);
         FontsSearchHelper4.fontsSearchHelper4.do1597();
-        RenderSystem.polygonOffset(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1167867904));
-        GL20.glDepthRange(0.0d, Double.longBitsToDouble(4607182418800017408L));
-        RenderSystem.polygonOffset(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1236736768));
+        RenderSystem.polygonOffset(1.0f, 5000.0f);
+        GL20.glDepthRange(0.0d, 1.0);
+        RenderSystem.polygonOffset(1.0f, 1500000.0f);
         RenderSystem.disablePolygonOffset();
     }
 
@@ -267,8 +267,8 @@ public class NameTags extends Module {
 
     public void do1307(MatrixStack matrixStack, Vec3d vec3d) {
         RenderSystem.enablePolygonOffset();
-        RenderSystem.polygonOffset(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(-913146880));
-        GL20.glDepthRange(0.0d, Double.longBitsToDouble(4591870180066957722L));
+        RenderSystem.polygonOffset(1.0f, -1200000.0f);
+        GL20.glDepthRange(0.0d, 0.1);
         Iterator<PlayerEntity> it = this.list.iterator();
         while (it.hasNext()) {
             ClientPlayerEntity clientPlayerEntity = (ClientPlayerEntity)((PlayerEntity) it.next());
@@ -285,34 +285,34 @@ public class NameTags extends Module {
                 matrixStack.push();
                 matrixStack.translate(x, y, z);
                 matrixStack.push();
-                matrixStack.translate(0.0d, (((PlayerEntity) clientPlayerEntity).getHeight() * (animations.is999() && clientPlayerEntity != minecraftClient.player ? animations.playerScale.getValue().floatValue() : Float.intBitsToFloat(1065353216))) + Float.intBitsToFloat(1056964608), 0.0d);
+                matrixStack.translate(0.0d, (((PlayerEntity) clientPlayerEntity).getHeight() * (animations.is999() && clientPlayerEntity != minecraftClient.player ? animations.playerScale.getValue().floatValue() : 1.0f)) + 0.5f, 0.0d);
                 matrixStack.multiply(minecraftClient.getEntityRenderDispatcher().getRotation());
-                matrixStack.scale((-f) * Float.intBitsToFloat(1020054733), (-f) * Float.intBitsToFloat(1020054733), f * Float.intBitsToFloat(1020054733));
-                float longBitsToDouble = (float) ((-get1316(getString1312((PlayerEntity) clientPlayerEntity))) * Double.longBitsToDouble(4602678819172646912L));
-                SearchHelper_2.searchHelper_2.do546(matrixStack, longBitsToDouble - Float.intBitsToFloat(1065353216), Float.intBitsToFloat(-1082130432), (longBitsToDouble * Float.intBitsToFloat(-1082130432)) + Float.intBitsToFloat(1065353216), get990() + Float.intBitsToFloat(1065353216), Color.white);
+                matrixStack.scale((-f) * 0.02500000037252903f, (-f) * 0.02500000037252903f, f * 0.02500000037252903f);
+                float longBitsToDouble = (float) ((-get1316(getString1312((PlayerEntity) clientPlayerEntity))) * 0.5);
+                SearchHelper_2.searchHelper_2.do546(matrixStack, longBitsToDouble - 1.0f, -1.0f, (longBitsToDouble * -1.0f) + 1.0f, get990() + 1.0f, Color.white);
                 matrixStack.pop();
                 matrixStack.pop();
             }
         }
-        GL20.glDepthRange(0.0d, Double.longBitsToDouble(4607182418800017408L));
+        GL20.glDepthRange(0.0d, 1.0);
         RenderSystem.disablePolygonOffset();
-        RenderSystem.polygonOffset(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1234336768));
+        RenderSystem.polygonOffset(1.0f, 1200000.0f);
     }
 
     public void do1308(DrawContext drawContext, MatrixStack matrixStack, PlayerEntity playerEntity) {
         this.flag3 = false;
         this.flag4 = false;
-        float height = (playerEntity.getHeight() * (animations.is999() && playerEntity != minecraftClient.player ? animations.playerScale.getValue().floatValue() : Float.intBitsToFloat(1065353216))) + Float.intBitsToFloat(1056964608);
+        float height = (playerEntity.getHeight() * (animations.is999() && playerEntity != minecraftClient.player ? animations.playerScale.getValue().floatValue() : 1.0f)) + 0.5f;
         float f = (float) PingSpoofHelper.get377(minecraftClient.gameRenderer.getCamera().getPos(), playerEntity.getPos(), this.scale.getValue().floatValue());
         matrixStack.push();
         matrixStack.translate(0.0f, height, 0.0f);
         matrixStack.multiply(minecraftClient.getEntityRenderDispatcher().getRotation());
-        matrixStack.scale(f * Float.intBitsToFloat(1020054733), (-f) * Float.intBitsToFloat(1020054733), (-f) * Float.intBitsToFloat(1020054733));
+        matrixStack.scale(f * 0.02500000037252903f, (-f) * 0.02500000037252903f, (-f) * 0.02500000037252903f);
         String string1312 = getString1312(playerEntity);
-        float longBitsToDouble = (float) ((-get1316(string1312)) * Double.longBitsToDouble(4602678819172646912L));
+        float longBitsToDouble = (float) ((-get1316(string1312)) * 0.5);
         RenderSystem.enablePolygonOffset();
-        RenderSystem.polygonOffset(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(-910746880));
-        GL20.glDepthRange(0.0d, Double.longBitsToDouble(4591870180066957722L));
+        RenderSystem.polygonOffset(1.0f, -1500000.0f);
+        GL20.glDepthRange(0.0d, 0.1);
         Color value = this.outline.getValue();
         if (this.smart.getValue().booleanValue()) {
             if (is1317((Entity) playerEntity)) {
@@ -323,9 +323,9 @@ public class NameTags extends Module {
                 }
             }
         }
-        float intBitsToFloat = Float.intBitsToFloat(1056964608);
-        CrosshairHelper.do1707(matrixStack, longBitsToDouble - Float.intBitsToFloat(1065353216), Float.intBitsToFloat(-1082130432), (longBitsToDouble * Float.intBitsToFloat(-1082130432)) + Float.intBitsToFloat(1065353216), get990() + Float.intBitsToFloat(1065353216), this.fill.getValue());
-        CrosshairHelper.do1706(matrixStack, (longBitsToDouble - Float.intBitsToFloat(1073741824)) + intBitsToFloat, Float.intBitsToFloat(-1073741824) + intBitsToFloat, (longBitsToDouble * Float.intBitsToFloat(-1082130432)) + Float.intBitsToFloat(1065353216), get990() + Float.intBitsToFloat(1065353216), intBitsToFloat, value);
+        float intBitsToFloat = 0.5f;
+        CrosshairHelper.do1707(matrixStack, longBitsToDouble - 1.0f, -1.0f, (longBitsToDouble * -1.0f) + 1.0f, get990() + 1.0f, this.fill.getValue());
+        CrosshairHelper.do1706(matrixStack, (longBitsToDouble - 2.0f) + intBitsToFloat, -2.0f + intBitsToFloat, (longBitsToDouble * -1.0f) + 1.0f, get990() + 1.0f, intBitsToFloat, value);
         Color value2 = this.text.getValue();
         if (playerEntity.isSneaking()) {
             value2 = this.sneak.getValue();
@@ -340,17 +340,17 @@ public class NameTags extends Module {
             value2 = BaritoneHelper_3.searchHelper4_14.getColor529();
         }
         boolean isToggled = fonts.isToggled();
-        FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, string1312, longBitsToDouble, Float.intBitsToFloat(1065353216), value2);
+        FontsSearchHelper4.fontsSearchHelper4.do1691(drawContext, string1312, longBitsToDouble, 1.0f, value2);
         flag = true;
         do1309(drawContext, matrixStack, playerEntity);
         flag = false;
         if (this.flag2) {
             matrixStack.push();
-            float intBitsToFloat2 = Float.intBitsToFloat(1032847360);
-            matrixStack.translate(longBitsToDouble - Float.intBitsToFloat(1082130432), Float.intBitsToFloat(-1065353216), 0.0f);
+            float intBitsToFloat2 = 0.0703125f;
+            matrixStack.translate(longBitsToDouble - 4.0f, -4.0f, 0.0f);
             matrixStack.scale(intBitsToFloat2, intBitsToFloat2, intBitsToFloat2);
             if (isToggled) {
-                matrixStack.translate(Double.longBitsToDouble(-4616189618054758400L), Double.longBitsToDouble(4608533498688228557L) + fonts.shift.getValue().intValue(), 0.0d);
+                matrixStack.translate(-1.0, 1.3 + fonts.shift.getValue().intValue(), 0.0d);
             }
             RenderSystem.setShader(GameRenderer::getPositionTexColorProgram);
             GlStateManager._blendFunc(770, 771);
@@ -359,9 +359,9 @@ public class NameTags extends Module {
             GlStateManager._texParameter(3553, 10240, 9728);
             matrixStack.pop();
         }
-        GL20.glDepthRange(0.0d, Double.longBitsToDouble(4607182418800017408L));
+        GL20.glDepthRange(0.0d, 1.0);
         RenderSystem.disablePolygonOffset();
-        RenderSystem.polygonOffset(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1236736768));
+        RenderSystem.polygonOffset(1.0f, 1500000.0f);
         matrixStack.pop();
     }
 
@@ -392,63 +392,63 @@ public class NameTags extends Module {
         if (this.durability.getValue() == NameTagsMode.ONLY || !this.enchants.getValue().booleanValue()) {
             max = 0;
         }
-        float f = -Math.max((((max * get990()) * Float.intBitsToFloat(1056964608)) / Float.intBitsToFloat(1067030938)) / Float.intBitsToFloat(1099563008), Float.intBitsToFloat(1058642330));
+        float f = -Math.max((((max * get990()) * 0.5f) / 1.2000000476837158f) / 17.25f, 0.6000000238418579f);
         for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            do1310(drawContext, playerEntity, matrixStack, (ItemStack) arrayList.get((arrayList.size() - 1) - i2), (i2 + Float.intBitsToFloat(1056964608)) - (arrayList.size() * Float.intBitsToFloat(1056964608)), f, Float.intBitsToFloat(1099563008));
+            do1310(drawContext, playerEntity, matrixStack, (ItemStack) arrayList.get((arrayList.size() - 1) - i2), (i2 + 0.5f) - (arrayList.size() * 0.5f), f, 17.25f);
         }
         if (playerEntity.getMainHandStack().isEmpty() || !this.itemName.getValue().booleanValue()) {
             return;
         }
-        float intBitsToFloat = ((f * Float.intBitsToFloat(1099563008)) - Float.intBitsToFloat(1082130432)) - get990();
+        float intBitsToFloat = ((f * 17.25f) - 4.0f) - get990();
         if (!this.flag3) {
             intBitsToFloat = -get990();
         }
         if (this.flag4) {
-            intBitsToFloat -= get990() * Float.intBitsToFloat(1056964608);
+            intBitsToFloat -= get990() * 0.5f;
             if (!this.flag3) {
-                intBitsToFloat -= Float.intBitsToFloat(1065353216);
+                intBitsToFloat -= 1.0f;
             }
         }
-        do1311(drawContext, Formatting.strip(playerEntity.getMainHandStack().getName().getString()), 0.0f, intBitsToFloat, Double.longBitsToDouble(4627005293803339776L), Color.white, false, NameTagsMode_2.nameTagsMode_2);
+        do1311(drawContext, Formatting.strip(playerEntity.getMainHandStack().getName().getString()), 0.0f, intBitsToFloat, 22.424999177455902, Color.white, false, NameTagsMode_2.nameTagsMode_2);
     }
 
     public void do1310(DrawContext drawContext, PlayerEntity playerEntity, MatrixStack matrixStack, ItemStack itemStack, float f, float f2, float f3) {
-        float intBitsToFloat = Float.intBitsToFloat(1058642330);
+        float intBitsToFloat = 0.6000000238418579f;
         int i = ArmorSearchHelper4.get1905(itemStack);
         if (this.items.getValue().booleanValue() && this.showEating.getValue().booleanValue() && playerEntity.isUsingItem() && playerEntity.getStackInHand(playerEntity.getActiveHand()) == itemStack && itemStack.contains(DataComponentTypes.FOOD)) {
-            CrosshairHelper.do1708(matrixStack, (f - Float.intBitsToFloat(1055286886)) * f3, (f2 * f3) - Float.intBitsToFloat(1089575322), ((f - Float.intBitsToFloat(1055286886)) + (Float.intBitsToFloat(1063675494) * MathHelper.clamp(((float) (System.currentTimeMillis() - ((NameTagsHelper) playerEntity).mio$getLastEatingTime())) / ((itemStack.getMaxUseTime((LivingEntity) playerEntity) * Float.intBitsToFloat(1112014848)) + Float.intBitsToFloat(1112014848)), 0.0f, Float.intBitsToFloat(1065353216)))) * f3, (f2 * f3) + Float.intBitsToFloat(1089575322), MixinMessageIndicatorHelper_2.get819(this.eating.getValue(), Float.intBitsToFloat(1045220557)));
+            CrosshairHelper.do1708(matrixStack, (f - 0.44999998807907104f) * f3, (f2 * f3) - 7.550000190734863f, ((f - 0.44999998807907104f) + (0.8999999761581421f * MathHelper.clamp(((float) (System.currentTimeMillis() - ((NameTagsHelper) playerEntity).mio$getLastEatingTime())) / ((itemStack.getMaxUseTime((LivingEntity) playerEntity) * 50.0f) + 50.0f), 0.0f, 1.0f))) * f3, (f2 * f3) + 7.550000190734863f, MixinMessageIndicatorHelper_2.get819(this.eating.getValue(), 0.20000000298023224f));
         }
         boolean z = false;
         if (this.durability.getValue() != NameTagsMode.ONLY || (!(itemStack.getItem() instanceof ArmorItem) && !itemStack.isOf(Items.ELYTRA))) {
             z = true;
             this.flag3 = true;
-            RenderSystem.polygonOffset(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1167867904));
+            RenderSystem.polygonOffset(1.0f, 5000.0f);
             matrixStack.push();
             matrixStack.translate(f * f3, f2 * f3, 0.0f);
-            matrixStack.scale(-f3, -f3, Float.intBitsToFloat(981668463));
+            matrixStack.scale(-f3, -f3, 0.0010000000474974513f);
             minecraftClient.getItemRenderer().renderItem(itemStack, ModelTransformationMode.FIXED, false, matrixStack, drawContext.getVertexConsumers(), 15728880, OverlayTexture.DEFAULT_UV, minecraftClient.getItemRenderer().getModel(itemStack, minecraftClient.world, (LivingEntity) null, 0));
             matrixStack.pop();
-            RenderSystem.polygonOffset(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(-979615744));
+            RenderSystem.polygonOffset(1.0f, -5000.0f);
         }
         if (itemStack.getCount() > 1) {
-            do1311(drawContext, String.valueOf(itemStack.getCount()), (f + Float.intBitsToFloat(1056964608)) * f3, (f2 * f3) + Float.intBitsToFloat(1065353216), f3 * Double.longBitsToDouble(4612248968380809216L), Color.white, true, NameTagsMode_2.nameTagsMode_23);
+            do1311(drawContext, String.valueOf(itemStack.getCount()), (f + 0.5f) * f3, (f2 * f3) + 1.0f, f3 * 2.25, Color.white, true, NameTagsMode_2.nameTagsMode_23);
         }
         if (itemStack.isItemBarVisible() && z) {
-            float intBitsToFloat2 = ((int) (f + Float.intBitsToFloat(1045220557))) * f3;
-            float intBitsToFloat3 = (f2 * f3) + Float.intBitsToFloat(1085276160);
-            CrosshairHelper.do1707(matrixStack, (f - Float.intBitsToFloat(1055286886)) * f3, intBitsToFloat3 - Float.intBitsToFloat(1028443341), (f + Float.intBitsToFloat(1055286886)) * f3, intBitsToFloat3 + Float.intBitsToFloat(1073741824), new Color(-16777216));
-            CrosshairHelper.do1707(matrixStack, (f - Float.intBitsToFloat(1055286886)) * f3, intBitsToFloat3 - Float.intBitsToFloat(1028443341), (f + MathHelper.lerp(itemStack.getItemBarStep() / Float.intBitsToFloat(1095761920), Float.intBitsToFloat(-1092196762), Float.intBitsToFloat(1055286886))) * f3, intBitsToFloat3 + Float.intBitsToFloat(1065772646), new Color(itemStack.getItemBarColor(), false));
+            float intBitsToFloat2 = ((int) (f + 0.20000000298023224f)) * f3;
+            float intBitsToFloat3 = (f2 * f3) + 5.5f;
+            CrosshairHelper.do1707(matrixStack, (f - 0.44999998807907104f) * f3, intBitsToFloat3 - 0.05000000074505806f, (f + 0.44999998807907104f) * f3, intBitsToFloat3 + 2.0f, new Color(-16777216));
+            CrosshairHelper.do1707(matrixStack, (f - 0.44999998807907104f) * f3, intBitsToFloat3 - 0.05000000074505806f, (f + MathHelper.lerp(itemStack.getItemBarStep() / 13.0f, -0.44999998807907104f, 0.44999998807907104f)) * f3, intBitsToFloat3 + 1.0499999523162842f, new Color(itemStack.getItemBarColor(), false));
         }
         Set<Object2IntMap.Entry> enchantmentEntries = (Set)(itemStack.getEnchantments().getEnchantmentEntries());
-        float intBitsToFloat4 = (-intBitsToFloat) * Float.intBitsToFloat(1073741824);
+        float intBitsToFloat4 = (-intBitsToFloat) * 2.0f;
         if (itemStack.isOf(Items.ENCHANTED_GOLDEN_APPLE) && z) {
-            do1311(drawContext, "God", f * f3, ((f2 * f3) - Float.intBitsToFloat(1065353216)) + (get990() * intBitsToFloat * intBitsToFloat4), f3 * Float.intBitsToFloat(1067869798), this.color, false, NameTagsMode_2.nameTagsMode_23);
+            do1311(drawContext, "God", f * f3, ((f2 * f3) - 1.0f) + (get990() * intBitsToFloat * intBitsToFloat4), f3 * 1.2999999523162842f, this.color, false, NameTagsMode_2.nameTagsMode_23);
             return;
         }
         if (z && this.enchants.getValue().booleanValue()) {
             boolean z2 = this.hideMax.getValue().booleanValue() && NameTagsHelper_2.is2028(itemStack);
             if (z2) {
-                do1311(drawContext, "Max", (f - Float.intBitsToFloat(1056964608)) * f3, ((f2 * f3) - Float.intBitsToFloat(1073741824)) + (((get990() * intBitsToFloat) / Float.intBitsToFloat(1067030938)) * intBitsToFloat4), f3 * Float.intBitsToFloat(1067869798), Color.RED, false, NameTagsMode_2.nameTagsMode_22);
+                do1311(drawContext, "Max", (f - 0.5f) * f3, ((f2 * f3) - 2.0f) + (((get990() * intBitsToFloat) / 1.2000000476837158f) * intBitsToFloat4), f3 * 1.2999999523162842f, Color.RED, false, NameTagsMode_2.nameTagsMode_22);
             }
             for (Object2IntMap.Entry entry : enchantmentEntries) {
                 if (z2) {
@@ -461,27 +461,27 @@ public class NameTags extends Module {
                     if (!z3) {
                         substring = new ArgumentTypeHelper().getArgumentTypeHelper2906(entry.getIntValue()).getArgumentTypeHelper2919(substring).getString2921("\u0001\u0001");
                     }
-                    do1311(drawContext, substring, (f - Float.intBitsToFloat(1056964608)) * f3, ((f2 * f3) - Float.intBitsToFloat(1073741824)) + (((get990() * intBitsToFloat) / Float.intBitsToFloat(1067030938)) * intBitsToFloat4), f3 * Float.intBitsToFloat(1067869798), Color.WHITE, false, NameTagsMode_2.nameTagsMode_22);
-                    intBitsToFloat4 += Float.intBitsToFloat(1065353216);
+                    do1311(drawContext, substring, (f - 0.5f) * f3, ((f2 * f3) - 2.0f) + (((get990() * intBitsToFloat) / 1.2000000476837158f) * intBitsToFloat4), f3 * 1.2999999523162842f, Color.WHITE, false, NameTagsMode_2.nameTagsMode_22);
+                    intBitsToFloat4 += 1.0f;
                 }
             }
         }
         if (!itemStack.isDamageable() || this.durability.getValue() == NameTagsMode.HIDE) {
             return;
         }
-        float intBitsToFloat5 = ((f2 * f3) - Float.intBitsToFloat(1082130432)) - get990();
+        float intBitsToFloat5 = ((f2 * f3) - 4.0f) - get990();
         if (!z) {
             intBitsToFloat5 = f2 - get990();
         }
         this.flag4 = true;
-        do1311(drawContext, String.format("%d%s", Integer.valueOf(i), "%"), ((float) ((f - FreecamHelper.val2) * f3)) + Float.intBitsToFloat(1065353216), intBitsToFloat5, f3 * Float.intBitsToFloat(1069547520), new Color(itemStack.getItemBarColor(), false), false, NameTagsMode_2.nameTagsMode_22);
+        do1311(drawContext, String.format("%d%s", Integer.valueOf(i), "%"), ((float) ((f - FreecamHelper.val2) * f3)) + 1.0f, intBitsToFloat5, f3 * 1.5f, new Color(itemStack.getItemBarColor(), false), false, NameTagsMode_2.nameTagsMode_22);
     }
 
     public void do1311(DrawContext drawContext, String str, float f, float f2, double d, Color color, boolean z, NameTagsMode_2 nameTagsMode_2) {
         MatrixStack matrices = drawContext.getMatrices();
         matrices.push();
         matrices.translate(f, f2, 0.0f);
-        matrices.scale(Float.intBitsToFloat(1020054733) * ((float) d), Float.intBitsToFloat(1020054733) * ((float) d), Float.intBitsToFloat(1065353216));
+        matrices.scale(0.02500000037252903f * ((float) d), 0.02500000037252903f * ((float) d), 1.0f);
         float f3 = nameTagsMode_2.get2063(str, z);
         if (z) {
             CrosshairHelper.do1711(drawContext.getMatrices(), str, (int) f3, 0, color.hashCode(), true);
@@ -535,7 +535,7 @@ public class NameTags extends Module {
     }
 
     public Formatting getFormatting1313(double d) {
-        return d >= Double.longBitsToDouble(4626322717216342016L) ? Formatting.GREEN : d >= Double.longBitsToDouble(4625196817309499392L) ? Formatting.DARK_GREEN : d >= Double.longBitsToDouble(4621819117588971520L) ? Formatting.GOLD : d >= Double.longBitsToDouble(4616189618054758400L) ? Formatting.RED : Formatting.DARK_RED;
+        return d >= 20.0 ? Formatting.GREEN : d >= 16.0 ? Formatting.DARK_GREEN : d >= 10.0 ? Formatting.GOLD : d >= 4.0 ? Formatting.RED : Formatting.DARK_RED;
     }
 
     public static Formatting getFormatting1314(int i) {
@@ -594,8 +594,8 @@ public class NameTags extends Module {
     }
 
     public boolean is1317(Entity entity) {
-        float width = entity.getDimensions(entity.getPose()).width() * Float.intBitsToFloat(1061997773);
-        return BlockPos.stream(Box.of(entity.getBoundingBox().getCenter(), width, entity.getHeight() * Float.intBitsToFloat(1056964608), width)).anyMatch(blockPos -> {
+        float width = entity.getDimensions(entity.getPose()).width() * 0.800000011920929f;
+        return BlockPos.stream(Box.of(entity.getBoundingBox().getCenter(), width, entity.getHeight() * 0.5f, width)).anyMatch(blockPos -> {
             BlockState blockState = minecraftClient.world.getBlockState(blockPos);
             return !blockState.isAir() && blockState.shouldSuffocate(minecraftClient.world, blockPos);
         });

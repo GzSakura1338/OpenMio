@@ -187,7 +187,7 @@ public class TextRadar extends me.mioclient.ModuleList {
     }
 
     public Formatting getFormatting1313(double d) {
-        return d >= Double.longBitsToDouble(4626322717216342016L) ? Formatting.GREEN : d >= Double.longBitsToDouble(4625196817309499392L) ? Formatting.DARK_GREEN : d >= Double.longBitsToDouble(4621819117588971520L) ? Formatting.GOLD : d >= Double.longBitsToDouble(4616189618054758400L) ? Formatting.RED : Formatting.DARK_RED;
+        return d >= 20.0 ? Formatting.GREEN : d >= 16.0 ? Formatting.DARK_GREEN : d >= 10.0 ? Formatting.GOLD : d >= 4.0 ? Formatting.RED : Formatting.DARK_RED;
     }
 
     public double get2647(Entity entity) {

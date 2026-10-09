@@ -65,7 +65,7 @@ public class Step extends Module {
         if (is1469()) {
             return;
         }
-        SearchHelper_3.do649(minecraftClient.player, Float.intBitsToFloat(1058642330));
+        SearchHelper_3.do649(minecraftClient.player, 0.6000000238418579f);
     }
 
     @Override // me.mioclient.module.Module
@@ -100,7 +100,7 @@ public class Step extends Module {
             moveEvent_2.do1473(this.height.getValue().floatValue());
         }
         if (moveEvent_2.getKeyPearlMode1472() == KeyPearlMode.Post) {
-            if (moveEvent_2.get990() <= Double.longBitsToDouble(4603579539098121011L)) {
+            if (moveEvent_2.get990() <= 0.6) {
                 BaritoneHelper_3.holeSnapSearchHelper4_2.do2017(this);
                 return;
             }
@@ -114,12 +114,12 @@ public class Step extends Module {
                 this.flag = true;
             }
             this.num++;
-            if (moveEvent_2.get990() <= Float.intBitsToFloat(1065353216)) {
-                arrayList.addAll(List.of(Double.valueOf(Double.longBitsToDouble(4601237667291888353L) * moveEvent_2.get990()), Double.valueOf(Double.longBitsToDouble(4604930618986332160L) * moveEvent_2.get990())));
-            } else if (moveEvent_2.get990() <= Double.longBitsToDouble(4609434218613702656L)) {
-                arrayList.addAll(List.of(Double.valueOf(Double.longBitsToDouble(4601237667291888353L)), Double.valueOf(Double.longBitsToDouble(4604930618986332160L)), Double.valueOf(Double.longBitsToDouble(4607182418800017408L)), Double.valueOf(Double.longBitsToDouble(4607902994740396687L)), Double.valueOf(Double.longBitsToDouble(4608218246714312622L)), Double.valueOf(Double.longBitsToDouble(4608083138725491507L))));
+            if (moveEvent_2.get990() <= 1.0f) {
+                arrayList.addAll(List.of(Double.valueOf(0.42 * moveEvent_2.get990()), Double.valueOf(0.75 * moveEvent_2.get990())));
+            } else if (moveEvent_2.get990() <= 1.5) {
+                arrayList.addAll(List.of(Double.valueOf(0.42), Double.valueOf(0.75), Double.valueOf(1.0), Double.valueOf(1.16), Double.valueOf(1.23), Double.valueOf(1.2)));
             } else if (moveEvent_2.get990() <= this.height.getValue().floatValue()) {
-                arrayList.addAll(List.of(Double.valueOf(Double.longBitsToDouble(4601237667291888353L)), Double.valueOf(Double.longBitsToDouble(4605200834963974390L)), Double.valueOf(Double.longBitsToDouble(4603849755075763241L)), Double.valueOf(Double.longBitsToDouble(4602768891165194322L)), Double.valueOf(Double.longBitsToDouble(4606281698874543309L)), Double.valueOf(Double.longBitsToDouble(4608128174721765212L)), Double.valueOf(Double.longBitsToDouble(4609209038632334131L)), Double.valueOf(Double.longBitsToDouble(4609118966639786721L))));
+                arrayList.addAll(List.of(Double.valueOf(0.42), Double.valueOf(0.78), Double.valueOf(0.63), Double.valueOf(0.51), Double.valueOf(0.9), Double.valueOf(1.21), Double.valueOf(1.45), Double.valueOf(1.43)));
             }
             if (arrayList.isEmpty()) {
                 return;

@@ -98,6 +98,6 @@ public class Borders extends Module {
 
     public Record getRecord1949() {
         int intValue = 128 * (1 << this.mapSize.getValue().intValue());
-        return new Record(((MathHelper.floor((minecraftClient.player.getBlockX() + Double.longBitsToDouble(4634204016564240384L)) / intValue) * intValue) + (intValue / 2)) - 64, ((MathHelper.floor((minecraftClient.player.getBlockZ() + Double.longBitsToDouble(4634204016564240384L)) / intValue) * intValue) + (intValue / 2)) - 64, intValue);
+        return new Record(((MathHelper.floor((minecraftClient.player.getBlockX() + 64.0) / intValue) * intValue) + (intValue / 2)) - 64, ((MathHelper.floor((minecraftClient.player.getBlockZ() + 64.0) / intValue) * intValue) + (intValue / 2)) - 64, intValue);
     }
 }

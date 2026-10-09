@@ -38,7 +38,7 @@ public class Spiral extends Module {
         for (int i = 0; i < 5000 * 4; i++) {
             this.list.add(pos);
             pos = pos.add(Vec3d.fromPolar(0.0f, f).multiply(i * this.setting.getValue().intValue() * 16));
-            f = MathHelper.wrapDegrees(f + Float.intBitsToFloat(1119092736));
+            f = MathHelper.wrapDegrees(f + 90.0f);
         }
     }
 
@@ -57,7 +57,7 @@ public class Spiral extends Module {
     public void do27(TickEvent tickEvent) {
         Vec3d vec3d2994 = getVec3d2994(this.current);
         minecraftClient.player.setYaw(SearchHelper4_8.getFloatArray2484(vec3d2994)[0]);
-        if (MixinLivingEntityHelper_2.get2583(vec3d2994, minecraftClient.player.getPos()) < Float.intBitsToFloat(1077936128)) {
+        if (MixinLivingEntityHelper_2.get2583(vec3d2994, minecraftClient.player.getPos()) < 3.0f) {
             this.current++;
         }
     }

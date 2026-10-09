@@ -53,10 +53,10 @@ public final class HoleSnapSearchHelper4_5 implements SearchHelper_4 {
                     if (block == Blocks.RESPAWN_ANCHOR) {
                         return null;
                     }
-                    if ((block.getBlastResistance() < Float.intBitsToFloat(1142292480) && block.getBlastResistance() >= 0.0f) || block.getHardness() == 0.0f) {
+                    if ((block.getBlastResistance() < 600.0f && block.getBlastResistance() >= 0.0f) || block.getHardness() == 0.0f) {
                         return null;
                     }
-                    if (block.getBlastResistance() >= Float.intBitsToFloat(1142292480) && block.getHardness() >= 0.0f) {
+                    if (block.getBlastResistance() >= 600.0f && block.getHardness() >= 0.0f) {
                         holeSnapDataMode = HoleSnapData.HoleSnapDataMode.UNSAFE;
                     }
                 } else {

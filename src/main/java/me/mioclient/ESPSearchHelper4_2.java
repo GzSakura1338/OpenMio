@@ -145,7 +145,7 @@ public class ESPSearchHelper4_2 implements SearchHelper_4 {
         } else if (entity instanceof EnderPearlEntity) {
             color = z ? this.eSP.fill3.getValue() : this.eSP.outline.getValue();
         }
-        int clamp = (int) MathHelper.clamp(PingSpoofHelper.get382(entity.age - 1, entity.age) * Float.intBitsToFloat(1101004800), 0.0f, color.getAlpha());
+        int clamp = (int) MathHelper.clamp(PingSpoofHelper.get382(entity.age - 1, entity.age) * 20.0f, 0.0f, color.getAlpha());
         if ((entity instanceof EnderPearlEntity) || (entity instanceof ExperienceBottleEntity)) {
             clamp = color.getAlpha();
         }

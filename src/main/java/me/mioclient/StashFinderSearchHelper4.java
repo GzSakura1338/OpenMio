@@ -78,7 +78,7 @@ public class StashFinderSearchHelper4 implements SearchHelper_4 {
             this.unconfirmedBreak = null;
         }
         this.set.removeIf(blockPos -> {
-            return !blockPos.isWithinDistance(minecraftClient.player.getBlockPos(), Double.longBitsToDouble(4638707616191610880L));
+            return !blockPos.isWithinDistance(minecraftClient.player.getBlockPos(), 128.0);
         });
         synchronized (this.map) {
             ArrayList arrayList = new ArrayList();

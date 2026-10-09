@@ -74,15 +74,15 @@ public class ElytraFlyHelper_3 extends ElytraFlyHelper {
             }
             this.val += fireworks.get142(false);
             if (this.num == 0) {
-                if (minecraftClient.player.input.jumping && this.elytraFly.vertical.getValue() == ElytraFly.ElytraFlyMode.STRICT && this.val >= Double.longBitsToDouble(4611686018427387904L)) {
-                    this.val = Double.longBitsToDouble(4611686018427387904L);
+                if (minecraftClient.player.input.jumping && this.elytraFly.vertical.getValue() == ElytraFly.ElytraFlyMode.STRICT && this.val >= 2.0) {
+                    this.val = 2.0;
                 }
                 double[] doubleArray2507 = HoleSnapSearchHelper4_3.getDoubleArray2507(moveEvent, this.val);
                 minecraftClient.player.setVelocity(doubleArray2507[0], minecraftClient.player.getVelocity().y, doubleArray2507[1]);
                 this.vec3d = minecraftClient.player.getVelocity();
                 if (this.elytraFly.antiKick.getValue().booleanValue() && minecraftClient.player.age % 4 == 0) {
-                    moveEvent.setY(moveEvent.get692() - Double.longBitsToDouble(4547007122018943789L));
-                    minecraftClient.player.setVelocity(minecraftClient.player.getVelocity().add(0.0d, Double.longBitsToDouble(-4676364914835832019L), 0.0d));
+                    moveEvent.setY(moveEvent.get692() - 0.0001);
+                    minecraftClient.player.setVelocity(minecraftClient.player.getVelocity().add(0.0d, -0.0001, 0.0d));
                 }
             }
             if (minecraftClient.player.input.jumping && minecraftClient.player.isFallFlying()) {
@@ -191,7 +191,7 @@ public class ElytraFlyHelper_3 extends ElytraFlyHelper {
         }
         tickEvent_2.getInput806().jumping = true;
         tickEvent_2.getInput806().pressingForward = true;
-        tickEvent_2.getInput806().movementForward = tickEvent_2.is808() ? tickEvent_2.get807() : Float.intBitsToFloat(1065353216);
+        tickEvent_2.getInput806().movementForward = tickEvent_2.is808() ? tickEvent_2.get807() : 1.0f;
     }
 
     public void do861() {
@@ -202,17 +202,17 @@ public class ElytraFlyHelper_3 extends ElytraFlyHelper {
         double horizontalLength2 = vec3d375.horizontalLength();
         double length = vec3d375.length();
         double cos = Math.cos(d);
-        Vec3d add = vec3d.add(0.0d, Double.longBitsToDouble(4590429028186199163L) * (Double.longBitsToDouble(-4616189618054758400L) + (cos * cos * Math.min(Double.longBitsToDouble(4607182418800017408L), length / Double.longBitsToDouble(4600877379321698714L)) * Double.longBitsToDouble(4604930618986332160L))), 0.0d);
+        Vec3d add = vec3d.add(0.0d, 0.08 * (-1.0 + (cos * cos * Math.min(1.0, length / 0.4) * 0.75)), 0.0d);
         if (d < 0.0d && horizontalLength2 > 0.0d) {
-            double longBitsToDouble = horizontalLength * (-Math.sin(d)) * Double.longBitsToDouble(4585925428558828667L);
-            add = add.add(((-vec3d375.x) * longBitsToDouble) / horizontalLength2, longBitsToDouble * Double.longBitsToDouble(4614388178203810202L), ((-vec3d375.z) * longBitsToDouble) / horizontalLength2);
+            double longBitsToDouble = horizontalLength * (-Math.sin(d)) * 0.04;
+            add = add.add(((-vec3d375.x) * longBitsToDouble) / horizontalLength2, longBitsToDouble * 3.2, ((-vec3d375.z) * longBitsToDouble) / horizontalLength2);
         }
-        minecraftClient.player.setVelocity(add.multiply(Double.longBitsToDouble(4607092346807469998L), Double.longBitsToDouble(4607002274814922588L), Double.longBitsToDouble(4607092346807469998L)));
+        minecraftClient.player.setVelocity(add.multiply(0.99, 0.98, 0.99));
         this.vec3d = minecraftClient.player.getVelocity();
     }
 
     public float get751() {
-        double[] doubleArray2508 = HoleSnapSearchHelper4_3.getDoubleArray2508(minecraftClient.player.getYaw(), minecraftClient.player.input, Double.longBitsToDouble(4607182418800017408L));
+        double[] doubleArray2508 = HoleSnapSearchHelper4_3.getDoubleArray2508(minecraftClient.player.getYaw(), minecraftClient.player.input, 1.0);
         return (float) (Math.toDegrees(Math.atan2(doubleArray2508[1], doubleArray2508[0])) - FreecamHelper.num2);
     }
 

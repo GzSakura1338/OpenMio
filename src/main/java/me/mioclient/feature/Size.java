@@ -26,7 +26,7 @@ public class Size extends ModuleListSearchHelper4 {
 
     public Size(ModuleList moduleList) {
         super(moduleList);
-        this.setting = new NumberSetting("Size", Float.valueOf(Float.intBitsToFloat(1065353216)), Float.valueOf(Float.intBitsToFloat(1056964608)), Float.valueOf(Float.intBitsToFloat(1073741824)));
+        this.setting = new NumberSetting("Size", Float.valueOf(1.0f), Float.valueOf(0.5f), Float.valueOf(2.0f));
         this.zoomHelper = new ZoomHelper();
     }
 
@@ -36,7 +36,7 @@ public class Size extends ModuleListSearchHelper4 {
         float[] floatArray365 = this.moduleList.getFloatArray365();
         matrixStack.push();
         if (this.flag) {
-            matrixStack.scale(get989(), get989(), Float.intBitsToFloat(1065353216));
+            matrixStack.scale(get989(), get989(), 1.0f);
             matrixStack.translate(get123() / get989(), get124() / get989(), 0.0f);
         } else {
             matrixStack.translate(get123(), get124(), 0.0f);
@@ -48,7 +48,7 @@ public class Size extends ModuleListSearchHelper4 {
                 this.setting.do2333(Float.valueOf((float) PingSpoofHelper.get368(Math.min((d - get123()) / floatArray365[0], (d2 - get124()) / floatArray365[1]), 2)));
             }
             if (is2638 && is2639(1)) {
-                this.setting.do2333(Float.valueOf(Float.intBitsToFloat(1065353216)));
+                this.setting.do2333(Float.valueOf(1.0f));
             }
             if (is2638 && is2639(0)) {
                 size = this;
@@ -56,21 +56,21 @@ public class Size extends ModuleListSearchHelper4 {
                 size = null;
             }
             if (size == this) {
-                this.zoomHelper.do169(Float.intBitsToFloat(1063675494), 250L);
+                this.zoomHelper.do169(0.8999999761581421f, 250L);
             } else if (is2638) {
-                this.zoomHelper.do169(Float.intBitsToFloat(1053609165), 250L);
+                this.zoomHelper.do169(0.4000000059604645f, 250L);
             } else {
-                this.zoomHelper.do169(Float.intBitsToFloat(1045220557), 250L);
+                this.zoomHelper.do169(0.20000000298023224f, 250L);
             }
             matrixStack.push();
-            float intBitsToFloat = Float.intBitsToFloat(1017118720);
-            matrixStack.scale(intBitsToFloat, intBitsToFloat, Float.intBitsToFloat(1140457472));
-            matrixStack.translate((floatArray365[0] - Float.intBitsToFloat(1084227584)) / intBitsToFloat, (floatArray365[1] - Float.intBitsToFloat(1084227584)) / intBitsToFloat, 0.0f);
+            float intBitsToFloat = 0.01953125f;
+            matrixStack.scale(intBitsToFloat, intBitsToFloat, 500.0f);
+            matrixStack.translate((floatArray365[0] - 5.0f) / intBitsToFloat, (floatArray365[1] - 5.0f) / intBitsToFloat, 0.0f);
             Color color811 = MixinMessageIndicatorHelper_2.getColor811();
             RenderSystem.enableBlend();
-            RenderSystem.setShaderColor(color811.getRed() / Float.intBitsToFloat(1132396544), color811.getGreen() / Float.intBitsToFloat(1132396544), color811.getBlue() / Float.intBitsToFloat(1132396544), this.zoomHelper.get172() * BaritoneHelper_3.getHUDSearchHelper42217().get189());
+            RenderSystem.setShaderColor(color811.getRed() / 255.0f, color811.getGreen() / 255.0f, color811.getBlue() / 255.0f, this.zoomHelper.get172() * BaritoneHelper_3.getHUDSearchHelper42217().get189());
             drawContext.drawTexture(identifier, 0, 0, 0, 0, 256, 256);
-            RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216));
+            RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
             RenderSystem.disableBlend();
             matrixStack.pop();
         }
@@ -99,9 +99,9 @@ public class Size extends ModuleListSearchHelper4 {
             return false;
         }
         float[] floatArray2950 = getFloatArray2950();
-        float f = get123() + Math.max(floatArray2950[0], Float.intBitsToFloat(1082130432));
-        float f2 = get124() + Math.max(floatArray2950[1], Float.intBitsToFloat(1082130432));
-        return d >= ((double) (f - Float.intBitsToFloat(1084227584))) && d <= ((double) f) && d2 >= ((double) (f2 - Float.intBitsToFloat(1084227584))) && d2 <= ((double) f2);
+        float f = get123() + Math.max(floatArray2950[0], 4.0f);
+        float f2 = get124() + Math.max(floatArray2950[1], 4.0f);
+        return d >= ((double) (f - 5.0f)) && d <= ((double) f) && d2 >= ((double) (f2 - 5.0f)) && d2 <= ((double) f2);
     }
 
     public boolean is2639(int i) {

@@ -64,8 +64,8 @@ public class AimAssist extends Module {
                 return;
             }
             double d = get3082(this.abstractClientPlayerEntity);
-            if (d > Double.longBitsToDouble(4607182418800017408L) || d < Double.longBitsToDouble(-4616189618054758400L)) {
-                minecraftClient.player.setYaw(minecraftClient.player.getYaw(SearchHelper_2.get536()) - ((float) ((d * this.setting2.getValue().floatValue()) * Double.longBitsToDouble(4576918229175238656L))));
+            if (d > 1.0 || d < -1.0) {
+                minecraftClient.player.setYaw(minecraftClient.player.getYaw(SearchHelper_2.get536()) - ((float) ((d * this.setting2.getValue().floatValue()) * 0.009999999776482582)));
             }
         }
     }
@@ -99,16 +99,16 @@ public class AimAssist extends Module {
     }
 
     public static double get3082(Entity entity) {
-        return ((((minecraftClient.player.getYaw(SearchHelper_2.get536()) - get3084(entity)) % FreecamHelper.num3) + Double.longBitsToDouble(4647961106050973696L)) % FreecamHelper.num3) - Double.longBitsToDouble(4640537203540230144L);
+        return ((((minecraftClient.player.getYaw(SearchHelper_2.get536()) - get3084(entity)) % FreecamHelper.num3) + 540.0) % FreecamHelper.num3) - 180.0;
     }
 
     public static boolean is3083(Entity entity, double d) {
         double d2 = (float) (d * FreecamHelper.val2);
-        double yaw = ((((minecraftClient.player.getYaw(SearchHelper_2.get536()) - get3084(entity)) % FreecamHelper.num3) + Double.longBitsToDouble(4647961106050973696L)) % FreecamHelper.num3) - Double.longBitsToDouble(4640537203540230144L);
+        double yaw = ((((minecraftClient.player.getYaw(SearchHelper_2.get536()) - get3084(entity)) % FreecamHelper.num3) + 540.0) % FreecamHelper.num3) - 180.0;
         return (yaw > 0.0d && yaw < d2) || ((-d2) < yaw && yaw < 0.0d);
     }
 
     public static float get3084(Entity entity) {
-        return (float) (Math.atan2(entity.getX() - minecraftClient.player.getX(), entity.getZ() - minecraftClient.player.getZ()) * Double.longBitsToDouble(4633260481409690083L) * Double.longBitsToDouble(-4616189618054758400L));
+        return (float) (Math.atan2(entity.getX() - minecraftClient.player.getX(), entity.getZ() - minecraftClient.player.getZ()) * 57.2957795 * -1.0);
     }
 }

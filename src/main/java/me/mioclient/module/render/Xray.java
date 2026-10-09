@@ -29,7 +29,7 @@ public class Xray extends Module {
     @Override // me.mioclient.module.Module
     public void onEnable() {
         this.val = ((Double) minecraftClient.options.getGamma().getValue()).doubleValue();
-        ((ZoomHelper_3<Double>)(Object) minecraftClient.options.getGamma()).forceSetValue(Double.valueOf(Double.longBitsToDouble(4652007308841189376L)));
+        ((ZoomHelper_3<Double>)(Object) minecraftClient.options.getGamma()).forceSetValue(Double.valueOf(1000.0));
     }
 
     @Override // me.mioclient.module.Module

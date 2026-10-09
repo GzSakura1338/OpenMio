@@ -248,13 +248,13 @@ public class LogoutSpots extends Module {
     @Listen
     public void onEvent(MatrixStackEvent.Inner_3 inner_3) {
         Camera camera = minecraftClient.gameRenderer.getCamera();
-        Vec3d add = new Vec3d(0.0d, 0.0d, Double.longBitsToDouble(4607182418800017408L)).rotateX(-((float) Math.toRadians(camera.getPitch()))).rotateY(-((float) Math.toRadians(camera.getYaw()))).add(minecraftClient.getEntityRenderDispatcher().camera.getPos());
+        Vec3d add = new Vec3d(0.0d, 0.0d, 1.0).rotateX(-((float) Math.toRadians(camera.getPitch()))).rotateY(-((float) Math.toRadians(camera.getYaw()))).add(minecraftClient.getEntityRenderDispatcher().camera.getPos());
         synchronized (this.object2ObjectOpenHashMap) {
             Iterator it = this.object2ObjectOpenHashMap.entrySet().iterator();
             while (it.hasNext()) {
                 Map.Entry entry = (Map.Entry) it.next();
                 if (((Record) entry.getValue()).getString805().equals(getString518()) && ((Record) entry.getValue()).getStashFinderMode800() == SearchHelper4_7.getStashFinderMode2438()) {
-                    if (((Record) entry.getValue()).box.getCenter().distanceTo(minecraftClient.gameRenderer.getCamera().getPos()) <= this.distance.getValue().floatValue() || this.distance.getValue().floatValue() == Float.intBitsToFloat(1133936640)) {
+                    if (((Record) entry.getValue()).box.getCenter().distanceTo(minecraftClient.gameRenderer.getCamera().getPos()) <= this.distance.getValue().floatValue() || this.distance.getValue().floatValue() == 301.0f) {
                         if (this.model.getValue() == LogoutSpotsMode_2.SIMPLE || this.model.getValue() == LogoutSpotsMode_2.BOTH) {
                             PhaseESPSearchHelper4.do1590(inner_3.getMatrixStack472(), ((Record) entry.getValue()).getBox799(), this.boxFill.getValue());
                             PhaseESPSearchHelper4.do1593(inner_3.getMatrixStack472(), ((Record) entry.getValue()).getBox799(), this.boxLine.getValue(), this.width.getValue().floatValue());
@@ -263,10 +263,10 @@ public class LogoutSpots extends Module {
                             Entity otherClientPlayerEntity804 = ((Record) entry.getValue()).getOtherClientPlayerEntity804();
                             if (this.textured.getValue().booleanValue()) {
                                 flag = true;
-                                RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), this.alpha.getValue().floatValue());
-                                SearchHelper_2.searchHelper_2.do574(otherClientPlayerEntity804, Float.intBitsToFloat(1065353216), inner_3.getMatrixStack472(), minecraftClient.getBufferBuilders().getEntityVertexConsumers());
+                                RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, this.alpha.getValue().floatValue());
+                                SearchHelper_2.searchHelper_2.do574(otherClientPlayerEntity804, 1.0f, inner_3.getMatrixStack472(), minecraftClient.getBufferBuilders().getEntityVertexConsumers());
                                 minecraftClient.getBufferBuilders().getEntityVertexConsumers().draw();
-                                RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216));
+                                RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
                                 flag = false;
                             }
                             ChamsHelper_2.do620(this.width.getValue().floatValue());
@@ -277,16 +277,16 @@ public class LogoutSpots extends Module {
                             SearchHelper_2.searchHelper_2.do560(inner_3.getMatrixStack472(), add, ((Record) entry.getValue()).getBox799().getCenter(), this.modelLine.getValue(), this.width2.getValue().floatValue());
                         }
                         if (this.nameTag.getValue().booleanValue()) {
-                            Vec3d withAxis = ((Record) entry.getValue()).getBox799().getCenter().withAxis(Direction.Axis.Y, ((Record) entry.getValue()).getBox799().maxY + Double.longBitsToDouble(4602678819172646912L));
+                            Vec3d withAxis = ((Record) entry.getValue()).getBox799().getCenter().withAxis(Direction.Axis.Y, ((Record) entry.getValue()).getBox799().maxY + 0.5);
                             String string2921 = new ArgumentTypeHelper().getArgumentTypeHelper2919((String) entry.getKey()).getString2921("\u0001 logout spot");
                             String string1289 = getString1289((Record) entry.getValue());
-                            float intBitsToFloat = fonts.isToggled() ? Float.intBitsToFloat(1065353216) : 0.0f;
+                            float intBitsToFloat = fonts.isToggled() ? 1.0f : 0.0f;
                             if (!string1289.isEmpty()) {
                                 string2921 = new ArgumentTypeHelper().getArgumentTypeHelper2919(string1289).getArgumentTypeHelper2919(string2921).getString2921("\u0001\u0001");
                             }
                             double d = PingSpoofHelper.get377(minecraftClient.gameRenderer.getCamera().getPos(), withAxis, this.textScale.getValue().floatValue());
-                            SearchHelper_2.searchHelper_2.do567(inner_3.getMatrixStack472(), withAxis, Float.intBitsToFloat(-1124744561), 0.0f, (-(FontsSearchHelper4.fontsSearchHelper4.get1316(string2921) / Float.intBitsToFloat(1073741824))) - Float.intBitsToFloat(1073741824), Float.intBitsToFloat(1084227584) + intBitsToFloat, d * Double.longBitsToDouble(4611686018427387904L), this.fillColor.getValue());
-                            SearchHelper_2.searchHelper_2.do571(inner_3.getDrawContext474(), string2921, withAxis, 0.0f, 0.0f, -(FontsSearchHelper4.fontsSearchHelper4.get1316(string2921) / Float.intBitsToFloat(1073741824)), Float.intBitsToFloat(1073741824), d, this.nameTagColor.getValue(), true);
+                            SearchHelper_2.searchHelper_2.do567(inner_3.getMatrixStack472(), withAxis, -0.029999999329447746f, 0.0f, (-(FontsSearchHelper4.fontsSearchHelper4.get1316(string2921) / 2.0f)) - 2.0f, 5.0f + intBitsToFloat, d * 2.0, this.fillColor.getValue());
+                            SearchHelper_2.searchHelper_2.do571(inner_3.getDrawContext474(), string2921, withAxis, 0.0f, 0.0f, -(FontsSearchHelper4.fontsSearchHelper4.get1316(string2921) / 2.0f), 2.0f, d, this.nameTagColor.getValue(), true);
                         }
                     }
                 }
@@ -303,7 +303,7 @@ public class LogoutSpots extends Module {
                 this.object2ObjectOpenHashMap.put(playerEntity1236.getGameProfile().getName(), Record.getRecord797(playerEntity1236, getString518()));
                 if (this.sounds.getValue().booleanValue() && this.logout.getValue().booleanValue()) {
                     SearchHelper4_11 searchHelper4_11 = BaritoneHelper_3.searchHelper4_11;
-                    searchHelper4_11.do2971(this.sound.getValue(), Float.intBitsToFloat(1065353216));
+                    searchHelper4_11.do2971(this.sound.getValue(), 1.0f);
                 }
             }
         }
@@ -321,7 +321,7 @@ public class LogoutSpots extends Module {
                     GameProfile profile = entry.profile();
                     String name = profile == null ? "" : profile.getName();
                     if (this.sounds.getValue().booleanValue() && this.login.getValue().booleanValue() && this.object2ObjectOpenHashMap.containsKey(name)) {
-                        BaritoneHelper_3.searchHelper4_11.do2971(this.sound2.getValue(), Float.intBitsToFloat(1065353216));
+                        BaritoneHelper_3.searchHelper4_11.do2971(this.sound2.getValue(), 1.0f);
                     }
                     this.object2ObjectOpenHashMap.remove(name);
                 });

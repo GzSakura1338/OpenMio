@@ -118,18 +118,18 @@ public class NoRender extends Module {
     @Listen(get219= Helper_7.num4)
     public void onEvent(EntityEvent entityEvent) {
         if (!this.noCluster.getValue().booleanValue()) {
-            this.val = Float.intBitsToFloat(1065353216);
+            this.val = 1.0f;
             return;
         }
         double distanceTo = minecraftClient.player.getPos().distanceTo(entityEvent.getEntity181().getPos());
         float width = entityEvent.getEntity181().getWidth();
         if (distanceTo > width || entityEvent.getEntity181() == minecraftClient.player) {
-            this.val = Float.intBitsToFloat(1065353216);
+            this.val = 1.0f;
             return;
         }
         float f = (float) (distanceTo / width);
-        float intValue = this.clusterAlpha.getValue().intValue() / Float.intBitsToFloat(1132396544);
-        entityEvent.do190(intValue + (f * (Float.intBitsToFloat(1065353216) - intValue)));
+        float intValue = this.clusterAlpha.getValue().intValue() / 255.0f;
+        entityEvent.do190(intValue + (f * (1.0f - intValue)));
         this.val = entityEvent.get189();
     }
 
@@ -227,28 +227,28 @@ public class NoRender extends Module {
 
     public float get1995() {
         if (!isToggled() || !this.hands.getValue().booleanValue() || ShaderSearchHelper4.flag || ShaderSearchHelper4.flag2) {
-            return Float.intBitsToFloat(1065353216);
+            return 1.0f;
         }
         float floatValue = this.opacity2.getValue().floatValue();
         if (floatValue == 0.0f) {
             return 0.0f;
         }
-        return Math.max(floatValue, Float.intBitsToFloat(1038174126));
+        return Math.max(floatValue, 0.10999999940395355f);
     }
 
     public float get1996() {
         if (!isToggled() || !this.armor.getValue().booleanValue()) {
-            return Float.intBitsToFloat(1065353216);
+            return 1.0f;
         }
         float floatValue = this.opacity.getValue().floatValue();
         if (floatValue == 0.0f) {
             return 0.0f;
         }
-        return Math.max(floatValue, Float.intBitsToFloat(1038174126));
+        return Math.max(floatValue, 0.10999999940395355f);
     }
 
     public float get1997() {
-        return !isToggled() ? Float.intBitsToFloat(1065353216) : this.val;
+        return !isToggled() ? 1.0f : this.val;
     }
 
     public boolean is1998() {

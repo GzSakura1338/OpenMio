@@ -16,7 +16,7 @@ public final class PositionData {
     }
 
     public double get1219(PositionData positionData) {
-        return Math.pow(this.num - positionData.num, Double.longBitsToDouble(4611686018427387904L)) + Math.pow(this.num2 - positionData.num2, Double.longBitsToDouble(4611686018427387904L));
+        return Math.pow(this.num - positionData.num, 2.0) + Math.pow(this.num2 - positionData.num2, 2.0);
     }
 
     public double get1220(PositionData positionData) {

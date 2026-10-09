@@ -46,7 +46,7 @@ public class ElytraFlyHelper_7 extends ElytraFlyHelper {
         }
         boolean z = minecraftClient.player.input.jumping;
         if (this.elytraFly.takeoff.getValue() == ElytraFly.ElytraFlyMode_2.STRICT) {
-            z = !minecraftClient.player.isOnGround() && minecraftClient.player.getVelocity().getY() < Double.longBitsToDouble(4591870180066957722L);
+            z = !minecraftClient.player.isOnGround() && minecraftClient.player.getVelocity().getY() < 0.1;
         } else {
             BaritoneHelper_3.holeSnapSearchHelper4_2.do2017(this.elytraFly);
         }
@@ -66,7 +66,7 @@ public class ElytraFlyHelper_7 extends ElytraFlyHelper {
                 this.num = System.currentTimeMillis();
             }
             float floatValue = this.elytraFly.speed2.getValue().floatValue();
-            double[] doubleArray2507 = HoleSnapSearchHelper4_3.getDoubleArray2507(moveEvent, MathHelper.lerp(MathHelper.clamp(((float) (System.currentTimeMillis() - this.num)) / Float.intBitsToFloat(1140457472), 0.0f, Float.intBitsToFloat(1065353216)), this.elytraFly.start.getValue().floatValue(), floatValue));
+            double[] doubleArray2507 = HoleSnapSearchHelper4_3.getDoubleArray2507(moveEvent, MathHelper.lerp(MathHelper.clamp(((float) (System.currentTimeMillis() - this.num)) / 500.0f, 0.0f, 1.0f), this.elytraFly.start.getValue().floatValue(), floatValue));
             minecraftClient.player.setVelocity(doubleArray2507[0], 0.0d, doubleArray2507[1]);
             moveEvent.setY(0.0d);
             minecraftClient.player.setVelocity(minecraftClient.player.getVelocity().withAxis(Direction.Axis.Y, 0.0d));
@@ -86,10 +86,10 @@ public class ElytraFlyHelper_7 extends ElytraFlyHelper {
         DuckPlayerMoveC2SPacket packet904 = (DuckPlayerMoveC2SPacket)(sendImmediatelyEvent.getPacket904());
         if (packet904 instanceof PlayerMoveC2SPacket) {
             DuckPlayerMoveC2SPacket duckPlayerMoveC2SPacket = (DuckPlayerMoveC2SPacket)((PlayerMoveC2SPacket) packet904);
-            if (!minecraftClient.player.isFallFlying() || minecraftClient.player.isOnGround() || minecraftClient.player.getVelocity().getY() >= Double.longBitsToDouble(4591870180066957722L) || !HoleSnapSearchHelper4_3.is2181()) {
+            if (!minecraftClient.player.isFallFlying() || minecraftClient.player.isOnGround() || minecraftClient.player.getVelocity().getY() >= 0.1 || !HoleSnapSearchHelper4_3.is2181()) {
                 return;
             }
-            duckPlayerMoveC2SPacket.setPitch(Float.intBitsToFloat(-1063256064));
+            duckPlayerMoveC2SPacket.setPitch(-5.0f);
         }
     }
 

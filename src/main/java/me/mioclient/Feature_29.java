@@ -15,8 +15,8 @@ public final class Feature_29 extends Feature {
     @Override // me.mioclient.Feature
     public void exec(com.mojang.brigadier.builder.LiteralArgumentBuilder<CommandSource> literalArgumentBuilder) {
         literalArgumentBuilder.then(Feature.literal("v").then(Feature.argument("value", FloatArgumentType.floatArg()).executes(commandContext -> {
-            float clamp = Math.clamp(((Float) commandContext.getArgument("value", Float.class)).floatValue(), Float.intBitsToFloat(-874192448), Float.intBitsToFloat(1273291200));
-            int ceil = (int) Math.ceil(Math.abs(clamp / Float.intBitsToFloat(1092616192)));
+            float clamp = Math.clamp(((Float) commandContext.getArgument("value", Float.class)).floatValue(), -30000000.0f, 30000000.0f);
+            int ceil = (int) Math.ceil(Math.abs(clamp / 10.0f));
             if (ceil > 20) {
                 ceil = 1;
             }
@@ -34,7 +34,7 @@ public final class Feature_29 extends Feature {
             AutoSignSearchHelper4.do2562(minecraftClient.player.getX(), minecraftClient.player.getY() + clamp, minecraftClient.player.getZ(), true);
             return 1;
         }))).then(Feature.literal("h").then(Feature.argument("value", FloatArgumentType.floatArg()).executes(commandContext2 -> {
-            float clamp = Math.clamp(((Float) commandContext2.getArgument("value", Float.class)).floatValue(), Float.intBitsToFloat(-874192448), Float.intBitsToFloat(1273291200));
+            float clamp = Math.clamp(((Float) commandContext2.getArgument("value", Float.class)).floatValue(), -30000000.0f, 30000000.0f);
             double cos = Math.cos(Math.toRadians(minecraftClient.player.getYaw() + FreecamHelper.num2));
             double sin = Math.sin(Math.toRadians(minecraftClient.player.getYaw() + FreecamHelper.num2));
             if (minecraftClient.player.hasVehicle()) {

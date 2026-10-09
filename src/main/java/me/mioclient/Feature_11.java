@@ -30,7 +30,7 @@ public final class Feature_11 extends Feature {
         if (minecraftClient.player == null) {
             return "";
         }
-        return new ArgumentTypeHelper().getArgumentTypeHelper2906((int) Math.floor(Math.random() * Double.longBitsToDouble(4666723172467343360L))).getArgumentTypeHelper2919(SearchHelper4_7.getStashFinderMode2438().getString2175()).getArgumentTypeHelper2906((int) minecraftClient.player.getZ()).getArgumentTypeHelper2906((int) minecraftClient.player.getY()).getArgumentTypeHelper2906((int) minecraftClient.player.getX()).getString2921("X: \u0001, Y: \u0001, Z: \u0001 in The \u0001 [\u0001]");
+        return new ArgumentTypeHelper().getArgumentTypeHelper2906((int) Math.floor(Math.random() * 10000.0)).getArgumentTypeHelper2919(SearchHelper4_7.getStashFinderMode2438().getString2175()).getArgumentTypeHelper2906((int) minecraftClient.player.getZ()).getArgumentTypeHelper2906((int) minecraftClient.player.getY()).getArgumentTypeHelper2906((int) minecraftClient.player.getX()).getString2921("X: \u0001, Y: \u0001, Z: \u0001 in The \u0001 [\u0001]");
     }
 
     public void do1387(String str, String str2) {

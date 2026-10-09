@@ -73,7 +73,7 @@ public class VoidESP extends Module {
                     Color value2 = this.line.getValue();
                     double distanceTo = pos.distanceTo(blockPos.toCenterPos());
                     if (this.fade.getValue().booleanValue() && distanceTo >= this.fadeRadius.getValue().floatValue()) {
-                        float intBitsToFloat = Float.intBitsToFloat(1065353216) - ((float) MathHelper.clamp((distanceTo - this.fadeRadius.getValue().floatValue()) / (this.radius.getValue().intValue() - this.fadeRadius.getValue().floatValue()), 0.0d, Double.longBitsToDouble(4607182418800017408L)));
+                        float intBitsToFloat = 1.0f - ((float) MathHelper.clamp((distanceTo - this.fadeRadius.getValue().floatValue()) / (this.radius.getValue().intValue() - this.fadeRadius.getValue().floatValue()), 0.0d, 1.0));
                         value = MixinMessageIndicatorHelper_2.getColor816(value, (int) (intBitsToFloat * value.getAlpha()));
                         value2 = MixinMessageIndicatorHelper_2.getColor816(value2, (int) (intBitsToFloat * value2.getAlpha()));
                     }

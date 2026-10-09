@@ -32,7 +32,7 @@ public class Feature_15 extends Feature {
                 return 1;
             }
             if (minecraftClient.player.isOnGround()) {
-                minecraftClient.player.addVelocity(0.0d, Double.longBitsToDouble(4601237667291888353L), 0.0d);
+                minecraftClient.player.addVelocity(0.0d, 0.42, 0.0d);
             }
             do413(() -> {
                 AutoSignSearchHelper4.do948();

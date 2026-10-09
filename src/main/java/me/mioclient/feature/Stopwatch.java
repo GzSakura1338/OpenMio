@@ -84,19 +84,19 @@ public class Stopwatch {
     public static long get424(double d, TimeUnit timeUnit) {
         switch (Inner.intArr[timeUnit.ordinal()]) {
             case 1:
-                return (long) (d * Double.longBitsToDouble(4562254508917369340L) * Double.longBitsToDouble(4562254508917369340L));
+                return (long) (d * 0.001 * 0.001);
             case 2:
-                return (long) (d * Double.longBitsToDouble(4562254508917369340L));
+                return (long) (d * 0.001);
             case 3:
                 return (long) d;
             case 4:
-                return (long) (d * Double.longBitsToDouble(4652007308841189376L));
+                return (long) (d * 1000.0);
             case 5:
-                return (long) (d * Double.longBitsToDouble(4652007308841189376L) * Double.longBitsToDouble(4633641066610819072L));
+                return (long) (d * 1000.0 * 60.0);
             case 6:
-                return (long) (d * Double.longBitsToDouble(4652007308841189376L) * Double.longBitsToDouble(4633641066610819072L) * Double.longBitsToDouble(4633641066610819072L));
+                return (long) (d * 1000.0 * 60.0 * 60.0);
             case 7:
-                return (long) (d * Double.longBitsToDouble(4652007308841189376L) * Double.longBitsToDouble(4633641066610819072L) * Double.longBitsToDouble(4633641066610819072L) * Double.longBitsToDouble(4627448617123184640L));
+                return (long) (d * 1000.0 * 60.0 * 60.0 * 24.0);
             default:
                 throw new MatchException((String) null, (Throwable) null);
         }

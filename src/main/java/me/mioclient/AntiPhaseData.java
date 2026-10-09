@@ -23,7 +23,7 @@ public final class AntiPhaseData {
 
     public Vec3d getVec3d2748() {
         Vec3d centerPos = this.blockPos.toCenterPos();
-        return centerPos.offset(this.direction, Double.longBitsToDouble(4602678819172646912L));
+        return centerPos.offset(this.direction, 0.5);
     }
 
 

@@ -110,21 +110,21 @@ public class Chams extends Module {
         if (this.shine2.getValue().booleanValue()) {
             this.trajectoriesVertexConsumer.getBufferBuilder2595(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_TEXTURE);
         }
-        float intBitsToFloat = ((Integer) minecraftClient.options.getFov().getValue()).intValue() > 115 && is2047() ? Float.intBitsToFloat(1075000115) : Float.intBitsToFloat(1065353216);
+        float intBitsToFloat = ((Integer) minecraftClient.options.getFov().getValue()).intValue() > 115 && is2047() ? 2.299999952316284f : 1.0f;
         ESPHelper.do1104();
         RenderSystem.enablePolygonOffset();
-        RenderSystem.polygonOffset(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(-900358272) * intBitsToFloat);
+        RenderSystem.polygonOffset(1.0f, -3500000.0f * intBitsToFloat);
         for (Entity entity : minecraftClient.world.getEntities()) {
             if (is1763(entity)) {
                 if (this.model.getValue().booleanValue() && this.xqz.getValue().booleanValue() && !norender.is1992(entity) && this.opacity.getValue().intValue() > 0) {
                     this.flag3 = true;
-                    RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), this.opacity.getValue().intValue() / Float.intBitsToFloat(1120403456));
+                    RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, this.opacity.getValue().intValue() / 100.0f);
                     SearchHelper_2.searchHelper_2.do574(entity, inner.get473(), inner.getMatrixStack472(), minecraftClient.getBufferBuilders().getEntityVertexConsumers());
                     this.flag3 = false;
                 }
                 if (this.shine2.getValue().booleanValue()) {
                     flag = true;
-                    RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216));
+                    RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
                     inner.getMatrixStack472().push();
                     SearchHelper_2.do578(inner.getMatrixStack472());
                     SearchHelper_2.searchHelper_2.do574(entity, inner.get473(), inner.getMatrixStack472(), minecraftClient.getBufferBuilders().getEntityVertexConsumers());
@@ -134,12 +134,12 @@ public class Chams extends Module {
             }
         }
         if (this.model.getValue().booleanValue() && this.xqz.getValue().booleanValue()) {
-            RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), this.opacity.getValue().intValue() / Float.intBitsToFloat(1120403456));
+            RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, this.opacity.getValue().intValue() / 100.0f);
             minecraftClient.getBufferBuilders().getEntityVertexConsumers().draw();
-            RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216));
+            RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         }
         RenderSystem.disablePolygonOffset();
-        RenderSystem.polygonOffset(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1247125376) * intBitsToFloat);
+        RenderSystem.polygonOffset(1.0f, 3500000.0f * intBitsToFloat);
         ESPHelper.do1105();
     }
 
@@ -154,13 +154,13 @@ public class Chams extends Module {
         if (this.pop.getValue().booleanValue()) {
             synchronized (this.map) {
                 this.map.entrySet().removeIf(entry -> {
-                    return ((float) ((Long) entry.getValue()).longValue()) + (this.time.getValue().floatValue() * Float.intBitsToFloat(1148846080)) < ((float) System.currentTimeMillis());
+                    return ((float) ((Long) entry.getValue()).longValue()) + (this.time.getValue().floatValue() * 1000.0f) < ((float) System.currentTimeMillis());
                 });
                 this.map.forEach((otherClientPlayerEntity, l) -> {
-                    float intBitsToFloat = Float.intBitsToFloat(1065353216) - MathHelper.clamp(((float) (System.currentTimeMillis() - l.longValue())) / (this.time.getValue().floatValue() * Float.intBitsToFloat(1148846080)), 0.0f, Float.intBitsToFloat(1065353216));
-                    otherClientPlayerEntity.setPosition(otherClientPlayerEntity.getX(), otherClientPlayerEntity.getVec3d147().y + ((Float.intBitsToFloat(1065353216) - intBitsToFloat) * this.motion.getValue().floatValue()), otherClientPlayerEntity.getZ());
+                    float intBitsToFloat = 1.0f - MathHelper.clamp(((float) (System.currentTimeMillis() - l.longValue())) / (this.time.getValue().floatValue() * 1000.0f), 0.0f, 1.0f);
+                    otherClientPlayerEntity.setPosition(otherClientPlayerEntity.getX(), otherClientPlayerEntity.getVec3d147().y + ((1.0f - intBitsToFloat) * this.motion.getValue().floatValue()), otherClientPlayerEntity.getZ());
                     Color[] colorArray593 = this.wireframe.getValue().getColorArray593(this);
-                    ChamsHelper_2.do612(MixinMessageIndicatorHelper_2.getColor817(colorArray593[0], (colorArray593[0].getAlpha() / Float.intBitsToFloat(1132396544)) * intBitsToFloat), MixinMessageIndicatorHelper_2.getColor817(colorArray593[1], (colorArray593[1].getAlpha() / Float.intBitsToFloat(1132396544)) * intBitsToFloat));
+                    ChamsHelper_2.do612(MixinMessageIndicatorHelper_2.getColor817(colorArray593[0], (colorArray593[0].getAlpha() / 255.0f) * intBitsToFloat), MixinMessageIndicatorHelper_2.getColor817(colorArray593[1], (colorArray593[1].getAlpha() / 255.0f) * intBitsToFloat));
                     ChamsHelper_2.do615(inner_3.getMatrixStack472(), otherClientPlayerEntity);
                 });
             }
@@ -179,12 +179,12 @@ public class Chams extends Module {
             RenderLayer.getArmorEntityGlint().startDrawing();
             MinecraftClient.getInstance().getTextureManager().getTexture(identifier).setFilter(true, false);
             RenderSystem.setShaderTexture(0, identifier);
-            RenderSystem.setShaderColor(value.getRed() / Float.intBitsToFloat(1132396544), value.getGreen() / Float.intBitsToFloat(1132396544), value.getBlue() / Float.intBitsToFloat(1132396544), Float.intBitsToFloat(1065353216));
+            RenderSystem.setShaderColor(value.getRed() / 255.0f, value.getGreen() / 255.0f, value.getBlue() / 255.0f, 1.0f);
             RenderSystem.disableDepthTest();
             this.trajectoriesVertexConsumer.do865();
             RenderSystem.enableDepthTest();
             RenderLayer.getArmorEntityGlint().endDrawing();
-            RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216));
+            RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
             flag2 = false;
             minecraftClient.options.getGlintSpeed().setValue(Double.valueOf(doubleValue));
             minecraftClient.options.getGlintStrength().setValue(Double.valueOf(doubleValue2));
@@ -213,7 +213,7 @@ public class Chams extends Module {
             if ((playerEntityEvent.getLogoutSpotsHelperMode1892() != PlayerEntityEvent.LogoutSpotsHelperMode.DEATH || this.death.getValue().booleanValue()) && (playerEntity1890 = playerEntityEvent.getPlayerEntity1890()) != minecraftClient.player) {
                 OtherClientPlayerEntity otherClientPlayerEntity = new OtherClientPlayerEntity(minecraftClient.world);
                 otherClientPlayerEntity.do146(playerEntity1890);
-                otherClientPlayerEntity.limbAnimator.pos *= Float.intBitsToFloat(1073741824);
+                otherClientPlayerEntity.limbAnimator.pos *= 2.0f;
                 if (!this.animate.getValue().booleanValue()) {
                     otherClientPlayerEntity.limbAnimator.pos = 0.0f;
                     otherClientPlayerEntity.limbAnimator.speed = 0.0f;
@@ -221,7 +221,7 @@ public class Chams extends Module {
                 } else if (this.boost.getValue().booleanValue()) {
                     otherClientPlayerEntity.do149(true);
                     otherClientPlayerEntity.handSwingProgress = 0.0f;
-                    otherClientPlayerEntity.limbAnimator.speed = (float) ((Math.random() * Double.longBitsToDouble(4605380979056443392L)) + Double.longBitsToDouble(4596373779801702400L));
+                    otherClientPlayerEntity.limbAnimator.speed = (float) ((Math.random() * 0.800000011920929) + 0.20000000298023224);
                     otherClientPlayerEntity.limbAnimator.pos = 0.0f;
                 }
                 synchronized (this.map) {
@@ -268,7 +268,7 @@ public class Chams extends Module {
     }
 
     public float get2044(Entity entity) {
-        return (float) (Double.longBitsToDouble(4607182418800017408L) - MathHelper.clamp(((minecraftClient.gameRenderer.getCamera().getPos().distanceTo(entity.getPos()) / this.range.getValue().intValue()) - (this.fadeRadius.getValue().intValue() / Float.intBitsToFloat(1120403456))) / (Float.intBitsToFloat(1065353216) - (this.fadeRadius.getValue().intValue() / Float.intBitsToFloat(1120403456))), 0.0d, Double.longBitsToDouble(4607182418800017408L)));
+        return (float) (1.0 - MathHelper.clamp(((minecraftClient.gameRenderer.getCamera().getPos().distanceTo(entity.getPos()) / this.range.getValue().intValue()) - (this.fadeRadius.getValue().intValue() / 100.0f)) / (1.0f - (this.fadeRadius.getValue().intValue() / 100.0f)), 0.0d, 1.0));
     }
 
     public boolean is2045(Entity entity) {
@@ -283,7 +283,7 @@ public class Chams extends Module {
     }
 
     public boolean is2047() {
-        float intBitsToFloat = Float.intBitsToFloat(1050253722);
+        float intBitsToFloat = 0.30000001192092896f;
         Vec3d eyePos = minecraftClient.player.getEyePos();
         BlockPos ofFloored = BlockPos.ofFloored((Position) eyePos);
         if (!minecraftClient.world.isBlockSpaceEmpty(minecraftClient.player, Box.of(eyePos, intBitsToFloat, intBitsToFloat, intBitsToFloat))) {

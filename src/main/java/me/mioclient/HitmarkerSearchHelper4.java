@@ -27,6 +27,6 @@ public final class HitmarkerSearchHelper4 implements SearchHelper_4 {
     }
 
     public float get3095(float f) {
-        return MathHelper.clamp(Float.intBitsToFloat(1065353216) / (this.num * f), 0.0f, Float.intBitsToFloat(1065353216));
+        return MathHelper.clamp(1.0f / (this.num * f), 0.0f, 1.0f);
     }
 }

@@ -51,7 +51,7 @@ public final class EntityIdHelper {
             this.val2 = this.val;
         }
         do2816();
-        this.val = MathHelper.clamp(f, 0.0f, Float.intBitsToFloat(1065353216));
+        this.val = MathHelper.clamp(f, 0.0f, 1.0f);
     }
 
     public int get2093() {
@@ -68,9 +68,9 @@ public final class EntityIdHelper {
 
     public boolean is2817() {
         Entity entity181;
-        if ((this.val == Float.intBitsToFloat(1065353216) && this.stopwatch.is419(2000L)) || (entity181 = getEntity181()) == null) {
+        if ((this.val == 1.0f && this.stopwatch.is419(2000L)) || (entity181 = getEntity181()) == null) {
             return true;
         }
-        return entity181.getEyePos().squaredDistanceTo(this.blockPos.toCenterPos()) >= Double.longBitsToDouble(4634204016564240384L);
+        return entity181.getEyePos().squaredDistanceTo(this.blockPos.toCenterPos()) >= 64.0;
     }
 }

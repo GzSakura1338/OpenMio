@@ -98,8 +98,8 @@ public class NoSlow extends Module {
         super("NoSlow", "Cancels several things that may slow you down.", Category.MOVEMENT, new String[0]);
         PhaseESPHelper.do1351(this);
         this.stopwatch = new Stopwatch();
-        this.hUDHelper_2 = new HUDHelper_2(Float.intBitsToFloat(1073741824), true);
-        this.hUDHelper_22 = new HUDHelper_2(Float.intBitsToFloat(1073741824), true);
+        this.hUDHelper_2 = new HUDHelper_2(2.0f, true);
+        this.hUDHelper_22 = new HUDHelper_2(2.0f, true);
         setDrawn(false);
     }
 
@@ -161,7 +161,7 @@ public class NoSlow extends Module {
         }
         if (HoleSnapSearchHelper4_3.is2181() && this.mode.getValue() != NoSlowMode.GRIMV3) {
             if (BaritoneHelper_3.antiPhaseSearchHelper4_2.get2231() > 1 && !this.flag3) {
-                AutoSignSearchHelper4.do2562(minecraftClient.player.getX(), minecraftClient.player.getY() + Double.longBitsToDouble(4589175226049939217L), minecraftClient.player.getZ(), false);
+                AutoSignSearchHelper4.do2562(minecraftClient.player.getX(), minecraftClient.player.getY() + 0.0626, minecraftClient.player.getZ(), false);
                 this.flag3 = true;
                 this.flag = true;
             }
@@ -188,8 +188,8 @@ public class NoSlow extends Module {
                 }
             }
             if (z) {
-                minecraftClient.player.input.movementSideways /= Float.intBitsToFloat(1045220557);
-                minecraftClient.player.input.movementForward /= Float.intBitsToFloat(1045220557);
+                minecraftClient.player.input.movementSideways /= 0.20000000298023224f;
+                minecraftClient.player.input.movementForward /= 0.20000000298023224f;
             }
             if (is3107()) {
                 do3102(minecraftClient.player.getActiveHand());
@@ -205,14 +205,14 @@ public class NoSlow extends Module {
             return;
         }
         if (is3105(264)) {
-            this.hUDHelper_2.do1737(Math.min(MathHelper.lerp(inner_3.get473(), minecraftClient.player.prevPitch, minecraftClient.player.getPitch()) + Float.intBitsToFloat(1090519040), FreecamHelper.num2));
+            this.hUDHelper_2.do1737(Math.min(MathHelper.lerp(inner_3.get473(), minecraftClient.player.prevPitch, minecraftClient.player.getPitch()) + 8.0f, FreecamHelper.num2));
         } else if (is3105(265)) {
-            this.hUDHelper_2.do1737(Math.max(MathHelper.lerp(inner_3.get473(), minecraftClient.player.prevPitch, minecraftClient.player.getPitch()) - Float.intBitsToFloat(1090519040), -FreecamHelper.num2));
+            this.hUDHelper_2.do1737(Math.max(MathHelper.lerp(inner_3.get473(), minecraftClient.player.prevPitch, minecraftClient.player.getPitch()) - 8.0f, -FreecamHelper.num2));
         }
         if (is3105(262)) {
-            this.hUDHelper_22.do1737(MathHelper.lerp(inner_3.get473(), minecraftClient.player.prevYaw, minecraftClient.player.getYaw()) + Float.intBitsToFloat(1090519040));
+            this.hUDHelper_22.do1737(MathHelper.lerp(inner_3.get473(), minecraftClient.player.prevYaw, minecraftClient.player.getYaw()) + 8.0f);
         } else if (is3105(263)) {
-            this.hUDHelper_22.do1737(MathHelper.lerp(inner_3.get473(), minecraftClient.player.prevYaw, minecraftClient.player.getYaw()) - Float.intBitsToFloat(1090519040));
+            this.hUDHelper_22.do1737(MathHelper.lerp(inner_3.get473(), minecraftClient.player.prevYaw, minecraftClient.player.getYaw()) - 8.0f);
         }
         if (is3104()) {
             minecraftClient.player.setPitch(this.hUDHelper_2.get172());

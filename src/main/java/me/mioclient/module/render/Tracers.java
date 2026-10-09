@@ -69,7 +69,7 @@ public class Tracers extends Module {
     @Listen
     public void onEvent(MatrixStackEvent.Inner_3 inner_3) {
         Camera camera = minecraftClient.gameRenderer.getCamera();
-        Vec3d add = new Vec3d(0.0d, 0.0d, Double.longBitsToDouble(4636737291354636288L)).rotateX(-((float) Math.toRadians(camera.getPitch()))).rotateY(-((float) Math.toRadians(camera.getYaw()))).add(minecraftClient.getEntityRenderDispatcher().camera.getPos());
+        Vec3d add = new Vec3d(0.0d, 0.0d, 100.0).rotateX(-((float) Math.toRadians(camera.getPitch()))).rotateY(-((float) Math.toRadians(camera.getYaw()))).add(minecraftClient.getEntityRenderDispatcher().camera.getPos());
         GL32C.glLineWidth(this.lineWidth.getValue().floatValue());
         for (PlayerEntity playerEntity : minecraftClient.world.getPlayers()) {
             if (minecraftClient.player != playerEntity) {
@@ -79,7 +79,7 @@ public class Tracers extends Module {
                         Color value = this.color.getValue();
                         boolean booleanValue = this.distanceColor.getValue().booleanValue();
                         if (booleanValue) {
-                            value = MixinMessageIndicatorHelper_2.getColor816(MixinMessageIndicatorHelper_2.getColor815(Color.red, Color.green, Float.intBitsToFloat(1065353216) - ((float) ((MathHelper.clamp(minecraftClient.player.getEyePos().distanceTo(add2), Double.longBitsToDouble(4620693217682128896L), Double.longBitsToDouble(4634204016564240384L)) - Double.longBitsToDouble(4620693217682128896L)) / Double.longBitsToDouble(4633078116657397760L)))), this.color.getValue().getAlpha());
+                            value = MixinMessageIndicatorHelper_2.getColor816(MixinMessageIndicatorHelper_2.getColor815(Color.red, Color.green, 1.0f - ((float) ((MathHelper.clamp(minecraftClient.player.getEyePos().distanceTo(add2), 8.0, 64.0) - 8.0) / 56.0))), this.color.getValue().getAlpha());
                         }
                         if (BaritoneHelper_3.searchHelper4_14.is520(playerEntity)) {
                             value = MixinMessageIndicatorHelper_2.getColor816(BaritoneHelper_3.searchHelper4_14.getColor528(), this.color.getValue().getAlpha());
@@ -98,6 +98,6 @@ public class Tracers extends Module {
                 }
             }
         }
-        GL32C.glLineWidth(Float.intBitsToFloat(1065353216));
+        GL32C.glLineWidth(1.0f);
     }
 }

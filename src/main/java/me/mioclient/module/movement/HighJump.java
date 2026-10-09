@@ -12,7 +12,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 /* compiled from: 0.java */
 /* loaded from: mio-yarn.jar:me/mioclient/module/movement/HighJump.class */
 public class HighJump extends Module {
-    public static final float val = Float.intBitsToFloat(1054280253);
+    public static final float val = 0.41999998688697815f;
     public Setting<Float> strength;
     public Setting<Boolean> inMovement;
 
@@ -39,7 +39,7 @@ public class HighJump extends Module {
     }
 
     public void reset() {
-        do511(Float.intBitsToFloat(1054280253));
+        do511(0.41999998688697815f);
     }
 
     public void do511(float f) {

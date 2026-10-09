@@ -65,7 +65,7 @@ public class AutoClicker extends Module {
         super("AutoClicker", "Spams attack as you hold down the attack button.", Category.COMBAT, new String[0]);
         PhaseESPHelper.do1351(this);
         this.stopwatch = new Stopwatch();
-        this.val = Float.intBitsToFloat(1065353216);
+        this.val = 1.0f;
         this.list = new ArrayList();
     }
 
@@ -87,7 +87,7 @@ public class AutoClicker extends Module {
             do1074();
             this.list.add(Long.valueOf(System.currentTimeMillis()));
             this.stopwatch.reset();
-            this.val = PingSpoofHelper.get370(Float.intBitsToFloat(1065353216), this.delay.getValue().floatValue());
+            this.val = PingSpoofHelper.get370(1.0f, this.delay.getValue().floatValue());
         }
     }
 

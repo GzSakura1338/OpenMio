@@ -28,9 +28,9 @@ public class PresetFontsSearchHelper42 extends FontsSearchHelper4_2 {
         if (f2 == 0.0f) {
             return;
         }
-        RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1061158912) * f2);
+        RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 0.75f * f2);
         drawContext.drawCenteredTextWithShadow(minecraftClient.textRenderer, "Drop preset files here", drawContext.getScaledWindowWidth() / 2, drawContext.getScaledWindowHeight() / 2, -1);
-        RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216));
+        RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
     }
 
     public void filesDragged(java.util.List<Path> list) {

@@ -75,7 +75,7 @@ public class GameStopwatchSearchHelper419_2 extends StopwatchSearchHelper419 {
             }
         }
         if (!this.flag3) {
-            FontsSearchHelper4.fontsSearchHelper4.do1695(drawContext, String.valueOf(this.num), getPresetEnumSettingHelper1394().getX() + Float.intBitsToFloat(1069547520), getPresetEnumSettingHelper1394().getY() + this.num + 1, Float.intBitsToFloat(1061158912), Color.white);
+            FontsSearchHelper4.fontsSearchHelper4.do1695(drawContext, String.valueOf(this.num), getPresetEnumSettingHelper1394().getX() + 1.5f, getPresetEnumSettingHelper1394().getY() + this.num + 1, 0.75f, Color.white);
             return;
         }
         String string = new ArgumentTypeHelper().getArgumentTypeHelper2906(this.num).getString2921("Score \u0001. Press R.");

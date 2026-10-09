@@ -151,14 +151,14 @@ public class Announcer extends Module {
         if (is1469()) {
             return;
         }
-        this.val += (BaritoneHelper_3.feetPlaceSearchHelper4.get2636() / Double.longBitsToDouble(4615288898129284301L)) / Double.longBitsToDouble(4626322717216342016L);
-        if (this.val >= Double.longBitsToDouble(4652007308841189376L)) {
+        this.val += (BaritoneHelper_3.feetPlaceSearchHelper4.get2636() / 3.6) / 20.0;
+        if (this.val >= 1000.0) {
             this.val = 0.0d;
         }
-        if (!this.move.getValue().booleanValue() || this.val < Double.longBitsToDouble(4607182418800017408L)) {
+        if (!this.move.getValue().booleanValue() || this.val < 1.0) {
             return;
         }
-        if (this.stopwatch.is419((long) (Double.longBitsToDouble(4652007308841189376L) * this.delay.getValue().doubleValue()))) {
+        if (this.stopwatch.is419((long) (1000.0 * this.delay.getValue().doubleValue()))) {
             do1926(getString1923().replace("{blocks}", new DecimalFormat("0.00").format(this.val)));
             this.val = 0.0d;
             this.stopwatch.reset();
@@ -175,7 +175,7 @@ public class Announcer extends Module {
             if (finishUsingEvent.getItemStack2549().contains(DataComponentTypes.FOOD)) {
                 this.num++;
                 if (this.num >= i) {
-                    if (this.stopwatch.is419((long) (Double.longBitsToDouble(4652007308841189376L) * this.delay.getValue().doubleValue()))) {
+                    if (this.stopwatch.is419((long) (1000.0 * this.delay.getValue().doubleValue()))) {
                         do1926(getString1925().replace("{amount}", new ArgumentTypeHelper().getArgumentTypeHelper2906(this.num).getString2921("\u0001")).replace("{name}", new ArgumentTypeHelper().getArgumentTypeHelper2919(finishUsingEvent.getItemStack2549().getItem().getName().getString()).getString2921("\u0001")));
                         this.num = 0;
                         this.stopwatch.reset();
@@ -192,7 +192,7 @@ public class Announcer extends Module {
         }
         int i = PingSpoofHelper.get371(1, 6);
         this.num2++;
-        if (this.break_.getValue().booleanValue() && this.num2 >= i && this.stopwatch.is419((long) (Double.longBitsToDouble(4652007308841189376L) * this.delay.getValue().doubleValue()))) {
+        if (this.break_.getValue().booleanValue() && this.num2 >= i && this.stopwatch.is419((long) (1000.0 * this.delay.getValue().doubleValue()))) {
             String[] strArr = {new ArgumentTypeHelper().getArgumentTypeHelper2919(PhaseESPSearchHelper4_2.getBlock3044(breakBlockEvent.getBlockPos386()).getName().getString()).getString2921("\u0001"), "Air", "Bedrock", "Barrier"};
             do1926(getString1924().replace("{amount}", new ArgumentTypeHelper().getArgumentTypeHelper2906(this.num2).getString2921("\u0001")).replace("{name}", strArr[new Random().nextInt(strArr.length)]));
             this.num2 = 0;

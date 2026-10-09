@@ -315,7 +315,7 @@ public class ElytraFly extends Module {
         if (packet904 instanceof EntitySpawnS2CPacket) {
             EntitySpawnS2CPacket entitySpawnS2CPacket = packet904;
             if (entitySpawnS2CPacket.getEntityType() == EntityType.FIREWORK_ROCKET) {
-                if (new Vec3d(entitySpawnS2CPacket.getX(), entitySpawnS2CPacket.getY(), entitySpawnS2CPacket.getZ()).squaredDistanceTo(minecraftClient.player.getPos()) <= Double.longBitsToDouble(4630263366890291200L)) {
+                if (new Vec3d(entitySpawnS2CPacket.getX(), entitySpawnS2CPacket.getY(), entitySpawnS2CPacket.getZ()).squaredDistanceTo(minecraftClient.player.getPos()) <= 36.0) {
                     this.stopwatch3.reset();
                 }
             }
@@ -364,7 +364,7 @@ public class ElytraFly extends Module {
             return;
         }
         if (this.takeoff.getValue() == ElytraFlyMode_2.STRICT) {
-            BaritoneHelper_3.holeSnapSearchHelper4_2.do2018(this, Float.intBitsToFloat(1036831949));
+            BaritoneHelper_3.holeSnapSearchHelper4_2.do2018(this, 0.10000000149011612f);
         }
         long j = 100;
         if (this.mode.getValue() == ElytraFlyPredicateMode.STRICT) {

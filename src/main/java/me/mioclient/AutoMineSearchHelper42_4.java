@@ -16,7 +16,7 @@ public final class AutoMineSearchHelper42_4 extends AutoMineSearchHelper4_2 {
     public void do722(AutoMineHelper autoMineHelper) {
         BlockPos blockPos = null;
         for (BlockEntity blockEntity : BaritoneHelper_3.stashFinderSearchHelper4.getList1555()) {
-            if (minecraftClient.player.getEyePos().distanceTo(blockEntity.getPos().toCenterPos()) <= Double.longBitsToDouble(4612136378390124954L) && (blockEntity instanceof EnderChestBlockEntity)) {
+            if (minecraftClient.player.getEyePos().distanceTo(blockEntity.getPos().toCenterPos()) <= 2.2 && (blockEntity instanceof EnderChestBlockEntity)) {
                 if (is1212(blockEntity.getPos())) {
                     if (blockPos != null) {
                         if (is2890(blockEntity.getPos())) {

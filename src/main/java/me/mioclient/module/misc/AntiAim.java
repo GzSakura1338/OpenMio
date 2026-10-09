@@ -185,7 +185,7 @@ public class AntiAim extends Module {
         }
         if (this.enderman.getValue().booleanValue() && (endermanEntity852 = getEndermanEntity852()) != null) {
             if (this.look.getValue() == AntiAimMode_2.AVOID) {
-                f2 = Float.intBitsToFloat(1119092736);
+                f2 = 90.0f;
                 do857();
             }
             if (this.look.getValue() == AntiAimMode_2.STARE) {
@@ -235,9 +235,9 @@ public class AntiAim extends Module {
     }
 
     public boolean is853(EndermanEntity endermanEntity) {
-        Vec3d normalize = minecraftClient.player.getRotationVec(Float.intBitsToFloat(1065353216)).normalize();
+        Vec3d normalize = minecraftClient.player.getRotationVec(1.0f).normalize();
         Vec3d vec3d = new Vec3d(endermanEntity.getX() - minecraftClient.player.getX(), endermanEntity.getEyeY() - minecraftClient.player.getEyeY(), endermanEntity.getZ() - minecraftClient.player.getZ());
-        return normalize.dotProduct(vec3d.normalize()) > Double.longBitsToDouble(4607182418800017408L) - (Double.longBitsToDouble(4582862980812216730L) / vec3d.length());
+        return normalize.dotProduct(vec3d.normalize()) > 1.0 - (0.025 / vec3d.length());
     }
 
     public void do854(Hand hand) {

@@ -16,10 +16,10 @@ import net.minecraft.util.shape.VoxelShapes;
 /* compiled from: 0.java */
 /* loaded from: mio-yarn.jar:me/mioclient/PlayerEntitySearchHelper4.class */
 public class PlayerEntitySearchHelper4 implements SearchHelper_4 {
-    public static final float val = Float.intBitsToFloat(-1113550802);
+    public static final float val = -0.07840000092983246f;
     public static final float val2 = HoleSnapSearchHelper4_3.val;
-    public static final float val3 = val2 * Float.intBitsToFloat(1050253722);
-    public static final float val4 = (val2 * Float.intBitsToFloat(1068708659)) + Float.intBitsToFloat(1045220557);
+    public static final float val3 = val2 * 0.30000001192092896f;
+    public static final float val4 = (val2 * 1.399999976158142f) + 0.20000000298023224f;
     public final List<Box> list = new ArrayList();
     public final PlayerEntity playerEntity;
 
@@ -40,7 +40,7 @@ public class PlayerEntitySearchHelper4 implements SearchHelper_4 {
                 z = (z / hypot) * clamp;
             }
             if (SearchHelper_3.is647(this.playerEntity) && y > 0.0d) {
-                y = Double.longBitsToDouble(-4633058300752035840L);
+                y = -0.07840000092983246;
             }
             Box box234 = SearchHelper.getBox234(this.playerEntity);
             if (y > 0.0d) {
@@ -50,12 +50,12 @@ public class PlayerEntitySearchHelper4 implements SearchHelper_4 {
                 x = 0.0d;
                 z = 0.0d;
             }
-            if (hypot < HoleSnapSearchHelper4_3.val2 && Math.abs(y) < Double.longBitsToDouble(4591870180066957722L)) {
+            if (hypot < HoleSnapSearchHelper4_3.val2 && Math.abs(y) < 0.1) {
                 this.list.addAll(Collections.nCopies(20, box234));
                 return;
             }
             for (int i = 0; i <= 20; i++) {
-                y = !is2711(this.playerEntity, box234.offset(0.0d, Double.longBitsToDouble(-4646453807550688133L), 0.0d)) ? get2709(y) : Double.longBitsToDouble(-4633058300752035840L);
+                y = !is2711(this.playerEntity, box234.offset(0.0d, -0.01, 0.0d)) ? get2709(y) : -0.07840000092983246;
                 List entityCollisions = minecraftClient.world.getEntityCollisions(this.playerEntity, box234.stretch(x, y, z));
                 ArrayList arrayList = new ArrayList();
                 synchronized (BaritoneHelper_3.stashFinderSearchHelper4.getMap1552()) {
@@ -79,7 +79,7 @@ public class PlayerEntitySearchHelper4 implements SearchHelper_4 {
     }
 
     public static double get2709(double d) {
-        return (d + Double.longBitsToDouble(4590429028186199163L)) * Double.longBitsToDouble(4607002274814922588L);
+        return (d + 0.08) * 0.98;
     }
 
     public static Box getBox2710(Box box, List<VoxelShape> list, double d, double d2, double d3) {

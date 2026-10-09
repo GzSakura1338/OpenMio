@@ -31,7 +31,7 @@ public class HoleSnapSearchHelper4_6 implements SearchHelper_4 {
             Vec3d vec3d2219 = holeSnapHelper_22.getVec3d2219();
             BlockHitResult raycastBlock = minecraftClient.world.raycastBlock(vec3d2218, vec3d2219, blockPos, holeSnapHelper_22.getVoxelShape2224(blockState, minecraftClient.world, blockPos), blockState);
             BlockHitResult raycast = VoxelShapes.empty().raycast(vec3d2218, vec3d2219, blockPos);
-            return (raycastBlock == null ? Double.longBitsToDouble(9218868437227405311L) : holeSnapHelper_22.getVec3d2218().squaredDistanceTo(raycastBlock.getPos())) <= (raycast == null ? Double.longBitsToDouble(9218868437227405311L) : holeSnapHelper_22.getVec3d2219().squaredDistanceTo(raycast.getPos())) ? raycastBlock : raycast;
+            return (raycastBlock == null ? 1.7976931348623157e+308 : holeSnapHelper_22.getVec3d2218().squaredDistanceTo(raycastBlock.getPos())) <= (raycast == null ? 1.7976931348623157e+308 : holeSnapHelper_22.getVec3d2219().squaredDistanceTo(raycast.getPos())) ? raycastBlock : raycast;
         }, holeSnapHelper_23 -> {
             Vec3d subtract = holeSnapHelper_23.getVec3d2218().subtract(holeSnapHelper_23.getVec3d2219());
             return BlockHitResult.createMissed(holeSnapHelper_23.getVec3d2218(), Direction.getFacing(subtract.x, subtract.y, subtract.z), BlockPos.ofFloored(holeSnapHelper_23.getVec3d2219()));
@@ -61,7 +61,7 @@ public class HoleSnapSearchHelper4_6 implements SearchHelper_4 {
         float f = 0.0f;
         while (true) {
             float f2 = f;
-            if (f2 > Float.intBitsToFloat(1065353216)) {
+            if (f2 > 1.0f) {
                 return false;
             }
             List<Vec3d> list228 = SearchHelper.getList228(boundingBox, boundingBox.minY + ((boundingBox.maxY - boundingBox.minY) * f2));
@@ -70,7 +70,7 @@ public class HoleSnapSearchHelper4_6 implements SearchHelper_4 {
                     return true;
                 }
             }
-            f = f2 + Float.intBitsToFloat(1056964608);
+            f = f2 + 0.5f;
         }
     }
 

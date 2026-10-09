@@ -38,12 +38,12 @@ public abstract class MainhandHelper implements SearchHelper_4 {
     }
 
     public boolean is469(Vec3d vec3d) {
-        if (vec3d.squaredDistanceTo(minecraftClient.player.getPos()) > Double.longBitsToDouble(4639270566145032192L)) {
+        if (vec3d.squaredDistanceTo(minecraftClient.player.getPos()) > 144.0) {
             return false;
         }
         for (int i = 4; i >= 0; i--) {
             Box box1109 = BaritoneHelper_3.mainhandHelper_2.getBox1109(minecraftClient.player, i);
-            if (ArmorSearchHelper4.get1900(vec3d, minecraftClient.player, box1109, Double.longBitsToDouble(4618441417868443648L), true, (BlockPos) null, (BlockPos) null) >= SearchHelper_3.get643()) {
+            if (ArmorSearchHelper4.get1900(vec3d, minecraftClient.player, box1109, 6.0, true, (BlockPos) null, (BlockPos) null) >= SearchHelper_3.get643()) {
                 return true;
             }
         }
@@ -51,6 +51,6 @@ public abstract class MainhandHelper implements SearchHelper_4 {
     }
 
     public boolean is470(Entity entity) {
-        return (entity instanceof EndCrystalEntity) && minecraftClient.player.squaredDistanceTo(entity) <= Double.longBitsToDouble(4639270566145032192L);
+        return (entity instanceof EndCrystalEntity) && minecraftClient.player.squaredDistanceTo(entity) <= 144.0;
     }
 }

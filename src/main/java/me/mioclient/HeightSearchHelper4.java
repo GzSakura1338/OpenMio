@@ -79,7 +79,7 @@ public final class HeightSearchHelper4 implements SearchHelper_4, TooltipCompone
         VertexConsumerProvider.Immediate entityVertexConsumers = minecraftClient.getBufferBuilders().getEntityVertexConsumers();
         matrixStack.push();
         matrixStack.translate(f, f2, 0.0f);
-        matrixStack.scale(Float.intBitsToFloat(1040187392), Float.intBitsToFloat(1040187392), 0.0f);
+        matrixStack.scale(0.125f, 0.125f, 0.0f);
         matrixStack.translate(0.0f, 0.0f, 0.0f);
         minecraftClient.gameRenderer.getMapRenderer().draw(matrixStack, (VertexConsumerProvider) entityVertexConsumers, new MapIdComponent(i), mapState, false, 15728880);
         entityVertexConsumers.draw();

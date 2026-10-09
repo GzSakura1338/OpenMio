@@ -16,8 +16,8 @@ public abstract class ModuleListSearchHelper4 implements SearchHelper_4, PresetH
     public final ZoomHelper zoomHelper = new ZoomHelper();
     public final ZoomHelper zoomHelper2 = new ZoomHelper();
     public ModuleListMode moduleListMode = ModuleListMode.NONE;
-    public float val = Float.intBitsToFloat(1056964608);
-    public float val2 = Float.intBitsToFloat(1056964608);
+    public float val = 0.5f;
+    public float val2 = 0.5f;
     public int num;
     public int num2;
     public float[] floatArr;
@@ -38,7 +38,7 @@ public abstract class ModuleListSearchHelper4 implements SearchHelper_4, PresetH
                 this.num3 = System.currentTimeMillis();
             }
             if (this.num3 + 300 <= System.currentTimeMillis()) {
-                HUDSearchHelper4.helper_22.do2418(this.moduleList.getName(), get2955() == 1 ? get123() + floatArray2950[0] + Float.intBitsToFloat(1073741824) : (get123() - Float.intBitsToFloat(1073741824)) - FontsSearchHelper4.fontsSearchHelper4.get1316(this.moduleList.getName()), get124(), get2955());
+                HUDSearchHelper4.helper_22.do2418(this.moduleList.getName(), get2955() == 1 ? get123() + floatArray2950[0] + 2.0f : (get123() - 2.0f) - FontsSearchHelper4.fontsSearchHelper4.get1316(this.moduleList.getName()), get124(), get2955());
             }
         }
         if (flag) {
@@ -46,21 +46,21 @@ public abstract class ModuleListSearchHelper4 implements SearchHelper_4, PresetH
         }
         float f = get123();
         float f2 = get124();
-        CrosshairHelper.do1708(matrixStack, f, f2, f + Math.max(floatArray2950[0], Float.intBitsToFloat(1082130432)), f2 + Math.max(floatArray2950[1], Float.intBitsToFloat(1082130432)), MixinMessageIndicatorHelper_2.get819(color, ((BaritoneHelper_3.getHUDSearchHelper42217().get189() * RenderSystem.getShaderColor()[3]) * color.getAlpha()) / Float.intBitsToFloat(1132396544)));
+        CrosshairHelper.do1708(matrixStack, f, f2, f + Math.max(floatArray2950[0], 4.0f), f2 + Math.max(floatArray2950[1], 4.0f), MixinMessageIndicatorHelper_2.get819(color, ((BaritoneHelper_3.getHUDSearchHelper42217().get189() * RenderSystem.getShaderColor()[3]) * color.getAlpha()) / 255.0f));
         float f3 = this.zoomHelper.get172();
         if (f3 > 0.0f) {
-            CrosshairHelper.do1705(matrixStack, f - Float.intBitsToFloat(1065353216), f2 - Float.intBitsToFloat(1065353216), f + Math.max(floatArray2950[0], Float.intBitsToFloat(1082130432)), f2 + Math.max(floatArray2950[1], Float.intBitsToFloat(1082130432)), MixinMessageIndicatorHelper_2.getColor816(MixinMessageIndicatorHelper_2.getColor811(), (int) (f3 * Float.intBitsToFloat(1132396544))));
+            CrosshairHelper.do1705(matrixStack, f - 1.0f, f2 - 1.0f, f + Math.max(floatArray2950[0], 4.0f), f2 + Math.max(floatArray2950[1], 4.0f), MixinMessageIndicatorHelper_2.getColor816(MixinMessageIndicatorHelper_2.getColor811(), (int) (f3 * 255.0f)));
         }
     }
 
     @Override // me.mioclient.PresetHelper_5
     public boolean is92(double d, double d2) {
         float[] floatArray2950 = getFloatArray2950();
-        return d >= ((double) get123()) && d <= ((double) (get123() + Math.max(floatArray2950[0], Float.intBitsToFloat(1082130432)))) && d2 >= ((double) get124()) && d2 <= ((double) (get124() + Math.max(floatArray2950[1], Float.intBitsToFloat(1082130432))));
+        return d >= ((double) get123()) && d <= ((double) (get123() + Math.max(floatArray2950[0], 4.0f))) && d2 >= ((double) get124()) && d2 <= ((double) (get124() + Math.max(floatArray2950[1], 4.0f)));
     }
 
     public void do2944() {
-        this.zoomHelper2.do169(is2349() ? Float.intBitsToFloat(1065353216) : 0.0f, 250L);
+        this.zoomHelper2.do169(is2349() ? 1.0f : 0.0f, 250L);
     }
 
     public abstract float[] getFloatArray365();
@@ -77,7 +77,7 @@ public abstract class ModuleListSearchHelper4 implements SearchHelper_4, PresetH
         if (z) {
             this.val = f / minecraftClient.getWindow().getScaledWidth();
         } else {
-            this.val = MathHelper.clamp(f, 0.0f, Float.intBitsToFloat(1065353216));
+            this.val = MathHelper.clamp(f, 0.0f, 1.0f);
         }
     }
 
@@ -93,7 +93,7 @@ public abstract class ModuleListSearchHelper4 implements SearchHelper_4, PresetH
         if (z) {
             this.val2 = f / minecraftClient.getWindow().getScaledHeight();
         } else {
-            this.val2 = MathHelper.clamp(f, 0.0f, Float.intBitsToFloat(1065353216));
+            this.val2 = MathHelper.clamp(f, 0.0f, 1.0f);
         }
     }
 
@@ -110,7 +110,7 @@ public abstract class ModuleListSearchHelper4 implements SearchHelper_4, PresetH
         if (this.flag2 == z) {
             return;
         }
-        this.zoomHelper.do169(z ? Float.intBitsToFloat(1065353216) : 0.0f, 250L);
+        this.zoomHelper.do169(z ? 1.0f : 0.0f, 250L);
         this.flag2 = z;
     }
 
@@ -139,7 +139,7 @@ public abstract class ModuleListSearchHelper4 implements SearchHelper_4, PresetH
     }
 
     public float get2953(float f) {
-        return this.moduleListMode == ModuleListMode.TOP_CENTER ? (get123() + (this.floatArr[0] / Float.intBitsToFloat(1073741824))) - (f / Float.intBitsToFloat(1073741824)) : get2955() == -1 ? (get123() + this.floatArr[0]) - f : get123();
+        return this.moduleListMode == ModuleListMode.TOP_CENTER ? (get123() + (this.floatArr[0] / 2.0f)) - (f / 2.0f) : get2955() == -1 ? (get123() + this.floatArr[0]) - f : get123();
     }
 
     public float get2954(float f) {
@@ -161,8 +161,8 @@ public abstract class ModuleListSearchHelper4 implements SearchHelper_4, PresetH
     }
 
     public void do2957() {
-        this.num = get123() + (this.floatArr[0] / Float.intBitsToFloat(1073741824)) > ((float) minecraftClient.getWindow().getScaledWidth()) / Float.intBitsToFloat(1073741824) ? -1 : 1;
-        this.num2 = get124() + (this.floatArr[1] / Float.intBitsToFloat(1073741824)) > ((float) minecraftClient.getWindow().getScaledHeight()) / Float.intBitsToFloat(1073741824) ? -1 : 1;
+        this.num = get123() + (this.floatArr[0] / 2.0f) > ((float) minecraftClient.getWindow().getScaledWidth()) / 2.0f ? -1 : 1;
+        this.num2 = get124() + (this.floatArr[1] / 2.0f) > ((float) minecraftClient.getWindow().getScaledHeight()) / 2.0f ? -1 : 1;
     }
 
     public Data_3 getData_32936() {

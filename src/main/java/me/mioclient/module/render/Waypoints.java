@@ -133,19 +133,19 @@ public class Waypoints extends Module {
             return;
         }
         Camera camera = minecraftClient.gameRenderer.getCamera();
-        Vec3d add = new Vec3d(0.0d, 0.0d, Double.longBitsToDouble(4607182418800017408L)).rotateX(-((float) Math.toRadians(camera.getPitch()))).rotateY(-((float) Math.toRadians(camera.getYaw()))).add(minecraftClient.getEntityRenderDispatcher().camera.getPos());
+        Vec3d add = new Vec3d(0.0d, 0.0d, 1.0).rotateX(-((float) Math.toRadians(camera.getPitch()))).rotateY(-((float) Math.toRadians(camera.getYaw()))).add(minecraftClient.getEntityRenderDispatcher().camera.getPos());
         Iterator<WaypointsEnumSettingHelper> it = this.copyOnWriteArrayList.iterator();
         while (it.hasNext()) {
             WaypointsEnumSettingHelper next = it.next();
             if (next != null && next.getString517() != null && next.getName() != null && next.getString518() != null) {
-                if (next.getVec3d1303().distanceTo(minecraftClient.gameRenderer.getCamera().getPos()) <= this.distance.getValue().floatValue() * Float.intBitsToFloat(1148846080) || this.distance.getValue().floatValue() == Float.intBitsToFloat(1120534528)) {
+                if (next.getVec3d1303().distanceTo(minecraftClient.gameRenderer.getCamera().getPos()) <= this.distance.getValue().floatValue() * 1000.0f || this.distance.getValue().floatValue() == 101.0f) {
                     Vec3d vec3d2100 = getVec3d2100(next);
                     if (vec3d2100 != null) {
                         Vec3d vec3d = vec3d2100;
-                        if (MixinLivingEntityHelper_2.get2583(minecraftClient.player.getPos(), vec3d2100) >= Float.intBitsToFloat(1123024896)) {
+                        if (MixinLivingEntityHelper_2.get2583(minecraftClient.player.getPos(), vec3d2100) >= 120.0f) {
                             float[] floatArray2484 = SearchHelper4_8.getFloatArray2484(vec3d2100);
                             Vec3d lerpedPos = minecraftClient.player.getLerpedPos(SearchHelper_2.get536());
-                            vec3d = new Vec3d(lerpedPos.getX() + (Float.intBitsToFloat(1120403456) * ((float) Math.cos(Math.toRadians(floatArray2484[0] + FreecamHelper.num2)))), vec3d2100.y, lerpedPos.getZ() + (Float.intBitsToFloat(1120403456) * ((float) Math.sin(Math.toRadians(floatArray2484[0] + FreecamHelper.num2)))));
+                            vec3d = new Vec3d(lerpedPos.getX() + (100.0f * ((float) Math.cos(Math.toRadians(floatArray2484[0] + FreecamHelper.num2)))), vec3d2100.y, lerpedPos.getZ() + (100.0f * ((float) Math.sin(Math.toRadians(floatArray2484[0] + FreecamHelper.num2)))));
                         }
                         if (this.beam.getValue().booleanValue()) {
                             PhaseESPSearchHelper4.do1590(inner_3.getMatrixStack472(), new Box(vec3d.add(-FreecamHelper.val3, -FreecamHelper.val3, -FreecamHelper.val3), vec3d.add(FreecamHelper.val3, FreecamHelper.val3, FreecamHelper.val3)).withMaxY(minecraftClient.world.getTopY()).withMinY(minecraftClient.world.getBottomY()), MixinMessageIndicatorHelper_2.getColor816(this.color.getValue(), this.beamAlpha.getValue().intValue()));
@@ -156,7 +156,7 @@ public class Waypoints extends Module {
                         if (this.tracers.getValue().booleanValue()) {
                             GL32C.glLineWidth(this.lineWidth.getValue().floatValue());
                             SearchHelper_2.searchHelper_2.do561(inner_3.getMatrixStack472(), add, vec3d, this.color.getValue());
-                            GL32C.glLineWidth(Float.intBitsToFloat(1065353216));
+                            GL32C.glLineWidth(1.0f);
                         }
                         if (this.name.getValue().booleanValue()) {
                             if (this.eyesAlign.getValue().booleanValue()) {
@@ -166,12 +166,12 @@ public class Waypoints extends Module {
                             double d = PingSpoofHelper.get377(minecraftClient.gameRenderer.getCamera().getPos(), vec3d, this.textScale.getValue().floatValue());
                             float f = (float) FreecamHelper.val3;
                             if (this.textBackground.getValue().booleanValue()) {
-                                SearchHelper_2.searchHelper_2.do567(inner_3.getMatrixStack472(), vec3d, Float.intBitsToFloat(-1124744561), (float) FreecamHelper.val3, (-(FontsSearchHelper4.fontsSearchHelper4.get1316(string2921) / Float.intBitsToFloat(1073741824))) - Float.intBitsToFloat(1073741824), Float.intBitsToFloat(1084227584), d * Double.longBitsToDouble(4611686018427387904L), new Color(0, 0, 0, 100));
+                                SearchHelper_2.searchHelper_2.do567(inner_3.getMatrixStack472(), vec3d, -0.029999999329447746f, (float) FreecamHelper.val3, (-(FontsSearchHelper4.fontsSearchHelper4.get1316(string2921) / 2.0f)) - 2.0f, 5.0f, d * 2.0, new Color(0, 0, 0, 100));
                                 if (!fonts.isToggled()) {
-                                    f = Float.intBitsToFloat(1047233823);
+                                    f = 0.23000000417232513f;
                                 }
                             }
-                            SearchHelper_2.searchHelper_2.do571(inner_3.getDrawContext474(), string2921, vec3d, 0.0f, f, -(FontsSearchHelper4.fontsSearchHelper4.get1316(string2921) / Float.intBitsToFloat(1073741824)), 0.0f, d, Color.WHITE, true);
+                            SearchHelper_2.searchHelper_2.do571(inner_3.getDrawContext474(), string2921, vec3d, 0.0f, f, -(FontsSearchHelper4.fontsSearchHelper4.get1316(string2921) / 2.0f), 0.0f, d, Color.WHITE, true);
                         }
                     }
                 }
@@ -183,10 +183,10 @@ public class Waypoints extends Module {
         Vec3d vec3d1303 = waypointsEnumSettingHelper.getVec3d1303();
         String lowerCase = SearchHelper4_7.getStashFinderMode2438().getString2175().toLowerCase();
         if (waypointsEnumSettingHelper.getString517().equals("overworld") && lowerCase.equals("nether")) {
-            return vec3d1303.multiply(Double.longBitsToDouble(4593671619917905920L), Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4593671619917905920L));
+            return vec3d1303.multiply(0.125, 1.0, 0.125);
         }
         if (waypointsEnumSettingHelper.getString517().equals("nether") && lowerCase.equals("overworld")) {
-            return vec3d1303.multiply(Double.longBitsToDouble(4620693217682128896L), Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4620693217682128896L));
+            return vec3d1303.multiply(8.0, 1.0, 8.0);
         }
         if (waypointsEnumSettingHelper.getString517().equals(lowerCase)) {
             return vec3d1303;

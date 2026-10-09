@@ -56,11 +56,11 @@ public class EntityControl extends Module {
             if (!(vehicle instanceof Saddleable) || ((Saddleable) vehicle).isSaddled()) {
                 double doubleValue = this.speed.getValue().doubleValue();
                 double floatValue = this.vertical.getValue().floatValue();
-                if (doubleValue >= Double.longBitsToDouble(4626322717216342016L)) {
-                    doubleValue = Double.longBitsToDouble(4626319902466574909L);
+                if (doubleValue >= 20.0) {
+                    doubleValue = 19.99;
                 }
                 if (this.accelerate.getValue().booleanValue()) {
-                    doubleValue = HoleSnapSearchHelper4_3.get2509(this.speed.getValue().doubleValue(), Double.longBitsToDouble(4591870180066957722L), this.speed.getValue().doubleValue(), this.num);
+                    doubleValue = HoleSnapSearchHelper4_3.get2509(this.speed.getValue().doubleValue(), 0.1, this.speed.getValue().doubleValue(), this.num);
                 }
                 if (!this.entitySpeed.getValue().booleanValue() || is1861()) {
                     return;
@@ -75,7 +75,7 @@ public class EntityControl extends Module {
                     } else if (this.glide.getValue().booleanValue() || EntityControlSearchHelper4.is1538(minecraftClient.options.sprintKey)) {
                         d = -floatValue;
                     } else {
-                        d = this.flag ? Double.longBitsToDouble(-4637266464074629120L) : Double.longBitsToDouble(4586105572780146688L);
+                        d = this.flag ? -0.04125000163912773 : 0.04125000163912773;
                     }
                 } else {
                     d = tickPreEvent.get692();

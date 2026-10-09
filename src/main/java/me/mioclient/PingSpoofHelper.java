@@ -60,11 +60,11 @@ public class PingSpoofHelper implements SearchHelper_4 {
 
     public static double get377(Vec3d vec3d, Vec3d vec3d2, double d) {
         double distanceTo = vec3d.distanceTo(vec3d2);
-        double intValue = ((Integer) minecraftClient.options.getFov().getValue()).intValue() / Double.longBitsToDouble(4637440978796412928L);
-        if (intValue < Double.longBitsToDouble(4607182418800017408L)) {
-            intValue = Double.longBitsToDouble(4607182418800017408L);
+        double intValue = ((Integer) minecraftClient.options.getFov().getValue()).intValue() / 110.0;
+        if (intValue < 1.0) {
+            intValue = 1.0;
         }
-        return distanceTo <= Double.longBitsToDouble(4621819117588971520L) / d ? Math.min(Double.longBitsToDouble(4607182418800017408L), d) * intValue : distanceTo * d * Double.longBitsToDouble(4591870180066957722L) * intValue;
+        return distanceTo <= 10.0 / d ? Math.min(1.0, d) * intValue : distanceTo * d * 0.1 * intValue;
     }
 
     public static float get378(PlayerEntity playerEntity) {
@@ -80,7 +80,7 @@ public class PingSpoofHelper implements SearchHelper_4 {
     }
 
     public static float get381(float f) {
-        return (f < 0.0f ? f + Float.intBitsToFloat(1135869952) : f) % Float.intBitsToFloat(1135869952);
+        return (f < 0.0f ? f + 360.0f : f) % 360.0f;
     }
 
     public static float get382(float f, float f2) {

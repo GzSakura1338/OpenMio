@@ -11,7 +11,7 @@ import net.minecraft.util.math.MathHelper;
 public class SpeedMineHelper_3 {
     public Box box;
     public long num;
-    public float val = Float.intBitsToFloat(1065353216);
+    public float val = 1.0f;
 
     public void do2258() {
         this.num = System.currentTimeMillis() + 150;
@@ -42,7 +42,7 @@ public class SpeedMineHelper_3 {
     }
 
     public float get2262(float f) {
-        return MathHelper.clamp(Float.intBitsToFloat(1065353216) - (((float) Math.max(System.currentTimeMillis() - this.num, 0L)) / f), 0.0f, Float.intBitsToFloat(1065353216));
+        return MathHelper.clamp(1.0f - (((float) Math.max(System.currentTimeMillis() - this.num, 0L)) / f), 0.0f, 1.0f);
     }
 
     public Box getBox2263() {

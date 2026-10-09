@@ -38,10 +38,10 @@ public class AntiCheatVelocityHelper extends VelocityHelper {
             if (entityVelocityUpdateS2CPacket.getEntityId() == minecraftClient.player.getId() && is951()) {
                 boolean z = fastWeb.isToggled() && fastWeb.is1534() && HoleSnapSearchHelper4.is2005(minecraftClient.player);
                 DuckEntityVelocityUpdateS2CPacket duckEntityVelocityUpdateS2CPacket = (DuckEntityVelocityUpdateS2CPacket) entityVelocityUpdateS2CPacket;
-                duckEntityVelocityUpdateS2CPacket.setZ((int) (entityVelocityUpdateS2CPacket.getVelocityZ() * Double.longBitsToDouble(4665518107723300864L) * 0.0f));
-                duckEntityVelocityUpdateS2CPacket.setX((int) (entityVelocityUpdateS2CPacket.getVelocityX() * Double.longBitsToDouble(4665518107723300864L) * 0.0f));
+                duckEntityVelocityUpdateS2CPacket.setZ((int) (entityVelocityUpdateS2CPacket.getVelocityZ() * 8000.0 * 0.0f));
+                duckEntityVelocityUpdateS2CPacket.setX((int) (entityVelocityUpdateS2CPacket.getVelocityX() * 8000.0 * 0.0f));
                 if ((this.flag || z) && entityVelocityUpdateS2CPacket.getVelocityY() > 0.0d) {
-                    duckEntityVelocityUpdateS2CPacket.setY((int) (entityVelocityUpdateS2CPacket.getVelocityY() * Double.longBitsToDouble(-4557853929131474944L)));
+                    duckEntityVelocityUpdateS2CPacket.setY((int) (entityVelocityUpdateS2CPacket.getVelocityY() * -8000.0));
                 }
             }
         }
@@ -87,21 +87,21 @@ public class AntiCheatVelocityHelper extends VelocityHelper {
 
     public static boolean is1885() {
         HashSet<BlockPos> hashSet = new HashSet<>();
-        hashSet.add(getBlockPos1887(Float.intBitsToFloat(1065353216), 0.0f));
-        hashSet.add(getBlockPos1887(Float.intBitsToFloat(-1082130432), 0.0f));
-        hashSet.add(getBlockPos1887(0.0f, Float.intBitsToFloat(1065353216)));
-        hashSet.add(getBlockPos1887(0.0f, Float.intBitsToFloat(-1082130432)));
+        hashSet.add(getBlockPos1887(1.0f, 0.0f));
+        hashSet.add(getBlockPos1887(-1.0f, 0.0f));
+        hashSet.add(getBlockPos1887(0.0f, 1.0f));
+        hashSet.add(getBlockPos1887(0.0f, -1.0f));
         return hashSet.stream().filter(AntiCheatVelocityHelper::is1888).count() >= 2;
     }
 
     public static boolean is1886() {
-        return BlockPos.stream(minecraftClient.player.getBoundingBox().shrink(SearchHelper.val, 0.0d, SearchHelper.val).withMaxY(minecraftClient.player.getY()).offset(0.0d, Double.longBitsToDouble(4591870180174331904L), 0.0d)).anyMatch(AntiCheatVelocityHelper::is1888);
+        return BlockPos.stream(minecraftClient.player.getBoundingBox().shrink(SearchHelper.val, 0.0d, SearchHelper.val).withMaxY(minecraftClient.player.getY()).offset(0.0d, 0.10000000149011612, 0.0d)).anyMatch(AntiCheatVelocityHelper::is1888);
     }
 
     public static BlockPos getBlockPos1887(float f, float f2) {
         ClientPlayerEntity clientPlayerEntity = minecraftClient.player;
-        float lengthX = (float) (clientPlayerEntity.getBoundingBox().getLengthX() / Double.longBitsToDouble(4611686018427387904L));
-        return BlockPos.ofFloored(clientPlayerEntity.getX() + (f * lengthX * Float.intBitsToFloat(1065353224)), Math.round(clientPlayerEntity.getY()), clientPlayerEntity.getZ() + (f2 * lengthX * Float.intBitsToFloat(1065353224)));
+        float lengthX = (float) (clientPlayerEntity.getBoundingBox().getLengthX() / 2.0);
+        return BlockPos.ofFloored(clientPlayerEntity.getX() + (f * lengthX * 1.0000009536743164f), Math.round(clientPlayerEntity.getY()), clientPlayerEntity.getZ() + (f2 * lengthX * 1.0000009536743164f));
     }
 
     public static boolean is1888(BlockPos blockPos) {

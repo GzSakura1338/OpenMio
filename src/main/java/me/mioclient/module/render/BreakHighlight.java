@@ -43,7 +43,7 @@ public class BreakHighlight extends Module {
                 VoxelShape outlineShape = minecraftClient.world.getBlockState(entityIdHelper.getBlockPos386()).getOutlineShape(minecraftClient.world, entityIdHelper.getBlockPos386());
                 float f = entityIdHelper.get2814(inner_3.get473());
                 PlayerEntity entity181 = (entityIdHelper.getEntity181()) instanceof PlayerEntity ? (PlayerEntity) (entityIdHelper.getEntity181()) : null;
-                Box offset = getBox1531(outlineShape.isEmpty() ? new Box(0.0d, 0.0d, 0.0d, Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4607182418800017408L), Double.longBitsToDouble(4607182418800017408L)) : outlineShape.getBoundingBox(), f).offset(entityIdHelper.getBlockPos386());
+                Box offset = getBox1531(outlineShape.isEmpty() ? new Box(0.0d, 0.0d, 0.0d, 1.0, 1.0, 1.0) : outlineShape.getBoundingBox(), f).offset(entityIdHelper.getBlockPos386());
                 if (entity181 instanceof PlayerEntity) {
                     PlayerEntity playerEntity = entity181;
                     Color color530 = BaritoneHelper_3.searchHelper4_14.getColor530(playerEntity.getGameProfile().getName(), (Color) null);
@@ -57,17 +57,17 @@ public class BreakHighlight extends Module {
                     }
                 }
                 PhaseESPSearchHelper4.do1590(inner_3.getMatrixStack472(), getBox1531(offset, f), value);
-                PhaseESPSearchHelper4.do1593(inner_3.getMatrixStack472(), getBox1531(offset, f), value2, Float.intBitsToFloat(1065353216));
+                PhaseESPSearchHelper4.do1593(inner_3.getMatrixStack472(), getBox1531(offset, f), value2, 1.0f);
             }
         }
     }
 
     public Box getBox1531(Box box, float f) {
-        float clamp = MathHelper.clamp(f, 0.0f, Float.intBitsToFloat(1065353216));
+        float clamp = MathHelper.clamp(f, 0.0f, 1.0f);
         double abs = Math.abs(box.getLengthX());
         double abs2 = Math.abs(box.getLengthY());
         double abs3 = Math.abs(box.getLengthZ());
         Vec3d center = box.getCenter();
-        return new Box(center.subtract((clamp * abs) / Double.longBitsToDouble(4611686018427387904L), (clamp * abs2) / Double.longBitsToDouble(4611686018427387904L), (clamp * abs3) / Double.longBitsToDouble(4611686018427387904L)), center.add((clamp * abs) / Double.longBitsToDouble(4611686018427387904L), (clamp * abs2) / Double.longBitsToDouble(4611686018427387904L), (clamp * abs3) / Double.longBitsToDouble(4611686018427387904L)));
+        return new Box(center.subtract((clamp * abs) / 2.0, (clamp * abs2) / 2.0, (clamp * abs3) / 2.0), center.add((clamp * abs) / 2.0, (clamp * abs2) / 2.0, (clamp * abs3) / 2.0));
     }
 }

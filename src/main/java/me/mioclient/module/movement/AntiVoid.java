@@ -58,7 +58,7 @@ public class AntiVoid extends Module {
             return blockState.isSolid();
         })).getType() == HitResult.Type.MISS && minecraftClient.world.getBottomY() + this.height.getValue().intValue() >= minecraftClient.player.getY()) {
             if (this.mode.getValue() == AntiVoidMode.TELEPORT) {
-                minecraftClient.player.setVelocity(0.0d, Double.longBitsToDouble(4621819117588971520L), 0.0d);
+                minecraftClient.player.setVelocity(0.0d, 10.0, 0.0d);
             } else {
                 minecraftClient.player.setVelocity(minecraftClient.player.getVelocity().withAxis(Direction.Axis.Y, 0.0d));
                 if (this.forceGround.getValue().booleanValue()) {

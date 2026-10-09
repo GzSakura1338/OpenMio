@@ -26,12 +26,12 @@ public class Glint extends Module {
     @Listen
     public void onEndDrawing(EndDrawingEvent endDrawingEvent) {
         if (endDrawingEvent.getKeyPearlMode1472() != KeyPearlMode.Pre) {
-            RenderSystem.setShaderColor(Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216), Float.intBitsToFloat(1065353216));
+            RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
             return;
         }
         Color value = this.color.getValue();
         MinecraftClient.getInstance().getTextureManager().getTexture(identifier).setFilter(true, false);
         RenderSystem.setShaderTexture(0, identifier);
-        RenderSystem.setShaderColor(value.getRed() / Float.intBitsToFloat(1132396544), value.getGreen() / Float.intBitsToFloat(1132396544), value.getBlue() / Float.intBitsToFloat(1132396544), Float.intBitsToFloat(1065353216));
+        RenderSystem.setShaderColor(value.getRed() / 255.0f, value.getGreen() / 255.0f, value.getBlue() / 255.0f, 1.0f);
     }
 }

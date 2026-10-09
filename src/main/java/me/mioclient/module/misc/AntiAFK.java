@@ -72,7 +72,7 @@ public class AntiAFK extends Module {
     public void onAddMessage(AddMessageEvent addMessageEvent) {
         if (this.autoReply.getValue().booleanValue() && is1583() && addMessageEvent.getKeyPearlMode1472() == KeyPearlMode.Pre && addMessageEvent.getText2279() != null && MixinMessageIndicatorHelper.is335(addMessageEvent.getText2279().getString())) {
             minecraftClient.executeSync(() -> {
-                minecraftClient.player.networkHandler.sendChatCommand(new ArgumentTypeHelper().getArgumentTypeHelper2906((int) Math.floor(Math.random() * Double.longBitsToDouble(4666723172467343360L))).getArgumentTypeHelper2919(minecraftClient.player.getName().getString()).getString2921("r Hello! This is auto reply talking. \u0001 is currently AFK :'). [\u0001]"));
+                minecraftClient.player.networkHandler.sendChatCommand(new ArgumentTypeHelper().getArgumentTypeHelper2906((int) Math.floor(Math.random() * 10000.0)).getArgumentTypeHelper2919(minecraftClient.player.getName().getString()).getString2921("r Hello! This is auto reply talking. \u0001 is currently AFK :'). [\u0001]"));
             });
         }
     }
@@ -115,7 +115,7 @@ public class AntiAFK extends Module {
             Random random = new Random();
             arrayList.add(() -> {
                 minecraftClient.player.setYaw(random.nextFloat(FreecamHelper.num3));
-                minecraftClient.player.setPitch(random.nextFloat(Float.intBitsToFloat(1127481344)) - FreecamHelper.num2);
+                minecraftClient.player.setPitch(random.nextFloat(180.0f) - FreecamHelper.num2);
             });
         }
         if (this.attack.getValue().booleanValue()) {
@@ -131,6 +131,6 @@ public class AntiAFK extends Module {
     }
 
     public boolean is1583() {
-        return this.stopwatch.is419((long) (this.delay.getValue().floatValue() * Float.intBitsToFloat(1148846080)));
+        return this.stopwatch.is419((long) (this.delay.getValue().floatValue() * 1000.0f));
     }
 }

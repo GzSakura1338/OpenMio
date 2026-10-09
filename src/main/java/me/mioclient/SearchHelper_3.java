@@ -26,7 +26,7 @@ public class SearchHelper_3 implements SearchHelper_4 {
 
     public static float get644(Entity entity) {
         if (!(entity instanceof LivingEntity)) {
-            return Float.intBitsToFloat(1073741824);
+            return 2.0f;
         }
         LivingEntity livingEntity = (LivingEntity) entity;
         return livingEntity.getHealth() + livingEntity.getAbsorptionAmount();
@@ -61,7 +61,7 @@ public class SearchHelper_3 implements SearchHelper_4 {
     }
 
     public static boolean is647(LivingEntity livingEntity) {
-        return !minecraftClient.world.isBlockSpaceEmpty((Entity) livingEntity, livingEntity.getBoundingBox().stretch(0.0d, Double.longBitsToDouble(-4631501856787818086L), 0.0d));
+        return !minecraftClient.world.isBlockSpaceEmpty((Entity) livingEntity, livingEntity.getBoundingBox().stretch(0.0d, -0.1, 0.0d));
     }
 
     public static boolean is648(Entity entity) {

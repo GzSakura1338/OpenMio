@@ -124,13 +124,13 @@ public final class ObstaclePasser extends Module {
             tickEvent_2.getInput806().jumping = true;
         }
         tickEvent_2.getInput806().pressingForward = true;
-        tickEvent_2.getInput806().movementForward = tickEvent_2.is808() ? tickEvent_2.get807() : Float.intBitsToFloat(1065353216);
+        tickEvent_2.getInput806().movementForward = tickEvent_2.is808() ? tickEvent_2.get807() : 1.0f;
     }
 
     public void do923() {
         BlockPos blockPos710;
         if (BaritoneHelper_3.obstaclePasserHelper.is702() && (blockPos710 = BaritoneHelper_3.obstaclePasserHelper.getBlockPos710()) != null) {
-            if (MixinLivingEntityHelper_2.get2583(minecraftClient.player.getPos(), blockPos710.toBottomCenterPos()) <= Float.intBitsToFloat(1065353216)) {
+            if (MixinLivingEntityHelper_2.get2583(minecraftClient.player.getPos(), blockPos710.toBottomCenterPos()) <= 1.0f) {
                 BaritoneHelper_3.obstaclePasserHelper.do706();
                 this.num = 10;
                 if (elytraFly.isToggled()) {

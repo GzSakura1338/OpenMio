@@ -62,8 +62,8 @@ public class Baritone extends KeybindModule {
             BaritoneAPI.getSettings().colorBlocksToPlace.value = color816;
             BaritoneAPI.getSettings().colorBlocksToWalkInto.value = color816;
             BaritoneAPI.getSettings().colorNextPath.value = color816;
-            BaritoneAPI.getSettings().pathRenderLineWidthPixels.value = Float.valueOf(Float.intBitsToFloat(1069547520));
-            BaritoneAPI.getSettings().goalRenderLineWidthPixels.value = Float.valueOf(Float.intBitsToFloat(1069547520));
+            BaritoneAPI.getSettings().pathRenderLineWidthPixels.value = Float.valueOf(1.5f);
+            BaritoneAPI.getSettings().goalRenderLineWidthPixels.value = Float.valueOf(1.5f);
         }
         if (this.setting3.getValue().booleanValue()) {
             BaritoneAPI.getSettings().assumeStep.value = Boolean.valueOf(step.isToggled());

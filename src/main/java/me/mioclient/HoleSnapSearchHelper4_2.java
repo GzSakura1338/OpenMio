@@ -10,17 +10,17 @@ import me.mioclient.module.Module;
 /* loaded from: mio-yarn.jar:me/mioclient/HoleSnapSearchHelper4_2.class */
 public class HoleSnapSearchHelper4_2 implements SearchHelper_4 {
     public final ConcurrentHashMap<Module, Boolean> concurrentHashMap = new ConcurrentHashMap<>();
-    public float val = Float.intBitsToFloat(1065353216);
+    public float val = 1.0f;
 
     /* compiled from: 0.java */
     /* loaded from: mio-yarn.jar:me/mioclient/HoleSnapSearchHelper4_2$Inner.class */
     public static class Inner extends HoleSnapSearchHelper4_2 {
         @Listen(get219= Helper_7.num5)
         public void onTick(TickEvent tickEvent) {
-            if (get2019() == Float.intBitsToFloat(1065353216)) {
+            if (get2019() == 1.0f) {
                 return;
             }
-            for (int i = 1; i <= get2019() - Float.intBitsToFloat(1065353216); i++) {
+            for (int i = 1; i <= get2019() - 1.0f; i++) {
                 MixinLivingEntityHelper.do869();
             }
         }
@@ -41,7 +41,7 @@ public class HoleSnapSearchHelper4_2 implements SearchHelper_4 {
     public void do2017(Module module) {
         this.concurrentHashMap.compute(module, (module2, bool) -> {
             if (Boolean.FALSE.equals(bool)) {
-                do2020(Float.intBitsToFloat(1065353216));
+                do2020(1.0f);
             }
             return true;
         });

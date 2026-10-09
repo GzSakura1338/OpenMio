@@ -87,22 +87,22 @@ public class Criticals extends Module {
         switch (this.mode.getValue().ordinal()) {
             case 1:
                 if (HoleSnapSearchHelper4.is2005(minecraftClient.player)) {
-                    do908(Double.longBitsToDouble(4589168748072235207L), 0.0d, Double.longBitsToDouble(4578359381184846234L), 0.0d);
+                    do908(0.0625101, 0.0d, 0.0125, 0.0d);
                     return;
                 } else {
-                    do908(Double.longBitsToDouble(4592590756007337001L), Double.longBitsToDouble(4592590853854343945L));
+                    do908(0.11, 0.1100013579);
                     return;
                 }
             case 2:
-                AutoSignSearchHelper4.do2563(minecraftClient.player.getX(), minecraftClient.player.getY() - Double.longBitsToDouble(4517329193108106637L), minecraftClient.player.getZ(), fArr[0], fArr[1], false);
+                AutoSignSearchHelper4.do2563(minecraftClient.player.getX(), minecraftClient.player.getY() - 1e-06, minecraftClient.player.getZ(), fArr[0], fArr[1], false);
                 return;
             case 3:
-                float clamp = Math.clamp(fArr[1], Float.intBitsToFloat(-1028390912) + AntiCheat.val, Float.intBitsToFloat(1119092736) - AntiCheat.val);
-                AutoSignSearchHelper4.do2563(minecraftClient.player.getX(), minecraftClient.player.getY() + Double.longBitsToDouble(4589175226049939217L), minecraftClient.player.getZ(), fArr[0], clamp + AntiCheat.val, false);
-                AutoSignSearchHelper4.do2563(minecraftClient.player.getX(), minecraftClient.player.getY() + Double.longBitsToDouble(4586718062093245874L), minecraftClient.player.getZ(), fArr[0], clamp - AntiCheat.val, false);
+                float clamp = Math.clamp(fArr[1], -90.0f + AntiCheat.val, 90.0f - AntiCheat.val);
+                AutoSignSearchHelper4.do2563(minecraftClient.player.getX(), minecraftClient.player.getY() + 0.0626, minecraftClient.player.getZ(), fArr[0], clamp + AntiCheat.val, false);
+                AutoSignSearchHelper4.do2563(minecraftClient.player.getX(), minecraftClient.player.getY() + 0.0455, minecraftClient.player.getZ(), fArr[0], clamp - AntiCheat.val, false);
                 return;
             default:
-                do908(Double.longBitsToDouble(4589168748072235207L), 0.0d);
+                do908(0.0625101, 0.0d);
                 return;
         }
     }

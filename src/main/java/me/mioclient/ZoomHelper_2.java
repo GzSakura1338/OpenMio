@@ -20,8 +20,8 @@ public final class ZoomHelper_2 implements SearchHelper_4 {
         int scaledWindowHeight = drawContext.getScaledWindowHeight();
         boolean z = is1011((double) i) || this.flag3;
         boolean z2 = is1012((double) i2) || this.flag4;
-        this.zoomHelper.do169(z ? Float.intBitsToFloat(1124859904) : 0.0f, 250L);
-        this.zoomHelper2.do169((z2 && this.zoomHelper.get172() == 0.0f) ? Float.intBitsToFloat(1124859904) : 0.0f, 250L);
+        this.zoomHelper.do169(z ? 140.0f : 0.0f, 250L);
+        this.zoomHelper2.do169((z2 && this.zoomHelper.get172() == 0.0f) ? 140.0f : 0.0f, 250L);
         if (this.zoomHelper.get172() > 0.0f) {
             if (this.flag3) {
                 hud.do739(this.flag ? Math.abs(i - scaledWindowWidth) : i);
@@ -49,8 +49,8 @@ public final class ZoomHelper_2 implements SearchHelper_4 {
         if (!this.flag3) {
             this.flag4 = is1012(d2);
         }
-        this.flag = d > ((double) (((float) minecraftClient.getWindow().getScaledWidth()) / Float.intBitsToFloat(1073741824)));
-        this.flag2 = d2 > ((double) (((float) minecraftClient.getWindow().getScaledHeight()) / Float.intBitsToFloat(1073741824)));
+        this.flag = d > ((double) (((float) minecraftClient.getWindow().getScaledWidth()) / 2.0f));
+        this.flag2 = d2 > ((double) (((float) minecraftClient.getWindow().getScaledHeight()) / 2.0f));
     }
 
     public void do88(double d, double d2, int i) {

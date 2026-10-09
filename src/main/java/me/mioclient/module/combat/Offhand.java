@@ -204,7 +204,7 @@ public class Offhand extends Module {
         if (this.mainhandHelper.is467()) {
             return OffhandMode.Totem;
         }
-        if (SearchHelper_3.get643() > this.health.getValue().floatValue() && minecraftClient.player.fallDistance < Float.intBitsToFloat(1098907648) && FireworksHelper.get449(itemStack -> {
+        if (SearchHelper_3.get643() > this.health.getValue().floatValue() && minecraftClient.player.fallDistance < 16.0f && FireworksHelper.get449(itemStack -> {
             return itemStack.isOf(this.item.getValue().getItem1241(booleanValue));
         }) > 0) {
             offhandMode = this.item.getValue();

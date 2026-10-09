@@ -82,7 +82,7 @@ public class Crypto extends me.mioclient.ModuleList {
 
     @Listen
     public void do27(TickEvent tickEvent) {
-        if (this.stopwatch.is418(Double.longBitsToDouble(4617315517961601024L), TimeUnit.SECONDS)) {
+        if (this.stopwatch.is418(5.0, TimeUnit.SECONDS)) {
             executorService.submit(this::do212);
             this.stopwatch.reset();
         }
@@ -119,7 +119,7 @@ public class Crypto extends me.mioclient.ModuleList {
 
     public void do213(float f) {
         float parseFloat = Float.parseFloat(this.string2);
-        if (Math.abs(f - parseFloat) < Double.longBitsToDouble(4576918229304087675L)) {
+        if (Math.abs(f - parseFloat) < 0.01) {
             this.formatting = Formatting.WHITE;
         } else if (parseFloat > f) {
             this.formatting = Formatting.RED;

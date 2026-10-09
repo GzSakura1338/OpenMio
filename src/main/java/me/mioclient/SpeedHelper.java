@@ -8,7 +8,7 @@ import me.mioclient.module.movement.Speed;
 /* loaded from: mio-yarn.jar:me/mioclient/SpeedHelper.class */
 public abstract class SpeedHelper implements SearchHelper_4 {
     public final Speed speed;
-    public final double val = Double.longBitsToDouble(4598847156609680094L);
+    public final double val = 0.2873;
     public double val2;
     public double val3;
     public int num;

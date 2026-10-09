@@ -92,7 +92,7 @@ public class Notifications extends Module {
                 executorService.submit(() -> {
                     try {
                         if (this.delay.getValue().floatValue() > 0.0f) {
-                            Thread.sleep((long) ((this.delay.getValue().floatValue() * Float.intBitsToFloat(1148846080)) + this.random2.nextLong(500L)));
+                            Thread.sleep((long) ((this.delay.getValue().floatValue() * 1000.0f) + this.random2.nextLong(500L)));
                         }
                         String str = null;
                         if (!this.random.getValue().booleanValue()) {
